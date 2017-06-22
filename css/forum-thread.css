@@ -1,0 +1,221 @@
+  /* ============================ */
+ /* ========== GLOBAL ========== */
+/* ============================ */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Actor');
+
+body {
+  background-image: url('http://artbaggage.com/wp-content/gallery/asphalt_road_patterns/asphalt_7_512x512.png');
+}
+
+.container {
+  max-width: none;
+}
+
+table.quote td {
+  padding: 5px;
+  background-color: silver;
+}
+
+a.forumlink:hover {
+  color: black;
+  background-color: unset;
+}
+
+  /* ============================ */
+ /* ========== HEADER ========== */
+/* ============================ */
+
+.navbar.TopHeader {
+  background-image: url('http://www.publicdomainpictures.net/pictures/140000/velka/black-square-with-fleck-pattern.jpg');
+  padding: 12px 0;
+  border-bottom: solid 1px whitesmoke;
+  font: small-caps large Oswald, sans-serif;
+  text-align: right;
+  box-shadow: 0 0 5px 1px silver;
+}
+
+.navbar.TopHeader .col-sm-4:first-of-type {
+  margin-top: 8px;
+}
+
+.navbar.TopHeader .col-sm-3:nth-of-type(2) {
+  font-size: x-large;
+  text-align: left;
+}
+
+.navbar.TopHeader .col-sm-3:nth-of-type(3) {
+  float: right;
+}
+
+#FormLoginForum {
+  position: relative;
+  right: 200px;
+}
+
+#FormLoginForum input {
+  color: black;
+  background-color: whitesmoke;
+  padding: 5px;
+}
+
+#FormLoginForum img[src$="login.gif"] {
+  margin-left: 10px;
+}
+
+#FormLoginForum img[src$="fleche-rouge.gif"] {
+  position: relative;
+  left: -105px;
+}
+
+#FormLoginForum .forumheader {
+  font: small-caps medium Oswald, sans-serif;
+  position: relative;
+  left: -100px;
+}
+
+  /* ============================ */
+ /* =========== IMAGE ========== */
+/* ============================ */
+
+.MainHeaderPicture {
+  background-position: center;
+}
+
+  /* ============================ */
+ /* ========= SUBMENU ========== */
+/* ============================ */
+
+.row.SubMenuBar {
+  margin-top: 20px;
+  background-image: url('http://www.publicdomainpictures.net/pictures/140000/velka/black-square-with-fleck-pattern.jpg');
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.row.SubMenuBar img {
+  margin-bottom: 6px;
+}
+
+.row.SubMenuBar a {
+  font: small-caps large Oswald, sans-serif;
+  margin-left: 5px;
+}
+
+.row.SubMenuBar button#search-icon {
+  width: 200px;
+}
+
+  /* ============================ */
+ /* ======= HEADLINE 1 ========= */
+/* ============================ */
+
+.row.ForumHeadline1 .col-sm-10.text-right {
+  background-color: #12110f;
+}
+
+.row.ForumHeadline1 .col-sm-10 .indication {
+  font: italic large Oswald, sans-serif;
+}
+
+.row.ForumHeadline1 .col-sm-2 {
+  background-color: #800000;
+  text-align: center;
+}
+
+.row.ForumHeadline1 .col-sm-2 a {
+  font: large Oswald, sans-serif;
+}
+
+.row.ForumHeadline1 .col.hidden-xs.text-center {
+  display: none;
+}
+
+  /* ============================ */
+ /* ======= HEADLINE 2 ========= */
+/* ============================ */
+
+.hidden + br {
+  display: none;
+}
+
+.container.ForumHeadline2 {
+  background-color: whitesmoke;
+  font: small-caps medium Oswald, sans-serif;
+}
+
+.container.ForumHeadline2 + br {
+  display: none;
+}
+
+.container.ForumHeadline2 .col.forumname {
+  color: black;
+  font: medium Oswald, sans-serif;
+}
+
+.container.ForumHeadline2 .col.forumname a:hover {
+  color: #25272C;
+}
+
+.container.ForumHeadline2 .addthis_toolbox {
+  display: none;
+}
+
+.row.ForumHeadline2:first-of-type {
+  color: white;
+  padding: 10px 0;
+  background-image: url('http://www.publicdomainpictures.net/pictures/140000/velka/black-square-with-fleck-pattern.jpg');
+}
+
+.row.ForumHeadline2:first-of-type a {
+  color: white;
+  margin-left: 5px;
+  font: large Oswald, sans-serif;
+}
+
+.row.ForumHeadline2:first-of-type img {
+  margin-bottom: 7px;
+}
+
+.row.ForumHeadline2 {
+  background-color: whitesmoke;
+  padding: 0;
+  margin-bottom: 15px;
+  transition: background .5s ease;
+  font: 1.1em Actor, sans-serif;
+}
+
+.row.ForumHeadline2:hover {
+  background-color: #d2d4d6;
+}
+
+.row.ForumHeadline2 .col-sm-2.hidden-xs {
+  font: medium Oswald, sans-serif;
+  padding-bottom: 10px;
+}
+
+.row.ForumHeadline2 .col-sm-2.hidden-xs .img-responsive {
+  width: 100%;
+  border: solid 2px whitesmoke;
+  margin-top: 15px;
+}
+
+.row.ForumHeadline2 .col-sm-2.hidden-xs .forumlink {
+  font: bold medium Oswald, sans-serif;
+}
+
+.row.ForumHeadline2 .col-xs-10 {
+  color: black;
+  padding: 15px;
+  border-left: dashed 1px silver !important;
+}
+
+.row.ForumHeadline2 .col-xs-10 img {
+  max-width: 900px;
+}
+
+.row.ForumHeadline2 hr {
+  border: dashed 1px silver !important;
+  margin-top: 30px !important;
+}
