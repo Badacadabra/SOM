@@ -1,0 +1,48 @@
+  /* ============================ */
+ /* =========== MENU =========== */
+/* ============================ */
+
+.MemberCellHeaderDefault {
+  padding: 5px;
+}
+
+.col-md-3 .btn-black {
+  width: 45%;
+}
+
+  /* ============================ */
+ /* ========== IFRAME ========== */
+/* ============================ */
+
+.ligne_today td, .ligne_hiers td, .ligne_reste td, .ligne_selected td {
+  padding: 5px;
+  border: solid 1px silver;
+}
+
+.sous_titreL {
+  border: 0;
+}
+
+.titre_PM {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.titre_PM a {
+  color: #F4BF31;
+}
+
+.blocPM a {
+  color: #25272C;
+}
+
+.titre2_PM {
+  margin-left: 5px;
+}
+
+#block_form {
+  margin: 0;
+}
+
+.PM_INC .btn {
+  width: 130px;
+}

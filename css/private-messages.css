@@ -1,0 +1,136 @@
+  /* ============================ */
+ /* =========== MENU =========== */
+/* ============================ */
+
+.MemberCellFrame {
+  border: 0;
+}
+
+.MemberCellHeaderDefault {
+  background-image: none;
+  background-color: #800000;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+.MemberCellFrame .content {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.PM_choix_menu, .PM_choix_menu_selected {
+  font: medium Oswald, sans-serif;
+}
+
+.PM_choix_menu:hover {
+  color: black;
+  background-color: whitesmoke;
+}
+
+#Search_PM {
+  width: 60%;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  height: 25px !important;
+}
+
+#Search_PM + input[type="submit"] {
+  height: 25px;
+  background-color: #800000;
+  border: 0;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+  /* ============================ */
+ /* ========== IFRAME ========== */
+/* ============================ */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+  background-color: initial !important;
+  font-family: Oswald, sans-serif;
+  position: relative;
+  top: -10px;
+  overflow: hidden;
+}
+
+#MySplitter {
+  border: 0;
+}
+
+#TopPane {
+  padding: 0 !important;
+}
+
+.PM_control_bar {
+  border: 0;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+  background-image: url('http://www.publicdomainpictures.net/pictures/140000/velka/black-square-with-fleck-pattern.jpg');
+}
+
+.PM_control_bar button {
+  color: whitesmoke;
+  background-color: initial;
+  font: small-caps medium Oswald, sans-serif;
+}
+
+.PM_control_bar #button_5 a {
+  color: white;
+}
+
+.PM_control_bar button:hover, .PM_control_bar #button_5 a:hover {
+  color: #800000 !important;
+}
+
+td[id^="emeteur"] {
+  width: 100px;
+  text-align: center;
+}
+
+tr td:nth-of-type(4) {
+  padding: 0 3px;
+}
+
+.date_PM {
+  text-align: center;
+}
+
+.ligne_selected {
+  color: black !important;
+  background-color: #F4BF31 !important;
+}
+
+.ligne_selected a {
+  color: black !important;
+}
+
+.hsplitbar {
+  display: none;
+}
+
+.sous_titreL {
+  color: white;
+  background-color: #25272C;
+}
+
+.titre_PM {
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.titre_PM a {
+  color: whitesmoke;
+}
+
+#BottomPane {
+  padding: 0;
+  overflow-x: hidden;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.3);
+}
