@@ -1,0 +1,118 @@
+/* Global fixes */
+
+em {
+  color: #800000;
+}
+
+a.forumlink:hover {
+  color: white;
+}
+
+.row.ForumHeadline1 .col, .row.ForumHeadline2 .col {
+  background-color: #25272C;
+  font-family: Actor, sans-serif;
+  padding: 10px;
+}
+
+.MainForumSection + .forumtitles {
+  padding: 20px 0;
+  font-size: large;
+  font-family: Actor, sans-serif;
+  background-image: url('/forum/pics/TopNavBar.jpg');
+}
+
+.MainForumSection + .forumtitles a {
+  color: #f4bf31;
+  font-size: x-large;
+  font-variant: small-caps;
+  font-family: Oswald, sans-serif;
+}
+
+/* Tablet */
+
+@media screen and (max-width: 995px) {
+  .navbar.TopHeader {
+  	margin-bottom: 0;
+  	border-bottom: 0;
+  }
+
+  .container {
+  	width: 100%;
+  }
+
+  .row.SubMenuBar {
+  	border-radius: 0;
+  	margin-top: 0 !important;
+  	margin-bottom: 0 !important;
+  }
+
+  .row.ForumHeadline1 .maintitle {
+    border-radius: 0;
+  }
+
+  .ForumRow .col-md-6 {
+  	margin-left: 10px;
+  }
+
+  .ForumRow .col-md-1 {
+  	position: relative;
+  	margin-left: 70px;
+  }
+}
+
+/* Smartphone */
+
+@media screen and (max-width: 750px) {
+  /* Header */
+
+  .TopHeader {
+    text-align: center;
+  }
+
+  #FormLoginForum {
+  	text-align: center;
+  }
+
+  /* Image */
+
+  .MainHeaderPicture {
+      display: none;
+  }
+
+  /* Menu */
+
+  .container {
+    padding: 0;
+  }
+
+  .navbar.TopHeader {
+  	margin: 0;
+  }
+
+  .row.SubMenuBar {
+      background-color: rgba(128, 0, 0, 0.5);
+      background-image: initial;
+      text-align: center;
+      margin: 0 !important;
+      border: 0;
+      border-radius: 0;
+  }
+
+  .row.SubMenuBar img[src$=".gif"] {
+      display: none;
+  }
+
+  /* Topics */
+
+  .maintitle {
+      display: none;
+  }
+
+  div.container.MainForumSection > end > end > end > end > strong > div:nth-child(4) > div {
+  	display: none;
+  }
+
+  .ForumRow:last-of-type {
+      display: none;
+  }
+}
