@@ -1,0 +1,51 @@
+.row.ForumHeadline1 .indication {
+  position: relative;
+  top: 4px;
+}
+
+.row.ForumMessage {
+  padding-bottom: 15px;
+}
+
+.row.ForumMessage .InfoAuthorMessage {
+  margin: 0;
+}
+
+.row.ForumMessage .MemberInfo {
+  padding: 10px;
+  font-size: medium;
+}
+
+.row.ForumMessage .MemberInfo a {
+  font-size: large;
+}
+
+.row.ForumMessage p {
+  font: large Actor, sans-serif;
+}
+
+.row.ForumMessage .indication {
+  color: black;
+}
+
+.row.ForumMessage .col-xs-10 {
+  border-left: solid 1px black;
+  font: large Actor, sans-serif;
+  padding: 15px;
+}
+
+.row.ForumMessage .quote td {
+  padding: 5px;
+  background-color: silver;
+  color: #25272C;
+}
+
+.row.ForumMessage p:first-child {
+  margin-top: 20px;
+}
+
+.row.ForumMessage .hidden-xs:last-of-type {
+  font-weight: bold;
+  font-size: medium;
+  font-family: Actor, sans-serif;
+}
