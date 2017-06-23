@@ -1,0 +1,155 @@
+  /* ============================ */
+ /* ========= MENU BAR ========= */
+/* ============================ */
+
+.row.SubMenuBar img {
+  margin-right: 5px;
+}
+
+.row.SearchBar {
+  text-align: right;
+}
+
+.row.SubMenuBar:last-of-type {
+  margin-bottom: 15px;
+}
+
+  /* ============================ */
+ /* ======== BREADCRUMB ======== */
+/* ============================ */
+
+.row.ForumRow .forumname {
+  font: large Actor, sans-serif;
+}
+
+.addthis_toolbox {
+  text-align: right;
+}
+
+  /* ============================ */
+ /* ====== TOPICS & POSTS ====== */
+/* ============================ */
+
+.row.ForumHeadline1 .indication {
+  margin-right: 15px;
+}
+
+.ForumRow {
+  font: large Actor, sans-serif;
+}
+
+.row.ForumHeadline1 .maintitle {
+  font-size: x-large;
+}
+
+.ForumRow .col-sm-4.hidden-xs.hidden-sm {
+  font-size: small !important;
+  margin-top: 12px
+}
+
+.ForumRow .col-sm-4.hidden-xs.hidden-sm a {
+  font-weight: bold;
+}
+
+.col-sm-2.forumtitles {
+  text-align: center;
+}
+
+.ForumRow b {
+  font: bold large Oswald;
+}
+
+.ForumMessage a:hover {
+  color: #800000;
+}
+
+blockquote {
+  background-color: #ccc !important;
+  font-style: italic;
+  padding: 15px !important;
+  margin: 15px;
+  border: solid 1px gray;
+}
+
+  /* ============================ */
+ /* ====== NEW/EDIT POST ======= */
+/* ============================ */
+
+.row.ForumRow form {
+  margin-top: 0 !important;
+}
+
+.row.ForumHeadline1 input[type="submit"] {
+  width: 50%;
+}
+
+.ForumRow input[type="submit"] {
+  width: 100%;
+  font-size: large;
+}
+
+  /* ============================ */
+ /* ===== PRIVATE MESSAGES ===== */
+/* ============================ */
+
+.blocPM {
+  font: medium Actor, sans-serif;
+  padding-bottom: 7px !important;
+}
+
+.PM_INC .btn {
+  font-size: medium;
+}
+
+.PM_choix_menu_selected {
+  background-color: rgba(128, 0, 0, 0.3) !important;
+}
+
+form[name="poster"] .btn {
+  width: 100%;
+}
+
+#AddBlackList {
+  margin-left: 20px
+}
+
+  /* ============================ */
+ /* ========== FOOTER ========== */
+/* ============================ */
+
+footer {
+  color: silver;
+  margin-top: 30px;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -10px 10px -10px black;
+}
+
+  /* ============================ */
+ /* ========== WARNING ========= */
+/* ============================ */
+
+form[action^="ajout_avertissement"] .head1 {
+  background-color: #800000;
+}
+
+form[action^="ajout_avertissement"] .head2 {
+  background-color: silver;
+}
+
+form[action^="ajout_avertissement"] .case_form_submit {
+  text-align: center;
+  vertical-align: middle;
+}
+
+  /* ============================ */
+ /* ======= MISCELLANEOUS ====== */
+/* ============================ */
+
+#nom_forum { /* text input */
+  background-color: #25272C;
+}
+
+.OnlineMembers, .BirthDays {
+  font: small Oswald, sans-serif;
+}
