@@ -1,0 +1,128 @@
+  /* ============================ */
+ /* ========== GLOBAL ========== */
+/* ============================ */
+
+div[align="right"] {
+  text-align: center;
+  margin-top: 10px;
+}
+
+img[src$="onlinenow.gif"] {
+  border: 0 !important;
+}
+
+  /* ============================ */
+ /* ========== MEMBER ========== */
+/* ============================ */
+
+.MemberCellFrame {
+  border: 0;
+}
+
+.MemberCellHeaderDefault {
+  font: small-caps large Oswald, sans-serif;
+  background-color: #800000;
+  background-image: initial;
+  text-align: center;
+  padding: 0;
+}
+
+.MemberCell .content {
+  padding: 15px 0 !important;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.MemberCell .content img {
+  border: solid 1px whitesmoke;
+}
+
+.MemberCell .content img:hover {
+  box-shadow: 0 0 7px whitesmoke;
+}
+
+.MemberCell .content li {
+  padding: 10px;
+  text-align: left;
+  border-top: dashed 1px gray;
+  background-color: rgba(128, 0, 0, 0.2);
+}
+
+.MemberCell .content li a {
+  margin-left: 10px;
+  font: small-caps medium Actor, sans-serif;
+}
+
+  /* ============================ */
+ /* ========= NEWS FEED ======== */
+/* ============================ */
+
+#Main {
+  font: medium Actor, sans-serif;
+  border: 0 !important;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#Main .Mood {
+  color: whitesmoke;
+  background-color: #25272C;
+  border: solid 1px whitesmoke;
+}
+
+#Main .Mood:focus {
+  border: solid 1px #f4bf31 !important;
+}
+
+#Main img {
+ margin: 5px;
+}
+
+#MainCellContent > table > tbody > tr > td {
+  padding: 7px !important;
+  font: medium Actor, sans-serif;
+  border-bottom: dotted 1px whitesmoke;
+}
+
+#MainCellContent > table > tbody > tr > td:first-child {
+  background-image: url('/forum/pics/TopNavBar.jpg');
+}
+
+table[id*="Comment"] > tbody > tr > td {
+  background-image: url('/forum/pics/TopNavBar.jpg');
+}
+
+  /* ============================ */
+ /* ==== FRIENDS & VISITORS ==== */
+/* ============================ */
+
+#FirstPageFavFriendsList {
+  padding-right: 10px;
+}
+
+#FirstPageFavFriendsList table {
+  width: 100%;
+}
+
+#FirstPageFavFriendsList .content {
+  background-color: initial;
+  font: large Oswald, sans-serif;
+  text-align: right;
+}
+
+.MenuDroit a {
+  margin: 10px;
+}
+
+.MenuDroit tr {
+  border-bottom: dashed 1px gray;
+}
+
+.MenuDroit td.content {
+  font: large Oswald, sans-serif;
+  background-color: initial;
+}
+
+.MenuDroit div[style^="background-image"] {
+  display: none;
+}
