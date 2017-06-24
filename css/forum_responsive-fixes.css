@@ -1,0 +1,148 @@
+#Search_PM {
+  padding: 10px !important;
+}
+
+.ForumMessage img { /* responsive images! */
+  max-width: 100% !important;
+  height: initial !important;
+}
+
+/* PROPERTIES TO REMOVE */
+
+.navbar.TopHeader {
+  /* remove box shadow */
+}
+
+#FormLoginForum img[src$="fleche-rouge.gif"] {
+  /* remove relative position */
+}
+
+#FormLoginForum .forumheader {
+  /* remove relative position */
+}
+
+  /* ============================ */
+ /* ========== TABLET ========== */
+/* ============================ */
+
+@media screen and (max-width: 995px) {
+  /* Global */
+
+  footer {
+    margin-top: 0;
+    box-shadow: 0 0;
+  }
+
+  /* Private messages */
+
+  ul.MemberCellHeaderDefault {
+    display: none;
+  }
+
+  .container .content {
+    background-color: initial !important;
+  }
+
+  #content_1 li {
+    display: inline;
+    padding: 10px;
+    background-color: rgba(128, 0, 0, 0.5);
+  }
+
+  #content_1 li:hover {
+    color: silver;
+  }
+}
+
+  /* ============================ */
+ /* ======== SMARTPHONE ======== */
+/* ============================ */
+
+@media screen and (max-width: 766px) {
+  /* Global */
+
+  .row { /* remove useless space */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navbar.TopHeader {
+    padding-bottom: 10px;
+    border-bottom: solid 1px white;
+  }
+
+  .navbar.TopHeader .text-right {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .container .col-md-3 {
+    padding: 0 !important;
+  }
+
+  .container .col-md-9 {
+    padding: 0 !important;
+  }
+
+  footer {
+    font-size: small;
+  }
+
+  /* Private messages */
+
+  #content_1 {
+    margin: 0 !important;
+    background-color: black !important;
+    padding: 15px !important;
+  }
+
+  #content_1 li {
+    display: block;
+  }
+
+  #content_1 img {
+    display: none;
+  }
+
+  .MemberCell:first-of-type {
+    border-top: dashed 1px whitesmoke;
+  }
+
+  .MemberCell:first-of-type + br {
+    display: none;
+  }
+
+  .PM_choix_menu {
+    background-color: black !important;
+  }
+
+  .PM_choix_menu_selected {
+    background-color: #800000 !important;
+  }
+
+  .MemberCellFrame .btn-black {
+    width: 30%;
+  }
+
+  /* Topics & Posts */
+
+  .row.ForumMessage {
+    padding: 0 0 0 30px;
+  }
+
+  .row.ForumMessage .col-xs-10 {
+    padding-bottom: 0;
+  }
+
+  .col.ForumName {
+    font-size: medium;
+  }
+
+  .row.ForumHeadline2 {
+    border: 0;
+  }
+}
