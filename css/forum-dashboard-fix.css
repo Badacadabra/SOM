@@ -1,0 +1,66 @@
+  /* ============================ */
+ /* ========== GLOBAL ========== */
+/* ============================ */
+
+.MemberCellFrame .content {
+  padding-top: 0 !important;
+}
+
+.MemberCellFrame img[src$="onlinenow.gif"]:hover {
+  box-shadow: 0 0 !important;
+}
+
+  /* ============================ */
+ /* ======== NEWS FEED ========= */
+/* ============================ */
+
+#Main {
+  border-radius: 7px;
+}
+
+#PublishButton {
+  width: 100%;
+}
+
+.NewsFeedRow {
+  margin-left: auto;
+}
+
+.NewsFeedBottom {
+  width: 100%;
+  padding: 7px 0 !important;
+  margin-bottom: 30px !important;
+  background-image: url('/forum/pics/TopNavBar.jpg');
+  border-bottom: solid 1px whitesmoke !important;
+  border-radius: 5px;
+}
+
+.row.NewsFeedBottom .col-xs-offset-1 {
+  margin-left: 5px;
+}
+
+.CommentRow {
+  max-width: 90%;
+  padding: 10px 0;
+  color: gray;
+}
+
+.CommentAuthor {
+  margin-right: 10px !important;
+}
+
+  /* ============================ */
+ /* ======= RIGHT COLUMN ======= */
+/* ============================ */
+
+.MenuDroit td:last-of-type {
+  text-align: right !important;
+}
+
+.MenuDroit img {
+  margin: 10px 0;
+}
+
+a.smallTahoma {
+  font: small Oswald, sans-serif !important;
+}
