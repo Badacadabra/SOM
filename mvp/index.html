@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spirit of Metal</title>
+  <meta name="description" content="Maquette opérationnelle pour le site mobile de Spirit of Metal (SOM)">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="author" content="Baptiste Vannesson">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar-fixed-top">
+    <h1><a href="http://som.badacadabra.net">SPIRIT OF <span class="yellow">METAL</span></a></h1>
+    <img id="burger" src="images/burger.png" alt="Ouvrir le menu">
+    <img id="cross" src="images/cross.png" alt="Fermer le menu">
+  </header>
+  <div id="menu">
+    <section id="login">
+      <h2>Connexion</h2>
+      <form id="login" action="#" method="#">
+        <input type="text" class="txt" id="pseudo" name="pseudo" placeholder="Pseudo" required>
+        <input type="password" class="txt" id="login-password" name="login-password" placeholder="Mot de passe" required>
+        <input type="submit" value="OK" class="custom-btn">
+      </form>
+    </section>
+    <section id="signup">
+      <h2>Inscription</h2>
+      <form id="signup" action="#" method="#">
+        <input type="text" class="txt" id="username" name="username" placeholder="Pseudo" required>
+        <div class="form-inline">
+          <input type="password" class="txt" id="signup-password" name="signup-password" placeholder="Mot de passe" required>
+          <input type="password" class="txt" id="password-confirm" name="signup-password" placeholder="Confirmation" required>
+        </div>
+        <input type="email" class="txt" id="email" name="email" placeholder="E-mail" required>
+        <div class="form-inline">
+          <input type="text" class="txt" id="location" name="location" placeholder="Pays/Ville">
+          <select name="language">Test
+            <option value="français" selected>Français</option>
+            <option value="english">English</option>
+            <option value="español">Español</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class='input-group date' id='datepicker'>
+            <input type='text' class="form-control" id="birthday" name="birthday">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+        <img id="captcha" src="images/captcha.png" alt="Captcha">
+        <div class="form-group" id="newsletter">
+          <label for="newsletter">Je souhaite recevoir la newsletter</label>
+          <div class="material-switch pull-right">
+            <input type="checkbox" id="optin" name="newsletter">
+            <label for="optin" class="label-default"></label>
+          </div>
+        </div>
+        <input type="submit" value="GO" class="custom-btn">
+      </form>
+    </section>
+    <section id="encyclopaedia">
+      <h2>Encyclopédie</h2>
+      <a class="custom-btn" href="http://www.spirit-of-metal.com">Accueil</a>
+      <a class="squares" href="http://www.spirit-of-metal.com/menu-index-bands-l-fr.html">Groupes</a>
+      <a class="squares" href="http://www.spirit-of-metal.com/menu-index-articles-l-fr.html">Articles</a>
+      <a class="squares" href="http://www.spirit-of-metal.com/menu-index-media-l-fr.html">Médias</a>
+      <a class="squares" href="http://www.spirit-of-metal.com/menu-index-members-l-fr.html">Mon espace</a>
+    </section>
+  </div>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 center right">
+        <a href="http://www.spirit-of-metal.com/news-l-fr.html" title="Actualités">
+          <figure>
+            <img src="../design/images/news.jpg" alt="Actualités">
+            <figcaption>Actualités</figcaption>
+          </figure>
+        </a>
+      </div>
+      <div class="col-sm-6 center">
+        <a href="http://www.spirit-of-metal.com/liste_chronique-l-fr.html" title="Chroniques">
+          <figure>
+            <img src="../design/images/reviews.jpg" alt="Chroniques">
+            <figcaption>Chroniques</figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 center right">
+        <a href="http://www.spirit-of-metal.com/interviews-l-fr.html" title="Interviews">
+          <figure>
+            <img src="../design/images/interviews.jpg" alt="Interviews">
+            <figcaption>Interviews</figcaption>
+          </figure>
+        </a>
+      </div>
+      <div class="col-sm-6 center">
+        <a href="http://www.spirit-of-metal.com/liste_chronique-by-release-l-fr.html" title="Sorties">
+          <figure>
+            <img src="../design/images/releases.jpg" alt="Sorties">
+            <figcaption>Sorties</figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 center right">
+        <a href="http://www.spirit-of-metal.com/concerts/index-l-fr.html" title="Événements">
+          <figure>
+            <img src="../design/images/events.jpg" alt="Événements">
+            <figcaption>Événements</figcaption>
+          </figure>
+        </a>
+      </div>
+      <div class="col-sm-6 center">
+        <a href="http://www.spirit-of-metal.net/forum/index-l-fr.html" title="Forums">
+          <figure>
+            <img src="../design/images/forums.jpg" alt="Forums">
+            <figcaption>Forums</figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+  </main>
+  <div id="dimmer"></div>
+  <footer>
+    Spirit of Metal © 2003 - 2017
+  </footer>
+  <div id="disclaimer">Veuillez redimensionner la fenêtre de votre navigateur pour voir la version mobile.</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+  /* ============================ */
+ /* ========== GLOBAL ========== */
+/* ============================ */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500');
+
+@font-face {
+    font-family: 'Astonished';
+    src: url('fonts/astonished/astonished-webfont.woff2') format('woff2'),
+         url('fonts/astonished/astonished-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  padding-top: 42px;
+}
+
+header, main {
+  display: none;
+}
+
+#disclaimer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 999;
+  font: xx-large Oswald, sans-serif;
+  color: whitesmoke;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  /* ============================ */
+ /* ========== MOBILE ========== */
+/* ============================ */
+
+@media screen and (max-width: 1023px) {
+
+  /* ========== Misc ========== */
+
+  header, main {
+    display: initial;
+  }
+
+  #disclaimer {
+    display: none;
+  }
+
+  #dimmer {
+    display: none;
+    position: fixed;
+    top: 50px; left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .yellow {
+    color: #F4BF31;
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  body {
+    background-image: url('images/asphalt.png');
+  }
+
+  main, footer {
+    color: whitesmoke;
+  }
+
+  a:hover, a:focus, a:active {
+    color: #F4BF31;
+    text-decoration: none;
+    outline-color: #800000;
+  }
+
+  /* ========== Header ========== */
+
+  header {
+    padding: 0 10px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h1 {
+    margin-top: 10px;
+    font: 400 25px Oswald, sans-serif;
+  }
+
+  header h1 a {
+    color: whitesmoke;
+  }
+
+  #burger, #cross {
+    cursor: pointer;
+  }
+
+  #cross {
+    display: none;
+  }
+
+  /* ========== Menu ========== */
+
+  #menu {
+    display: none;
+    width: 300px;
+    background-color: whitesmoke;
+    border-right: solid 5px #800000;
+    border-bottom: solid 5px #800000;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 20;
+  }
+
+  #menu h2 {
+    color: whitesmoke;
+    background-color: #800000;
+    font: 500 25px Oswald, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  #menu .txt {
+    width: 280px;
+    height: 25px;
+    margin: 0 0 10px 8px;
+    color: gray;
+    border: solid 1px gray;
+    background-color: silver;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 17px;
+  }
+
+  #menu .custom-btn {
+    display: block;
+    color: whitesmoke;
+    background-color: black;
+    width: 280px;
+    height: 25px;
+    margin: 0 0 10px 8px;
+    font-family: Oswald, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  #menu .custom-btn:hover {
+    color: #F4BF31;
+  }
+
+  #menu #signup-password,
+  #menu #password-confirm,
+  #menu #location,
+  #menu #language {
+    width: 134px;
+  }
+
+  #menu select {
+    width: 134px;
+    height: 25px;
+    background-color: gray;
+    float: right;
+    margin-right: 10px;
+    font-family: Oswald, sans-serif;
+    font-weight: 200;
+    font-size: 17px;
+  }
+
+  #menu #datepicker {
+    margin: 0 10px;
+  }
+
+  #menu #captcha {
+    display: block;
+    margin: auto;
+    position: relative;
+    top: -7px;
+  }
+
+  #menu #newsletter {
+    margin: 5px 0 10px 0;
+    font-family: Oswald, sans-serif;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .material-switch > input[type="checkbox"] {
+    display: none;
+  }
+
+  .material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative;
+    width: 40px;
+  }
+
+  .material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+  }
+
+  .material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+  }
+
+  .material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+  }
+
+  .material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+  }
+
+  #encyclopaedia .squares {
+    width: 135px;
+    height: 135px;
+    line-height: 135px;
+    vertical-align: middle;
+    border: solid 3px gray;
+    margin-left: 7px;
+    margin-bottom: 10px;
+    background-image: url('images/simili.png');
+    font-family: Oswald, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: whitesmoke;
+    display: inline-block;
+    text-align: center;
+  }
+
+  #encyclopaedia .squares:hover {
+    color: #F4BF31;
+    border-color: #F4BF31;
+  }
+
+  /* ========== Nav ========== */
+
+  main a {
+    color: whitesmoke;
+    width: 350px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  main a:hover figure {
+    border-color: #F4BF31;
+  }
+
+  figure {
+    width: 350px;
+    height: 350px;
+    margin: 10px 0;
+    border: solid 5px whitesmoke;
+  }
+
+  figure img {
+    filter: brightness(0.4);
+  }
+
+  figcaption {
+    font: 80px Astonished, sans-serif;
+    position: relative;
+    top: -230px;
+    text-align: center;
+  }
+
+  /* ========== Footer ========== */
+
+  footer {
+    height: 50px;
+    text-align: center;
+    font: 300 15px Oswald, sans-serif;
+    border-top: solid 5px black;
+    border-image: url('images/border.png') 30;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+}
