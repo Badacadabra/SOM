@@ -1,46 +1,84 @@
 <template>
   <div id="news">
     <h2>Actualités</h2>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
+    <article>
+      <a href="#">
+        <div class="date">06/07/2017</div>
+        <h3>Wintersun sortira Time II en 2042</h3>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <div class="info">
+          <div class="date">06/07/2017</div>
+          <h3 class="album">Wintersun sortira Time II en 2042</h3>
+        </div>
+      </a>
+    </article>
   </div>
 </template>
 
@@ -59,19 +97,34 @@ export default {
     text-align: center
     font: 42px Astonished, sans-serif
 
-  .item
-    display: block
-    padding: 20px 15px
-    color: black
-    background-color: whitesmoke
-    border-bottom: dashed 1px gray
+  h3
+    font-weight: 400
+    font-size: large
 
-    &:last-of-type
-      border-bottom: 0
+  a
+    color: black
+    display: block
+    min-height: 60px
+    line-height: 30px
+    text-align: center
+    padding: 5px
+
+    &:hover
+      text-decoration: none
 
     &:focus
       background-color: silver
 
+  article
+    color: black
+    background-color: whitesmoke
+    font-family: Oswald, sans-serif
+    border-bottom: solid 1px gray
+
+    &:last-of-type
+      border-bottom: 0
+
   .date
-    font-weight: bold
+    text-align: center
+    color: #800000
 </style>

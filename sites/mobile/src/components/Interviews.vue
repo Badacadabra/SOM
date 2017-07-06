@@ -1,10 +1,106 @@
 <template>
   <div id="interviews">
     <h2>Interviews</h2>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <div class="info">
+          <div class="band">Children Of Bodom</div>
+          <div class="author">Par BadaOfBodom</div>
+          <div class="date">06/07/2017</div>
+        </div>
+      </a>
+    </article>
   </div>
 </template>
 
@@ -23,20 +119,37 @@ export default {
     text-align: center
     font: 42px Astonished, sans-serif
 
-  .item
-    display: block
-    padding: 20px 15px
+  a
     color: black
-    background-color: whitesmoke
-    border-bottom: dashed 1px gray
+    display: flex
+    align-items: center
 
-    &:last-of-type
-      border-bottom: 0
+    &:hover
+      text-decoration: none
 
     &:focus
       background-color: silver
 
-  .date
-    font-weight: bold
-</style>
+  article
+    display: block
+    color: black
+    background-color: whitesmoke
+    font-family: Oswald, sans-serif
+    border-bottom: solid 1px gray
 
+    &:last-of-type
+      border-bottom: 0
+
+  .photo
+    width: 100px
+
+  .info
+    margin-left: 7px
+
+    .band
+      font-size: medium
+
+    .author
+      font-style: italic
+      font-size: small
+</style>

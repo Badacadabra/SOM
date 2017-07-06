@@ -1,10 +1,106 @@
 <template>
   <div id="releases">
     <h2>Sorties</h2>
-    <a href="#" class="item">
-      <span class="date">06/07/2017</span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue nec sem nec pulvinar.
-    </a>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
+    <article>
+      <a href="#">
+        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <div class="info">
+          <h3 class="album">Something Wild</h3>
+          <div class="band">Children Of Bodom</div>
+          <div class="genre">Heavy/Black</div>
+        </div>
+      </a>
+    </article>
   </div>
 </template>
 
@@ -23,19 +119,43 @@ export default {
     text-align: center
     font: 42px Astonished, sans-serif
 
-  .item
-    display: block
-    padding: 20px 15px
+  a
     color: black
-    background-color: whitesmoke
-    border-bottom: dashed 1px gray
+    display: flex
+    align-items: center
 
-    &:last-of-type
-      border-bottom: 0
+    &:hover
+      text-decoration: none
 
     &:focus
       background-color: silver
 
-  .date
-    font-weight: bold
+  article
+    display: block
+    color: black
+    background-color: whitesmoke
+    font-family: Oswald, sans-serif
+    border-bottom: solid 1px gray
+
+    &:last-of-type
+      border-bottom: 0
+
+  .cover
+    width: 100px
+
+  .info
+    margin-left: 7px
+
+    .album
+      color: #800000
+      font-weight: 400
+      font-size: large
+
+    .band
+      font-size: medium
+
+    .genre
+      font-style: italic
+      font-size: small
 </style>
+
