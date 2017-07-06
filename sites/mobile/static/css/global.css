@@ -1,0 +1,36 @@
+  /* =========================== */
+ /* ==== GLOBAL STYLESHEET ==== */
+/* =========================== */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500');
+
+@font-face {
+    font-family: 'Astonished';
+    src: url('../fonts/astonished/astonished-webfont.woff2') format('woff2'),
+         url('../fonts/astonished/astonished-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-image: url('../img/asphalt.png');
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  color: #F4BF31;
+  text-decoration: none;
+}
+
+.yellow {
+  color: #F4BF31;
+}
