@@ -31,7 +31,12 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
-        acceptSslCerts: true
+        acceptSslCerts: true,
+        chromeOptions: {
+          args: [
+            "window-size=412,732" // Nexus 5X
+          ]
+        }
       }
     },
 
