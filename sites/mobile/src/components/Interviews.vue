@@ -1,103 +1,13 @@
 <template>
   <div id="interviews">
     <h2>Interviews</h2>
-    <article>
+    <article v-for="interview of interviews">
       <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
+        <img class="photo" :src="interview.picture" :alt="interview.band">
         <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="photo" src="http://www.spirit-of-metal.com/les%20goupes/C/Children%20Of%20Bodom/pics/cb77_1.jpg" alt="Children Of Bodom">
-        <div class="info">
-          <div class="band">Children Of Bodom</div>
-          <div class="author">Par BadaOfBodom</div>
-          <div class="date">06/07/2017</div>
+          <div class="band">{{ interview.band }}</div>
+          <div class="date">{{ interview.date }}</div>
+          <div class="author">@{{ interview.author }}</div>
         </div>
       </a>
     </article>
@@ -105,17 +15,37 @@
 </template>
 
 <script>
-export default {
-  name: 'interviews'
-}
+  import axios from 'axios'
+
+  export default {
+    name: 'interviews',
+    data () {
+      return {
+        interviews: [],
+        errors: []
+      }
+    },
+    created () {
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+      axios.get(`${baseUrl}/interviews.php?l=fr`)
+        .then(response => {
+          this.interviews = response.data
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    }
+  }
 </script>
 
 <style lang="styl" scoped>
+  @import '../assets/variables.styl'
+
   h2
     height: 50px
     line-height: 50px
     color: whitesmoke
-    background-color: #800000
+    background-color: $red
     text-align: center
     font: 42px Astonished, sans-serif
 

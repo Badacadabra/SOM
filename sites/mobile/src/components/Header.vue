@@ -24,6 +24,8 @@
 </script>
 
 <style lang="styl" scoped>
+  @import '../assets/variables.styl'
+
   header
     padding: 0 10px
     height: 50px
@@ -39,7 +41,7 @@
         color: whitesmoke
 
         &:active
-          color: #F4BF31
+          color: $yellow
 
   #burger
   #cross

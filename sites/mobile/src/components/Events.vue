@@ -16,247 +16,30 @@
       </a>
     </nav>
     <section id="gigs" v-if="gigsSelected">
-      <article>
+      <article v-for="gig of gigs">
         <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Hellfest</h3>
-          <div class="place">Clisson</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
+          <h3 class="gig">{{ gig.title }}</h3>
+          <div class="place">{{ gig.place }}</div>
+          <div class="date">{{ gig.date }}</div>
         </a>
       </article>
     </section>
     <section id="live-reports" v-else-if="reportsSelected">
-      <article>
+      <article v-for="report of reports">
         <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3 class="gig">Descending + Carach Angren + Fleshgod Apocalypse + Septicflesh</h3>
-          <div class="place">CCO Villeurbanne</div>
-          <div class="date">06/07/2017</div>
-          <div class="author">@BadaOfBodom</div>
+          <h3 class="gig">{{ report.title }}</h3>
+          <div class="place">{{ report.place }}</div>
+          <div class="date">{{ report.date }}</div>
+          <div class="author">@{{ report.author }}</div>
         </a>
       </article>
     </section>
     <section id="photo-galleries" v-else>
-      <article>
+      <article v-for="photo of photos">
         <a href="#">
           <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
-          </figure>
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <figure>
-            <img class="photo" src="https://i.ytimg.com/vi/bf9QqGlF0Yo/hqdefault.jpg" alt="Children Of Bodom">
-            <figcaption>Children Of Bodom (Live in Barcelona)</figcaption>
+            <img class="photo" :src="photo.picture" :alt="photo.band">
+            <figcaption>{{ photo.title }}</figcaption>
           </figure>
         </a>
       </article>
@@ -268,13 +51,19 @@
   import 'vue-awesome/icons/calendar'
   import 'vue-awesome/icons/bullhorn'
   import 'vue-awesome/icons/photo'
+  import axios from 'axios'
 
   export default {
     name: 'events',
     data () {
       return {
         gigsSelected: true,
-        reportsSelected: false
+        reportsSelected: false,
+        baseUrl: 'http://www.spirit-of-metal.com/API',
+        gigs: [],
+        reports: [],
+        photos: [],
+        errors: []
       }
     },
     methods: {
@@ -284,26 +73,57 @@
         } else if (tab === 'reports') {
           this.gigsSelected = false
           this.reportsSelected = true
-        } else {
+
+          if (this.reports.length === 0) {
+            axios.get(`${this.baseUrl}/live_reports.php`)
+              .then(response => {
+                this.reports = response.data
+              })
+              .catch(e => {
+                this.errors.push(e)
+              })
+          }
+        } else { // "Photos" tab
           this.gigsSelected = false
           this.reportsSelected = false
+
+          if (this.photos.length === 0) {
+            axios.get(`${this.baseUrl}/galleries.php`)
+              .then(response => {
+                this.photos = response.data
+              })
+              .catch(e => {
+                this.errors.push(e)
+              })
+          }
         }
       }
+    },
+    created () {
+      axios.get(`${this.baseUrl}/gigs.php`)
+        .then(response => {
+          this.gigs = response.data
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
     }
   }
 </script>
 
 <style lang="styl" scoped>
+  @import '../assets/variables.styl'
+
   h2
     height: 50px
     line-height: 50px
     color: whitesmoke
-    background-color: #800000
+    background-color: $red
     text-align: center
     font: 42px Astonished, sans-serif
 
   h3
-    color: #800000
+    color: $red
     font-weight: 400
     font-size: large
 
@@ -361,7 +181,7 @@
   #photo-galleries
 
     article a:focus
-      color: #F4BF31
+      color: $yellow
       background-color: black
 
     .photo

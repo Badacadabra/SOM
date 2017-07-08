@@ -2,7 +2,7 @@
   <div id="menu">
     <section id="login">
       <h2>Connexion</h2>
-      <form id="login" action="#" method="#">
+      <form action="#" method="#">
         <input type="text" class="txt" id="pseudo" name="pseudo" placeholder="Pseudo" required>
         <input type="password" class="txt" id="login-password" name="login-password" placeholder="Mot de passe" required>
         <input type="submit" value="OK" class="custom-btn">
@@ -10,7 +10,7 @@
     </section>
     <section id="signup">
       <h2>Inscription</h2>
-      <form id="signup" action="#" method="#">
+      <form action="#" method="#">
         <input type="text" class="txt" id="username" name="username" placeholder="Pseudo" required>
         <div>
           <input type="password" class="txt" id="signup-password" name="signup-password" placeholder="Mot de passe" required>
@@ -19,7 +19,7 @@
         <input type="email" class="txt" id="email" name="email" placeholder="E-mail" required>
         <div>
           <input type="text" class="txt" id="location" name="location" placeholder="Pays/Ville">
-          <select name="language">Test
+          <select id="language" name="language">Test
             <option value="français" selected>Français</option>
             <option value="english">English</option>
             <option value="español">Español</option>
@@ -46,8 +46,7 @@
 </script>
 
 <style lang="styl" scoped>
-  $yellow = #F4BF31
-  $red = #800000
+  @import '../assets/variables.styl'
 
   #menu
     width: 300px

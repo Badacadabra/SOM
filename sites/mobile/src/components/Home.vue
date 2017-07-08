@@ -46,6 +46,8 @@
 </script>
 
 <style lang="styl" scoped>
+  @import '../assets/variables.styl'
+
   nav
     display: flex
     flex-direction: column
@@ -58,10 +60,10 @@
     display: block
 
     &:active
-      color: #F4BF31
+      color: $yellow
 
       figure
-        border-color: #F4BF31
+        border-color: $yellow
 
   figure
     width: 300px

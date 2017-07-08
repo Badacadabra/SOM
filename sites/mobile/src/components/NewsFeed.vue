@@ -1,13 +1,14 @@
 <template>
-  <div id="reviews">
-    <h2>Chroniques</h2>
-    <article v-for="review of reviews">
-      <a href="#">
-        <img class="cover" :src="review.cover" :alt="review.album">
+  <div id="news">
+    <h2>Actualités</h2>
+    <article v-for="n of news">
+      <a :href="'/actualites/'+n.id">
         <div class="info">
-          <h3 class="album">{{ review.album }}</h3>
-          <div class="band">{{ review.band }}</div>
-          <div class="author">@{{ review.author }}</div>
+          <h3>{{ n.title }}</h3>
+          <div>
+            Le <span class="date">{{ n.date }}</span>
+            par <span class="author">@{{ n.author }}</span>
+          </div>
         </div>
       </a>
     </article>
@@ -18,18 +19,18 @@
   import axios from 'axios'
 
   export default {
-    name: 'reviews',
+    name: 'newsfeed',
     data () {
       return {
-        reviews: [],
+        news: [],
         errors: []
       }
     },
     created () {
       const baseUrl = 'http://www.spirit-of-metal.com/API'
-      axios.get(`${baseUrl}/reviews.php?l=fr`)
+      axios.get(`${baseUrl}/news.php?l=fr`)
         .then(response => {
-          this.reviews = response.data
+          this.news = response.data
         })
         .catch(e => {
           this.errors.push(e)
@@ -49,10 +50,18 @@
     text-align: center
     font: 42px Astonished, sans-serif
 
+  h3
+    color: $red
+    font-weight: 400
+    font-size: large
+
   a
     color: black
-    display: flex
-    align-items: center
+    display: block
+    min-height: 60px
+    line-height: 30px
+    text-align: center
+    padding: 5px
 
     &:hover
       text-decoration: none
@@ -61,7 +70,6 @@
       background-color: silver
 
   article
-    display: block
     color: black
     background-color: whitesmoke
     font-family: Oswald, sans-serif
@@ -70,21 +78,6 @@
     &:last-of-type
       border-bottom: 0
 
-  .cover
-    width: 100px
-
-  .info
-    margin-left: 7px
-
-    .album
-      color: $red
-      font-weight: 400
-      font-size: large
-
-    .band
-      font-size: medium
-
-    .author
-      font-style: italic
-      font-size: small
+  .info > div
+    text-align: center
 </style>

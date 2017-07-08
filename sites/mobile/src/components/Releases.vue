@@ -1,103 +1,13 @@
 <template>
   <div id="releases">
     <h2>Sorties</h2>
-    <article>
+    <article v-for="release of releases">
       <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
+        <img class="cover" :src="release.cover" :alt="release.album">
         <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <img class="cover" src="https://upload.wikimedia.org/wikipedia/fi/6/64/Children_of_Bodom_Something_Wild.jpg" alt="Something Wild">
-        <div class="info">
-          <h3 class="album">Something Wild</h3>
-          <div class="band">Children Of Bodom</div>
-          <div class="genre">Heavy/Black</div>
+          <h3 class="album">{{ release.album }}</h3>
+          <div class="band">{{ release.band }}</div>
+          <div class="genre">{{ release.genre }}</div>
         </div>
       </a>
     </article>
@@ -105,17 +15,37 @@
 </template>
 
 <script>
-export default {
-  name: 'releases'
-}
+  import axios from 'axios'
+
+  export default {
+    name: 'releases',
+    data () {
+      return {
+        releases: [],
+        errors: []
+      }
+    },
+    created () {
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+      axios.get(`${baseUrl}/releases.php`)
+        .then(response => {
+          this.releases = response.data
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    }
+  }
 </script>
 
 <style lang="styl" scoped>
+  @import '../assets/variables.styl'
+
   h2
     height: 50px
     line-height: 50px
     color: whitesmoke
-    background-color: #800000
+    background-color: $red
     text-align: center
     font: 42px Astonished, sans-serif
 
@@ -147,7 +77,7 @@ export default {
     margin-left: 7px
 
     .album
-      color: #800000
+      color: $red
       font-weight: 400
       font-size: large
 

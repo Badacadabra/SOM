@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import NewsFeed from '@/components/NewsFeed'
 import News from '@/components/News'
 import Reviews from '@/components/Reviews'
 import Interviews from '@/components/Interviews'
@@ -23,6 +24,11 @@ export default new Router({
     },
     {
       path: '/actualites',
+      name: 'newsfeed',
+      component: NewsFeed
+    },
+    {
+      path: '/actualites/:id',
       name: 'news',
       component: News
     },

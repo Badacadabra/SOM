@@ -1,130 +1,65 @@
 <template>
-  <div id="news">
-    <h2>Actualités</h2>
-    <article>
-      <a href="#">
-        <div class="date">06/07/2017</div>
-        <h3>Wintersun sortira Time II en 2042</h3>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <div class="info">
-          <div class="date">06/07/2017</div>
-          <h3 class="album">Wintersun sortira Time II en 2042</h3>
-        </div>
-      </a>
-    </article>
-  </div>
+  <article>
+    <h2>{{ news.title }}</h2>
+    <div class="content" v-html="news.content"></div>
+  </article>
 </template>
 
 <script>
-export default {
-  name: 'news'
-}
+  import axios from 'axios'
+
+  export default {
+    name: 'news-entry',
+    data () {
+      return {
+        news: {},
+        errors: []
+      }
+    },
+    created () {
+      const id = window.location.pathname.split('/')[2]
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+      axios.get(`${baseUrl}/news.php?id=${id}`)
+        .then(response => {
+          this.news = response.data
+          console.log(response.data)
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    }
+  }
 </script>
 
 <style lang="styl" scoped>
+  @import '../assets/variables.styl'
+
   h2
-    height: 50px
-    line-height: 50px
-    color: whitesmoke
-    background-color: #800000
-    text-align: center
-    font: 42px Astonished, sans-serif
-
-  h3
-    font-weight: 400
-    font-size: large
-
-  a
+    min-height: 50px
     color: black
-    display: block
-    min-height: 60px
-    line-height: 30px
-    text-align: center
-    padding: 5px
+    background-color: silver
+    font: 20px Oswald, sans-serif
+    display: flex
+    align-items: center
+    justify-content: center
 
-    &:hover
-      text-decoration: none
-
-    &:focus
-      background-color: silver
-
-  article
-    color: black
+  // Use ">>>" to style elements within v-html
+  .content
+    padding: 10px
     background-color: whitesmoke
-    font-family: Oswald, sans-serif
-    border-bottom: solid 1px gray
 
-    &:last-of-type
-      border-bottom: 0
+    >>> img
+    >>> iframe
+      display: block
+      margin: auto
+      max-width: 100%
 
-  .date
-    text-align: center
-    color: #800000
+    >>> a
+      color: $red
+      white-space: pre-wrap; // CSS 3
+      white-space: -moz-pre-wrap; // Mozilla, since 1999
+      white-space: -pre-wrap; // Opera 4-6
+      white-space: -o-pre-wrap; // Opera 7
+      word-wrap: break-word; // Internet Explorer 5.5+
 </style>
