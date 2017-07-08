@@ -30,6 +30,12 @@
         <figcaption>Événements</figcaption>
       </figure>
     </a>
+    <a href="/encyclopedie" title="Encyclopédie">
+      <figure>
+        <img src="../assets/img/jpg/encyclopedia.jpg" alt="Encyclopédie">
+        <figcaption>Encyclopédie</figcaption>
+      </figure>
+    </a>
     <a href="http://www.spirit-of-metal.net/forum/index-l-fr.html" title="Forums">
       <figure>
         <img src="../assets/img/jpg/forums.jpg" alt="Forums">
