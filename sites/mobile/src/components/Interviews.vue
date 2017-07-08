@@ -2,7 +2,7 @@
   <div id="interviews">
     <h2>Interviews</h2>
     <article v-for="interview of interviews">
-      <a href="#">
+      <a :href="'/interviews/'+interview.id">
         <img class="photo" :src="interview.picture" :alt="interview.band">
         <div class="info">
           <div class="band">{{ interview.band }}</div>
@@ -11,6 +11,7 @@
         </div>
       </a>
     </article>
+    <loader v-if="ajax"></loader>
   </div>
 </template>
 
@@ -21,15 +22,19 @@
     name: 'interviews',
     data () {
       return {
+        ajax: false,
         interviews: [],
         errors: []
       }
     },
     created () {
+      this.ajax = true
+
       const baseUrl = 'http://www.spirit-of-metal.com/API'
       axios.get(`${baseUrl}/interviews.php?l=fr`)
         .then(response => {
           this.interviews = response.data
+          this.ajax = false
         })
         .catch(e => {
           this.errors.push(e)

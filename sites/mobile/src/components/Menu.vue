@@ -56,7 +56,7 @@
     position: absolute
     top: 50px
     left: 0
-    z-index: 20
+    z-index: 100
 
   h2
     color: whitesmoke

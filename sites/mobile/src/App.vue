@@ -17,8 +17,6 @@
   import appHeader from './components/Header'
   import appMenu from './components/Menu'
   import appFooter from './components/Footer'
-  import dimmer from './components/Dimmer'
-  import disclaimer from './components/Disclaimer'
 
   export default {
     name: 'app',
@@ -35,9 +33,7 @@
     components: {
       appHeader,
       appMenu,
-      appFooter,
-      dimmer,
-      disclaimer
+      appFooter
     }
   }
 </script>

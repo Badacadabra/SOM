@@ -44,6 +44,7 @@
         </a>
       </article>
     </section>
+    <loader v-if="ajax"></loader>
   </div>
 </template>
 
@@ -60,6 +61,7 @@
         gigsSelected: true,
         reportsSelected: false,
         baseUrl: 'http://www.spirit-of-metal.com/API',
+        ajax: false,
         gigs: [],
         reports: [],
         photos: [],
@@ -75,9 +77,11 @@
           this.reportsSelected = true
 
           if (this.reports.length === 0) {
+            this.ajax = true
             axios.get(`${this.baseUrl}/live_reports.php`)
               .then(response => {
                 this.reports = response.data
+                this.ajax = false
               })
               .catch(e => {
                 this.errors.push(e)
@@ -88,9 +92,11 @@
           this.reportsSelected = false
 
           if (this.photos.length === 0) {
+            this.ajax = true
             axios.get(`${this.baseUrl}/galleries.php`)
               .then(response => {
                 this.photos = response.data
+                this.ajax = false
               })
               .catch(e => {
                 this.errors.push(e)
@@ -100,9 +106,11 @@
       }
     },
     created () {
+      this.ajax = true
       axios.get(`${this.baseUrl}/gigs.php`)
         .then(response => {
           this.gigs = response.data
+          this.ajax = false
         })
         .catch(e => {
           this.errors.push(e)

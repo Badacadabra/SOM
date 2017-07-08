@@ -12,6 +12,7 @@
         </div>
       </a>
     </article>
+    <loader v-if="ajax"></loader>
   </div>
 </template>
 
@@ -22,15 +23,18 @@
     name: 'newsfeed',
     data () {
       return {
+        ajax: false,
         news: [],
         errors: []
       }
     },
     created () {
+      this.ajax = true
       const baseUrl = 'http://www.spirit-of-metal.com/API'
       axios.get(`${baseUrl}/news.php?l=fr`)
         .then(response => {
           this.news = response.data
+          this.ajax = false
         })
         .catch(e => {
           this.errors.push(e)

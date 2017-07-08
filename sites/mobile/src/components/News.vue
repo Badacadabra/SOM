@@ -2,6 +2,7 @@
   <article>
     <h2>{{ news.title }}</h2>
     <div class="content" v-html="news.content"></div>
+    <loader v-if="ajax"></loader>
   </article>
 </template>
 
@@ -9,21 +10,27 @@
   import axios from 'axios'
 
   export default {
-    name: 'news-entry',
+    name: 'news',
     data () {
       return {
-        news: {},
+        ajax: false,
+        news: {
+          title: 'Chargement...',
+          content: 'Veuillez patienter'
+        },
         errors: []
       }
     },
     created () {
+      this.ajax = true
+
       const id = window.location.pathname.split('/')[2]
       const baseUrl = 'http://www.spirit-of-metal.com/API'
 
       axios.get(`${baseUrl}/news.php?id=${id}`)
         .then(response => {
           this.news = response.data
-          console.log(response.data)
+          this.ajax = false
         })
         .catch(e => {
           this.errors.push(e)
@@ -52,8 +59,9 @@
     >>> img
     >>> iframe
       display: block
-      margin: auto
       max-width: 100%
+      margin: auto !important
+      height: auto !important
 
     >>> a
       color: $red

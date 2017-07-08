@@ -2,7 +2,7 @@
   <div id="reviews">
     <h2>Chroniques</h2>
     <article v-for="review of reviews">
-      <a href="#">
+      <a :href="'/chroniques/'+review.id">
         <img class="cover" :src="review.cover" :alt="review.album">
         <div class="info">
           <h3 class="album">{{ review.album }}</h3>
@@ -11,6 +11,7 @@
         </div>
       </a>
     </article>
+    <loader v-if="ajax"></loader>
   </div>
 </template>
 
@@ -21,15 +22,18 @@
     name: 'reviews',
     data () {
       return {
+        ajax: false,
         reviews: [],
         errors: []
       }
     },
     created () {
+      this.ajax = true
       const baseUrl = 'http://www.spirit-of-metal.com/API'
       axios.get(`${baseUrl}/reviews.php?l=fr`)
         .then(response => {
           this.reviews = response.data
+          this.ajax = false
         })
         .catch(e => {
           this.errors.push(e)
