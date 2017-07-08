@@ -6,7 +6,7 @@
         <div class="info">
           <h3>{{ n.title }}</h3>
           <div>
-            Le <span class="date">{{ n.date }}</span>
+            Le <span class="date">{{ new Date(n.date) | moment('DD/MM/YYYY') }}</span>
             par <span class="author">@{{ n.author }}</span>
           </div>
         </div>
@@ -84,4 +84,9 @@
 
   .info > div
     text-align: center
+    font-weight: 300
+
+  .date
+  .author
+    font-weight: 400
 </style>

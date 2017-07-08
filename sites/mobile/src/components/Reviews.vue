@@ -7,7 +7,9 @@
         <div class="info">
           <h3 class="album">{{ review.album }}</h3>
           <div class="band">{{ review.band }}</div>
+          <hr>
           <div class="author">@{{ review.author }}</div>
+          <div class="date">{{ new Date(review.date) | moment('DD/MM/YYYY') }}</div>
         </div>
       </a>
     </article>
@@ -79,6 +81,7 @@
 
   .info
     margin-left: 7px
+    flex: 1
 
     .album
       color: $red
@@ -86,9 +89,13 @@
       font-size: large
 
     .band
+    .author
       font-size: medium
 
     .author
-      font-style: italic
+    .date
+      font-weight: 300
+
+    .date
       font-size: small
 </style>

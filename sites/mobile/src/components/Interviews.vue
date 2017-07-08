@@ -5,8 +5,8 @@
       <a :href="'/interviews/'+interview.id">
         <img class="photo" :src="interview.picture" :alt="interview.band">
         <div class="info">
-          <div class="band">{{ interview.band }}</div>
-          <div class="date">{{ interview.date }}</div>
+          <h3 class="band">{{ interview.band }}</h3>
+          <div class="date">{{ new Date(interview.date) | moment('DD/MM/YYYY') }}</div>
           <div class="author">@{{ interview.author }}</div>
         </div>
       </a>
@@ -35,6 +35,7 @@
         .then(response => {
           this.interviews = response.data
           this.ajax = false
+          console.log(response.data)
         })
         .catch(e => {
           this.errors.push(e)
@@ -54,6 +55,11 @@
     text-align: center
     font: 42px Astonished, sans-serif
 
+  h3
+    color: $red
+    font-weight: 400
+    font-size: large
+
   a
     color: black
     display: flex
@@ -66,7 +72,6 @@
       background-color: silver
 
   article
-    display: block
     color: black
     background-color: whitesmoke
     font-family: Oswald, sans-serif
@@ -76,15 +81,11 @@
       border-bottom: 0
 
   .photo
-    width: 100px
+    width: 130px
 
   .info
-    margin-left: 7px
-
-    .band
-      font-size: medium
+    margin-left: 10px
 
     .author
-      font-style: italic
-      font-size: small
+      font-weight: 300
 </style>

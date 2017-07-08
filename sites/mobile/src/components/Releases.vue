@@ -7,6 +7,7 @@
         <div class="info">
           <h3 class="album">{{ release.album }}</h3>
           <div class="band">{{ release.band }}</div>
+          <div class="date">{{ release.date | moment('DD/MM/YYYY') }}</div>
           <div class="genre">{{ release.genre }}</div>
         </div>
       </a>
@@ -89,8 +90,7 @@
     .band
       font-size: medium
 
-    .genre
-      font-style: italic
-      font-size: small
+    .date
+      font-weight: 300
 </style>
 

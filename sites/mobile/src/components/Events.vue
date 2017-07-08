@@ -20,27 +20,33 @@
         <a href="#">
           <h3 class="gig">{{ gig.title }}</h3>
           <div class="place">{{ gig.place }}</div>
-          <div class="date">{{ gig.date }}</div>
+          <div class="date">{{ new Date(gig.date) | moment('DD/MM/YYYY') }}</div>
         </a>
       </article>
     </section>
     <section id="live-reports" v-else-if="reportsSelected">
       <article v-for="report of reports">
         <a href="#">
-          <h3 class="gig">{{ report.title }}</h3>
-          <div class="place">{{ report.place }}</div>
-          <div class="date">{{ report.date }}</div>
-          <div class="author">@{{ report.author }}</div>
+          <div class="info">
+            <h3 class="gig">{{ report.title }}</h3>
+            <div class="place">{{ report.place }}</div>
+            <div>
+              Le <span class="date">{{ new Date(report.date) | moment('DD/MM/YYYY') }}</span>
+              par <span class="author">@{{ report.author }}</span>
+            </div>
+          </div>
         </a>
       </article>
     </section>
     <section id="photo-galleries" v-else>
-      <article v-for="photo of photos">
+      <article v-for="gallery of galleries">
         <a href="#">
-          <figure>
-            <img class="photo" :src="photo.picture" :alt="photo.band">
-            <figcaption>{{ photo.title }}</figcaption>
-          </figure>
+          <img class="photo" :src="gallery.picture" :alt="gallery.band">
+          <div class="info">
+            <h3>{{ gallery.title }}</h3>
+            <div class="date">{{ new Date(gallery.date) | moment('DD/MM/YYYY') }}</div>
+            <div class="author">@{{ gallery.author }}</div>
+          </div>
         </a>
       </article>
     </section>
@@ -64,7 +70,7 @@
         ajax: false,
         gigs: [],
         reports: [],
-        photos: [],
+        galleries: [],
         errors: []
       }
     },
@@ -91,12 +97,13 @@
           this.gigsSelected = false
           this.reportsSelected = false
 
-          if (this.photos.length === 0) {
+          if (this.galleries.length === 0) {
             this.ajax = true
             axios.get(`${this.baseUrl}/galleries.php`)
               .then(response => {
-                this.photos = response.data
+                this.galleries = response.data
                 this.ajax = false
+                console.log(response.data)
               })
               .catch(e => {
                 this.errors.push(e)
@@ -144,7 +151,6 @@
     .item
       color: gray
       height: 50px
-      text-align: center
       flex-grow: 1
       display: flex
       align-items: center
@@ -160,38 +166,48 @@
       span
         font-variant: small-caps
 
+  a
+    color: black
+
+    &:hover
+      text-decoration: none
+
+    &:focus
+      background-color: silver
+
   article
     color: black
     background-color: whitesmoke
     font-family: Oswald, sans-serif
     border-top: solid 1px gray
 
-    a
-      color: black
-      display: block
-      min-height: 60px
-      line-height: 30px
-      text-align: center
-      padding: 5px
-
-      &:hover
-        text-decoration: none
-
-      &:focus
-        background-color: silver
-
-    .author
-      font-style: italic
+  .info
+    margin-left: 7px
 
   img
     max-width: 100%
 
+  #gigs
+    a
+      display: block
+      text-align: center
+
+    .date
+      font-weight: 300
+
+  #live-reports
+    a
+      display: block
+      text-align: center
+
+    .info div:last-child
+      font-weight: 300
+
   #photo-galleries
+    a
+      display: flex
+      align-items: center
 
-    article a:focus
-      color: $yellow
-      background-color: black
-
-    .photo
-      width: 100%
+    .author
+      font-weight: 300
 </style>
