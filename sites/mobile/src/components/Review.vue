@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h2>{{ review.title }}</h2>
+    <h2>Chronique de {{ review.album }}</h2>
     <div class="content" v-html="review.content"></div>
     <loader v-if="ajax"></loader>
   </article>

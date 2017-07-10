@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h2>{{ interview.title }}</h2>
+    <h2>Interview de {{ interview.band }}</h2>
     <div class="content" v-html="interview.content"></div>
     <loader v-if="ajax"></loader>
   </article>
