@@ -23,6 +23,7 @@
           <div class="date">{{ new Date(gig.date) | moment('DD/MM/YYYY') }}</div>
         </a>
       </article>
+      <infinite-loading :on-infinite="onInfiniteGigs" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
     </section>
     <section id="live-reports" v-else-if="reportsSelected">
       <article v-for="report of reports">
@@ -37,6 +38,7 @@
           </div>
         </a>
       </article>
+      <infinite-loading :on-infinite="onInfiniteReports" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
     </section>
     <section id="photo-galleries" v-else>
       <article v-for="gallery of galleries">
@@ -49,6 +51,7 @@
           </div>
         </a>
       </article>
+      <infinite-loading :on-infinite="onInfiniteGalleries" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
     </section>
     <loader v-if="ajax"></loader>
   </div>
@@ -68,6 +71,9 @@
         reportsSelected: false,
         baseUrl: 'http://www.spirit-of-metal.com/API',
         ajax: false,
+        gigsPage: 1,
+        reportsPage: 1,
+        galleriesPage: 1,
         gigs: [],
         reports: [],
         galleries: [],
@@ -78,56 +84,83 @@
       navigate (tab) {
         if (tab === 'gigs') {
           this.gigsSelected = true
+
+          axios.get(`${this.baseUrl}/gigs.php?p=${this.gigsPage}`)
+            .then(response => {
+              for (var i = 0; i < response.data.length; i++) {
+                this.gigs.push(response.data[i])
+              }
+              this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+              this.ajax = false
+              this.gigsPage++
+            })
+            .catch(e => {
+              this.errors.push(e)
+            })
         } else if (tab === 'reports') {
           this.gigsSelected = false
           this.reportsSelected = true
 
-          if (this.reports.length === 0) {
+          if (this.reportsPage === 1) {
             this.ajax = true
-            axios.get(`${this.baseUrl}/live_reports.php`)
-              .then(response => {
-                this.reports = response.data
-                this.ajax = false
-              })
-              .catch(e => {
-                this.errors.push(e)
-              })
           }
+
+          axios.get(`${this.baseUrl}/live_reports.php?p=${this.reportsPage}`)
+            .then(response => {
+              for (var i = 0; i < response.data.length; i++) {
+                this.reports.push(response.data[i])
+              }
+              this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+              this.reportsPage++
+              this.ajax = false
+            })
+            .catch(e => {
+              this.errors.push(e)
+            })
         } else { // "Photos" tab
           this.gigsSelected = false
           this.reportsSelected = false
 
-          if (this.galleries.length === 0) {
+          if (this.galleriesPage === 1) {
             this.ajax = true
-            axios.get(`${this.baseUrl}/galleries.php`)
-              .then(response => {
-                this.galleries = response.data
-                this.ajax = false
-                console.log(response.data)
-              })
-              .catch(e => {
-                this.errors.push(e)
-              })
           }
+
+          axios.get(`${this.baseUrl}/galleries.php?p=${this.galleriesPage}`)
+            .then(response => {
+              for (var i = 0; i < response.data.length; i++) {
+                this.galleries.push(response.data[i])
+              }
+              this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+              this.galleriesPage++
+              this.ajax = false
+            })
+            .catch(e => {
+              this.errors.push(e)
+            })
         }
+      },
+      onInfiniteGigs () {
+        this.navigate('gigs')
+      },
+      onInfiniteReports () {
+        this.navigate('reports')
+      },
+      onInfiniteGalleries () {
+        this.navigate('photos')
       }
     },
     created () {
+      // Used to show a big loader on the initial load
       this.ajax = true
-      axios.get(`${this.baseUrl}/gigs.php`)
-        .then(response => {
-          this.gigs = response.data
-          this.ajax = false
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
     }
   }
 </script>
 
 <style lang="styl" scoped>
   @import '../assets/variables.styl'
+
+  #events
+    background-color: whitesmoke
 
   h2
     height: 50px
@@ -177,7 +210,6 @@
 
   article
     color: black
-    background-color: whitesmoke
     font-family: Oswald, sans-serif
     border-top: solid 1px gray
 

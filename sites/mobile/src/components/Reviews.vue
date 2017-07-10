@@ -13,6 +13,7 @@
         </div>
       </a>
     </article>
+    <infinite-loading :on-infinite="onInfinite" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
     <loader v-if="ajax"></loader>
   </div>
 </template>
@@ -25,27 +26,39 @@
     data () {
       return {
         ajax: false,
+        page: 1,
         reviews: [],
         errors: []
       }
     },
+    methods: {
+      onInfinite () {
+        const baseUrl = 'http://www.spirit-of-metal.com/API'
+        axios.get(`${baseUrl}/reviews.php?l=fr&p=${this.page}`)
+          .then(response => {
+            for (var i = 0; i < response.data.length; i++) {
+              this.reviews.push(response.data[i])
+            }
+            this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+            this.ajax = false
+            this.page++
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
+      }
+    },
     created () {
       this.ajax = true
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-      axios.get(`${baseUrl}/reviews.php?l=fr`)
-        .then(response => {
-          this.reviews = response.data
-          this.ajax = false
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
     }
   }
 </script>
 
 <style lang="styl" scoped>
   @import '../assets/variables.styl'
+
+  #reviews
+    background-color: whitesmoke
 
   h2
     height: 50px
@@ -67,9 +80,7 @@
       background-color: silver
 
   article
-    display: block
     color: black
-    background-color: whitesmoke
     font-family: Oswald, sans-serif
     border-bottom: solid 1px gray
 

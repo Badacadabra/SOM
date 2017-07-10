@@ -12,6 +12,7 @@
         </div>
       </a>
     </article>
+    <infinite-loading :on-infinite="onInfinite" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
     <loader v-if="ajax"></loader>
   </div>
 </template>
@@ -24,27 +25,39 @@
     data () {
       return {
         ajax: false,
+        page: 1,
         news: [],
         errors: []
       }
     },
+    methods: {
+      onInfinite () {
+        const baseUrl = 'http://www.spirit-of-metal.com/API'
+        axios.get(`${baseUrl}/news.php?l=fr&p=${this.page}`)
+          .then(response => {
+            for (var i = 0; i < response.data.length; i++) {
+              this.news.push(response.data[i])
+            }
+            this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+            this.ajax = false
+            this.page++
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
+      }
+    },
     created () {
       this.ajax = true
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-      axios.get(`${baseUrl}/news.php?l=fr`)
-        .then(response => {
-          this.news = response.data
-          this.ajax = false
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
     }
   }
 </script>
 
 <style lang="styl" scoped>
   @import '../assets/variables.styl'
+
+  #news
+    background-color: whitesmoke
 
   h2
     height: 50px
@@ -75,7 +88,6 @@
 
   article
     color: black
-    background-color: whitesmoke
     font-family: Oswald, sans-serif
     border-bottom: solid 1px gray
 

@@ -4,9 +4,10 @@ import router from './router'
 
 import Moment from 'vue-moment'
 import Icon from 'vue-awesome/components/Icon'
+import InfiniteLoading from 'vue-infinite-loading'
 
-import Dimmer from './components/Dimmer'
 import Loader from './components/Loader'
+import Dimmer from './components/Dimmer'
 import Disclaimer from './components/Disclaimer'
 
 Vue.config.productionTip = false
@@ -14,8 +15,9 @@ Vue.config.productionTip = false
 Vue.use(Moment)
 
 Vue.component('icon', Icon)
-Vue.component('dimmer', Dimmer)
+Vue.component('infinite-loading', InfiniteLoading)
 Vue.component('loader', Loader)
+Vue.component('dimmer', Dimmer)
 Vue.component('disclaimer', Disclaimer)
 
 /* eslint-disable no-new */
