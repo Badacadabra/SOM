@@ -2,7 +2,7 @@
   <div id="releases">
     <h2>Sorties</h2>
     <article v-for="release of releases">
-      <a :href="'/sorties/'+release.id">
+      <router-link :to="{name: 'release', params: {id: release.id}}">
         <img class="cover" :src="release.cover" :alt="release.album">
         <div class="info">
           <h3 class="album">{{ release.album }}</h3>
@@ -10,7 +10,7 @@
           <div class="date">{{ release.date | moment('DD/MM/YYYY') }}</div>
           <div class="genre">{{ release.genre }}</div>
         </div>
-      </a>
+      </router-link>
     </article>
     <loader v-if="ajax"></loader>
   </div>

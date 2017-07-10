@@ -1,41 +1,41 @@
 <template>
   <nav class="home">
-    <a href="/actualites" title="Actualités">
+    <router-link :to="{name: 'newsfeed'}">
       <figure>
         <img src="../assets/img/jpg/news.jpg" alt="Actualités">
         <figcaption>Actualités</figcaption>
       </figure>
-    </a>
-    <a href="/chroniques" title="Chroniques">
+    </router-link>
+    <router-link :to="{name: 'reviews'}">
       <figure>
         <img src="../assets/img/jpg/reviews.jpg" alt="Chroniques">
         <figcaption>Chroniques</figcaption>
       </figure>
-    </a>
-    <a href="/interviews" title="Interviews">
+    </router-link>
+    <router-link :to="{name: 'interviews'}">
       <figure>
         <img src="../assets/img/jpg/interviews.jpg" alt="Interviews">
         <figcaption>Interviews</figcaption>
       </figure>
-    </a>
-    <a href="/sorties" title="Sorties">
+    </router-link>
+    <router-link :to="{name: 'releases'}">
       <figure>
         <img src="../assets/img/jpg/releases.jpg" alt="Sorties">
         <figcaption>Sorties</figcaption>
       </figure>
-    </a>
-    <a href="/evenements" title="Événements">
+    </router-link>
+    <router-link :to="{name: 'events'}">
       <figure>
         <img src="../assets/img/jpg/events.jpg" alt="Événements">
         <figcaption>Événements</figcaption>
       </figure>
-    </a>
-    <a href="/encyclopedie" title="Encyclopédie">
+    </router-link>
+    <router-link :to="{name: 'encyclopedia'}">
       <figure>
         <img src="../assets/img/jpg/encyclopedia.jpg" alt="Encyclopédie">
         <figcaption>Encyclopédie</figcaption>
       </figure>
-    </a>
+    </router-link>
     <a href="http://www.spirit-of-metal.net/forum/index-l-fr.html" title="Forums">
       <figure>
         <img src="../assets/img/jpg/forums.jpg" alt="Forums">

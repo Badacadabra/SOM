@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1><a href="/">SPIRIT OF <span class="yellow">METAL</span></a></h1>
+    <h1><router-link :to="{name: 'home'}">SPIRIT OF <span class="yellow">METAL</span></router-link></h1>
     <img v-if="menuIsHidden" @click="toggle" id="burger" src="../assets/img/png/burger.png" alt="Ouvrir le menu">
     <img v-else @click="toggle" id="cross" src="../assets/img/png/cross.png" alt="Fermer le menu">
   </header>

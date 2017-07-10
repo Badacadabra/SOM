@@ -2,14 +2,14 @@
   <div id="interviews">
     <h2>Interviews</h2>
     <article v-for="interview of interviews">
-      <a :href="'/interviews/'+interview.id">
+      <router-link :to="{name: 'interview', params: {id: interview.id}}">
         <img class="photo" :src="interview.picture" :alt="interview.band">
         <div class="info">
           <h3 class="band">{{ interview.band }}</h3>
           <div class="date">{{ new Date(interview.date) | moment('DD/MM/YYYY') }}</div>
           <div class="author">@{{ interview.author }}</div>
         </div>
-      </a>
+      </router-link>
     </article>
     <infinite-loading :on-infinite="onInfinite" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
     <loader v-if="ajax"></loader>

@@ -21,7 +21,7 @@
     created () {
       this.ajax = true
 
-      const id = window.location.pathname.split('/')[2]
+      const id = this.$route.params.id
       const baseUrl = 'http://www.spirit-of-metal.com/API'
 
       axios.get(`${baseUrl}/interviews.php?id=${id}`)

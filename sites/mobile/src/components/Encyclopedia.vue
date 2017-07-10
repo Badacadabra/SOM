@@ -2,30 +2,30 @@
   <div id="encyclopedia">
     <h2>{{ title }}</h2>
     <nav>
-      <a href="/encyclopedie/genres" class="item">
+      <router-link :to="{name: 'genres'}" class="item">
         <icon name="hashtag" scale="1.3"></icon>
         Genres
-      </a>
-      <a href="/encyclopedie/groupes" class="item">
+      </router-link>
+      <router-link :to="{name: 'bands'}" class="item">
         <icon name="group" scale="1.3"></icon>
         Groupes
-      </a>
-      <a href="/encyclopedie/albums" class="item">
+      </router-link>
+      <router-link :to="{name: 'albums'}" class="item">
         <icon name="music" scale="1.3"></icon>
         Albums
-      </a>
-      <a href="/encyclopedie/artistes" class="item">
+      </router-link>
+      <router-link :to="{name: 'artists'}" class="item">
         <icon name="address-book-o" scale="1.3"></icon>
         Artistes
-      </a>
-      <a href="/encyclopedie/labels" class="item">
+      </router-link>
+      <router-link :to="{name: 'labels'}" class="item">
         <icon name="tag" scale="1.3"></icon>
         Labels
-      </a>
-      <a href="/encyclopedie/lieux" class="item">
+      </router-link>
+      <router-link :to="{name: 'places'}" class="item">
         <icon name="map-marker" scale="1.3"></icon>
         Lieux
-      </a>
+      </router-link>
     </nav>
     <h3>Quelques chiffres...</h3>
     <div class="figures">

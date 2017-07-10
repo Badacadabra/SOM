@@ -17,7 +17,17 @@ import Release from '@/components/Release'
 
 import Events from '@/components/Events'
 
+import Gigs from '@/components/Gigs'
+import Gig from '@/components/Gig'
+
+import LiveReports from '@/components/LiveReports'
+import LiveReport from '@/components/LiveReport'
+
+import PhotoGalleries from '@/components/PhotoGalleries'
+import PhotoGallery from '@/components/PhotoGallery'
+
 import Encyclopedia from '@/components/Encyclopedia'
+
 import Genres from '@/components/Genres'
 import Bands from '@/components/Bands'
 import Albums from '@/components/Albums'
@@ -28,7 +38,6 @@ import Places from '@/components/Places'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   routes: [
     {
       path: '*',
@@ -82,7 +91,40 @@ export default new Router({
     {
       path: '/evenements',
       name: 'events',
-      component: Events
+      component: Events,
+      redirect: {name: 'gigs'},
+      children: [
+        {
+          path: 'concerts',
+          name: 'gigs',
+          component: Gigs
+        },
+        {
+          path: 'live-reports',
+          name: 'liveReports',
+          component: LiveReports
+        },
+        {
+          path: 'galeries-photo',
+          name: 'photoGalleries',
+          component: PhotoGalleries
+        }
+      ]
+    },
+    {
+      path: '/evenements/gigs/:id',
+      name: 'gig',
+      component: Gig
+    },
+    {
+      path: '/evenements/live-reports/:id',
+      name: 'live-report',
+      component: LiveReport
+    },
+    {
+      path: '/evenements/galeries-photo/:id',
+      name: 'photo-gallery',
+      component: PhotoGallery
     },
     {
       path: '/encyclopedie',

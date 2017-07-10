@@ -2,7 +2,7 @@
   <div id="reviews">
     <h2>Chroniques</h2>
     <article v-for="review of reviews">
-      <a :href="'/chroniques/'+review.id">
+      <router-link :to="{name: 'review', params: {id: review.id}}">
         <img class="cover" :src="review.cover" :alt="review.album">
         <div class="info">
           <h3 class="album">{{ review.album }}</h3>
@@ -11,7 +11,7 @@
           <div class="author">@{{ review.author }}</div>
           <div class="date">{{ new Date(review.date) | moment('DD/MM/YYYY') }}</div>
         </div>
-      </a>
+      </router-link>
     </article>
     <infinite-loading :on-infinite="onInfinite" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
     <loader v-if="ajax"></loader>
