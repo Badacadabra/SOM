@@ -18,6 +18,12 @@ import Release from '@/components/Release'
 import Events from '@/components/Events'
 
 import Encyclopedia from '@/components/Encyclopedia'
+import Genres from '@/components/Genres'
+import Bands from '@/components/Bands'
+import Albums from '@/components/Albums'
+import Artists from '@/components/Artists'
+import Labels from '@/components/Labels'
+import Places from '@/components/Places'
 
 Vue.use(Router)
 
@@ -82,6 +88,36 @@ export default new Router({
       path: '/encyclopedie',
       name: 'encyclopedia',
       component: Encyclopedia
+    },
+    {
+      path: '/encyclopedie/genres',
+      name: 'genres',
+      component: Genres
+    },
+    {
+      path: '/encyclopedie/groupes',
+      name: 'bands',
+      component: Bands
+    },
+    {
+      path: '/encyclopedie/albums',
+      name: 'albums',
+      component: Albums
+    },
+    {
+      path: '/encyclopedie/artistes',
+      name: 'artists',
+      component: Artists
+    },
+    {
+      path: '/encyclopedie/labels',
+      name: 'labels',
+      component: Labels
+    },
+    {
+      path: '/encyclopedie/lieux',
+      name: 'places',
+      component: Places
     }
   ]
 })
