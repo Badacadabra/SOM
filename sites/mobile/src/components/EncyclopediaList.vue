@@ -1,13 +1,13 @@
 <template>
   <section>
-    <a href="#" v-for="item of items">{{ item }}</a>
+    <router-link v-for="item of items" :key="item.id" :to="{name: link, params: {id: item.id}}">{{ item[prop] }}</router-link>
   </section>
 </template>
 
 <script>
   export default {
     name: 'encylopedia-list',
-    props: ['items']
+    props: ['items', 'link', 'prop']
   }
 </script>
 

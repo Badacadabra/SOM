@@ -29,11 +29,22 @@ import PhotoGallery from '@/components/PhotoGallery'
 import Encyclopedia from '@/components/Encyclopedia'
 
 import Genres from '@/components/Genres'
+import Genre from '@/components/Genre'
+
 import Bands from '@/components/Bands'
+import Band from '@/components/Band'
+
 import Albums from '@/components/Albums'
+import Album from '@/components/Album'
+
 import Artists from '@/components/Artists'
+import Artist from '@/components/Artist'
+
 import Labels from '@/components/Labels'
+import Label from '@/components/Label'
+
 import Places from '@/components/Places'
+import Place from '@/components/Place'
 
 Vue.use(Router)
 
@@ -137,9 +148,19 @@ export default new Router({
       component: Genres
     },
     {
+      path: '/encyclopedie/genres/:id',
+      name: 'genre',
+      component: Genre
+    },
+    {
       path: '/encyclopedie/groupes',
       name: 'bands',
       component: Bands
+    },
+    {
+      path: '/encyclopedie/groupes/:id',
+      name: 'band',
+      component: Band
     },
     {
       path: '/encyclopedie/albums',
@@ -147,9 +168,19 @@ export default new Router({
       component: Albums
     },
     {
+      path: '/encyclopedie/albums/:id',
+      name: 'album',
+      component: Album
+    },
+    {
       path: '/encyclopedie/artistes',
       name: 'artists',
       component: Artists
+    },
+    {
+      path: '/encyclopedie/artistes/:id',
+      name: 'artist',
+      component: Artist
     },
     {
       path: '/encyclopedie/labels',
@@ -157,9 +188,19 @@ export default new Router({
       component: Labels
     },
     {
+      path: '/encyclopedie/labels/:id',
+      name: 'label',
+      component: Label
+    },
+    {
       path: '/encyclopedie/lieux',
       name: 'places',
       component: Places
+    },
+    {
+      path: '/encyclopedie/lieux/:id',
+      name: 'place',
+      component: Place
     }
   ]
 })

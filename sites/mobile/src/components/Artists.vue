@@ -2,7 +2,8 @@
   <div id="artistes">
     <encyclopedia-subtitle title="Artistes"></encyclopedia-subtitle>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="artists"></encyclopedia-list>
+    <encyclopedia-list :items="artists" link="artist" prop="FullName"></encyclopedia-list>
+    <loader v-if="ajax"></loader>
   </div>
 </template>
 
@@ -16,14 +17,19 @@
     name: 'artists',
     data () {
       return {
-        artists: []
+        ajax: false,
+        artists: [],
+        errors: []
       }
     },
     methods: {
       getData (e) {
-        axios.get(`http://suggestqueries.google.com/complete/search?client=firefox&q=${e.target.value}`)
+        const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+        axios.get(`${baseUrl}/artists.php?q=${e.target.value}`)
           .then(response => {
-            this.artists = response.data[1]
+            this.artists = response.data
+            this.ajax = false
           })
           .catch(e => {
             this.errors.push(e)
@@ -31,6 +37,7 @@
       }
     },
     created () {
+      this.ajax = true
       this.getData({
         target: {
           value: 'a'

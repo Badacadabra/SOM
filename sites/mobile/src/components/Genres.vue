@@ -2,7 +2,8 @@
   <div id="genres">
     <encyclopedia-subtitle title="Genres"></encyclopedia-subtitle>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="genres"></encyclopedia-list>
+    <encyclopedia-list :items="genres" link="genre" prop="title"></encyclopedia-list>
+    <loader v-if="ajax"></loader>
   </div>
 </template>
 
@@ -16,14 +17,19 @@
     name: 'genres',
     data () {
       return {
-        genres: []
+        ajax: false,
+        genres: [],
+        errors: []
       }
     },
     methods: {
       getData (e) {
-        axios.get(`http://suggestqueries.google.com/complete/search?client=firefox&q=${e.target.value}`)
+        const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+        axios.get(`${baseUrl}/styles.php?q=${e.target.value}`)
           .then(response => {
-            this.genres = response.data[1]
+            this.genres = response.data
+            this.ajax = false
           })
           .catch(e => {
             this.errors.push(e)
@@ -31,6 +37,7 @@
       }
     },
     created () {
+      this.ajax = true
       this.getData({
         target: {
           value: 'a'

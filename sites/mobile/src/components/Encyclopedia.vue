@@ -1,6 +1,6 @@
 <template>
   <div id="encyclopedia">
-    <h2>{{ title }}</h2>
+    <h2>Encyclopédie</h2>
     <nav>
       <router-link :to="{name: 'genres'}" class="item">
         <icon name="hashtag" scale="1.3"></icon>
@@ -29,15 +29,16 @@
     </nav>
     <h3>Quelques chiffres...</h3>
     <div class="figures">
-      <ul>
-        <li><span class="num">?????</span> genres</li>
-        <li><span class="num">94917</span> groupes</li>
-        <li><span class="num">?????</span> artistes</li>
-        <li><span class="num">298479</span> albums</li>
-        <li><span class="num">?????</span> labels</li>
-        <li><span class="num">?????</span> lieux</li>
+      <ul v-if="stats.length > 0">
+        <li><span class="num">{{ stats[7].value }}</span> genres</li>
+        <li><span class="num">{{ stats[0].value }}</span> groupes</li>
+        <li><span class="num">{{ stats[5].value }}</span> artistes</li>
+        <li><span class="num">{{ stats[1].value }}</span> albums</li>
+        <li><span class="num">{{ stats[2].value }}</span> labels</li>
+        <li><span class="num">{{ stats[6].value }}</span> lieux</li>
       </ul>
     </div>
+    <loader v-if="ajax"></loader>
   </div>
 </template>
 
@@ -48,13 +49,28 @@
   import 'vue-awesome/icons/address-book-o'
   import 'vue-awesome/icons/tag'
   import 'vue-awesome/icons/map-marker'
+  import axios from 'axios'
 
   export default {
     name: 'encyclopedia',
     data () {
       return {
-        title: 'Encyclopédie'
+        ajax: false,
+        stats: []
       }
+    },
+    created () {
+      this.ajax = true
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+      axios.get(`${baseUrl}/stats.php`)
+        .then(response => {
+          this.stats = response.data
+          this.ajax = false
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
     }
   }
 </script>
