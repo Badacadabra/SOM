@@ -34,11 +34,17 @@ import Genre from '@/components/Genre'
 import Bands from '@/components/Bands'
 import Band from '@/components/Band'
 
+import Artists from '@/components/Artists'
+import Artist from '@/components/Artist'
+
 import Albums from '@/components/Albums'
 import Album from '@/components/Album'
 
-import Artists from '@/components/Artists'
-import Artist from '@/components/Artist'
+import Audios from '@/components/Audios'
+import Audio from '@/components/Audio'
+
+import Videos from '@/components/Videos'
+import Video from '@/components/Video'
 
 import Labels from '@/components/Labels'
 import Label from '@/components/Label'
@@ -163,6 +169,16 @@ export default new Router({
       component: Band
     },
     {
+      path: '/encyclopedie/artistes',
+      name: 'artists',
+      component: Artists
+    },
+    {
+      path: '/encyclopedie/artistes/:id',
+      name: 'artist',
+      component: Artist
+    },
+    {
       path: '/encyclopedie/albums',
       name: 'albums',
       component: Albums
@@ -173,14 +189,24 @@ export default new Router({
       component: Album
     },
     {
-      path: '/encyclopedie/artistes',
-      name: 'artists',
-      component: Artists
+      path: '/encyclopedie/audios',
+      name: 'audios',
+      component: Audios
     },
     {
-      path: '/encyclopedie/artistes/:id',
-      name: 'artist',
-      component: Artist
+      path: '/encyclopedie/audios/:id',
+      name: 'audio',
+      component: Audio
+    },
+    {
+      path: '/encyclopedie/videos',
+      name: 'videos',
+      component: Videos
+    },
+    {
+      path: '/encyclopedie/videos/:id',
+      name: 'video',
+      component: Video
     },
     {
       path: '/encyclopedie/labels',

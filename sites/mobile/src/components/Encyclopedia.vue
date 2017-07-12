@@ -18,6 +18,14 @@
         <icon name="music" scale="1.3"></icon>
         Albums
       </router-link>
+      <router-link :to="{name: 'audios'}" class="item">
+        <icon name="file-audio-o" scale="1.3"></icon>
+        Audios
+      </router-link>
+      <router-link :to="{name: 'videos'}" class="item">
+        <icon name="video-camera" scale="1.3"></icon>
+        Vidéos
+      </router-link>
       <router-link :to="{name: 'labels'}" class="item">
         <icon name="tag" scale="1.3"></icon>
         Labels
@@ -46,6 +54,8 @@
   import 'vue-awesome/icons/hashtag'
   import 'vue-awesome/icons/group'
   import 'vue-awesome/icons/music'
+  import 'vue-awesome/icons/file-audio-o'
+  import 'vue-awesome/icons/video-camera'
   import 'vue-awesome/icons/address-book-o'
   import 'vue-awesome/icons/tag'
   import 'vue-awesome/icons/map-marker'
