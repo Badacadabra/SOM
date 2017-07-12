@@ -53,8 +53,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   #interviews
     background-color: whitesmoke
 

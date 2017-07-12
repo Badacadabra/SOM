@@ -55,8 +55,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   article
     color: black
     font-family: Oswald, sans-serif

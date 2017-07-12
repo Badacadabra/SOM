@@ -40,8 +40,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   h2
     min-height: 50px
     color: black

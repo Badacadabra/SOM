@@ -54,8 +54,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   #news
     background-color: whitesmoke
 

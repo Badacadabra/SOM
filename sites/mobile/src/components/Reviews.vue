@@ -55,8 +55,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   #reviews
     background-color: whitesmoke
 

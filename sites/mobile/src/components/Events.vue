@@ -39,8 +39,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   #events
     background-color: whitesmoke
 

@@ -24,8 +24,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   header
     padding: 0 10px
     height: 50px

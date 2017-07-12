@@ -46,8 +46,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   #menu
     width: 300px
     background-color: whitesmoke

@@ -45,8 +45,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   h2
     height: 50px
     line-height: 50px

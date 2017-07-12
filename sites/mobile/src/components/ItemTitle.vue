@@ -11,8 +11,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   h2
   h3
     min-height: 50px

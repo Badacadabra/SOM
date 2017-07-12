@@ -52,8 +52,6 @@
 </script>
 
 <style lang="styl" scoped>
-  @import '../assets/variables.styl'
-
   nav
     display: flex
     flex-direction: column
