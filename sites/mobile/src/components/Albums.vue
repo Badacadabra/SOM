@@ -1,15 +1,14 @@
 <template>
   <div id="albums">
-    <encyclopedia-subtitle title="Albums"></encyclopedia-subtitle>
+    <heading text="Albums" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="albums" link="album" prop="album"></encyclopedia-list>
+    <encyclopedia-list :items="albums" link="album" prop="name"></encyclopedia-list>
     <loader v-if="ajax"></loader>
   </div>
 </template>
 
 <script>
   import Search from './Search'
-  import EncyclopediaSubtitle from './EncyclopediaSubtitle'
   import EncyclopediaList from './EncyclopediaList'
   import axios from 'axios'
 
@@ -26,7 +25,7 @@
       getData (e) {
         const baseUrl = 'http://www.spirit-of-metal.com/API'
 
-        axios.get(`${baseUrl}/releases.php?q=${e.target.value}`)
+        axios.get(`${baseUrl}/albums.php?q=${e.target.value}`)
           .then(response => {
             this.albums = response.data
             this.ajax = false
@@ -46,7 +45,6 @@
     },
     components: {
       Search,
-      EncyclopediaSubtitle,
       EncyclopediaList
     }
   }

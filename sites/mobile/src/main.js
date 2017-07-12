@@ -9,7 +9,7 @@ import InfiniteLoading from 'vue-infinite-loading'
 import Loader from './components/Loader'
 import Dimmer from './components/Dimmer'
 import Disclaimer from './components/Disclaimer'
-import ItemTitle from './components/ItemTitle'
+import Heading from './components/Heading'
 
 Vue.config.productionTip = false
 
@@ -20,7 +20,7 @@ Vue.component('infinite-loading', InfiniteLoading)
 Vue.component('loader', Loader)
 Vue.component('dimmer', Dimmer)
 Vue.component('disclaimer', Disclaimer)
-Vue.component('item-title', ItemTitle)
+Vue.component('heading', Heading)
 
 /* eslint-disable no-new */
 new Vue({

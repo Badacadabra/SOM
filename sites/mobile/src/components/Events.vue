@@ -1,6 +1,6 @@
 <template>
   <div id="events">
-    <h2>Événements</h2>
+    <heading text="Événements" :level="2" font="astonished" color="red"></heading>
     <nav>
       <router-link class="item" :to="{name: 'gigs'}">
         <icon name="calendar" scale="1.3"></icon>
@@ -41,14 +41,6 @@
 <style lang="styl" scoped>
   #events
     background-color: whitesmoke
-
-  h2
-    height: 50px
-    line-height: 50px
-    color: whitesmoke
-    background-color: $red
-    text-align: center
-    font: 42px Astonished, sans-serif
 
   nav
     background-color: silver

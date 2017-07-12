@@ -1,6 +1,6 @@
 <template>
   <div id="genres">
-    <encyclopedia-subtitle title="Genres"></encyclopedia-subtitle>
+    <heading text="Genres" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <encyclopedia-list :items="genres" link="genre" prop="title"></encyclopedia-list>
     <loader v-if="ajax"></loader>
@@ -9,7 +9,6 @@
 
 <script>
   import Search from './Search'
-  import EncyclopediaSubtitle from './EncyclopediaSubtitle'
   import EncyclopediaList from './EncyclopediaList'
   import axios from 'axios'
 
@@ -40,13 +39,12 @@
       this.ajax = true
       this.getData({
         target: {
-          value: 'a'
+          value: ''
         }
       })
     },
     components: {
       Search,
-      EncyclopediaSubtitle,
       EncyclopediaList
     }
   }

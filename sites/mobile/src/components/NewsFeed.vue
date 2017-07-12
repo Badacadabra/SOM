@@ -1,6 +1,6 @@
 <template>
   <div id="news">
-    <h2>Actualités</h2>
+    <heading text="Actualités" :level="2" font="astonished" color="red"></heading>
     <article v-for="n of news">
       <router-link :to="{name: 'news', params: {id: n.id}}">
         <div class="info">
@@ -56,14 +56,6 @@
 <style lang="styl" scoped>
   #news
     background-color: whitesmoke
-
-  h2
-    height: 50px
-    line-height: 50px
-    color: whitesmoke
-    background-color: $red
-    text-align: center
-    font: 42px Astonished, sans-serif
 
   h3
     color: $red

@@ -1,13 +1,13 @@
 <template>
   <article id="artist">
-    <item-title :title="artist.fullname" :level="2" color="yellow"></item-title>
-    <img :src="artist.photo" :alt="artist.name">
+    <heading :text="artist.FullName" :level="2" font="oswald" color="yellow"></heading>
+    <encyclopedia-picture :src="artist.picture" :alt="artist.name"></encyclopedia-picture>
     <section>
-      <item-title title="Fiche technique" :level="3" color="silver"></item-title>
+      <heading text="Fiche technique" :level="3" font="oswald" color="silver"></heading>
       <div class="info">
         <div class="birthday">
           <span class="bold">Naissance</span>
-          <span class="light">{{ artist.birthday }}</span>
+          <span class="light">{{ artist.birthday | moment('DD/MM/YYYY') }}</span>
         </div>
         <div class="country">
           <span class="bold">Pays</span>
@@ -16,41 +16,49 @@
       </div>
     </section>
     <section>
-      <item-title title="Groupes" :level="3" color="silver"></item-title>
-      <ul class="info bands">
-        <li v-for="band of artist.bands">{{ band }}</li>
-      </ul>
+      <heading text="Groupes associés" :level="3" font="oswald" color="silver"></heading>
+      <router-link v-for="band of artist.bands" :to="{name: 'band', params: {id: band.id }}" class="info bands">
+        {{ band.name }}
+      </router-link>
     </section>
+    <loader v-if="ajax"></loader>
   </article>
 </template>
 
 <script>
+  import EncyclopediaPicture from './EncyclopediaPicture'
+  import axios from 'axios'
+
   export default {
     name: 'artist',
     data () {
       return {
-        artist: {
-          fullname: 'Liimatainen Jani',
-          photo: 'https://www.metal-archives.com/images/4/1/1/0/4110_artist.jpg?4052',
-          birthday: '09/09/1980',
-          country: 'Finlande',
-          bands: [
-            'Sonata Arctica',
-            'Altaria',
-            'Graveyard Shift',
-            'Cain\'s Offering',
-            'Kotipelto And Liimatainen'
-          ]
-        }
+        ajax: false,
+        artist: {}
       }
+    },
+    created () {
+      this.ajax = true
+
+      const id = this.$route.params.id
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+      axios.get(`${baseUrl}/artists.php?id=${id}`)
+        .then(response => {
+          this.artist = response.data
+          this.ajax = false
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+    components: {
+      EncyclopediaPicture
     }
   }
 </script>
 
 <style lang="styl" scoped>
-  img
-    max-width: 100%
-
   .info
     padding: 10px
     font-family: Oswald, sans-serif
@@ -65,4 +73,17 @@
 
   .light
     color: gray
+
+  a
+    display: block
+    color: gray
+    font: large Oswald, sans-serif
+    background-color: whitesmoke
+    text-align: center
+    padding: 15px 5px
+    border-bottom: dashed 1px silver
+
+    &:active
+    &:focus
+      background-color: silver
 </style>

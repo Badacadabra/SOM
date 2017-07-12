@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h2>Interview de {{ interview.band }}</h2>
+    <heading :text="interview.band" level="2" font="oswald" color="silver"></heading>
     <div class="content" v-html="interview.content"></div>
     <loader v-if="ajax"></loader>
   </article>
@@ -37,15 +37,6 @@
 </script>
 
 <style lang="styl" scoped>
-  h2
-    min-height: 50px
-    color: black
-    background-color: silver
-    font: 20px Oswald, sans-serif
-    display: flex
-    align-items: center
-    justify-content: center
-
   // Use ">>>" to style elements within v-html
   .content
     padding: 10px

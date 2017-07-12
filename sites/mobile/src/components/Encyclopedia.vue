@@ -1,6 +1,6 @@
 <template>
   <div id="encyclopedia">
-    <h2>Encyclopédie</h2>
+    <heading text="Encyclopédie" :level="2" font="astonished" color="red"></heading>
     <nav>
       <router-link :to="{name: 'genres'}" class="item">
         <icon name="hashtag" scale="1.3"></icon>
@@ -10,13 +10,13 @@
         <icon name="group" scale="1.3"></icon>
         Groupes
       </router-link>
-      <router-link :to="{name: 'albums'}" class="item">
-        <icon name="music" scale="1.3"></icon>
-        Albums
-      </router-link>
       <router-link :to="{name: 'artists'}" class="item">
         <icon name="address-book-o" scale="1.3"></icon>
         Artistes
+      </router-link>
+      <router-link :to="{name: 'albums'}" class="item">
+        <icon name="music" scale="1.3"></icon>
+        Albums
       </router-link>
       <router-link :to="{name: 'labels'}" class="item">
         <icon name="tag" scale="1.3"></icon>
@@ -76,18 +76,10 @@
 </script>
 
 <style lang="styl" scoped>
-  h2
   h3
     height: 50px
     line-height: 50px
     text-align: center
-
-  h2
-    color: whitesmoke
-    background-color: $red
-    font: 42px Astonished, sans-serif
-
-  h3
     color: black
     background-color: silver
     border-top: solid 2px black

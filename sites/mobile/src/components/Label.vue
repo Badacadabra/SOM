@@ -1,9 +1,9 @@
 <template>
   <article id="label">
-    <item-title :title="label.name" :level="2" color="yellow"></item-title>
-    <img :src="label.logo" :alt="label.name">
+    <heading :text="label.name" :level="2" font="oswald" color="yellow"></heading>
+    <encyclopedia-picture :src="label.logo" :alt="label.nom_label"></encyclopedia-picture>
     <section>
-      <item-title title="Fiche technique" :level="3" color="silver"></item-title>
+      <heading text="Fiche technique" :level="3" font="oswald" color="silver"></heading>
       <div class="info">
         <div class="status">
           <span class="bold">Statut</span>
@@ -23,31 +23,44 @@
         </div>
       </div>
     </section>
+    <loader v-if="ajax"></loader>
   </article>
 </template>
 
 <script>
+  import EncyclopediaPicture from './EncyclopediaPicture'
+  import axios from 'axios'
+
   export default {
     name: 'label',
     data () {
       return {
-        label: {
-          name: 'Nuclear Blast',
-          logo: 'https://upload.wikimedia.org/wikipedia/fr/thumb/1/14/Nuclear_Blast.jpg/1200px-Nuclear_Blast.jpg',
-          status: 'Actif',
-          country: 'Allemagne',
-          website: 'http://www.nuclearblast.de',
-          nbAlbums: '1643'
-        }
+        ajax: false,
+        label: {}
       }
+    },
+    created () {
+      this.ajax = true
+
+      const id = this.$route.params.id
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+      axios.get(`${baseUrl}/labels.php?id=${id}`)
+        .then(response => {
+          this.label = response.data
+          this.ajax = false
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+    components: {
+      EncyclopediaPicture
     }
   }
 </script>
 
 <style lang="styl" scoped>
-  img
-    max-width: 100%
-
   .info
     padding: 10px
     font-family: Oswald, sans-serif

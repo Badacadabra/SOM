@@ -1,12 +1,12 @@
 <template>
-  <h2 :class="color" v-if="level === 2">{{ title }}</h2>
-  <h3 :class="color" v-else>{{ title }}</h3>
+  <h2 :class="[font, color]" v-if="level === 2">{{ text }}</h2>
+  <h3 :class="[font, color]" v-else>{{ text }}</h3>
 </template>
 
 <script>
   export default {
-    name: 'item-title',
-    props: ['title', 'level', 'color']
+    name: 'heading',
+    props: ['text', 'level', 'font', 'color']
   }
 </script>
 
@@ -15,15 +15,21 @@
   h3
     min-height: 50px
     color: black
-    font: 20px Oswald, sans-serif
     display: flex
     align-items: center
     justify-content: center
+
+  .oswald
+    font: 20px Oswald, sans-serif
+
+  .astonished
+    font: 42px Astonished, sans-serif
 
   .silver
     background-color: silver
 
   .red
+    color: whitesmoke
     background-color: $red
 
   .yellow

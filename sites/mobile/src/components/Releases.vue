@@ -1,6 +1,6 @@
 <template>
   <div id="releases">
-    <h2>Sorties</h2>
+    <heading text="Sorties" :level="2" font="astonished" color="red"></heading>
     <article v-for="release of releases">
       <router-link :to="{name: 'release', params: {id: release.id}}">
         <img class="cover" :src="release.cover" :alt="release.album">
@@ -45,14 +45,6 @@
 </script>
 
 <style lang="styl" scoped>
-  h2
-    height: 50px
-    line-height: 50px
-    color: whitesmoke
-    background-color: $red
-    text-align: center
-    font: 42px Astonished, sans-serif
-
   a
     color: black
     display: flex

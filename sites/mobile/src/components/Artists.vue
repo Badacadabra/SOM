@@ -1,6 +1,6 @@
 <template>
   <div id="artistes">
-    <encyclopedia-subtitle title="Artistes"></encyclopedia-subtitle>
+    <heading text="Artistes" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <encyclopedia-list :items="artists" link="artist" prop="FullName"></encyclopedia-list>
     <loader v-if="ajax"></loader>
@@ -9,7 +9,6 @@
 
 <script>
   import Search from './Search'
-  import EncyclopediaSubtitle from './EncyclopediaSubtitle'
   import EncyclopediaList from './EncyclopediaList'
   import axios from 'axios'
 
@@ -46,7 +45,6 @@
     },
     components: {
       Search,
-      EncyclopediaSubtitle,
       EncyclopediaList
     }
   }

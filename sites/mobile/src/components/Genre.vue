@@ -1,27 +1,32 @@
 <template>
   <article id="genre">
-    <item-title :title="genre.name" :level="2" color="yellow"></item-title>
-    <div class="info">
-      <div class="description">{{ genre.description }}</div>
-      <item-title title="Les groupes phares" :level="3" color="silver"></item-title>
+    <heading :text="genre.name" :level="2" font="oswald" color="yellow"></heading>
+    <div class="description">{{ genre.description }}</div>
+    <section>
+      <heading text="Les groupes phares" :level="3" font="oswald" color="silver"></heading>
       <figure class="bands" v-for="band of genre.bands">
         <img :src="band.photo" :alt="band.name">
         <figcaption>{{ band.name }}</figcaption>
       </figure>
-      <item-title title="Les albums cultes" :level="3" color="silver"></item-title>
+    </section>
+    <section>
+      <heading text="Les albums cultes" :level="3" font="oswald" color="silver"></heading>
       <figure class="albums" v-for="album of genre.albums">
         <img :src="album.cover" :alt="album.name">
         <figcaption>{{ album.name }}</figcaption>
       </figure>
-    </div>
+    </section>
   </article>
 </template>
 
 <script>
+  // import axios from 'axios'
+
   export default {
     name: 'genre',
     data () {
       return {
+        ajax: false,
         genre: {
           name: 'Black Metal',
           description: 'Lorem ipsum dolor sit amet',
@@ -38,11 +43,27 @@
         }
       }
     }
+    /* created () {
+      this.ajax = true
+
+      const id = this.$route.params.id
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+      axios.get(`${baseUrl}/genres.php?id=${id}`)
+        .then(response => {
+          this.genre = response.data
+          this.ajax = false
+          console.log(response.data)
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    } */
   }
 </script>
 
 <style lang="styl" scoped>
-  .info
+  article
     background-color: whitesmoke
 
   .description

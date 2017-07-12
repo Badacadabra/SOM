@@ -1,15 +1,14 @@
 <template>
   <div id="labels">
-    <encyclopedia-subtitle title="Labels"></encyclopedia-subtitle>
+    <heading text="Labels" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="labels" link="label" prop="nom_label"></encyclopedia-list>
+    <encyclopedia-list :items="labels" link="label" prop="name"></encyclopedia-list>
     <loader v-if="ajax"></loader>
   </div>
 </template>
 
 <script>
   import Search from './Search'
-  import EncyclopediaSubtitle from './EncyclopediaSubtitle'
   import EncyclopediaList from './EncyclopediaList'
   import axios from 'axios'
 
@@ -46,7 +45,6 @@
     },
     components: {
       Search,
-      EncyclopediaSubtitle,
       EncyclopediaList
     }
   }

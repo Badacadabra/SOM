@@ -1,6 +1,6 @@
 <template>
   <div id="reviews">
-    <h2>Chroniques</h2>
+    <heading text="Chroniques" :level="2" font="astonished" color="red"></heading>
     <article v-for="review of reviews">
       <router-link :to="{name: 'review', params: {id: review.id}}">
         <img class="cover" :src="review.cover" :alt="review.album">
@@ -57,14 +57,6 @@
 <style lang="styl" scoped>
   #reviews
     background-color: whitesmoke
-
-  h2
-    height: 50px
-    line-height: 50px
-    color: whitesmoke
-    background-color: $red
-    text-align: center
-    font: 42px Astonished, sans-serif
 
   a
     color: black

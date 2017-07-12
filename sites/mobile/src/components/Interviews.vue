@@ -1,6 +1,6 @@
 <template>
   <div id="interviews">
-    <h2>Interviews</h2>
+    <heading text="Interviews" :level="2" font="astonished" color="red"></heading>
     <article v-for="interview of interviews">
       <router-link :to="{name: 'interview', params: {id: interview.id}}">
         <img class="photo" :src="interview.picture" :alt="interview.band">
@@ -55,14 +55,6 @@
 <style lang="styl" scoped>
   #interviews
     background-color: whitesmoke
-
-  h2
-    height: 50px
-    line-height: 50px
-    color: whitesmoke
-    background-color: $red
-    text-align: center
-    font: 42px Astonished, sans-serif
 
   h3
     color: $red

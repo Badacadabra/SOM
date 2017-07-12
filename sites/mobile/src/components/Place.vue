@@ -1,48 +1,68 @@
 <template>
   <article id="place">
-    <item-title :title="place.name" :level="2" color="yellow"></item-title>
-    <img :src="place.photo" :alt="place.name">
+    <heading :text="place.name" :level="2" font="oswald" color="yellow"></heading>
+    <encyclopedia-picture :src="place.picture" :alt="place.name"></encyclopedia-picture>
     <section>
-      <item-title title="Fiche technique" :level="3" color="silver"></item-title>
+      <heading text="Fiche technique" :level="3" font="oswald" color="silver"></heading>
       <div class="info">
         <div class="description">
           <div class="bold">Description</div>
-          <div class="light">{{ place.description }}</div>
+          <div class="light" v-if="place.description">{{ place.description }}</div>
+          <div class="light" v-else>Non renseignée</div>
         </div>
         <div class="address">
           <div class="bold">Adresse</div>
-          <div class="light">{{ place.address }}</div>
+          <div class="light" v-if="place.address">{{ place.address }}</div>
+          <div class="light" v-else>Non renseignée</div>
         </div>
-        <a :href="place.website" class="website">
+        <div class="website">
           <div class="bold">Website</div>
-          <div class="light">{{ place.website }}</div>
-        </a>
+          <a :href="place.website" class="light" v-if="place.website">{{ place.website }}</a>
+          <div class="light" v-else>Non renseigné</div>
+        </div>
       </div>
     </section>
+    <loader v-if="ajax"></loader>
   </article>
 </template>
 
 <script>
+  import EncyclopediaPicture from './EncyclopediaPicture'
+  import axios from 'axios'
+
   export default {
     name: 'place',
     data () {
       return {
-        place: {
-          name: '013',
-          photo: 'https://i1.thrillcall.com/venue/111699/7662/1487100018/013-tilburg-nl-mobile.jpg',
-          description: 'Salle de concerts',
-          address: 'Veemarktstraat 44 Tilburg, Brabant Septentrional, Pays-Bas',
-          website: 'http://www.013.nl'
-        },
+        ajax: false,
+        place: {},
         errors: []
       }
+    },
+    created () {
+      this.ajax = true
+
+      const id = this.$route.params.id
+      const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+      axios.get(`${baseUrl}/places.php?id=${id}`)
+        .then(response => {
+          this.place = response.data
+          this.ajax = false
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+    components: {
+      EncyclopediaPicture
     }
   }
 </script>
 
 <style lang="styl" scoped>
-  img
-    max-width: 100%
+  article
+    background-color: black
 
   .info
     padding: 10px
@@ -58,4 +78,11 @@
 
   .website
     color: black
+
+  a
+    white-space: pre-wrap; // CSS 3
+    white-space: -moz-pre-wrap; // Mozilla, since 1999
+    white-space: -pre-wrap; // Opera 4-6
+    white-space: -o-pre-wrap; // Opera 7
+    word-wrap: break-word; // Internet Explorer 5.5+
 </style>

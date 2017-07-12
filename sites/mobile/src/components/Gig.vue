@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h2>{{ gig.title }}</h2>
+    <heading :text="gig.title" :level="2" font="oswald" color="silver"></heading>
     <div class="content" v-html="gig.content"></div>
     <loader v-if="ajax"></loader>
   </article>
@@ -38,12 +38,4 @@
 </script>
 
 <style lang="styl" scoped>
-  h2
-    min-height: 50px
-    color: black
-    background-color: silver
-    font: 20px Oswald, sans-serif
-    display: flex
-    align-items: center
-    justify-content: center
 </style>
