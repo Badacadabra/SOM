@@ -11,33 +11,35 @@
         </div>
         <div class="genre">
           <span class="bold">Genre</span>
-          <span class="light">{{ album.style }}</span>
+          <span class="light" v-if="album.style">{{ album.style }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="date">
           <span class="bold">Date</span>
-          <span class="light">{{ album.date }}</span>
-        </div>
-        <div class="label">
-          <span class="bold">Label</span>
-          <span class="light" v-for="label of album.labels">/ {{ label.name }}</span>
-        </div>
-        <div class="producer">
-          <span class="bold">Producteur</span>
-          <span class="light" v-if="album.producer">{{ album.producer }}</span>
-          <span class="light" v-else>Non renseigné</span>
+          <span class="light" v-if="album.date">{{ album.date }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="studio">
           <span class="bold">Studio</span>
           <span class="light" v-if="album.studio">{{ album.studio }}</span>
-          <span class="light" v-else>Non renseigné</span>
+          <span class="light" v-else>N/A</span>
+        </div>
+        <div class="producer">
+          <span class="bold">Producteur</span>
+          <span class="light" v-if="album.producer">{{ album.producer }}</span>
+          <span class="light" v-else>N/A</span>
+        </div>
+        <div class="label">
+          <span class="bold">Label(s)</span>
+          <ul class="light" v-if="album.labels.length !== 0">
+            <li v-for="label of album.labels">{{ label.name }}</li>
+          </ul>
+          <span class="light" v-else>N/A</span>
         </div>
       </div>
     </section>
     <section>
-      <heading text="Morceaux" :level="3" font="oswald" color="silver"></heading>
-      <!-- <ol class="info tracklist">
-        <li v-for="track of album.tracks">{{ track }}</li>
-      </ol> -->
+      <heading text="Tracklist" :level="3" font="oswald" color="silver"></heading>
       <div class="tracks" v-html="album.tracks"></div>
     </section>
     <loader v-if="ajax"></loader>
@@ -66,7 +68,6 @@
         .then(response => {
           this.album = response.data
           this.ajax = false
-          console.log(response.data)
         })
         .catch(e => {
           this.errors.push(e)
@@ -97,7 +98,12 @@
   .light
     color: gray
 
+  .label ul
+    list-style-type: none
+    text-align: right
+
   >>> .tracks
     padding: 10px
     background-color: whitesmoke
+    font-family: Oswald, sans-serif
 </style>

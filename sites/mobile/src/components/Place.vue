@@ -8,17 +8,17 @@
         <div class="description">
           <div class="bold">Description</div>
           <div class="light" v-if="place.description">{{ place.description }}</div>
-          <div class="light" v-else>Non renseignée</div>
+          <div class="light" v-else>N/A</div>
         </div>
         <div class="address">
           <div class="bold">Adresse</div>
           <div class="light" v-if="place.address">{{ place.address }}</div>
-          <div class="light" v-else>Non renseignée</div>
+          <div class="light" v-else>N/A</div>
         </div>
         <div class="website">
           <div class="bold">Website</div>
           <a :href="place.website" class="light" v-if="place.website">{{ place.website }}</a>
-          <div class="light" v-else>Non renseigné</div>
+          <div class="light" v-else>N/A</div>
         </div>
       </div>
     </section>

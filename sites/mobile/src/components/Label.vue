@@ -7,19 +7,23 @@
       <div class="info">
         <div class="status">
           <span class="bold">Statut</span>
-          <span class="light">{{ label.status }}</span>
+          <span class="light" v-if="label.status">{{ label.status }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="country">
           <span class="bold">Pays</span>
-          <span class="light">{{ label.country }}</span>
+          <span class="light" v-if="label.country">{{ label.country }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="website">
           <span class="bold">Site web</span>
-          <span class="light">{{ label.website }}</span>
+          <span class="light" v-if="label.website">{{ label.website }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="nbAlbums">
           <span class="bold">Nombre d'albums</span>
-          <span class="light">{{ label.nbAlbums }}</span>
+          <span class="light" v-if="label.nbAlbums">{{ label.nbAlbums }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
       </div>
     </section>
