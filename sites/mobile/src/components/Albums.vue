@@ -2,7 +2,7 @@
   <div id="albums">
     <heading text="Albums" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="albums" link="album" prop="name"></encyclopedia-list>
+    <encyclopedia-list :items="albums" link="album" prop="name" subprop="band"></encyclopedia-list>
     <loader v-if="ajax"></loader>
   </div>
 </template>

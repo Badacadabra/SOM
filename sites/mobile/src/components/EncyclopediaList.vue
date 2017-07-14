@@ -1,13 +1,16 @@
 <template>
   <section>
-    <router-link v-for="item of items" :key="item.id" :to="{name: link, params: {id: item.id}}">{{ item[prop] }}</router-link>
+    <router-link v-for="item of items" :key="item.id" :to="{name: link, params: {id: item.id}}">
+      {{ item[prop] }}
+      <span class="subprop">{{ item[subprop] }}</span>
+    </router-link>
   </section>
 </template>
 
 <script>
   export default {
     name: 'encylopedia-list',
-    props: ['items', 'link', 'prop']
+    props: ['items', 'link', 'prop', 'subprop']
   }
 </script>
 
@@ -24,5 +27,9 @@
     &:active
     &:focus
       background-color: silver
+
+  .subprop
+    color: gray
+    font-size: small
 </style>
 
