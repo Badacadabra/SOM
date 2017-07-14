@@ -16,16 +16,21 @@
         <div class="creationDate">
           <span class="bold">Date de formation</span>
           <span class="light" v-if="band.creationDate !== '0000'">{{ band.creationDate }}</span>
-          <span class="light" v-else>Inconnue</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="splitDate">
           <span class="bold">Date de séparation</span>
           <span class="light" v-if="band.splitDate !== '0000'">{{ band.splitDate }}</span>
-          <span class="light" v-else>Inconnue</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="country">
           <span class="bold">Pays</span>
           <span class="light">{{ band.country }}</span>
+        </div>
+        <div class="city">
+          <span class="bold">Ville</span>
+          <span class="light" v-if="band.city">{{ band.city }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="popularity">
           <span class="bold">Popularité</span>
@@ -68,42 +73,33 @@
           <li>Tributes</li>
         </ul>
       </nav>
-      <list :scroll="true" v-on:update="scroll" ref="list" :items="albums" link="album" :fields="['name', 'type', 'date']"></list>
+      <list ref="list" :scroll="true" v-on:update="load" :items="albums" link="album" :fields="['name', 'type', 'date']" type="img"></list>
     </section>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
   import 'vue-awesome/icons/star'
-  import axios from 'axios'
 
   export default {
     name: 'band',
     data () {
       return {
-        ajax: false,
         page: 1,
         band: {},
         albums: []
       }
     },
     methods: {
-      scroll () {
-        const id = this.$route.params.id
-        const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-        axios.get(`${baseUrl}/albums.php?id_groupe=${id}&p=${this.page}`)
+      load () {
+        this.$get('albums', {id_groupe: this.$route.params.id, p: this.page})
           .then(response => {
             if (response.data.length === 0) {
               this.$refs.list.complete()
             } else {
-              for (let i = 0; i < response.data.length; i++) {
-                this.albums.push(response.data[i])
-              }
-              this.$refs.list.loaded()
-              this.page++
+              this.$parseList('albums', response.data, this.page)
             }
           })
           .catch(e => {
@@ -112,15 +108,9 @@
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/bands.php?id=${id}`)
+      this.$get('bands', {id: this.$route.params.id})
         .then(response => {
-          this.band = response.data
-          this.ajax = false
+          this.$parseItem('band', response.data)
         })
         .catch(e => {
           this.errors.push(e)

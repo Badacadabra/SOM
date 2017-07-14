@@ -46,7 +46,7 @@
         <li><span class="num">{{ stats[6].value }}</span> lieux</li>
       </ul>
     </div>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </div>
 </template>
 
@@ -59,24 +59,18 @@
   import 'vue-awesome/icons/address-book-o'
   import 'vue-awesome/icons/tag'
   import 'vue-awesome/icons/map-marker'
-  import axios from 'axios'
 
   export default {
     name: 'encyclopedia',
     data () {
       return {
-        ajax: false,
         stats: []
       }
     },
     created () {
-      this.ajax = true
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/stats.php`)
+      this.$get('stats')
         .then(response => {
-          this.stats = response.data
-          this.ajax = false
+          this.$parseList('stats', response.data)
         })
         .catch(e => {
           this.errors.push(e)

@@ -1,33 +1,25 @@
 <template>
   <article id="audio">
     <heading :text="audio.title" :level="2" font="oswald" color="yellow"></heading>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
-  import axios from 'axios'
 
   export default {
     name: 'audio',
     data () {
       return {
-        ajax: false,
         audio: {},
         errors: []
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/audios.php?id=${id}`)
+      this.$get('audios', {id: this.$route.params.id})
         .then(response => {
-          this.audio = response.data
-          this.ajax = false
+          this.$parseItem('audio', response.data)
         })
         .catch(e => {
           this.errors.push(e)

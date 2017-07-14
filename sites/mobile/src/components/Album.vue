@@ -31,7 +31,7 @@
         </div>
         <div class="label">
           <span class="bold">Label(s)</span>
-          <ul class="light" v-if="album.labels.length !== 0">
+          <ul class="light" v-if="album.labels && album.labels.length !== 0">
             <li v-for="label of album.labels">{{ label.name }}</li>
           </ul>
           <span class="light" v-else>N/A</span>
@@ -42,32 +42,24 @@
       <heading text="Tracklist" :level="3" font="oswald" color="silver"></heading>
       <div class="tracks" v-html="album.tracks"></div>
     </section>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
-  import axios from 'axios'
 
   export default {
     name: 'album',
     data () {
       return {
-        ajax: false,
         album: {}
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/albums.php?id=${id}`)
+      this.$get('albums', {id: this.$route.params.id})
         .then(response => {
-          this.album = response.data
-          this.ajax = false
+          this.$parseItem('album', response.data)
         })
         .catch(e => {
           this.errors.push(e)

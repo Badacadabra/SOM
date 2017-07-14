@@ -2,32 +2,23 @@
   <article>
     <heading :text="interview.band" level="2" font="oswald" color="silver"></heading>
     <div class="content" v-html="interview.content"></div>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
-  import axios from 'axios'
-
   export default {
     name: 'interview',
     data () {
       return {
-        ajax: false,
         interview: {},
         errors: []
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/interviews.php?id=${id}`)
+      this.$get('interviews', {id: this.$route.params.id})
         .then(response => {
-          this.interview = response.data
-          this.ajax = false
+          this.$parseItem('interview', response.data)
         })
         .catch(e => {
           this.errors.push(e)

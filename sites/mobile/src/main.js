@@ -6,6 +6,8 @@ import Moment from 'vue-moment'
 import Icon from 'vue-awesome/components/Icon'
 import InfiniteLoading from 'vue-infinite-loading'
 
+import Ajax from './plugins/Ajax.js'
+
 import Loader from './components/Loader'
 import Dimmer from './components/Dimmer'
 import Disclaimer from './components/Disclaimer'
@@ -15,6 +17,7 @@ import List from './components/List'
 Vue.config.productionTip = false
 
 Vue.use(Moment)
+Vue.use(Ajax)
 
 Vue.component('icon', Icon)
 Vue.component('infinite-loading', InfiniteLoading)

@@ -7,11 +7,18 @@
       <div class="info">
         <div class="birthday">
           <span class="bold">Naissance</span>
-          <span class="light">{{ artist.birthday | moment('DD/MM/YYYY') }}</span>
+          <span class="light" v-if="artist.birthday !== '0000'">{{ artist.birthday | moment('DD/MM/YYYY') }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
         <div class="country">
           <span class="bold">Pays</span>
-          <span class="light">{{ artist.country }}</span>
+          <span class="light" v-if="artist.country">{{ artist.country }}</span>
+          <span class="light" v-else>N/A</span>
+        </div>
+        <div class="city">
+          <span class="bold">Ville</span>
+          <span class="light" v-if="artist.city">{{ artist.city }}</span>
+          <span class="light" v-else>N/A</span>
         </div>
       </div>
     </section>
@@ -21,32 +28,25 @@
         {{ band.name }}
       </router-link>
     </section>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
-  import axios from 'axios'
 
   export default {
     name: 'artist',
     data () {
       return {
-        ajax: false,
         artist: {}
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/artists.php?id=${id}`)
+      this.$get('artists', {id: this.$route.params.id})
         .then(response => {
-          this.artist = response.data
-          this.ajax = false
+          this.$parseItem('artist', response.data)
+          console.log(response.data)
         })
         .catch(e => {
           this.errors.push(e)

@@ -13,7 +13,6 @@ import Interviews from '@/components/Interviews'
 import Interview from '@/components/Interview'
 
 import Releases from '@/components/Releases'
-import Release from '@/components/Release'
 
 import Events from '@/components/Events'
 
@@ -101,11 +100,6 @@ export default new Router({
       path: '/sorties',
       name: 'releases',
       component: Releases
-    },
-    {
-      path: '/sorties/:id',
-      name: 'release',
-      component: Release
     },
     {
       path: '/evenements',

@@ -2,33 +2,25 @@
   <article id="video">
     <heading :text="video.title" :level="2" font="oswald" color="yellow"></heading>
     <div v-html="video.code"></div>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
-  import axios from 'axios'
 
   export default {
     name: 'video',
     data () {
       return {
-        ajax: false,
         video: {},
         errors: []
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/videos.php?id=${id}`)
+      this.$get('videos', {id: this.$route.params.id})
         .then(response => {
-          this.video = response.data
-          this.ajax = false
+          this.$parseItem('video', response.data)
         })
         .catch(e => {
           this.errors.push(e)

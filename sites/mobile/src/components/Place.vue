@@ -22,33 +22,25 @@
         </div>
       </div>
     </section>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
-  import axios from 'axios'
 
   export default {
     name: 'place',
     data () {
       return {
-        ajax: false,
         place: {},
         errors: []
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/places.php?id=${id}`)
+      this.$get('places', {id: this.$route.params.id})
         .then(response => {
-          this.place = response.data
-          this.ajax = false
+          this.$parseItem('place', response.data)
         })
         .catch(e => {
           this.errors.push(e)

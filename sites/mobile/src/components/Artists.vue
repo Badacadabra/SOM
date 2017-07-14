@@ -3,31 +3,26 @@
     <heading text="Artistes" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="artists" link="artist" :fields="['FullName']" type="min"></list>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </div>
 </template>
 
 <script>
   import Search from './Search'
-  import axios from 'axios'
 
   export default {
     name: 'artists',
     data () {
       return {
-        ajax: false,
         artists: [],
         errors: []
       }
     },
     methods: {
       getData (e) {
-        const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-        axios.get(`${baseUrl}/artists.php?q=${e.target.value}`)
+        this.$get('artists', {q: e.target.value})
           .then(response => {
-            this.artists = response.data
-            this.ajax = false
+            this.$parseList('artists', response.data)
           })
           .catch(e => {
             this.errors.push(e)
@@ -35,7 +30,6 @@
       }
     },
     created () {
-      this.ajax = true
       this.getData({
         target: {
           value: 'a'

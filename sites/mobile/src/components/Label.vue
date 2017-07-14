@@ -15,44 +15,45 @@
           <span class="light" v-if="label.country">{{ label.country }}</span>
           <span class="light" v-else>N/A</span>
         </div>
+        <div class="nbAlbums">
+          <span class="bold">Albums</span>
+          <span class="light" v-if="label.nbAlbums">{{ label.nbAlbums }}</span>
+          <span class="light" v-else>N/A</span>
+        </div>
         <div class="website">
           <span class="bold">Site web</span>
           <span class="light" v-if="label.website">{{ label.website }}</span>
           <span class="light" v-else>N/A</span>
         </div>
-        <div class="nbAlbums">
-          <span class="bold">Nombre d'albums</span>
-          <span class="light" v-if="label.nbAlbums">{{ label.nbAlbums }}</span>
-          <span class="light" v-else>N/A</span>
-        </div>
       </div>
     </section>
-    <loader v-if="ajax"></loader>
+    <section>
+      <heading text="Dernières sorties" :level="3" font="oswald" color="silver"></heading>
+      <list ref="list" :scroll="false" :items="albums" link="album" :fields="['name', 'band', 'type', 'date']" type="img"></list>
+    </section>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
-  import axios from 'axios'
 
   export default {
     name: 'label',
     data () {
       return {
-        ajax: false,
-        label: {}
+        label: {},
+        albums: []
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/labels.php?id=${id}`)
+      this.$get('labels', {id: this.$route.params.id})
         .then(response => {
           this.label = response.data
-          this.ajax = false
+          return this.$get('albums', {id_label: this.$route.params.id})
+        })
+        .then(response => {
+          this.$parseItem('albums', response.data)
         })
         .catch(e => {
           this.errors.push(e)

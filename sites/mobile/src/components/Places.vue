@@ -3,31 +3,26 @@
     <heading text="Lieux" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="places" link="place" :fields="['name']" type="min"></list>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </div>
 </template>
 
 <script>
   import Search from './Search'
-  import axios from 'axios'
 
   export default {
     name: 'places',
     data () {
       return {
-        ajax: false,
         places: [],
         errors: []
       }
     },
     methods: {
       getData (e) {
-        const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-        axios.get(`${baseUrl}/places.php?q=${e.target.value}`)
+        this.$get('places', {q: e.target.value})
           .then(response => {
-            this.places = response.data
-            this.ajax = false
+            this.$parseList('places', response.data)
           })
           .catch(e => {
             this.errors.push(e)
@@ -35,7 +30,6 @@
       }
     },
     created () {
-      this.ajax = true
       this.getData({
         target: {
           value: 'a'

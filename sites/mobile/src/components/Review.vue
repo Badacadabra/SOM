@@ -2,32 +2,23 @@
   <article>
     <heading :text="review.album" :level="2" font="oswald" color="silver"></heading>
     <div class="content" v-html="review.content"></div>
-    <loader v-if="ajax"></loader>
+    <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
-  import axios from 'axios'
-
   export default {
     name: 'review',
     data () {
       return {
-        ajax: false,
         review: {},
         errors: []
       }
     },
     created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/reviews.php?id=${id}`)
+      this.$get('reviews', {id: this.$route.params.id})
         .then(response => {
-          this.review = response.data
-          this.ajax = false
+          this.$parseItem('review', response.data)
         })
         .catch(e => {
           this.errors.push(e)
