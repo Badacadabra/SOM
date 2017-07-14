@@ -15,11 +15,13 @@
         </div>
         <div class="creationDate">
           <span class="bold">Date de formation</span>
-          <span class="light">{{ band.creationDate }}</span>
+          <span class="light" v-if="band.creationDate !== '0000'">{{ band.creationDate }}</span>
+          <span class="light" v-else>Inconnue</span>
         </div>
-        <div class="splitDate" v-if="band.splitDate !== '0000'">
+        <div class="splitDate">
           <span class="bold">Date de séparation</span>
-          <span class="light">{{ band.splitDate }}</span>
+          <span class="light" v-if="band.splitDate !== '0000'">{{ band.splitDate }}</span>
+          <span class="light" v-else>Inconnue</span>
         </div>
         <div class="country">
           <span class="bold">Pays</span>
@@ -27,7 +29,9 @@
         </div>
         <div class="popularity">
           <span class="bold">Popularité</span>
-          <span class="light">{{ band.popularity }}</span>
+          <span>
+            <icon class="light" name="star" scale="1" v-for="star in band.popularity" :key="star"></icon>
+          </span>
         </div>
         <div class="nbFans">
           <span class="bold">Fans</span>
@@ -40,7 +44,7 @@
       <ul class="lineup">
         <li v-for="member in band.lineup">
           <span class="bold">{{ member.name }}</span>
-          <span class="light">{{ member.role }}</span>
+          <span class="light">{{ member.instruments }}</span>
         </li>
       </ul>
     </section>
@@ -49,20 +53,22 @@
       <ul class="formerMembers">
         <li v-for="member of band.formerMembers">
           <span class="bold">{{ member.name }}</span>
-          <span class="light">{{ member.role }}</span>
+          <span class="light">{{ member.instruments }}</span>
         </li>
       </ul>
     </section>
     <section>
       <heading text="Discographie" :level="3" font="oswald" color="silver"></heading>
-      <router-link v-for="album of band.albums" :to="{name: 'album', params: {id: album.id}}" class="albums">
-        <img :src="album.cover" :alt="album.name">
-        <div>
-          <div class="name">{{ album.name }}</div>
-          <div class="type">{{ album.type }}</div>
-          <div class="date">{{ new Date(album.date) | moment('YYYY') }}</div>
-        </div>
-      </router-link>
+      <nav>
+        <ul>
+          <li>Albums</li>
+          <li>Vidéo</li>
+          <li>Single</li>
+          <li>Bootlegs</li>
+          <li>Tributes</li>
+        </ul>
+      </nav>
+      <list :scroll="true" v-on:update="scroll" ref="list" :items="albums" link="album" :fields="['name', 'type', 'date']"></list>
     </section>
     <loader v-if="ajax"></loader>
   </article>
@@ -70,6 +76,7 @@
 
 <script>
   import EncyclopediaPicture from './EncyclopediaPicture'
+  import 'vue-awesome/icons/star'
   import axios from 'axios'
 
   export default {
@@ -77,7 +84,31 @@
     data () {
       return {
         ajax: false,
-        band: {}
+        page: 1,
+        band: {},
+        albums: []
+      }
+    },
+    methods: {
+      scroll () {
+        const id = this.$route.params.id
+        const baseUrl = 'http://www.spirit-of-metal.com/API'
+
+        axios.get(`${baseUrl}/albums.php?id_groupe=${id}&p=${this.page}`)
+          .then(response => {
+            if (response.data.length === 0) {
+              this.$refs.list.complete()
+            } else {
+              for (let i = 0; i < response.data.length; i++) {
+                this.albums.push(response.data[i])
+              }
+              this.$refs.list.loaded()
+              this.page++
+            }
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
       }
     },
     created () {
@@ -89,11 +120,6 @@
       axios.get(`${baseUrl}/bands.php?id=${id}`)
         .then(response => {
           this.band = response.data
-          console.log(response.data)
-          return axios.get(`${baseUrl}/albums.php?id_groupe=${id}`)
-        })
-        .then(response => {
-          this.band.albums = response.data
           this.ajax = false
         })
         .catch(e => {
@@ -107,10 +133,12 @@
 </script>
 
 <style lang="styl" scoped>
+  article
+    background-color: whitesmoke
+
   .info
     padding: 10px
     font-family: Oswald, sans-serif
-    background-color: whitesmoke
 
     & > div
       display: flex
@@ -124,7 +152,6 @@
 
   .lineup
   .formerMembers
-  .albums
     background-color: whitesmoke
     font-family: Oswald, sans-serif
 
@@ -132,25 +159,12 @@
   .formerMembers
     padding: 10px
 
-  a.albums
+  nav ul
     display: flex
-    align-items: center
-    border-bottom: dashed 1px silver
-
-    img
-      width: 100px
-      height: 100px
-
-    div
-      flex: 1
-      padding-left: 5px
-
-    .name
-      color: $red
-
-    .type
-      color: black
-
-    .date
-      color: gray
+    justify-content: space-between
+    color: whitesmoke
+    padding: 5px
+    background-color: black
+    list-style-type: none
+    font-family: Oswald, sans-serif
 </style>

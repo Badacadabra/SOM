@@ -17,7 +17,7 @@
     </section>
     <section>
       <heading text="Groupes associés" :level="3" font="oswald" color="silver"></heading>
-      <router-link v-for="band of artist.bands" :to="{name: 'band', params: {id: band.id }}" class="info bands">
+      <router-link v-for="band of artist.bands" :key="band.id" :to="{name: 'band', params: {id: band.id }}" class="info bands">
         {{ band.name }}
       </router-link>
     </section>

@@ -10,6 +10,7 @@ import Loader from './components/Loader'
 import Dimmer from './components/Dimmer'
 import Disclaimer from './components/Disclaimer'
 import Heading from './components/Heading'
+import List from './components/List'
 
 Vue.config.productionTip = false
 
@@ -21,6 +22,7 @@ Vue.component('loader', Loader)
 Vue.component('dimmer', Dimmer)
 Vue.component('disclaimer', Disclaimer)
 Vue.component('heading', Heading)
+Vue.component('list', List)
 
 /* eslint-disable no-new */
 new Vue({

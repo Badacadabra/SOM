@@ -1,6 +1,7 @@
 <template>
   <article id="video">
     <heading :text="video.title" :level="2" font="oswald" color="yellow"></heading>
+    <div v-html="video.code"></div>
     <loader v-if="ajax"></loader>
   </article>
 </template>
@@ -40,5 +41,8 @@
 </script>
 
 <style lang="styl" scoped>
+  >>> iframe
+    display: block
+    max-width: 100%
+    height: auto
 </style>
-
