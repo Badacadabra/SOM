@@ -30,6 +30,8 @@ import Encyclopedia from '@/components/Encyclopedia'
 
 import Genres from '@/components/Genres'
 import Genre from '@/components/Genre'
+import BandsByGenre from '@/components/BandsByGenre'
+import AlbumsByGenre from '@/components/AlbumsByGenre'
 
 import Bands from '@/components/Bands'
 import Band from '@/components/Band'
@@ -156,7 +158,20 @@ export default new Router({
     {
       path: '/encyclopedie/genres/:id',
       name: 'genre',
-      component: Genre
+      component: Genre,
+      redirect: {name: 'bandsByGenre'},
+      children: [
+        {
+          path: 'groupes',
+          name: 'bandsByGenre',
+          component: BandsByGenre
+        },
+        {
+          path: 'albums',
+          name: 'albumsByGenre',
+          component: AlbumsByGenre
+        }
+      ]
     },
     {
       path: '/encyclopedie/groupes',

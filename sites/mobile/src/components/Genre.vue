@@ -1,83 +1,74 @@
 <template>
   <article id="genre">
-    <heading :text="genre.name" :level="2" font="oswald" color="yellow"></heading>
-    <div class="description">{{ genre.description }}</div>
-    <section>
-      <heading text="Les groupes phares" :level="3" font="oswald" color="silver"></heading>
-      <figure class="bands" v-for="band of genre.bands">
-        <img :src="band.photo" :alt="band.name">
-        <figcaption>{{ band.name }}</figcaption>
-      </figure>
-    </section>
-    <section>
-      <heading text="Les albums cultes" :level="3" font="oswald" color="silver"></heading>
-      <figure class="albums" v-for="album of genre.albums">
-        <img :src="album.cover" :alt="album.name">
-        <figcaption>{{ album.name }}</figcaption>
-      </figure>
-    </section>
+    <heading :text="title" :level="2" font="oswald" color="yellow"></heading>
+    <nav>
+      <router-link :to="{name: 'bandsByGenre'}" :class="{selected: bandsSelected}">
+        <icon name="group" scale="1.3"></icon>
+        <span>Groupes phares</span>
+      </router-link>
+      <router-link :to="{name: 'albumsByGenre'}" :class="{selected: albumsSelected}">
+        <icon name="music" scale="1.3"></icon>
+        <span>Albums célèbres</span>
+      </router-link>
+    </nav>
+    <router-view v-on:bands="onBands" v-on:albums="onAlbums"></router-view>
   </article>
 </template>
 
 <script>
-  // import axios from 'axios'
+  import 'vue-awesome/icons/group'
+  import 'vue-awesome/icons/music'
 
   export default {
     name: 'genre',
     data () {
       return {
-        ajax: false,
-        genre: {
-          name: 'Black Metal',
-          description: 'Lorem ipsum dolor sit amet',
-          bands: [
-            {name: 'Immortal', photo: 'http://www.immortalofficial.com/wp-content-npt/uploads/2015/12/Immortal-pressphoto-2016b-front.jpg'},
-            {name: 'Immortal', photo: 'http://www.immortalofficial.com/wp-content-npt/uploads/2015/12/Immortal-pressphoto-2016b-front.jpg'},
-            {name: 'Immortal', photo: 'http://www.immortalofficial.com/wp-content-npt/uploads/2015/12/Immortal-pressphoto-2016b-front.jpg'}
-          ],
-          albums: [
-            {name: 'Battles In The North', cover: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Battles_In_The_North.jpg/220px-Battles_In_The_North.jpg'},
-            {name: 'Battles In The North', cover: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Battles_In_The_North.jpg/220px-Battles_In_The_North.jpg'},
-            {name: 'Battles In The North', cover: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Battles_In_The_North.jpg/220px-Battles_In_The_North.jpg'}
-          ]
-        }
+        bandsSelected: true,
+        albumsSelected: false,
+        title: 'Chargement...'
+      }
+    },
+    methods: {
+      onBands (data) {
+        this.title = data
+        this.bandsSelected = true
+        this.albumsSelected = false
+      },
+      onAlbums () {
+        this.albumsSelected = true
+        this.bandsSelected = false
       }
     }
-    /* created () {
-      this.ajax = true
-
-      const id = this.$route.params.id
-      const baseUrl = 'http://www.spirit-of-metal.com/API'
-
-      axios.get(`${baseUrl}/genres.php?id=${id}`)
-        .then(response => {
-          this.genre = response.data
-          this.ajax = false
-          console.log(response.data)
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
-    } */
   }
 </script>
 
 <style lang="styl" scoped>
-  article
-    background-color: whitesmoke
-
-  .description
-    padding: 15px
-
-  .bands
-  .albums
+  nav
     display: flex
+    justify-content: space-between
     align-items: center
-    border-bottom: dashed 1px silver
+    background-color: whitesmoke
+    border-top: solid 1px black
+    border-bottom: solid 1px black
 
-  img
-    width: 100px
+    a
+      color: gray
+      background-color: silver
+      height: 50px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      flex-grow: 1
 
-  figcaption
-    flex: 1
+      &:first-child
+        border-right: solid 1px black
+
+      span
+        font-variant: small-caps
+        font-family: Oswald, sans-serif
+
+    .selected
+      color: black
+      background-color: $yellow
 </style>
