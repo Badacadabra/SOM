@@ -2,14 +2,13 @@
   <div id="videos">
     <heading text="Vidéos" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="videos" link="video" prop="title"></encyclopedia-list>
+    <list :scroll="false" :items="videos" link="video" :fields="['title']" type="min"></list>
     <loader v-if="ajax"></loader>
   </div>
 </template>
 
 <script>
   import Search from './Search'
-  import EncyclopediaList from './EncyclopediaList'
   import axios from 'axios'
 
   export default {
@@ -39,13 +38,12 @@
       this.ajax = true
       this.getData({
         target: {
-          value: ''
+          value: 'a'
         }
       })
     },
     components: {
-      Search,
-      EncyclopediaList
+      Search
     }
   }
 </script>

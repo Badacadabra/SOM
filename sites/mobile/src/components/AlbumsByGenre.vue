@@ -1,6 +1,6 @@
 <template>
   <section>
-    <list :scroll="false" :items="albums" link="album" :fields="['name', 'band', 'date']"></list>
+    <list :scroll="false" :items="albums" link="album" :fields="['name', 'band', 'date']" type="img"></list>
     <loader v-if="ajax"></loader>
   </section>
 </template>

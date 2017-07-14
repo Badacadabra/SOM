@@ -2,14 +2,13 @@
   <div id="artistes">
     <heading text="Artistes" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="artists" link="artist" prop="FullName"></encyclopedia-list>
+    <list :scroll="false" :items="artists" link="artist" :fields="['FullName']" type="min"></list>
     <loader v-if="ajax"></loader>
   </div>
 </template>
 
 <script>
   import Search from './Search'
-  import EncyclopediaList from './EncyclopediaList'
   import axios from 'axios'
 
   export default {
@@ -44,8 +43,7 @@
       })
     },
     components: {
-      Search,
-      EncyclopediaList
+      Search
     }
   }
 </script>

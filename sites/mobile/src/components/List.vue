@@ -1,8 +1,8 @@
 <template>
-  <div class="list">
+  <div :class="type">
     <router-link v-for="item of items" :key="item.id" :to="{name: link, params: {id: item.id}}">
-      <img v-if="item.cover" :src="item.cover" :alt="'Pochette n°'+item.id">
-      <img v-if="item.picture" :src="item.picture" :alt="'Image n°'+item.id">
+      <img v-if="item.cover && displayImg" :src="item.cover" :alt="'Pochette n°'+item.id">
+      <img v-if="item.picture && displayImg" :src="item.picture" :alt="'Image n°'+item.id">
       <div>
         <div v-for="field of fields">{{ item[field] }}</div>
       </div>
@@ -14,7 +14,7 @@
 <script>
   export default {
     name: 'list',
-    props: ['items', 'link', 'fields', 'scroll'],
+    props: ['items', 'link', 'fields', 'scroll', 'type'],
     methods: {
       onInfinite () {
         this.$emit('update')
@@ -25,23 +25,58 @@
       loaded () {
         this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
       }
+    },
+    computed: {
+      displayImg () {
+        return this.type === 'img'
+      }
     }
   }
 </script>
 
 <style lang="styl" scoped>
-  .list a
+  // std (standard) - Centered list without images
+  // img (image) - Left-aligned list with images
+  // min (minimalistic) - Centered list with a single line (see encyclopedia)
+
+  a
     color: black
     background-color: whitesmoke
+    font-family: Oswald, sans-serif
+    border-bottom: dashed 1px silver
+
+  .std a
+    display: block
+    text-align: center
+    padding: 5px
+
+  .img a
     display: flex
     align-items: center
-    border-bottom: dashed 1px silver
-    font-family: Oswald, sans-serif
 
     img
       width: 100px
       margin-right: 5px
 
+  .min a
+    display: block
+    font-size: large
+    text-align: center
+    padding: 15px 5px
+
+    & > div
+
+      div:first-of-type
+        display: inline
+
+      div:nth-of-type(2)
+        display: inline
+        color: gray
+        font-size: small
+        margin-left: 5px
+
+  .std a
+  .img a
     & > div
 
       div:first-of-type

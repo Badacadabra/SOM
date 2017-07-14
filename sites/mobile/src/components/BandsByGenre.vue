@@ -1,6 +1,6 @@
 <template>
   <section>
-    <list :scroll="false" :items="bands" link="band" :fields="['name', 'country']"></list>
+    <list :scroll="false" :items="bands" link="band" :fields="['name', 'country']" type="img"></list>
     <loader v-if="ajax"></loader>
   </section>
 </template>

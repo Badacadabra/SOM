@@ -2,14 +2,13 @@
   <div id="genres">
     <heading text="Genres" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
-    <encyclopedia-list :items="genres" link="genre" prop="title"></encyclopedia-list>
+    <list :scroll="false" :items="genres" link="genre" :fields="['title']" type="min"></list>
     <loader v-if="ajax"></loader>
   </div>
 </template>
 
 <script>
   import Search from './Search'
-  import EncyclopediaList from './EncyclopediaList'
   import axios from 'axios'
 
   export default {
@@ -44,8 +43,7 @@
       })
     },
     components: {
-      Search,
-      EncyclopediaList
+      Search
     }
   }
 </script>

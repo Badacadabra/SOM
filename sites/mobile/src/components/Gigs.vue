@@ -1,13 +1,6 @@
 <template>
   <section id="gigs">
-    <article v-for="gig of gigs">
-      <router-link :to="{name: 'gig', params: {id: gig.id}}">
-        <h3 class="gig">{{ gig.title }}</h3>
-        <div class="place">{{ gig.place }}</div>
-        <div class="date">{{ new Date(gig.date) | moment('DD/MM/YYYY') }}</div>
-      </router-link>
-    </article>
-    <infinite-loading :on-infinite="onInfinite" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
+    <list ref="list" :scroll="true" v-on:update="load" :items="gigs" link="gig" :fields="['title', 'place', 'date']" type="std"></list>
     <loader v-if="ajax"></loader>
   </section>
 </template>
@@ -25,7 +18,7 @@
       }
     },
     methods: {
-      onInfinite () {
+      load () {
         const baseUrl = 'http://www.spirit-of-metal.com/API'
 
         axios.get(`${baseUrl}/gigs.php?p=${this.page}`)
@@ -33,7 +26,7 @@
             for (var i = 0; i < response.data.length; i++) {
               this.gigs.push(response.data[i])
             }
-            this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+            this.$refs.list.loaded()
             this.ajax = false
             this.page++
           })
@@ -49,27 +42,4 @@
 </script>
 
 <style lang="styl" scoped>
-  article
-    color: black
-    font-family: Oswald, sans-serif
-    border-top: solid 1px gray
-
-  h3
-    color: $red
-    font-weight: 400
-    font-size: large
-
-  a
-    color: black
-    display: block
-    text-align: center
-
-    &:hover
-      text-decoration: none
-
-    &:focus
-      background-color: silver
-
-  .date
-    font-weight: 300
 </style>

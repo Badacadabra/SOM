@@ -137,12 +137,12 @@ export default new Router({
     },
     {
       path: '/evenements/live-reports/:id',
-      name: 'live-report',
+      name: 'liveReport',
       component: LiveReport
     },
     {
       path: '/evenements/galeries-photo/:id',
-      name: 'photo-gallery',
+      name: 'photoGallery',
       component: PhotoGallery
     },
     {
