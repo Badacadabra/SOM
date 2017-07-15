@@ -46,4 +46,7 @@
   .slide-enter
   .slide-leave-to
     transform: translateX(-300px)
+
+  #app
+    padding-top: 50px // due to fixed header
 </style>

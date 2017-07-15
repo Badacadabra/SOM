@@ -25,15 +25,19 @@
 
 <style lang="styl" scoped>
   header
-    padding: 0 10px
+    width: 100%
     height: 50px
     background-color: black
     display: flex
     justify-content: space-between
     align-items: center
+    position: fixed
+    z-index: 50
+    top: 0
 
     h1
       font: 400 25px Oswald, sans-serif
+      padding-left: 10px
 
       a
         color: whitesmoke
@@ -44,4 +48,5 @@
   #burger
   #cross
     cursor: pointer
+    padding-right: 10px
 </style>

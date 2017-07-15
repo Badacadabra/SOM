@@ -45,6 +45,10 @@
     font-family: Oswald, sans-serif
     border-bottom: dashed 1px silver
 
+    &:active
+    &:focus
+      background-color: silver
+
   .std a
     display: block
     text-align: center

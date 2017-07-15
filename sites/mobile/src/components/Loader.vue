@@ -26,7 +26,7 @@
 
 <style lang="styl" scoped>
   .loader
-    position: absolute
+    position: fixed
     z-index: 50
     top: 50%
     left: 50%
