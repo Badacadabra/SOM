@@ -1,6 +1,6 @@
 <template>
   <div id="labels">
-    <heading text="Labels" :level="2" font="astonished" color="yellow"></heading>
+    <heading :text="$t('encyclopedia.labels')" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="labels" link="label" :fields="['name']" type="min"></list>
     <loader v-if="$loading"></loader>

@@ -1,18 +1,18 @@
 <template>
   <div id="events">
-    <heading text="Événements" :level="2" font="astonished" color="red"></heading>
+    <heading :text="$t('categories.events')" :level="2" font="astonished" color="red"></heading>
     <nav>
       <router-link class="item" :to="{name: 'gigs'}">
         <icon name="calendar" scale="1.3"></icon>
-        <span>Concerts</span>
+        <span>{{ $t('events.gigs') }}</span>
       </router-link>
       <router-link class="item" :to="{name: 'liveReports'}">
         <icon name="bullhorn" scale="1.3"></icon>
-        <span>Live-reports</span>
+        <span>{{ $t('events.liveReports') }}</span>
       </router-link>
       <router-link class="item" :to="{name: 'photoGalleries'}">
         <icon name="photo" scale="1.3"></icon>
-        <span>Photos</span>
+        <span>{{ $t('events.photos') }}</span>
       </router-link>
     </nav>
     <router-view v-if="gigsSelected"></router-view>

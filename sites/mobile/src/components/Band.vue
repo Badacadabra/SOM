@@ -3,49 +3,49 @@
     <heading :text="band.name" :level="2" font="oswald" color="yellow"></heading>
     <encyclopedia-picture :src="band.picture" :alt="band.name"></encyclopedia-picture>
     <section>
-      <heading text="Fiche technique" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
       <div class="info">
         <div class="genre">
-          <span class="bold">Genre</span>
+          <span class="bold">{{ $t('encyclopedia.genre') }}</span>
           <span class="light">{{ band.style }}</span>
         </div>
         <div class="status">
-          <span class="bold">Statut</span>
+          <span class="bold">{{ $t('encyclopedia.status') }}</span>
           <span class="light">{{ band.status }}</span>
         </div>
         <div class="creationDate">
-          <span class="bold">Date de formation</span>
+          <span class="bold">{{ $t('band.creation') }}</span>
           <span class="light" v-if="band.creationDate !== '0000'">{{ band.creationDate }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="splitDate">
-          <span class="bold">Date de séparation</span>
+          <span class="bold">{{ $t('band.split') }}</span>
           <span class="light" v-if="band.splitDate !== '0000'">{{ band.splitDate }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="country">
-          <span class="bold">Pays</span>
+          <span class="bold">{{ $t('encyclopedia.country') }}</span>
           <span class="light">{{ band.country }}</span>
         </div>
         <div class="city">
-          <span class="bold">Ville</span>
+          <span class="bold">{{ $t('encyclopedia.city') }}</span>
           <span class="light" v-if="band.city">{{ band.city }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="popularity">
-          <span class="bold">Popularité</span>
+          <span class="bold">{{ $t('band.popularity') }}</span>
           <span>
             <icon class="light" name="star" scale="1" v-for="star in band.popularity" :key="star"></icon>
           </span>
         </div>
         <div class="nbFans">
-          <span class="bold">Fans</span>
+          <span class="bold">{{ $t('band.fans') }}</span>
           <span class="light">{{ band.nbFans }}</span>
         </div>
       </div>
     </section>
     <section>
-      <heading text="Line-up" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('band.lineup')" :level="3" font="oswald" color="silver"></heading>
       <ul class="lineup">
         <li v-for="member in band.lineup">
           <span class="bold">{{ member.name }}</span>
@@ -54,7 +54,7 @@
       </ul>
     </section>
     <section v-if="band.formerMembers !== null">
-      <heading text="Anciens membres" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('band.formerMembers')" :level="3" font="oswald" color="silver"></heading>
       <ul class="formerMembers">
         <li v-for="member of band.formerMembers">
           <span class="bold">{{ member.name }}</span>
@@ -63,7 +63,7 @@
       </ul>
     </section>
     <section>
-      <heading text="Discographie" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('band.discography')" :level="3" font="oswald" color="silver"></heading>
       <nav>
         <ul>
           <li>Albums</li>
@@ -108,7 +108,7 @@
       }
     },
     created () {
-      this.$get('bands', {id: this.$route.params.id})
+      this.$get('bands', {l: this.$i18n.locale, id: this.$route.params.id})
         .then(response => {
           this.$parseItem('band', response.data)
         })

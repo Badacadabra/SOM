@@ -1,6 +1,6 @@
 <template>
   <div id="artistes">
-    <heading text="Artistes" :level="2" font="astonished" color="yellow"></heading>
+    <heading :text="$t('encyclopedia.artists')" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="artists" link="artist" :fields="['FullName']" type="min"></list>
     <loader v-if="$loading"></loader>

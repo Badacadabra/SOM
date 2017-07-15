@@ -1,6 +1,6 @@
 <template>
-  <div id="genres">
-    <heading text="Lieux" :level="2" font="astonished" color="yellow"></heading>
+  <div id="places">
+    <heading :text="$t('encyclopedia.places')" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="places" link="place" :fields="['name']" type="min"></list>
     <loader v-if="$loading"></loader>

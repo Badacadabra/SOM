@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <input type="text" placeholder="Recherche..." @keyup="autocomplete">
+    <input type="text" :placeholder="$t('encyclopedia.search')" @keyup="autocomplete">
     <icon class="icon" name="search" scale="1.3"></icon>
   </div>
 </template>

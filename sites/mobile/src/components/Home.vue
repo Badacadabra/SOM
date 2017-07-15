@@ -2,44 +2,44 @@
   <nav class="home">
     <router-link :to="{name: 'newsfeed'}">
       <figure>
-        <img src="../assets/img/jpg/news.jpg" alt="Actualités">
-        <figcaption>Actualités</figcaption>
+        <img src="../assets/img/jpg/news.jpg" alt="$t('categories.news')">
+        <figcaption>{{ $t('categories.news') }}</figcaption>
       </figure>
     </router-link>
     <router-link :to="{name: 'reviews'}">
       <figure>
-        <img src="../assets/img/jpg/reviews.jpg" alt="Chroniques">
-        <figcaption>Chroniques</figcaption>
+        <img src="../assets/img/jpg/reviews.jpg" :alt="$t('categories.reviews')">
+        <figcaption>{{ $t('categories.reviews') }}</figcaption>
       </figure>
     </router-link>
     <router-link :to="{name: 'interviews'}">
       <figure>
-        <img src="../assets/img/jpg/interviews.jpg" alt="Interviews">
-        <figcaption>Interviews</figcaption>
+        <img src="../assets/img/jpg/interviews.jpg" :alt="$t('categories.interviews')">
+        <figcaption>{{ $t('categories.interviews') }}</figcaption>
       </figure>
     </router-link>
     <router-link :to="{name: 'releases'}">
       <figure>
-        <img src="../assets/img/jpg/releases.jpg" alt="Sorties">
-        <figcaption>Sorties</figcaption>
+        <img src="../assets/img/jpg/releases.jpg" :alt="$t('categories.releases')">
+        <figcaption>{{ $t('categories.releases') }}</figcaption>
       </figure>
     </router-link>
     <router-link :to="{name: 'events'}">
       <figure>
-        <img src="../assets/img/jpg/events.jpg" alt="Événements">
-        <figcaption>Événements</figcaption>
+        <img src="../assets/img/jpg/events.jpg" :alt="$t('categories.events')">
+        <figcaption>{{ $t('categories.events') }}</figcaption>
       </figure>
     </router-link>
     <router-link :to="{name: 'encyclopedia'}">
       <figure>
-        <img src="../assets/img/jpg/encyclopedia.jpg" alt="Encyclopédie">
-        <figcaption>Encyclopédie</figcaption>
+        <img src="../assets/img/jpg/encyclopedia.jpg" :alt="$t('categories.encyclopedia')">
+        <figcaption>{{ $t('categories.encyclopedia') }}</figcaption>
       </figure>
     </router-link>
-    <a href="http://www.spirit-of-metal.net/forum/index-l-fr.html" title="Forums">
+    <a :href="'http://www.spirit-of-metal.com/forum/index.php?l='+this.$i18n.locale" title="Forums">
       <figure>
-        <img src="../assets/img/jpg/forums.jpg" alt="Forums">
-        <figcaption>Forums</figcaption>
+        <img src="../assets/img/jpg/forums.jpg" :alt="$t('categories.forums')">
+        <figcaption>{{ $t('categories.forums') }}</figcaption>
       </figure>
     </a>
   </nav>

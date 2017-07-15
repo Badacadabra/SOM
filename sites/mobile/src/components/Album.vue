@@ -3,34 +3,34 @@
     <heading :text="album.name" :level="2" font="oswald" color="yellow"></heading>
     <encyclopedia-picture :src="album.cover" :alt="album.name"></encyclopedia-picture>
     <section>
-      <heading text="Fiche technique" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
       <div class="info">
         <div class="band">
-          <span class="bold">Groupe</span>
+          <span class="bold">{{ $t('encyclopedia.band') }}</span>
           <span class="light">{{ album.band }}</span>
         </div>
         <div class="genre">
-          <span class="bold">Genre</span>
+          <span class="bold">{{ $t('encyclopedia.genre') }}</span>
           <span class="light" v-if="album.style">{{ album.style }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="date">
-          <span class="bold">Date</span>
+          <span class="bold">{{ $t('encyclopedia.date') }}</span>
           <span class="light" v-if="album.date">{{ album.date }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="studio">
-          <span class="bold">Studio</span>
+          <span class="bold">{{ $t('album.studio') }}</span>
           <span class="light" v-if="album.studio">{{ album.studio }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="producer">
-          <span class="bold">Producteur</span>
+          <span class="bold">{{ $t('album.producer') }}</span>
           <span class="light" v-if="album.producer">{{ album.producer }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="label">
-          <span class="bold">Label(s)</span>
+          <span class="bold">{{ $tc('album.label', album.labels && album.labels.length) }}</span>
           <ul class="light" v-if="album.labels && album.labels.length !== 0">
             <li v-for="label of album.labels">{{ label.name }}</li>
           </ul>
@@ -39,7 +39,7 @@
       </div>
     </section>
     <section>
-      <heading text="Tracklist" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('album.tracklist')" :level="3" font="oswald" color="silver"></heading>
       <div class="tracks" v-html="album.tracks"></div>
     </section>
     <loader v-if="$loading"></loader>

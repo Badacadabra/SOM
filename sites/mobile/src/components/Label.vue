@@ -3,32 +3,32 @@
     <heading :text="label.name" :level="2" font="oswald" color="yellow"></heading>
     <encyclopedia-picture :src="label.logo" :alt="label.nom_label"></encyclopedia-picture>
     <section>
-      <heading text="Fiche technique" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
       <div class="info">
         <div class="status">
-          <span class="bold">Statut</span>
+          <span class="bold">{{ $t('encyclopedia.status')}}</span>
           <span class="light" v-if="label.status">{{ label.status }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="country">
-          <span class="bold">Pays</span>
+          <span class="bold">{{ $t('encyclopedia.country') }}</span>
           <span class="light" v-if="label.country">{{ label.country }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="nbAlbums">
-          <span class="bold">Albums</span>
+          <span class="bold">{{ $t('encyclopedia.albums') }}</span>
           <span class="light" v-if="label.nbAlbums">{{ label.nbAlbums }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="website">
-          <span class="bold">Site web</span>
+          <span class="bold">{{ $t('encyclopedia.website') }}</span>
           <span class="light" v-if="label.website">{{ label.website }}</span>
           <span class="light" v-else>N/A</span>
         </div>
       </div>
     </section>
     <section>
-      <heading text="Dernières sorties" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('label.releases')" :level="3" font="oswald" color="silver"></heading>
       <list ref="list" :scroll="false" :items="albums" link="album" :fields="['name', 'band', 'type', 'date']" type="img"></list>
     </section>
     <loader v-if="$loading"></loader>
@@ -47,7 +47,7 @@
       }
     },
     created () {
-      this.$get('labels', {id: this.$route.params.id})
+      this.$get('labels', {l: this.$i18n.locale, id: this.$route.params.id})
         .then(response => {
           this.label = response.data
           return this.$get('albums', {id_label: this.$route.params.id})

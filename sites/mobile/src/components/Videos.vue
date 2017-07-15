@@ -1,6 +1,6 @@
 <template>
   <div id="videos">
-    <heading text="Vidéos" :level="2" font="astonished" color="yellow"></heading>
+    <heading :text="$t('encyclopedia.videos')" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="videos" link="video" :fields="['title']" type="min"></list>
     <loader v-if="$loading"></loader>

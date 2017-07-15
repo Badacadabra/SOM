@@ -12,8 +12,8 @@
     data () {
       return {
         news: {
-          title: 'Chargement...',
-          content: 'Veuillez patienter'
+          title: '...',
+          content: ''
         },
         errors: []
       }

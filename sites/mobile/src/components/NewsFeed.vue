@@ -1,6 +1,6 @@
 <template>
   <div id="news">
-    <heading text="Actualités" :level="2" font="astonished" color="red"></heading>
+    <heading :text="$t('categories.news')" :level="2" font="astonished" color="red"></heading>
     <list ref="list" :scroll="true" v-on:update="load" :items="news" link="news" :fields="['title', 'date', 'author']" type="std"></list>
     <loader v-if="$loading"></loader>
   </div>
@@ -18,7 +18,7 @@
     },
     methods: {
       load () {
-        this.$get('news', {l: 'fr', p: this.page})
+        this.$get('news', {l: this.$i18n.locale, p: this.page})
           .then(response => {
             this.$parseList('news', response.data, this.page)
           })

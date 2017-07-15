@@ -4,11 +4,11 @@
     <nav>
       <router-link :to="{name: 'bandsByGenre'}" :class="{selected: bandsSelected}">
         <icon name="group" scale="1.3"></icon>
-        <span>Groupes phares</span>
+        <span>{{ $t('genre.bands') }}</span>
       </router-link>
       <router-link :to="{name: 'albumsByGenre'}" :class="{selected: albumsSelected}">
         <icon name="music" scale="1.3"></icon>
-        <span>Albums célèbres</span>
+        <span>{{ $t('genre.albums') }}</span>
       </router-link>
     </nav>
     <router-view v-on:bands="onBands" v-on:albums="onAlbums"></router-view>

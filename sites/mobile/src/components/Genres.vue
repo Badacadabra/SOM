@@ -1,6 +1,6 @@
 <template>
   <div id="genres">
-    <heading text="Genres" :level="2" font="astonished" color="yellow"></heading>
+    <heading :text="$t('encyclopedia.genres')" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="genres" link="genre" :fields="['title']" type="min"></list>
     <loader v-if="$loading"></loader>
@@ -20,7 +20,7 @@
     },
     methods: {
       getData (e) {
-        this.$get('styles', {q: e.target.value})
+        this.$get('styles', {l: this.$i18n.locale, q: e.target.value})
           .then(response => {
             this.$parseList('genres', response.data)
           })

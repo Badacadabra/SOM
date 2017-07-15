@@ -1,49 +1,67 @@
 <template>
   <div id="encyclopedia">
-    <heading text="Encyclopédie" :level="2" font="astonished" color="red"></heading>
+    <heading :text="$t('categories.encyclopedia')" :level="2" font="astonished" color="red"></heading>
     <nav>
       <router-link :to="{name: 'genres'}" class="item">
         <icon name="hashtag" scale="1.3"></icon>
-        Genres
+        {{ $t('encyclopedia.genres') }}
       </router-link>
       <router-link :to="{name: 'bands'}" class="item">
         <icon name="group" scale="1.3"></icon>
-        Groupes
+        {{ $t('encyclopedia.bands') }}
       </router-link>
       <router-link :to="{name: 'artists'}" class="item">
         <icon name="address-book-o" scale="1.3"></icon>
-        Artistes
+        {{ $t('encyclopedia.artists') }}
       </router-link>
       <router-link :to="{name: 'albums'}" class="item">
         <icon name="music" scale="1.3"></icon>
-        Albums
+        {{ $t('encyclopedia.albums') }}
       </router-link>
       <router-link :to="{name: 'audios'}" class="item">
         <icon name="file-audio-o" scale="1.3"></icon>
-        Audios
+        {{ $t('encyclopedia.audios') }}
       </router-link>
       <router-link :to="{name: 'videos'}" class="item">
         <icon name="video-camera" scale="1.3"></icon>
-        Vidéos
+        {{ $t('encyclopedia.videos') }}
       </router-link>
       <router-link :to="{name: 'labels'}" class="item">
         <icon name="tag" scale="1.3"></icon>
-        Labels
+        {{ $t('encyclopedia.labels') }}
       </router-link>
       <router-link :to="{name: 'places'}" class="item">
         <icon name="map-marker" scale="1.3"></icon>
-        Lieux
+        {{ $t('encyclopedia.places') }}
       </router-link>
     </nav>
-    <h3>Quelques chiffres...</h3>
+    <h3>{{ $t('encyclopedia.stats') }}</h3>
     <div class="figures">
       <ul v-if="stats.length > 0">
-        <li><span class="num">{{ stats[7].value }}</span> genres</li>
-        <li><span class="num">{{ stats[0].value }}</span> groupes</li>
-        <li><span class="num">{{ stats[5].value }}</span> artistes</li>
-        <li><span class="num">{{ stats[1].value }}</span> albums</li>
-        <li><span class="num">{{ stats[2].value }}</span> labels</li>
-        <li><span class="num">{{ stats[6].value }}</span> lieux</li>
+        <li>
+          <span class="num">{{ $n(stats[7].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.genres') }}
+        </li>
+        <li>
+          <span class="num">{{ $n(stats[0].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.bands') }}
+        </li>
+        <li>
+          <span class="num">{{ $n(stats[5].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.artists') }}
+        </li>
+        <li>
+          <span class="num">{{ $n(stats[1].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.albums') }}
+        </li>
+        <li>
+          <span class="num">{{ $n(stats[2].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.labels') }}
+        </li>
+        <li>
+          <span class="num">{{ $n(stats[6].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.places') }}
+        </li>
       </ul>
     </div>
     <loader v-if="$loading"></loader>

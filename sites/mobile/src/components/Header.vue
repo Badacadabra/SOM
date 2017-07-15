@@ -1,8 +1,11 @@
 <template>
   <header>
     <h1><router-link :to="{name: 'home'}">SPIRIT OF <span class="yellow">METAL</span></router-link></h1>
-    <img v-if="menuIsHidden" @click="toggle" id="burger" src="../assets/img/png/burger.png" alt="Ouvrir le menu">
-    <img v-else @click="toggle" id="cross" src="../assets/img/png/cross.png" alt="Fermer le menu">
+    <div id="language-switcher" @click="switchLanguage">
+      <span>&bull;</span> {{ this.$i18n.locale }} <span>&bull;</span>
+    </div>
+    <img v-if="menuIsHidden" @click="toggleMenu" id="burger" src="../assets/img/png/burger.png" alt="Ouvrir le menu">
+    <img v-else @click="toggleMenu" id="cross" src="../assets/img/png/cross.png" alt="Fermer le menu">
   </header>
 </template>
 
@@ -15,7 +18,10 @@
       }
     },
     methods: {
-      toggle () {
+      switchLanguage () {
+        this.$i18n.locale === 'en' ? this.$i18n.locale = 'fr' : this.$i18n.locale = 'en'
+      },
+      toggleMenu () {
         this.menuIsHidden = !this.menuIsHidden
         this.$emit('menu')
       }
@@ -44,6 +50,13 @@
 
         &:active
           color: $yellow
+
+  #language-switcher
+    color: gray
+    text-transform: uppercase
+
+    span
+      color: whitesmoke
 
   #burger
   #cross

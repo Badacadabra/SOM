@@ -4,10 +4,15 @@
       <img v-if="item.cover && displayImg" :src="item.cover" :alt="'Pochette n°'+item.id">
       <img v-if="item.picture && displayImg" :src="item.picture" :alt="'Image n°'+item.id">
       <div>
-        <div v-for="field of fields">{{ item[field] }}</div>
+        <div v-for="field of fields">
+          {{ field === 'date' ? $d(new Date(item[field]), 'long') : item[field] }}
+        </div>
       </div>
     </router-link>
-    <infinite-loading v-if="scroll" :on-infinite="onInfinite" :distance="30" spinner="waveDots" ref="infiniteLoading"></infinite-loading>
+    <infinite-loading v-if="scroll" :on-infinite="onInfinite" :distance="30" spinner="waveDots" ref="infiniteLoading">
+      <span slot="no-results">{{ $t('loader.none') }}</span>
+      <span slot="no-more">{{ $t('loader.end') }}</span>
+    </infinite-loading>
   </div>
 </template>
 

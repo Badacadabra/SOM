@@ -3,20 +3,20 @@
     <heading :text="place.name" :level="2" font="oswald" color="yellow"></heading>
     <encyclopedia-picture :src="place.picture" :alt="place.name"></encyclopedia-picture>
     <section>
-      <heading text="Fiche technique" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
       <div class="info">
         <div class="description">
-          <div class="bold">Description</div>
+          <div class="bold">{{ $t('place.description') }}</div>
           <div class="light" v-if="place.description">{{ place.description }}</div>
           <div class="light" v-else>N/A</div>
         </div>
         <div class="address">
-          <div class="bold">Adresse</div>
+          <div class="bold">{{ $t('place.address') }}</div>
           <div class="light" v-if="place.address">{{ place.address }}</div>
           <div class="light" v-else>N/A</div>
         </div>
         <div class="website">
-          <div class="bold">Website</div>
+          <div class="bold">{{ $t('encyclopedia.website') }}</div>
           <a :href="place.website" class="light" v-if="place.website">{{ place.website }}</a>
           <div class="light" v-else>N/A</div>
         </div>
@@ -38,7 +38,7 @@
       }
     },
     created () {
-      this.$get('places', {id: this.$route.params.id})
+      this.$get('places', {l: this.$i18n.locale, id: this.$route.params.id})
         .then(response => {
           this.$parseItem('place', response.data)
         })

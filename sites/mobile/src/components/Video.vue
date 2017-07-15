@@ -18,7 +18,7 @@
       }
     },
     created () {
-      this.$get('videos', {id: this.$route.params.id})
+      this.$get('videos', {l: this.$i18n.locale, id: this.$route.params.id})
         .then(response => {
           this.$parseItem('video', response.data)
         })

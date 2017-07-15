@@ -1,6 +1,6 @@
 <template>
   <div id="bands">
-    <heading text="Groupes" :label="2" font="astonished" color="yellow"></heading>
+    <heading :text="$t('encyclopedia.bands')" :label="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="bands" link="band" :fields="['name']" type="min"></list>
     <loader v-if="$loading"></loader>

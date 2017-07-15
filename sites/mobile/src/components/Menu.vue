@@ -1,37 +1,36 @@
 <template>
   <div id="menu">
     <section id="login">
-      <h2>Connexion</h2>
+      <h2>{{ $t('menu.login') }}</h2>
       <form action="#" method="#">
-        <input type="text" class="txt" id="pseudo" name="pseudo" placeholder="Pseudo" required>
-        <input type="password" class="txt" id="login-password" name="login-password" placeholder="Mot de passe" required>
+        <input type="text" class="txt" id="pseudo" name="pseudo" :placeholder="$t('menu.username')" required>
+        <input type="password" class="txt" id="login-password" name="login-password" :placeholder="$t('menu.password')" required>
         <input type="submit" value="OK" class="custom-btn">
       </form>
     </section>
     <section id="signup">
-      <h2>Inscription</h2>
+      <h2>{{ $t('menu.signup') }}</h2>
       <form action="#" method="#">
-        <input type="text" class="txt" id="username" name="username" placeholder="Pseudo" required>
+        <input type="text" class="txt" id="username" name="username" :placeholder="$t('menu.username')" required>
         <div>
-          <input type="password" class="txt" id="signup-password" name="signup-password" placeholder="Mot de passe" required>
-          <input type="password" class="txt" id="password-confirm" name="signup-password" placeholder="Confirmation" required>
+          <input type="password" class="txt" id="signup-password" name="signup-password" :placeholder="$t('menu.password')" required>
+          <input type="password" class="txt" id="password-confirm" name="signup-password" :placeholder="$t('menu.confirmation')" required>
         </div>
-        <input type="email" class="txt" id="email" name="email" placeholder="E-mail" required>
+        <input type="email" class="txt" id="email" name="email" :placeholder="$t('menu.mail')" required>
         <div>
-          <input type="text" class="txt" id="location" name="location" placeholder="Pays/Ville">
-          <select id="language" name="language">Test
-            <option value="français" selected>Français</option>
-            <option value="english">English</option>
-            <option value="español">Español</option>
+          <input type="text" class="txt" id="location" name="location" :placeholder="$t('menu.location')">
+          <select id="language" name="language">
+            <option value="english" selected>{{ $t('menu.english') }}</option>
+            <option value="french">{{ $t('menu.french') }}</option>
           </select>
         </div>
         <div>
-          <input type='text' class="txt" id="birthday" name="birthday" placeholder="Date de naissance">
+          <input type='text' class="txt" id="birthday" name="birthday" :placeholder="$t('menu.birthday')">
         </div>
         <img id="captcha" src="../assets/img/png/captcha.png" alt="Captcha">
         <div id="newsletter">
           <input type="checkbox" id="newsletter" name="newsletter">
-          <label for="newsletter">Je souhaite recevoir la newsletter</label>
+          <label for="newsletter">{{ $t('menu.newsletter') }}</label>
         </div>
         <input type="submit" value="GO" class="custom-btn">
       </form>

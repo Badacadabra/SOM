@@ -67,22 +67,22 @@ export default new Router({
       component: Home
     },
     {
-      path: '/actualites',
+      path: '/news',
       name: 'newsfeed',
       component: NewsFeed
     },
     {
-      path: '/actualites/:id',
+      path: '/news/:id',
       name: 'news',
       component: News
     },
     {
-      path: '/chroniques',
+      path: '/reviews',
       name: 'reviews',
       component: Reviews
     },
     {
-      path: '/chroniques/:id',
+      path: '/reviews/:id',
       name: 'review',
       component: Review
     },
@@ -97,18 +97,18 @@ export default new Router({
       component: Interview
     },
     {
-      path: '/sorties',
+      path: '/releases',
       name: 'releases',
       component: Releases
     },
     {
-      path: '/evenements',
+      path: '/events',
       name: 'events',
       component: Events,
       redirect: {name: 'gigs'},
       children: [
         {
-          path: 'concerts',
+          path: 'gigs',
           name: 'gigs',
           component: Gigs
         },
@@ -118,45 +118,45 @@ export default new Router({
           component: LiveReports
         },
         {
-          path: 'galeries-photo',
+          path: 'photo-galleries',
           name: 'photoGalleries',
           component: PhotoGalleries
         }
       ]
     },
     {
-      path: '/evenements/gigs/:id',
+      path: '/events/gigs/:id',
       name: 'gig',
       component: Gig
     },
     {
-      path: '/evenements/live-reports/:id',
+      path: '/events/live-reports/:id',
       name: 'liveReport',
       component: LiveReport
     },
     {
-      path: '/evenements/galeries-photo/:id',
+      path: '/events/photo-galleries/:id',
       name: 'photoGallery',
       component: PhotoGallery
     },
     {
-      path: '/encyclopedie',
+      path: '/encyclopedia',
       name: 'encyclopedia',
       component: Encyclopedia
     },
     {
-      path: '/encyclopedie/genres',
+      path: '/encyclopedia/genres',
       name: 'genres',
       component: Genres
     },
     {
-      path: '/encyclopedie/genres/:id',
+      path: '/encyclopedia/genres/:id',
       name: 'genre',
       component: Genre,
       redirect: {name: 'bandsByGenre'},
       children: [
         {
-          path: 'groupes',
+          path: 'bands',
           name: 'bandsByGenre',
           component: BandsByGenre
         },
@@ -168,72 +168,72 @@ export default new Router({
       ]
     },
     {
-      path: '/encyclopedie/groupes',
+      path: '/encyclopedia/bands',
       name: 'bands',
       component: Bands
     },
     {
-      path: '/encyclopedie/groupes/:id',
+      path: '/encyclopedia/bands/:id',
       name: 'band',
       component: Band
     },
     {
-      path: '/encyclopedie/artistes',
+      path: '/encyclopedia/artists',
       name: 'artists',
       component: Artists
     },
     {
-      path: '/encyclopedie/artistes/:id',
+      path: '/encyclopedia/artists/:id',
       name: 'artist',
       component: Artist
     },
     {
-      path: '/encyclopedie/albums',
+      path: '/encyclopedia/albums',
       name: 'albums',
       component: Albums
     },
     {
-      path: '/encyclopedie/albums/:id',
+      path: '/encyclopedia/albums/:id',
       name: 'album',
       component: Album
     },
     {
-      path: '/encyclopedie/audios',
+      path: '/encyclopedia/audios',
       name: 'audios',
       component: Audios
     },
     {
-      path: '/encyclopedie/audios/:id',
+      path: '/encyclopedia/audios/:id',
       name: 'audio',
       component: Audio
     },
     {
-      path: '/encyclopedie/videos',
+      path: '/encyclopedia/videos',
       name: 'videos',
       component: Videos
     },
     {
-      path: '/encyclopedie/videos/:id',
+      path: '/encyclopedia/videos/:id',
       name: 'video',
       component: Video
     },
     {
-      path: '/encyclopedie/labels',
+      path: '/encyclopedia/labels',
       name: 'labels',
       component: Labels
     },
     {
-      path: '/encyclopedie/labels/:id',
+      path: '/encyclopedia/labels/:id',
       name: 'label',
       component: Label
     },
     {
-      path: '/encyclopedie/lieux',
+      path: '/encyclopedia/places',
       name: 'places',
       component: Places
     },
     {
-      path: '/encyclopedie/lieux/:id',
+      path: '/encyclopedia/places/:id',
       name: 'place',
       component: Place
     }

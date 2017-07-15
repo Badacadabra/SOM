@@ -17,6 +17,7 @@
     "axios": "^0.16.2",
     "vue": "^2.3.3",
     "vue-awesome": "^2.3.1",
+    "vue-i18n": "^7.0.5",
     "vue-images": "^1.0.10",
     "vue-infinite-loading": "^2.1.3",
     "vue-moment": "^2.0.2",
