@@ -11,7 +11,6 @@ import dateTimeFormats from './locales/dateTimeFormats'
 import numberFormats from './locales/numberFormats'
 
 // External modules
-import Moment from 'vue-moment'
 import Icon from 'vue-awesome/components/Icon'
 import InfiniteLoading from 'vue-infinite-loading'
 
@@ -28,7 +27,6 @@ import List from './components/List'
 Vue.config.productionTip = false
 
 Vue.use(VueI18n)
-Vue.use(Moment)
 Vue.use(Ajax)
 
 Vue.component('icon', Icon)
