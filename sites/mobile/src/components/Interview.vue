@@ -1,6 +1,12 @@
 <template>
   <article>
-    <heading :text="interview.band" level="2" font="oswald" color="silver"></heading>
+    <heading :text="interview.band" level="2" font="oswald" color="red" variant="uppercase"></heading>
+    <div class="info">
+      <figure v-if="interview.picture">
+        <img :src="interview.picture" :alt="interview.picture">
+      </figure>
+      <div class="credits">{{ $t('post.on') }} <span>{{ $d(new Date(interview.date), 'short') }}</span> {{ $t('post.by') }} <span>{{ interview.author }}</span></div>
+    </div>
     <div class="content" v-html="interview.content"></div>
     <loader v-if="$loading"></loader>
   </article>
@@ -28,16 +34,38 @@
 </script>
 
 <style lang="styl" scoped>
+  article
+    background-color: whitesmoke
+    font-family: Abel, sans-serif
+    font-size: 1.2em
+
+    .credits
+      color: $red
+      text-align: center
+      padding-bottom: 10px
+      border-bottom: dashed 1px black
+
+      span
+        font-weight: bold
+
+    figure
+      margin: 15px 0
+
+      img
+        display: block
+        margin: auto
+        max-width: 100%
+
   // Use ">>>" to style elements within v-html
   .content
     padding: 10px
-    background-color: whitesmoke
 
     >>> img
     >>> iframe
       display: block
       margin: auto
       max-width: 100%
+      height: auto
 
     >>> a
       color: $red

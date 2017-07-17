@@ -1,18 +1,23 @@
 <template>
   <article id="artist">
-    <heading :text="artist.FullName" :level="2" font="oswald" color="yellow"></heading>
+    <heading :text="artist.FullName" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
     <encyclopedia-picture :src="artist.picture" :alt="artist.name"></encyclopedia-picture>
     <section>
-      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
         <div class="birthday">
           <span class="bold">{{ $t('artist.birth') }}</span>
-          <span class="light" v-if="artist.birthday !== '0000'">{{ artist.birthday | moment('DD/MM/YYYY') }}</span>
+          <span class="light" v-if="artist.birthday !== '0000'">{{ $d(new Date(artist.birthday), 'long') }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="country">
           <span class="bold">{{ $t('encyclopedia.country') }}</span>
           <span class="light" v-if="artist.country">{{ artist.country }}</span>
+          <span class="light" v-else>N/A</span>
+        </div>
+        <div class="region">
+          <span class="bold">{{ $t('encyclopedia.region') }}</span>
+          <span class="light" v-if="artist.region">{{ artist.region }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="city">
@@ -23,7 +28,7 @@
       </div>
     </section>
     <section>
-      <heading :text="$t('artist.bands')" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('artist.bands')" :level="3" font="oswald" color="black"></heading>
       <router-link v-for="band of artist.bands" :key="band.id" :to="{name: 'band', params: {id: band.id }}" class="info bands">
         {{ band.name }}
       </router-link>
@@ -60,27 +65,33 @@
 <style lang="styl" scoped>
   .info
     padding: 10px
-    font-family: Oswald, sans-serif
+    font-family: Abel, sans-serif
+    font-size: 1.1em
     background-color: whitesmoke
 
     & > div
       display: flex
       justify-content: space-between
+      border-bottom: dashed 1px silver
+      padding-bottom: 5px
+      margin-bottom: 10px
 
   .bold
-    font-weight: 500
+    font-weight: bold
 
   .light
     color: gray
+
+  .bands
+    color: black
 
   a
     display: block
     color: gray
     font: large Oswald, sans-serif
-    background-color: whitesmoke
     text-align: center
     padding: 15px 5px
-    border-bottom: dashed 1px silver
+    border-bottom: solid 2px #E7E7E7
 
     &:active
     &:focus

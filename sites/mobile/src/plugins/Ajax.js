@@ -6,7 +6,7 @@ const Ajax = {
     Vue.prototype.$loading = false
 
     Vue.mixin({
-      created () {
+      beforeCreate () {
         this.$loading = true
       }
     })

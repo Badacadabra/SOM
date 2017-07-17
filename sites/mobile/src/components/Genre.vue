@@ -1,6 +1,6 @@
 <template>
   <article id="genre">
-    <heading :text="title" :level="2" font="oswald" color="yellow"></heading>
+    <heading :text="title" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
     <nav>
       <router-link :to="{name: 'bandsByGenre'}" :class="{selected: bandsSelected}">
         <icon name="group" scale="1.3"></icon>
@@ -48,27 +48,22 @@
     justify-content: space-between
     align-items: center
     background-color: whitesmoke
-    border-top: solid 1px black
-    border-bottom: solid 1px black
 
     a
       color: gray
-      background-color: silver
       height: 50px
       display: flex
       flex-direction: column
       justify-content: center
       align-items: center
       flex-grow: 1
-
-      &:first-child
-        border-right: solid 1px black
+      border: solid 5px white
 
       span
-        font-variant: small-caps
         font-family: Oswald, sans-serif
 
     .selected
       color: black
       background-color: $yellow
+      border-radius: 7px
 </style>

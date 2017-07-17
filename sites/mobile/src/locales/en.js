@@ -39,12 +39,14 @@ export default {
     videos: 'Videos',
     labels: 'Labels',
     places: 'Places',
-    stats: 'Some figures...',
+    stats: 'Statistics',
     search: 'Search...',
-    info: 'Technical sheet',
+    info: 'About',
+    sheet: 'Description sheet',
     genre: 'Genre',
     band: 'Band',
     country: 'Country',
+    region: 'Region',
     city: 'City',
     date: 'Date',
     status: 'Statut',
@@ -70,7 +72,7 @@ export default {
   album: {
     studio: 'Studio',
     producer: 'Producer',
-    label: 'Label',
+    label: 'Label | Labels',
     tracklist: 'Tracklist'
   },
   label: {
@@ -79,5 +81,10 @@ export default {
   place: {
     description: 'Description',
     address: 'Address'
+  },
+  post: {
+    on: 'On',
+    by: 'by'
   }
+
 }

@@ -13,10 +13,11 @@
 
 <style lang="styl" scoped>
   figure
-    background-color: black
+    padding: 20px 0
 
     img
       display: block
-      max-width: 100%
+      max-width: 90%
       margin: auto
+      box-shadow: 0 0 15px black
 </style>

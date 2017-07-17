@@ -1,6 +1,8 @@
 <template>
   <article id="audio">
-    <heading :text="audio.title" :level="2" font="oswald" color="yellow"></heading>
+    <heading :text="audio[0].title" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
+    <encyclopedia-picture :src="audio[0].picture" :alt="audio[0].title"></encyclopedia-picture>
+    <div v-html="audio[0].player"></div>
     <loader v-if="$loading"></loader>
   </article>
 </template>
@@ -32,9 +34,6 @@
 </script>
 
 <style lang="styl" scoped>
-  article
-    background-color: black
-
   .info
     padding: 10px
     font-family: Oswald, sans-serif
@@ -46,9 +45,6 @@
   .light
     color: gray
     margin: 0 0 15px 20px
-
-  .website
-    color: black
 
   a
     white-space: pre-wrap; // CSS 3

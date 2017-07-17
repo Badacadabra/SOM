@@ -19,6 +19,7 @@
         this.$get('live_reports', {p: this.page})
           .then(response => {
             this.$parseList('reports', response.data, this.page)
+            this.$emit('reports')
           })
           .catch(e => {
             this.errors.push(e)

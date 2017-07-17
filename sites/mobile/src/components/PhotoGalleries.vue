@@ -19,6 +19,7 @@
         this.$get('galleries', {p: this.page})
           .then(response => {
             this.$parseList('galleries', response.data, this.page)
+            this.$emit('galleries')
           })
           .catch(e => {
             this.errors.push(e)

@@ -1,9 +1,9 @@
 <template>
   <article id="band">
-    <heading :text="band.name" :level="2" font="oswald" color="yellow"></heading>
+    <heading :text="band.name" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
     <encyclopedia-picture :src="band.picture" :alt="band.name"></encyclopedia-picture>
     <section>
-      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.sheet')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
         <div class="genre">
           <span class="bold">{{ $t('encyclopedia.genre') }}</span>
@@ -27,6 +27,10 @@
           <span class="bold">{{ $t('encyclopedia.country') }}</span>
           <span class="light">{{ band.country }}</span>
         </div>
+        <div class="region">
+          <span class="bold">{{ $t('encyclopedia.region') }}</span>
+          <span class="light">{{ band.region }}</span>
+        </div>
         <div class="city">
           <span class="bold">{{ $t('encyclopedia.city') }}</span>
           <span class="light" v-if="band.city">{{ band.city }}</span>
@@ -45,8 +49,8 @@
       </div>
     </section>
     <section>
-      <heading :text="$t('band.lineup')" :level="3" font="oswald" color="silver"></heading>
-      <ul class="lineup">
+      <heading :text="$t('band.lineup')" :level="3" font="oswald" color="black"></heading>
+      <ul class="info lineup">
         <li v-for="member in band.lineup">
           <span class="bold">{{ member.name }}</span>
           <span class="light">{{ member.instruments }}</span>
@@ -54,8 +58,8 @@
       </ul>
     </section>
     <section v-if="band.formerMembers !== null">
-      <heading :text="$t('band.formerMembers')" :level="3" font="oswald" color="silver"></heading>
-      <ul class="formerMembers">
+      <heading :text="$t('band.formerMembers')" :level="3" font="oswald" color="black"></heading>
+      <ul class="info formerMembers">
         <li v-for="member of band.formerMembers">
           <span class="bold">{{ member.name }}</span>
           <span class="light">{{ member.instruments }}</span>
@@ -63,7 +67,7 @@
       </ul>
     </section>
     <section>
-      <heading :text="$t('band.discography')" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('band.discography')" :level="3" font="oswald" color="black"></heading>
       <nav>
         <ul>
           <li>Albums</li>
@@ -123,19 +127,21 @@
 </script>
 
 <style lang="styl" scoped>
-  article
-    background-color: whitesmoke
-
   .info
     padding: 10px
-    font-family: Oswald, sans-serif
+    font-family: Abel, sans-serif
+    font-size: 1.1em
+    background-color: whitesmoke
 
     & > div
       display: flex
       justify-content: space-between
+      border-bottom: dashed 1px silver
+      padding-bottom: 5px
+      margin-bottom: 10px
 
   .bold
-    font-weight: 500
+    font-weight: bold
 
   .light
     color: gray
@@ -143,7 +149,6 @@
   .lineup
   .formerMembers
     background-color: whitesmoke
-    font-family: Oswald, sans-serif
 
   .lineup
   .formerMembers
@@ -152,9 +157,12 @@
   nav ul
     display: flex
     justify-content: space-between
-    color: whitesmoke
+    color: black
     padding: 5px
-    background-color: black
+    background-color: silver
     list-style-type: none
     font-family: Oswald, sans-serif
+
+  >>> .infinite-loading-container
+    background-color: whitesmoke
 </style>

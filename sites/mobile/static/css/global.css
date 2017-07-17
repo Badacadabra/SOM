@@ -3,6 +3,7 @@
 /* =========================== */
 
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Abel');
 
 @font-face {
     font-family: 'Astonished';
@@ -29,8 +30,4 @@ a {
 a:hover, a:focus, a:active {
   color: #F4BF31;
   text-decoration: none;
-}
-
-.yellow {
-  color: #F4BF31;
 }

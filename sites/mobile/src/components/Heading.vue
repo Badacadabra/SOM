@@ -1,12 +1,12 @@
 <template>
-  <h2 :class="[font, color]" v-if="level === 2">{{ text }}</h2>
-  <h3 :class="[font, color]" v-else>{{ text }}</h3>
+  <h2 :class="[font, color, variant]" v-if="level === 2">{{ text }}</h2>
+  <h3 :class="[font, color, variant]" v-else>{{ text }}</h3>
 </template>
 
 <script>
   export default {
     name: 'heading',
-    props: ['text', 'level', 'font', 'color']
+    props: ['text', 'level', 'font', 'color', 'variant']
   }
 </script>
 
@@ -16,8 +16,12 @@
     min-height: 50px
     color: black
     display: flex
+    text-align: center
     align-items: center
     justify-content: center
+    padding: 0 5px
+
+  // Fonts
 
   .oswald
     font: 20px Oswald, sans-serif
@@ -25,8 +29,7 @@
   .astonished
     font: 42px Astonished, sans-serif
 
-  .silver
-    background-color: silver
+  // Colors
 
   .red
     color: whitesmoke
@@ -34,5 +37,18 @@
 
   .yellow
     background-color: $yellow
+
+  .silver
+    background-color: silver
+
+  .black
+    color: whitesmoke
+    background-color: black
+
+  // Variants
+
+  .uppercase
+    text-transform: uppercase
+    font-weight: 500
 </style>
 

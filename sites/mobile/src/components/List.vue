@@ -48,7 +48,7 @@
     color: black
     background-color: whitesmoke
     font-family: Oswald, sans-serif
-    border-bottom: dashed 1px silver
+    border-bottom: solid 2px #E7E7E7
 
     &:active
     &:focus
@@ -62,10 +62,11 @@
   .img a
     display: flex
     align-items: center
+    padding: 10px
 
     img
       width: 100px
-      margin-right: 5px
+      margin-right: 10px
 
   .min a
     display: block
@@ -87,6 +88,7 @@
   .std a
   .img a
     & > div
+      flex: 1
 
       div:first-of-type
         color: $red

@@ -1,6 +1,13 @@
 <template>
   <article>
-    <heading :text="review.album" :level="2" font="oswald" color="silver"></heading>
+    <heading :text="review.album" :level="2" font="oswald" color="red" variant="uppercase"></heading>
+    <div class="info">
+      <figure v-if="review.cover">
+        <img :src="review.cover" :alt="review.album">
+        <figcaption class="band">{{ review.band }}</figcaption>
+      </figure>
+      <div class="credits">{{ $t('post.on') }} <span>{{ $d(new Date(review.date), 'short') }}</span> {{ $t('post.by') }} <span>{{ review.author }}</span></div>
+    </div>
     <div class="content" v-html="review.content"></div>
     <loader v-if="$loading"></loader>
   </article>
@@ -28,6 +35,42 @@
 </script>
 
 <style lang="styl" scoped>
+  article
+    background-color: whitesmoke
+    font-family: Abel, sans-serif
+    font-size: 1.2em
+
+  .info
+    text-align: center
+
+    .band
+      font-size: 1.2em
+      font-weight: bold
+
+    .credits
+      color: $red
+      margin-top: 10px
+      padding-bottom: 10px
+      border-bottom: dashed 1px black
+
+      span
+        font-weight: bold
+
+  figure
+    margin-top: 12px
+
+    img
+      display: block
+      margin: auto
+      width: 250px
+
+    figcaption
+      color: whitesmoke
+      width: 250px
+      margin: auto
+      padding: 5px 0
+      background-color: black
+
   // Use ">>>" to style elements within v-html
   .content
     padding: 10px

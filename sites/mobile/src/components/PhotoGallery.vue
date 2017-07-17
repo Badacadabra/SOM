@@ -1,7 +1,9 @@
 <template>
   <article>
     <heading :text="gallery.title" :level="2" font="oswald" color="silver"></heading>
-    <div class="content" v-html="gallery.content"></div>
+    <figure v-for="photo of gallery.picture">
+      <img :src="photo" :alt="gallery.title">
+    </figure>
     <loader v-if="$loading"></loader>
   </article>
 </template>
@@ -28,4 +30,8 @@
 </script>
 
 <style lang="styl" scoped>
+  img
+    max-width: 100%
+    display: block
+    border-top: solid 5px whitesmoke
 </style>

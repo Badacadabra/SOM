@@ -1,9 +1,9 @@
 <template>
   <article id="place">
-    <heading :text="place.name" :level="2" font="oswald" color="yellow"></heading>
+    <heading :text="place.name" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
     <encyclopedia-picture :src="place.picture" :alt="place.name"></encyclopedia-picture>
     <section>
-      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
         <div class="description">
           <div class="bold">{{ $t('place.description') }}</div>
@@ -53,16 +53,14 @@
 </script>
 
 <style lang="styl" scoped>
-  article
-    background-color: black
-
   .info
     padding: 10px
-    font-family: Oswald, sans-serif
+    font-family: Abel, sans-serif
+    font-size: 1.1em
     background-color: whitesmoke
 
   .bold
-    font-weight: 500
+    font-weight: bold
 
   .light
     color: gray

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1><router-link :to="{name: 'home'}">SPIRIT OF <span class="yellow">METAL</span></router-link></h1>
+    <h1><router-link :to="{name: 'home'}">SPIRIT OF <span>METAL</span></router-link></h1>
     <div id="language-switcher" @click="switchLanguage">
       <span>&bull;</span> {{ this.$i18n.locale }} <span>&bull;</span>
     </div>
@@ -49,6 +49,7 @@
         color: whitesmoke
 
         &:active
+        span
           color: $yellow
 
   #language-switcher

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <list :scroll="false" :items="bands" link="band" :fields="['name', 'country']" type="img"></list>
+    <list :scroll="false" :items="bands" link="band" :fields="['name', 'country']" type="img" class="bands"></list>
     <loader v-if="$loading"></loader>
   </section>
 </template>
@@ -28,5 +28,7 @@
 </script>
 
 <style lang="styl" scoped>
+  .bands
+    text-align: center
 </style>
 

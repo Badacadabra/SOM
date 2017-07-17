@@ -1,6 +1,9 @@
 <template>
   <article>
-    <heading :text="news.title" level="2" font="oswald" color="silver"></heading>
+    <div class="info">
+      <h3>{{ news.title }}</h3>
+      <div class="credits">{{ $d(new Date(news.date), 'short') }} - {{ news.author }}</div>
+    </div>
     <div class="content" v-html="news.content"></div>
     <loader v-if="$loading"></loader>
   </article>
@@ -31,20 +34,41 @@
 </script>
 
 <style lang="styl" scoped>
+  article
+    background-color: whitesmoke
+    font-family: Abel, sans-serif
+    font-size: 1.2em
+
+  h3
+    text-align: center
+    font-size: 1.1em
+    padding: 0 5px
+
+  .info
+    text-align: center
+    padding: 10px 0
+    border-bottom: dashed 1px black
+
+    .credits
+      color: $red
+
   // Use ">>>" to style elements within v-html
   .content
-    padding: 10px
-    background-color: whitesmoke
+    padding: 0 10px 10px 10px
 
     >>> img
     >>> iframe
       display: block
       max-width: 100%
-      margin: auto !important
+      margin: auto
       height: auto !important
 
+    >>> img
+      margin-top: 10px
+      margin-bottom: 10px
+
     >>> a
-      color: $red
+      color: gray
       white-space: pre-wrap; // CSS 3
       white-space: -moz-pre-wrap; // Mozilla, since 1999
       white-space: -pre-wrap; // Opera 4-6

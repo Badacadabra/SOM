@@ -1,9 +1,9 @@
 <template>
   <article id="album">
-    <heading :text="album.name" :level="2" font="oswald" color="yellow"></heading>
+    <heading :text="album.name" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
     <encyclopedia-picture :src="album.cover" :alt="album.name"></encyclopedia-picture>
     <section>
-      <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('encyclopedia.sheet')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
         <div class="band">
           <span class="bold">{{ $t('encyclopedia.band') }}</span>
@@ -16,7 +16,7 @@
         </div>
         <div class="date">
           <span class="bold">{{ $t('encyclopedia.date') }}</span>
-          <span class="light" v-if="album.date">{{ album.date }}</span>
+          <span class="light" v-if="album.date">{{ $d(new Date(album.date), 'short') }}</span>
           <span class="light" v-else>N/A</span>
         </div>
         <div class="studio">
@@ -39,7 +39,7 @@
       </div>
     </section>
     <section>
-      <heading :text="$t('album.tracklist')" :level="3" font="oswald" color="silver"></heading>
+      <heading :text="$t('album.tracklist')" :level="3" font="oswald" color="black"></heading>
       <div class="tracks" v-html="album.tracks"></div>
     </section>
     <loader v-if="$loading"></loader>
@@ -74,18 +74,19 @@
 <style lang="styl" scoped>
   .info
     padding: 10px
-    font-family: Oswald, sans-serif
+    font-family: Abel, sans-serif
+    font-size: 1.1em
     background-color: whitesmoke
 
     & > div
       display: flex
       justify-content: space-between
-
-  .tracklist
-    padding-left: 25px
+      border-bottom: dashed 1px silver
+      padding-bottom: 5px
+      margin-bottom: 10px
 
   .bold
-    font-weight: 500
+    font-weight: bold
 
   .light
     color: gray
@@ -96,6 +97,7 @@
 
   >>> .tracks
     padding: 10px
+    font-family: Abel, sans-serif
+    font-size: 1.1em
     background-color: whitesmoke
-    font-family: Oswald, sans-serif
 </style>

@@ -20,7 +20,7 @@ export default {
     news: 'Actualités',
     reviews: 'Chroniques',
     interviews: 'Interviews',
-    releases: 'Sorties',
+    releases: 'À découvrir',
     events: 'Événements',
     encyclopedia: 'Encyclopédie',
     forums: 'Forums'
@@ -39,12 +39,14 @@ export default {
     videos: 'Vidéos',
     labels: 'Labels',
     places: 'Lieux',
-    stats: 'Quelques chiffres...',
+    stats: 'Statistiques',
     search: 'Recherche...',
-    info: 'Fiche technique',
+    info: 'À propos',
+    sheet: 'Fiche descriptive',
     genre: 'Genre',
     band: 'Groupe',
     country: 'Pays',
+    region: 'Région',
     city: 'Ville',
     date: 'Date',
     status: 'Statut',
@@ -71,7 +73,7 @@ export default {
     studio: 'Studio',
     producer: 'Producteur',
     label: 'Label | Labels',
-    tracklist: 'Tracklist'
+    tracklist: 'Liste des morceaux'
   },
   label: {
     releases: 'Dernières sorties'
@@ -79,5 +81,9 @@ export default {
   place: {
     description: 'Description',
     address: 'Adresse'
+  },
+  post: {
+    on: 'Le',
+    by: 'par'
   }
 }
