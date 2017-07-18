@@ -14,6 +14,11 @@
           <span class="light" v-if="album.style">{{ album.style }}</span>
           <span class="light" v-else>N/A</span>
         </div>
+        <div class="type">
+          <span class="bold">{{ $t('album.type') }}</span>
+          <span class="light" v-if="album.type">{{ album.type }}</span>
+          <span class="light" v-else>N/A</span>
+        </div>
         <div class="date">
           <span class="bold">{{ $t('encyclopedia.date') }}</span>
           <span class="light" v-if="album.date">{{ $d(new Date(album.date), 'short') }}</span>
