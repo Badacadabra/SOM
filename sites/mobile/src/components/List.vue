@@ -48,11 +48,11 @@
     color: black
     background-color: whitesmoke
     font-family: Oswald, sans-serif
-    border-bottom: solid 2px #E7E7E7
+    border-bottom: solid 2px $lightgray
 
     &:active
     &:focus
-      background-color: silver
+      background-color: $lightgray
 
   .std a
     display: block

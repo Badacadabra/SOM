@@ -38,12 +38,15 @@
   .yellow
     background-color: $yellow
 
-  .silver
-    background-color: silver
-
   .black
     color: whitesmoke
     background-color: black
+
+  .silver
+    background-color: silver
+
+  .white
+    background-color: whitesmoke
 
   // Variants
 

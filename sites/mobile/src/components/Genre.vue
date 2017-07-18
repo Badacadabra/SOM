@@ -48,6 +48,7 @@
     justify-content: space-between
     align-items: center
     background-color: whitesmoke
+    border-bottom: solid 2px black
 
     a
       color: gray
@@ -57,13 +58,11 @@
       justify-content: center
       align-items: center
       flex-grow: 1
-      border: solid 5px white
 
       span
         font-family: Oswald, sans-serif
 
     .selected
       color: black
-      background-color: $yellow
-      border-radius: 7px
+      background-color: $lightgray
 </style>

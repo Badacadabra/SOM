@@ -60,7 +60,7 @@
 
   nav
     font-family: Oswald, sans-serif
-    background-color: silver
+    background-color: $lightgray
     display: flex
     justify-content: space-between
     align-items: center

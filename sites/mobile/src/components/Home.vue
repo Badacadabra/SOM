@@ -64,6 +64,7 @@
     display: block
 
     &:active
+    &:focus
       color: $yellow
 
       figure

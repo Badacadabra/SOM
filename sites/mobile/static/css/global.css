@@ -28,6 +28,5 @@ a {
 }
 
 a:hover, a:focus, a:active {
-  color: #F4BF31;
   text-decoration: none;
 }
