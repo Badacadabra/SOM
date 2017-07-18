@@ -55,6 +55,14 @@
           {{ $t('encyclopedia.albums') }}
         </li>
         <li>
+          <span class="num">{{ $n(stats[8].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.audios') }}
+        </li>
+        <li>
+          <span class="num">{{ $n(stats[3].value, 'decimal') }}</span>
+          {{ $t('encyclopedia.videos') }}
+        </li>
+        <li>
           <span class="num">{{ $n(stats[2].value, 'decimal') }}</span>
           {{ $t('encyclopedia.labels') }}
         </li>
@@ -103,14 +111,14 @@
     line-height: 50px
     text-align: center
     color: black
-    background-color: silver
+    background-color: $lightgray
     border-top: solid 2px black
     font-family: Oswald, sans-serif
     font-weight: 400
 
   .figures
     color: black
-    background-color: silver
+    background-color: $lightgray
     text-align: center
     padding-bottom: 10px
     font: 300 large Oswald, sans-serif
@@ -135,5 +143,5 @@
 
       &:active
       &:focus
-        background-color: silver
+        background-color: $lightgray
 </style>
