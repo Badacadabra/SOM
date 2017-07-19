@@ -1,6 +1,10 @@
 <template>
   <article>
-    <heading :text="gallery.title" :level="2" font="oswald" color="silver"></heading>
+    <heading :text="gallery.title" :level="2" font="oswald" color="white"></heading>
+    <div class="info" v-if="gallery.date">
+      <span>{{ $t('galleries.credits') }} {{ gallery.author }}</span><br>
+      {{ $d(new Date(gallery.date), 'short') }}
+    </div>
     <figure v-for="photo of gallery.picture">
       <img :src="photo" :alt="gallery.title">
     </figure>
@@ -33,5 +37,16 @@
   img
     max-width: 100%
     display: block
-    border-top: solid 5px whitesmoke
+
+  .info
+    color: $red
+    padding: 0 5px 10px 5px
+    background-color: whitesmoke
+    text-align: center
+    font-family: Abel, sans-serif
+    font-size: 1.2em
+    border-bottom: solid 2px black
+
+    span
+      font-weight: bold
 </style>

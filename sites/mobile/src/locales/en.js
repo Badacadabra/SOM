@@ -25,6 +25,15 @@ export default {
     encyclopedia: 'Encyclopedia',
     forums: 'Forums'
   },
+  reviews: {
+    credits: 'Review by'
+  },
+  interviews: {
+    credits: 'Interview by'
+  },
+  galleries: {
+    credits: 'Gallery by'
+  },
   events: {
     gigs: 'Gigs',
     liveReports: 'Live reports',
@@ -70,6 +79,7 @@ export default {
     bands: 'Associated bands'
   },
   album: {
+    type: 'Type',
     studio: 'Studio',
     producer: 'Producer',
     label: 'Label | Labels',
@@ -86,5 +96,4 @@ export default {
     on: 'On',
     by: 'by'
   }
-
 }

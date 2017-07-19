@@ -5,7 +5,10 @@
       <figure v-if="interview.picture">
         <img :src="interview.picture" :alt="interview.picture">
       </figure>
-      <div class="credits">{{ $t('post.on') }} <span>{{ $d(new Date(interview.date), 'short') }}</span> {{ $t('post.by') }} <span>{{ interview.author }}</span></div>
+      <div class="credits" v-if="interview.date">
+        <span>{{ $t('interviews.credits') }} {{ interview.author }}</span><br>
+        {{ $d(new Date(interview.date), 'short') }}
+      </div>
     </div>
     <div class="content" v-html="interview.content"></div>
     <loader v-if="$loading"></loader>
@@ -39,17 +42,20 @@
     font-family: Abel, sans-serif
     font-size: 1.2em
 
-    .credits
-      color: $red
-      text-align: center
-      padding-bottom: 10px
-      border-bottom: dashed 1px black
+    .info
+      background-color: $lightgray
 
-      span
-        font-weight: bold
+      .credits
+        color: $red
+        text-align: center
+        padding-bottom: 10px
+        border-bottom: solid 2px silver
+
+        span
+          font-weight: bold
 
     figure
-      margin: 15px 0
+      padding: 15px 0
 
       img
         display: block
@@ -75,4 +81,3 @@
       white-space: -o-pre-wrap; // Opera 7
       word-wrap: break-word; // Internet Explorer 5.5+
 </style>
-

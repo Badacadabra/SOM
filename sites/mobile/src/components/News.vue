@@ -2,7 +2,9 @@
   <article>
     <div class="info">
       <h3>{{ news.title }}</h3>
-      <div class="credits">{{ $d(new Date(news.date), 'short') }} - {{ news.author }}</div>
+      <div class="credits">
+        <span v-if="news.date">{{ $d(new Date(news.date), 'short') }}</span> - <span>{{ news.author }}</span>
+      </div>
     </div>
     <div class="content" v-html="news.content"></div>
     <loader v-if="$loading"></loader>
@@ -14,10 +16,7 @@
     name: 'news',
     data () {
       return {
-        news: {
-          title: '...',
-          content: ''
-        },
+        news: {},
         errors: []
       }
     },
@@ -47,7 +46,9 @@
   .info
     text-align: center
     padding: 10px 0
-    border-bottom: dashed 1px black
+    margin-bottom: 10px
+    border-bottom: solid 2px silver
+    background-color: $lightgray
 
     .credits
       color: $red

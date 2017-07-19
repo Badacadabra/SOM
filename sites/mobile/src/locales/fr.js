@@ -25,6 +25,15 @@ export default {
     encyclopedia: 'Encyclopédie',
     forums: 'Forums'
   },
+  reviews: {
+    credits: 'Chronique par'
+  },
+  interviews: {
+    credits: 'Interview par'
+  },
+  galleries: {
+    credits: 'Galerie par'
+  },
   events: {
     gigs: 'Concerts',
     liveReports: 'Live-reports',
@@ -70,6 +79,7 @@ export default {
     bands: 'Groupes associés'
   },
   album: {
+    type: 'Type',
     studio: 'Studio',
     producer: 'Producteur',
     label: 'Label | Labels',
