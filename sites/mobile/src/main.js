@@ -13,6 +13,7 @@ import numberFormats from './locales/numberFormats'
 // External modules
 import Icon from 'vue-awesome/components/Icon'
 import InfiniteLoading from 'vue-infinite-loading'
+import Lazyload from 'vue-lazyload'
 
 // Own plugins
 import Ajax from './plugins/Ajax.js'
@@ -27,6 +28,11 @@ import List from './components/List'
 Vue.config.productionTip = false
 
 Vue.use(VueI18n)
+Vue.use(Lazyload, {
+  error: '../static/img/no-image.png',
+  loading: '../static/img/img-loader.gif',
+  attempt: 1
+})
 Vue.use(Ajax)
 
 Vue.component('icon', Icon)

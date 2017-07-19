@@ -1,8 +1,8 @@
 <template>
   <div :class="type">
     <router-link v-for="item of items" :key="item.id" :to="{name: link, params: {id: item.id}}">
-      <img v-if="item.cover && displayImg" :src="item.cover" :alt="'Pochette n°'+item.id">
-      <img v-if="item.picture && displayImg" :src="item.picture" :alt="'Image n°'+item.id">
+      <img v-if="item.cover && displayImg" v-lazy="item.cover" :alt="'Pochette n°'+item.id">
+      <img v-if="item.picture && displayImg" v-lazy="item.picture" :alt="'Image n°'+item.id">
       <div>
         <div v-for="field of fields">
           {{ field === 'date' ? $d(new Date(item[field]), 'long') : item[field] }}
