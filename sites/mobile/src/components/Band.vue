@@ -70,14 +70,30 @@
       <heading :text="$t('band.discography')" :level="3" font="oswald" color="black"></heading>
       <nav>
         <ul>
-          <li>Albums</li>
-          <li>Vidéo</li>
-          <li>Single</li>
-          <li>Bootlegs</li>
-          <li>Tributes</li>
+          <li><router-link :to="{name: 'fullLength'}">Albums</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'eps'}">EPs</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'singles'}">Singles</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'demos'}">Démos</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'compilations'}">Compilations</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'lives'}">Lives</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'splits'}">Splits</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'vids'}">Vidéos</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'bootlegs'}">Bootlegs</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'boxSets'}">Box sets</router-link></li>
+          <li>&rsaquo;</li>
+          <li><router-link :to="{name: 'tributes'}">Tributes</router-link></li>
         </ul>
       </nav>
-      <list ref="list" :scroll="true" v-on:update="load" :items="albums" link="album" :fields="['name', 'type', 'date']" type="img"></list>
+      <router-view></router-view>
     </section>
     <loader v-if="$loading"></loader>
   </article>
@@ -97,14 +113,10 @@
       }
     },
     methods: {
-      load () {
-        this.$get('albums', {id_groupe: this.$route.params.id, p: this.page})
+      types () {
+        this.$get('album_types', {id_groupe: this.$route.params.id, p: this.page})
           .then(response => {
-            if (response.data.length === 0) {
-              this.$refs.list.complete()
-            } else {
-              this.$parseList('albums', response.data, this.page)
-            }
+            console.log(response.data)
           })
           .catch(e => {
             this.errors.push(e)
@@ -155,13 +167,24 @@
     padding: 10px
 
   nav ul
-    display: flex
-    justify-content: space-between
     color: black
-    padding: 5px
-    background-color: silver
+    background-color: $lightgray
     list-style-type: none
     font-family: Oswald, sans-serif
+    white-space: nowrap
+    overflow: auto
+
+    li
+      display: inline-block
+
+      a
+        display: block
+        color: black
+        padding: 15px
+
+        &:active
+        &:focus
+          background-color: silver
 
   >>> .infinite-loading-container
     background-color: whitesmoke

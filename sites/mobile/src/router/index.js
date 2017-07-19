@@ -34,6 +34,7 @@ import AlbumsByGenre from '@/components/AlbumsByGenre'
 
 import Bands from '@/components/Bands'
 import Band from '@/components/Band'
+import BandAlbums from '@/components/BandAlbums'
 
 import Artists from '@/components/Artists'
 import Artist from '@/components/Artist'
@@ -175,7 +176,76 @@ export default new Router({
     {
       path: '/encyclopedia/bands/:id',
       name: 'band',
-      component: Band
+      component: Band,
+      redirect: {name: 'fullLength'},
+      children: [
+        {
+          path: 'full-length',
+          name: 'fullLength',
+          component: BandAlbums,
+          props: {type: 'Album'}
+        },
+        {
+          path: 'eps',
+          name: 'eps',
+          component: BandAlbums,
+          props: {type: 'EP'}
+        },
+        {
+          path: 'singles',
+          name: 'singles',
+          component: BandAlbums,
+          props: {type: 'Single'}
+        },
+        {
+          path: 'demos',
+          name: 'demos',
+          component: BandAlbums,
+          props: {type: 'Demo'}
+        },
+        {
+          path: 'compilations',
+          name: 'compilations',
+          component: BandAlbums,
+          props: {type: 'Compilation'}
+        },
+        {
+          path: 'lives',
+          name: 'lives',
+          component: BandAlbums,
+          props: {type: 'Live'}
+        },
+        {
+          path: 'splits',
+          name: 'splits',
+          component: BandAlbums,
+          props: {type: 'Split'}
+        },
+        {
+          path: 'vids',
+          name: 'vids',
+          component: BandAlbums,
+          props: {type: 'Vidéo'}
+        },
+        {
+          path: 'bootlegs',
+          name: 'bootlegs',
+          component: BandAlbums,
+          props: {type: 'Bootleg'}
+        },
+        {
+          path: 'box-sets',
+          name: 'boxSets',
+          component: BandAlbums,
+          props: {type: 'Box Set'}
+        },
+        {
+          path: 'tributes',
+          name: 'tributes',
+          component: BandAlbums,
+          props: {type: 'Tribute'}
+        }
+      ]
     },
     {
       path: '/encyclopedia/artists',
