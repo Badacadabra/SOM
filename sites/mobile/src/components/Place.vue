@@ -17,7 +17,7 @@
         </div>
         <div class="website">
           <div class="bold">{{ $t('encyclopedia.website') }}</div>
-          <a :href="place.website" class="light" v-if="place.website">{{ place.website }}</a>
+          <a :href="place.website" class="light" v-if="place.website">{{ getDomain(place.website) }}</a>
           <div class="light" v-else>N/A</div>
         </div>
       </div>
@@ -45,6 +45,11 @@
         .catch(e => {
           this.errors.push(e)
         })
+    },
+    methods: {
+      getDomain (url) {
+        return url.split('/')[2]
+      }
     },
     components: {
       EncyclopediaPicture
