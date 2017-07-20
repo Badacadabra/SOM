@@ -33,6 +33,14 @@ export default {
   interviews: {
     credits: 'Interview by'
   },
+  gigs: {
+    title: 'Upcoming event',
+    what: 'What?',
+    where: 'Where?',
+    when: 'When?',
+    who: 'Who?',
+    price: 'Price'
+  },
   liveReports: {
     credits: 'Live report by'
   },
