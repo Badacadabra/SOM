@@ -1,5 +1,7 @@
 <template>
-  <div id="dimmer"></div>
+  <transition name="fade">
+    <div id="dimmer"></div>
+  </transition>
 </template>
 
 <script>
@@ -13,8 +15,16 @@
     position: fixed
     top: 50px
     left: 0
-    z-index: 10
+    z-index: 20
     width: 100%
     height: 100%
     background-color: rgba(0, 0, 0, 0.9)
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0
+  }
 </style>
