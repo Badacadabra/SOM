@@ -11,10 +11,12 @@ export default {
     confirmation: 'Confirmation',
     mail: 'E-mail',
     location: 'Pays/Ville',
+    language: 'Langue',
     english: 'Anglais',
     french: 'Français',
     birthday: 'Date de naissance',
-    newsletter: 'Je souhaite recevoir la newsletter'
+    ok: 'OK',
+    validate: 'Valider'
   },
   categories: {
     news: 'Actualités',
@@ -30,6 +32,9 @@ export default {
   },
   interviews: {
     credits: 'Interview par'
+  },
+  liveReports: {
+    credits: 'Live-report par'
   },
   galleries: {
     credits: 'Galerie par'

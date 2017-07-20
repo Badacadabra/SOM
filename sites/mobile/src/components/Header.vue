@@ -20,6 +20,7 @@
     methods: {
       switchLanguage () {
         this.$i18n.locale === 'en' ? this.$i18n.locale = 'fr' : this.$i18n.locale = 'en'
+        this.$validator.setLocale(this.$i18n.locale) // vee-validate
       },
       toggleMenu () {
         this.menuIsHidden = !this.menuIsHidden
@@ -38,7 +39,7 @@
     justify-content: space-between
     align-items: center
     position: fixed
-    z-index: 50
+    z-index: 100
     top: 0
 
     h1

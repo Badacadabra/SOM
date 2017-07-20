@@ -28,6 +28,7 @@
     methods: {
       toggleMenu () {
         this.menuEnabled = !this.menuEnabled
+        document.body.scrollTop = 0
       }
     },
     components: {

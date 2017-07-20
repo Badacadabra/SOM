@@ -6,15 +6,17 @@ export default {
   menu: {
     login: 'Log in',
     signup: 'Sign up',
-    username: 'Pseudo',
+    username: 'Username',
     password: 'Password',
     confirmation: 'Confirmation',
     mail: 'Email',
     location: 'Location',
+    language: 'Language',
     english: 'English',
     french: 'French',
     birthday: 'Birthday',
-    newsletter: 'I want to get the newsletter'
+    ok: 'OK',
+    validate: 'Validate'
   },
   categories: {
     news: 'News',
@@ -30,6 +32,9 @@ export default {
   },
   interviews: {
     credits: 'Interview by'
+  },
+  liveReports: {
+    credits: 'Live report by'
   },
   galleries: {
     credits: 'Gallery by'
