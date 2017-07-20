@@ -37,6 +37,7 @@
   img
     max-width: 100%
     display: block
+    background-color: black
 
   .info
     color: $red

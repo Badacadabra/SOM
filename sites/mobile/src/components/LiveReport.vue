@@ -1,12 +1,13 @@
 <template>
   <article>
-    <heading :text="report.title" :level="2" font="oswald" color="red"></heading>
-    <div class="content" v-for="txt of report.content">
-      <heading :text="txt.band" :level="3" font="oswald" color="silver"></heading>
-      <div v-html="txt.report"></div>
+    <heading :text="report.title" :level="2" font="oswald" color="silver"></heading>
+    <div class="credits" v-if="report.date">
+      <span>{{ $t('liveReports.credits') }} {{ report.author }}</span><br>
+      {{ $d(new Date(report.date), 'short') }}
     </div>
-    <div class="credits">
-      {{ report.author }} - {{ $d(new Date(report.date), 'short') }}
+    <div class="content" v-for="txt of report.content">
+      <h3>{{ txt.band }}</h3>
+      <div v-html="txt.report"></div>
     </div>
     <loader v-if="$loading"></loader>
   </article>
@@ -25,7 +26,6 @@
       this.$get('live_reports', {id: this.$route.params.id})
         .then(response => {
           this.$parseItem('report', response.data)
-          console.log(response.data)
         })
         .catch(e => {
           this.errors.push(e)
@@ -37,20 +37,36 @@
 <style lang="styl" scoped>
   article
     background-color: whitesmoke
-
-  h3
-    margin: 10px 0
+    font-family: Abel, sans-serif
+    font-size: 1.2em
 
     &:first-of-type
       margin-top: 0
 
-  .content div
-    padding: 5px
-
   .credits
     color: $red
     text-align: center
-    font: large Oswald, sans-serif
-    border-top: dashed 1px gray
     padding: 15px 0
+
+    span
+      font-weight: bold
+
+  >>> .content
+    div
+      padding: 10px
+
+    h2
+      font-size: 1.1em
+
+    h3
+      text-align: center
+      padding: 10px 0 5px 0
+      border-bottom: solid 1px black
+
+    img
+      max-width: 100%
+      display: block
+      margin: auto
+      padding: 10px 0
+      height: auto !important
 </style>

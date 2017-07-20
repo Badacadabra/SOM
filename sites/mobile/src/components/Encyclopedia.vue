@@ -40,35 +40,35 @@
       <ul v-if="stats.length > 0">
         <li>
           <span class="num">{{ $n(stats[7].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.genres') }}
+          {{ $t('encyclopedia.genres') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[0].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.bands') }}
+          {{ $t('encyclopedia.bands') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[5].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.artists') }}
+          {{ $t('encyclopedia.artists') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[1].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.albums') }}
+          {{ $t('encyclopedia.albums') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[8].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.audios') }}
+          {{ $t('encyclopedia.audios') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[3].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.videos') }}
+          {{ $t('encyclopedia.videos') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[2].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.labels') }}
+          {{ $t('encyclopedia.labels') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[6].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.places') }}
+          {{ $t('encyclopedia.places') | lowercase }}
         </li>
       </ul>
     </div>
@@ -101,6 +101,11 @@
         .catch(e => {
           this.errors.push(e)
         })
+    },
+    filters: {
+      lowercase: (v) => {
+        return v.toLowerCase()
+      }
     }
   }
 </script>

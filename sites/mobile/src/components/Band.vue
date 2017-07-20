@@ -18,10 +18,9 @@
           <span class="light" v-if="band.creationDate !== '0000'">{{ band.creationDate }}</span>
           <span class="light" v-else>N/A</span>
         </div>
-        <div class="splitDate">
+        <div class="splitDate" v-if="band.splitDate !== '0000'">
           <span class="bold">{{ $t('band.split') }}</span>
-          <span class="light" v-if="band.splitDate !== '0000'">{{ band.splitDate }}</span>
-          <span class="light" v-else>N/A</span>
+          <span class="light" >{{ band.splitDate }}</span>
         </div>
         <div class="country">
           <span class="bold">{{ $t('encyclopedia.country') }}</span>
