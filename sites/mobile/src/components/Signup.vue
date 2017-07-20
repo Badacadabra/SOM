@@ -62,7 +62,11 @@
         this.locations = []
       },
       onSubmit () {
-        console.log(this.username, this.password, this.confirmation, this.email, this.location, this.language, this.birthday)
+        if (this.$i18n.locale === 'en') {
+          alert('Coming soon...')
+        } else {
+          alert('Bientôt...')
+        }
       }
     },
     components: {

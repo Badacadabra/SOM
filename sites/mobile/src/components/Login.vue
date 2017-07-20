@@ -22,7 +22,11 @@
     },
     methods: {
       onSubmit () {
-        console.log(this.pseudo, this.password)
+        if (this.$i18n.locale === 'en') {
+          alert('Coming soon...')
+        } else {
+          alert('Bientôt...')
+        }
       }
     }
   }

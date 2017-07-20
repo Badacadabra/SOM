@@ -27,8 +27,17 @@
     },
     methods: {
       toggleMenu () {
+        // regular code
         this.menuEnabled = !this.menuEnabled
         document.body.scrollTop = 0
+
+        // alpha version
+        if (this.menuEnabled && this.$i18n.locale === 'en') {
+          alert('Member accounts are not available in this alpha version. You can play with forms, but you will not be able to log in or sign up.')
+        }
+        if (this.menuEnabled && this.$i18n.locale === 'fr') {
+          alert('L\'espace membre n\'est pas disponible dans cette version alpha. Vous pouvez jouer avec les formulaires, mais vous ne pourrez pas vous connecter ni vous inscrire.')
+        }
       }
     },
     components: {

@@ -16,8 +16,6 @@
       }
     },
     created () {
-      this.ajax = true
-
       this.$get('releases')
         .then(response => {
           this.$parseList('releases', response.data)
