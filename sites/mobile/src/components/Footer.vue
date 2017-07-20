@@ -1,6 +1,6 @@
 <template>
   <footer>
-    Spirit of Metal © 2003 - 2017
+    Spirit of Metal © 2003 - {{ new Date().getFullYear() }}
   </footer>
 </template>
 
