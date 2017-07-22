@@ -16,7 +16,7 @@
     },
     methods: {
       load () {
-        this.$get('live_reports', {p: this.page})
+        this.$get('live_reports', {l: this.$i18n.locale, p: this.page})
           .then(response => {
             this.$parseList('reports', response.data, this.page)
             this.$emit('reports')
