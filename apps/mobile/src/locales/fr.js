@@ -96,7 +96,8 @@ export default {
     studio: 'Studio',
     producer: 'Producteur',
     label: 'Label | Labels',
-    tracklist: 'Liste des morceaux'
+    tracklist: 'Liste des morceaux',
+    audio: 'Audio disponible | Audios disponibles'
   },
   label: {
     releases: 'Dernières sorties'
