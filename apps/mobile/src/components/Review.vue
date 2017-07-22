@@ -2,16 +2,19 @@
   <article>
     <heading :text="review.album" :level="2" font="oswald" color="red" variant="uppercase"></heading>
     <div class="info">
-      <figure v-if="review.cover">
-        <img :src="review.cover" :alt="review.album">
-        <figcaption class="band">{{ review.band }}</figcaption>
-      </figure>
+      <router-link v-if="review.id_groupe" :to="{name: 'band', params: {id: review.id_groupe}}">
+        <figure v-if="review.cover">
+            <img :src="review.cover" :alt="review.album">
+          <figcaption class="band">{{ review.band }}</figcaption>
+        </figure>
+      </router-link>
       <div class="credits" v-if="review.date">
         <span>{{ $t('reviews.credits') }} {{ review.author }}</span><br>
         {{ $d(new Date(review.date), 'short') }}
       </div>
     </div>
     <div class="content" v-html="review.content"></div>
+    <div class="video" v-html="review.video"></div>
     <loader v-if="$loading"></loader>
   </article>
 </template>
@@ -93,4 +96,12 @@
       white-space: -pre-wrap; // Opera 4-6
       white-space: -o-pre-wrap; // Opera 7
       word-wrap: break-word; // Internet Explorer 5.5+
+
+  .video
+
+    >>> iframe
+      display: block
+      margin: auto
+      height: auto
+      max-width: 100%
 </style>
