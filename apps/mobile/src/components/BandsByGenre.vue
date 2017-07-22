@@ -1,6 +1,6 @@
 <template>
   <section>
-    <list :scroll="false" :items="bands" link="band" :fields="['name', 'country']" type="std" class="bands"></list>
+    <list ref="list" :scroll="true" v-on:update="load" :items="bands" link="band" :fields="['name', 'country']" type="std" class="bands"></list>
     <loader v-if="$loading"></loader>
   </section>
 </template>
@@ -10,24 +10,30 @@
     name: 'bands-by-genre',
     data () {
       return {
+        page: 1,
         bands: [],
         errors: []
       }
     },
-    created () {
-      this.$get('bands', {id_style: this.$route.params.id})
-        .then(response => {
-          this.$parseList('bands', response.data)
-          this.$emit('bands', this.bands[0].style) // necessary to display a title
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
+    methods: {
+      load () {
+        this.$get('bands', {id_style: this.$route.params.id, p: this.page})
+          .then(response => {
+            this.$parseList('bands', response.data, this.page)
+            this.$emit('bands', this.bands[0].style) // necessary to display a title
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
+      }
     }
   }
 </script>
 
 <style lang="styl" scoped>
+  section
+    background-color: whitesmoke
+
   .bands
     text-align: center
 </style>
