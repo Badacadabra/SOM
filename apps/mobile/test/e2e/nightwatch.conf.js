@@ -34,7 +34,8 @@ module.exports = {
         acceptSslCerts: true,
         chromeOptions: {
           args: [
-            "window-size=412,732" // Nexus 5X
+            'disable-web-security=true',
+            'window-size=412,732' // Nexus 5X
           ]
         }
       }

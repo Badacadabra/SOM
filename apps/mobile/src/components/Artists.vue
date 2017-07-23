@@ -1,5 +1,5 @@
 <template>
-  <div id="artistes">
+  <div id="artists">
     <heading :text="$t('encyclopedia.artists')" :level="2" font="astonished" color="yellow"></heading>
     <search v-on:typing="getData"></search>
     <list :scroll="false" :items="artists" link="artist" :fields="['FullName']" type="min"></list>
