@@ -4,163 +4,18 @@
 // automatically uses dev Server port from /config.index.js
 // default: http://localhost:8080
 // see nightwatch.conf.js
+
 let devServer
-const TIMEOUT = 5000 // Can be adjusted depending on the Internet connection...
+const TIMEOUT = 10000 // Can be adjusted depending on the Internet connection...
 
 module.exports = {
-  'Home': browser => {
+  'Main': browser => {
     devServer = browser.globals.devServerURL;
 
     browser
-      .url(devServer)
-      .waitForElementVisible('#app', TIMEOUT)
-      .assert.title('Spirit of Metal')
-      .execute((() => document.getElementById('disclaimer').style.display = 'none'), [])
-      .assert.visible('header')
-      .assert.visible('nav')
-      .assert.visible('footer')
-      .assert.containsText('h1', 'SPIRIT OF METAL')
-      .assert.containsText('footer', 'Spirit of Metal')
-      .assert.containsText('footer', String(new Date().getFullYear()))
-      .assert.elementCount('figure', 7)
-      .assert.elementNotPresent('#menu')
-      .assert.visible('#burger')
-      .assert.visible('#language-switcher')
-      .assert.containsText('#language-switcher', 'FR')
-      .assert.containsText('nav a:first-child', 'Actualités')
-      .assert.containsText('nav a:nth-child(2)', 'Chroniques')
-      .assert.containsText('nav a:nth-child(3)', 'Interviews')
-      .assert.containsText('nav a:nth-child(4)', 'À découvrir')
-      .assert.containsText('nav a:nth-child(5)', 'Événements')
-      .assert.containsText('nav a:nth-child(6)', 'Encyclopédie')
-      .assert.containsText('nav a:last-child', 'Forums')
-      .click('#language-switcher')
-      .assert.containsText('#language-switcher', 'EN')
-      .assert.containsText('nav a:first-child', 'News')
-      .assert.containsText('nav a:nth-child(2)', 'Reviews')
-      .assert.containsText('nav a:nth-child(3)', 'Interviews')
-      .assert.containsText('nav a:nth-child(4)', 'Releases')
-      .assert.containsText('nav a:nth-child(5)', 'Events')
-      .assert.containsText('nav a:nth-child(6)', 'Encyclopedia')
-      .assert.containsText('nav a:last-child', 'Forums')
-      .click('#language-switcher')
-
-      // Next
-      .click('a[href$="news"]')
-  },
-  'News': browser => {
-    browser
-
-      // List
-      .waitForElementVisible('#news a', TIMEOUT)
-      .assert.containsText('h2', 'Actualités')
-      .click('#language-switcher')
-      .assert.containsText('h2', 'News')
-      .click('#language-switcher')
-      .click('#news a:first-child')
-
-      // Details
-      .waitForElementPresent('article', TIMEOUT)
-      .assert.visible('h3')
-      .assert.visible('.credits')
-      .assert.visible('.content')
-
-      // Next
-      .click('h1')
-      .click('a[href$="reviews"]')
-  },
-  'Reviews': browser => {
-    browser
-
-      // List
-      .waitForElementVisible('#reviews a', TIMEOUT)
-      .assert.containsText('h2', 'Chroniques')
-      .click('#language-switcher')
-      .pause(TIMEOUT)
-      .assert.containsText('h2', 'Reviews')
-      .click('#language-switcher')
-      .click('#reviews a:nth-child(2)')
-
-      // Details
-      .waitForElementVisible('article', TIMEOUT)
-      .waitForElementVisible('figure', TIMEOUT)
-      .waitForElementVisible('figcaption', TIMEOUT)
-      .waitForElementVisible('.credits', TIMEOUT)
-      .waitForElementVisible('.content', TIMEOUT)
-
-      // Next
-      .click('h1')
-      .click('a[href$="interviews"]')
-  },
-  'Interviews': browser => {
-    browser
-
-      // List
-      .waitForElementVisible('#interviews a', TIMEOUT)
-      .assert.containsText('h2', 'Interviews')
-      .click('#language-switcher')
-      .assert.containsText('h2', 'Interviews')
-      .click('#language-switcher')
-      .click('#interviews a:nth-child(3)')
-
-      // Details
-      .waitForElementVisible('article', TIMEOUT)
-      .waitForElementVisible('figure', TIMEOUT)
-      .waitForElementVisible('.credits', TIMEOUT)
-      .waitForElementVisible('.content', TIMEOUT)
-
-      // Next
-      .click('h1')
-      .click('a[href$="releases"]')
-  },
-  'Releases': browser => {
-    browser
-
-      // List
-      .waitForElementVisible('#releases a', TIMEOUT)
-      .assert.containsText('h2', 'À découvrir')
-      .click('#language-switcher')
-      .assert.containsText('h2', 'Releases')
-      .click('#language-switcher')
-      .click('#releases a:nth-child(4)')
-
-      // Details
-      .waitForElementVisible('#album', TIMEOUT)
-
-      // Next
-      .click('h1')
-      .click('a[href$="events"]')
-  },
-  'Events': browser => {
-    browser
-
-      // Lists
-      .waitForElementVisible('#events a', TIMEOUT)
-      .assert.containsText('h2', 'Événements')
-      .assert.containsText('nav a:first-child', 'Concerts')
-      .assert.containsText('nav a:nth-child(2)', 'Live-reports')
-      .assert.containsText('nav a:last-child', 'Photos')
-      .click('#language-switcher')
-      .assert.containsText('h2', 'Events')
-      .assert.containsText('nav a:first-child', 'Gigs')
-      .assert.containsText('nav a:nth-child(2)', 'Live reports')
-      .assert.containsText('nav a:last-child', 'Photos')
-      .click('#language-switcher')
-      .click('#events a:nth-child(5)')
-
-      // Details
-      .waitForElementVisible('.content', TIMEOUT)
-      .waitForElementPresent('#map', TIMEOUT)
-
-      // Next
-      .click('h1')
-      .click('a[href$="encyclopedia"]')
-  },
-  'Encyclopedia': browser => {
-    browser
-
-      // Home
+      .url(`${devServer}/#/encyclopedia`)
       .waitForElementVisible('#encyclopedia', TIMEOUT)
+      .execute((() => document.getElementById('disclaimer').style.display = 'none'), [])
       .assert.containsText('h2', 'Encyclopédie')
       .assert.containsText('h3', 'Statistiques')
       .assert.visible('nav')
@@ -186,9 +41,11 @@ module.exports = {
       .assert.containsText('nav > a:last-child', 'Places')
       .click('#language-switcher')
       // .assert.elementCount('.figures > ul > li', 8)
-
-      // Genres
+  },
+  'Genres': browser => {
+    browser
       .click('a[href$="genres"]')
+      .waitForElementVisible('#genres a', TIMEOUT)
       .assert.containsText('h2', 'Genres')
       .click('#language-switcher')
       .assert.containsText('h2', 'Genres')
@@ -196,6 +53,7 @@ module.exports = {
       .assert.visible('.search')
       .setValue('.search input', 'Black S')
       // .assert.containsText('#genres a:first-child', 'Black Symphonique')
+      .pause(TIMEOUT)
       .click('#genres a:first-child')
       .assert.visible('h2')
       .assert.visible('nav')
@@ -203,15 +61,19 @@ module.exports = {
       .assert.containsText('nav > a[href$="albums"]', 'Albums célèbres')
       .click('#language-switcher')
       .assert.containsText('nav > a[href$="bands"]', 'Famous bands')
-      .assert.containsText('nav > a[href$="bands"]', 'Well-known albums')
+      .assert.containsText('nav > a[href$="albums"]', 'Well-known albums')
       .click('#language-switcher')
+      .pause(TIMEOUT)
       .click('.bands a:first-child')
       .waitForElementVisible('#band', TIMEOUT)
       .click('h1')
       .click('a[href$="encyclopedia"]')
-
-      // Bands
+      .pause(TIMEOUT)
+  },
+  'Bands': browser => {
+    browser
       .click('a[href$="bands"]')
+      .waitForElementVisible('#bands a', TIMEOUT)
       .assert.containsText('h2', 'Groupes')
       .click('#language-switcher')
       .assert.containsText('h2', 'Bands')
@@ -219,14 +81,19 @@ module.exports = {
       .assert.visible('.search')
       .setValue('.search input', 'children of bodom')
       // .assert.containsText('#bands a:first-child', 'Children Of Bodom')
+      .pause(TIMEOUT)
       .click('#bands a:first-child')
+      .waitForElementVisible('#band', TIMEOUT)
       .assert.visible('h2')
       .assert.visible('figure')
       .click('h1')
       .click('a[href$="encyclopedia"]')
-
-      // Artists
+      .pause(TIMEOUT)
+  },
+  'Artists': browser => {
+    browser
       .click('a[href$="artists"]')
+      .waitForElementVisible('#artists a', TIMEOUT)
       .assert.containsText('h2', 'Artistes')
       .click('#language-switcher')
       .assert.containsText('h2', 'Artists')
@@ -234,14 +101,19 @@ module.exports = {
       .assert.visible('.search')
       .setValue('.search input', 'angela gossow')
       // .assert.containsText('#artists a:first-child', 'Angela Gossow')
+      .pause(TIMEOUT)
       .click('#artists a:first-child')
+      .waitForElementVisible('#artist', TIMEOUT)
       .assert.visible('h2')
       .assert.visible('figure')
       .click('h1')
       .click('a[href$="encyclopedia"]')
-
-      // Albums
+      .pause(TIMEOUT)
+  },
+  'Albums': browser => {
+    browser
       .click('a[href$="albums"]')
+      .waitForElementVisible('#albums a', TIMEOUT)
       .assert.containsText('h2', 'Albums')
       .click('#language-switcher')
       .assert.containsText('h2', 'Albums')
@@ -249,14 +121,19 @@ module.exports = {
       .assert.visible('.search')
       .setValue('.search input', 'wintersun')
       // .assert.containsText('#albums a:first-child', 'Wintersun')
+      .pause(TIMEOUT)
       .click('#albums a:first-child')
+      .waitForElementVisible('#album', TIMEOUT)
       .assert.visible('h2')
       .assert.visible('figure')
       .click('h1')
       .click('a[href$="encyclopedia"]')
-
-      // Audios
+      .pause(TIMEOUT)
+  },
+  'Audios': browser => {
+    browser
       .click('a[href$="audios"]')
+      .waitForElementVisible('#audios a', TIMEOUT)
       .assert.containsText('h2', 'Audios')
       .click('#language-switcher')
       .assert.containsText('h2', 'Audios')
@@ -264,14 +141,19 @@ module.exports = {
       .assert.visible('.search')
       .setValue('.search input', 'deceiver of the gods')
       // .assert.containsText('#audios a:first-child', 'Deceiver of the Gods')
+      .pause(TIMEOUT)
       .click('#audios a:first-child')
+      .waitForElementVisible('#audio', TIMEOUT)
       .assert.visible('h2')
       .assert.visible('figure')
       .click('h1')
       .click('a[href$="encyclopedia"]')
-
-      // Videos
+      .pause(TIMEOUT)
+  },
+  'Videos': browser => {
+    browser
       .click('a[href$="videos"]')
+      .waitForElementVisible('#videos a', TIMEOUT)
       .assert.containsText('h2', 'Vidéos')
       .click('#language-switcher')
       .assert.containsText('h2', 'Videos')
@@ -279,14 +161,19 @@ module.exports = {
       .assert.visible('.search')
       .setValue('.search input', 'deep purple')
       // .assert.containsText('#videos a:first-child', 'Deep Purple')
+      .pause(TIMEOUT)
       .click('#videos a:first-child')
+      .waitForElementVisible('#video', TIMEOUT)
       .assert.visible('h2')
-      .assert.visible('figure')
+      .waitForElementVisible('iframe', TIMEOUT)
       .click('h1')
       .click('a[href$="encyclopedia"]')
-
-      // Labels
+      .pause(TIMEOUT)
+  },
+  'Labels': browser => {
+    browser
       .click('a[href$="labels"]')
+      .waitForElementVisible('#labels a', TIMEOUT)
       .assert.containsText('h2', 'Labels')
       .click('#language-switcher')
       .assert.containsText('h2', 'Labels')
@@ -294,40 +181,32 @@ module.exports = {
       .assert.visible('.search')
       .setValue('.search input', 'nuclear blast')
       // .assert.containsText('#labels a:first-child', 'Nuclear Blast')
+      .pause(TIMEOUT)
       .click('#labels a:first-child')
+      .waitForElementVisible('#label', TIMEOUT)
       .assert.visible('h2')
       .assert.visible('figure')
       .click('h1')
       .click('a[href$="encyclopedia"]')
-
-      // Places
+      .pause(TIMEOUT)
+  },
+  'Places': browser => {
+    browser
       .click('a[href$="places"]')
-      .assert.containsText('h2', 'Places')
+      .waitForElementVisible('#places a', TIMEOUT)
+      .assert.containsText('h2', 'Lieux')
       .click('#language-switcher')
       .assert.containsText('h2', 'Places')
       .click('#language-switcher')
       .assert.visible('.search')
       .setValue('.search input', 'cco')
       // .assert.containsText('#places a:first-child', 'CCO Villeurbanne')
+      .pause(TIMEOUT)
       .click('#places a:first-child')
+      .waitForElementVisible('#place', TIMEOUT)
       .assert.visible('h2')
       .assert.visible('figure')
-
-      // Next
-      .click('h1')
-      .click('a[href$="forums"]')
-  },
-  'Forums': browser => {
-    browser
-      .waitForElementVisible('nav > a:last-child', TIMEOUT)
-      .click('nav > a:last-child')
-      .assert.title('Spirit of Metal forum')
-      .assert.urlContains('l=fr')
-      .back()
-      .click('#language-switcher')
-      .click('nav > a:last-child')
-      .assert.title('Spirit of Metal forum')
-      .assert.urlContains('l=en')
+      .pause(TIMEOUT)
       .end()
   }
 }
