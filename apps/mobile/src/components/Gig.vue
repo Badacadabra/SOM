@@ -36,7 +36,6 @@
     data () {
       return {
         gig: {},
-        errors: [],
         coordinates: {}
       }
     },
@@ -51,7 +50,7 @@
             this.coordinates['lng'] = results[0].geometry.location.lng()
             this.drawMap()
           } else {
-            this.errors.push(status)
+            this.$errors.push(status)
           }
         })
       },
@@ -76,7 +75,7 @@
           this.getLocation(response.data.place)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     }
   }

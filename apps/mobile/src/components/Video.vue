@@ -13,8 +13,7 @@
     name: 'video',
     data () {
       return {
-        video: {},
-        errors: []
+        video: {}
       }
     },
     created () {
@@ -23,7 +22,7 @@
           this.$parseItem('video', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     },
     components: {

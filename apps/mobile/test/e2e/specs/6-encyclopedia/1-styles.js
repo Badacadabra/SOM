@@ -16,23 +16,23 @@ module.exports = {
       .url(`${devServer}/#/encyclopedia`)
       .waitForElementVisible('#encyclopedia nav', TIMEOUT)
       .execute((() => document.getElementById('disclaimer').style.display = 'none'), [])
-      .click('a[href$="genres"]')
+      .click('a[href$="styles"]')
   },
   'Search': browser => {
     browser
-      .waitForElementVisible('#genres a', TIMEOUT)
-      .assert.elementCount('#genres a', 10)
-      .assert.containsText('h2', 'Genres')
+      .waitForElementVisible('#styles a', TIMEOUT)
+      .assert.elementCount('#styles a', 10)
+      .assert.containsText('h2', 'Styles')
       .click('#language-switcher')
-      .assert.containsText('h2', 'Genres')
+      .assert.containsText('h2', 'Styles')
       .click('#language-switcher')
       .assert.visible('.search')
-      .assert.containsText('#genres', 'Black')
-      .click('#genres a:first-child')
+      .assert.containsText('#styles', 'Black')
+      .click('#styles a:first-child')
   },
   'Lists': browser => {
     browser
-      .waitForElementVisible('#genre', TIMEOUT)
+      .waitForElementVisible('#style', TIMEOUT)
       .assert.visible('nav')
       .assert.containsText('nav > a[href$="bands"]', 'Groupes phares')
       .assert.containsText('nav > a[href$="albums"]', 'Albums célèbres')

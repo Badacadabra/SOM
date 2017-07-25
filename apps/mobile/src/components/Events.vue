@@ -30,8 +30,7 @@
       return {
         gigsSelected: true,
         reportsSelected: false,
-        galleriesSelected: false,
-        errors: []
+        galleriesSelected: false
       }
     },
     methods: {

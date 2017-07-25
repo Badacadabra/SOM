@@ -33,8 +33,7 @@
     name: 'place',
     data () {
       return {
-        place: {},
-        errors: []
+        place: {}
       }
     },
     created () {
@@ -43,7 +42,7 @@
           this.$parseItem('place', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     },
     methods: {

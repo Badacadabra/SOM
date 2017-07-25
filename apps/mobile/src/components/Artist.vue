@@ -53,7 +53,7 @@
           this.$parseItem('artist', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     },
     components: {

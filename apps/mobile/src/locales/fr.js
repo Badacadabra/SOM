@@ -53,7 +53,7 @@ export default {
     photos: 'Photos'
   },
   encyclopedia: {
-    genres: 'Genres',
+    styles: 'Styles',
     bands: 'Groupes',
     artists: 'Artistes',
     albums: 'Albums',
@@ -65,7 +65,7 @@ export default {
     search: 'Recherche...',
     info: 'À propos',
     sheet: 'Fiche descriptive',
-    genre: 'Genre',
+    style: 'Style',
     band: 'Groupe',
     country: 'Pays',
     region: 'Région',
@@ -74,7 +74,7 @@ export default {
     status: 'Statut',
     website: 'Site web'
   },
-  genre: {
+  style: {
     bands: 'Groupes phares',
     albums: 'Albums célèbres'
   },

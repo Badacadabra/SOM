@@ -17,8 +17,7 @@
     name: 'photo-gallery',
     data () {
       return {
-        gallery: {},
-        errors: []
+        gallery: {}
       }
     },
     created () {
@@ -27,7 +26,7 @@
           this.$parseItem('gallery', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     }
   }

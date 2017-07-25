@@ -22,7 +22,7 @@
             this.$emit('reports')
           })
           .catch(e => {
-            this.errors.push(e)
+            this.$errors.push(e)
           })
       }
     }

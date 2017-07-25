@@ -9,7 +9,7 @@
   import 'vue-awesome/icons/search'
 
   export default {
-    name: 'search',
+    name: 'search-input',
     methods: {
       autocomplete (event) {
         this.$emit('typing', event)

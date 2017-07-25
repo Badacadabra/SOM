@@ -7,12 +7,11 @@
 
 <script>
   export default {
-    name: 'bands-by-genre',
+    name: 'bands-by-style',
     data () {
       return {
         page: 1,
-        bands: [],
-        errors: []
+        bands: []
       }
     },
     methods: {
@@ -23,7 +22,7 @@
             this.$emit('bands', this.bands[0].style) // necessary to display a title
           })
           .catch(e => {
-            this.errors.push(e)
+            this.$errors.push(e)
           })
       }
     }

@@ -5,8 +5,8 @@
     <section>
       <heading :text="$t('encyclopedia.sheet')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
-        <div class="genre">
-          <span class="bold">{{ $t('encyclopedia.genre') }}</span>
+        <div class="style">
+          <span class="bold">{{ $t('encyclopedia.style') }}</span>
           <span class="light">{{ band.style }}</span>
         </div>
         <div class="status">
@@ -118,7 +118,7 @@
             console.log(response.data)
           })
           .catch(e => {
-            this.errors.push(e)
+            this.$errors.push(e)
           })
       }
     },

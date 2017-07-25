@@ -1,14 +1,14 @@
 <template>
-  <article id="genre">
+  <article id="style">
     <heading :text="title" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
     <nav>
-      <router-link :to="{name: 'bandsByGenre'}" :class="{selected: bandsSelected}">
+      <router-link :to="{name: 'bandsByStyle'}" :class="{selected: bandsSelected}">
         <icon name="group" scale="1.3"></icon>
-        <span>{{ $t('genre.bands') }}</span>
+        <span>{{ $t('style.bands') }}</span>
       </router-link>
-      <router-link :to="{name: 'albumsByGenre'}" :class="{selected: albumsSelected}">
+      <router-link :to="{name: 'albumsByStyle'}" :class="{selected: albumsSelected}">
         <icon name="music" scale="1.3"></icon>
-        <span>{{ $t('genre.albums') }}</span>
+        <span>{{ $t('style.albums') }}</span>
       </router-link>
     </nav>
     <router-view v-on:bands="onBands" v-on:albums="onAlbums"></router-view>
@@ -20,7 +20,7 @@
   import 'vue-awesome/icons/music'
 
   export default {
-    name: 'genre',
+    name: 'style',
     data () {
       return {
         bandsSelected: true,

@@ -9,8 +9,8 @@
           <span class="bold">{{ $t('encyclopedia.band') }}</span>
           <span class="light">{{ album.band }}</span>
         </router-link>
-        <div class="genre">
-          <span class="bold">{{ $t('encyclopedia.genre') }}</span>
+        <div class="style">
+          <span class="bold">{{ $t('encyclopedia.style') }}</span>
           <span class="light" v-if="album.style">{{ album.style }}</span>
           <span class="light" v-else>N/A</span>
         </div>
@@ -66,8 +66,7 @@
         audios: [],
         bandcampLogo: '/static/img/bandcamp.png',
         soundcloudLogo: '/static/img/soundcloud.png',
-        defaultLogo: '/static/img/no-image.png',
-        errors: []
+        defaultLogo: '/static/img/no-image.png'
       }
     },
     methods: {
@@ -94,7 +93,7 @@
           this.bandcampOrSoundcloud()
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     },
     components: {

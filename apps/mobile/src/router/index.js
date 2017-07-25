@@ -26,32 +26,18 @@ import PhotoGalleries from '@/components/PhotoGalleries'
 import PhotoGallery from '@/components/PhotoGallery'
 
 import Encyclopedia from '@/components/Encyclopedia'
+import EncyclopediaSearch from '@/components/EncyclopediaSearch'
 
-import Genres from '@/components/Genres'
-import Genre from '@/components/Genre'
-import BandsByGenre from '@/components/BandsByGenre'
-import AlbumsByGenre from '@/components/AlbumsByGenre'
-
-import Bands from '@/components/Bands'
+import Style from '@/components/Style'
+import BandsByStyle from '@/components/BandsByStyle'
+import AlbumsByStyle from '@/components/AlbumsByStyle'
 import Band from '@/components/Band'
 import BandAlbums from '@/components/BandAlbums'
-
-import Artists from '@/components/Artists'
 import Artist from '@/components/Artist'
-
-import Albums from '@/components/Albums'
 import Album from '@/components/Album'
-
-import Audios from '@/components/Audios'
 import Audio from '@/components/Audio'
-
-import Videos from '@/components/Videos'
 import Video from '@/components/Video'
-
-import Labels from '@/components/Labels'
 import Label from '@/components/Label'
-
-import Places from '@/components/Places'
 import Place from '@/components/Place'
 
 Vue.use(Router)
@@ -150,32 +136,34 @@ export default new Router({
       component: Encyclopedia
     },
     {
-      path: '/encyclopedia/genres',
-      name: 'genres',
-      component: Genres
+      path: '/encyclopedia/styles',
+      name: 'styles',
+      component: EncyclopediaSearch,
+      props: {type: 'styles', fields: ['title'], firstChar: ''}
     },
     {
-      path: '/encyclopedia/genres/:id',
-      name: 'genre',
-      component: Genre,
-      redirect: {name: 'bandsByGenre'},
+      path: '/encyclopedia/styles/:id',
+      name: 'style',
+      component: Style,
+      redirect: {name: 'bandsByStyle'},
       children: [
         {
           path: 'bands',
-          name: 'bandsByGenre',
-          component: BandsByGenre
+          name: 'bandsByStyle',
+          component: BandsByStyle
         },
         {
           path: 'albums',
-          name: 'albumsByGenre',
-          component: AlbumsByGenre
+          name: 'albumsByStyle',
+          component: AlbumsByStyle
         }
       ]
     },
     {
       path: '/encyclopedia/bands',
       name: 'bands',
-      component: Bands
+      component: EncyclopediaSearch,
+      props: {type: 'bands', fields: ['name'], firstChar: ''}
     },
     {
       path: '/encyclopedia/bands/:id',
@@ -254,7 +242,8 @@ export default new Router({
     {
       path: '/encyclopedia/artists',
       name: 'artists',
-      component: Artists
+      component: EncyclopediaSearch,
+      props: {type: 'artists', fields: ['FullName'], firstChar: 'a'}
     },
     {
       path: '/encyclopedia/artists/:id',
@@ -264,7 +253,8 @@ export default new Router({
     {
       path: '/encyclopedia/albums',
       name: 'albums',
-      component: Albums
+      component: EncyclopediaSearch,
+      props: {type: 'albums', fields: ['name', 'band'], firstChar: 'a'}
     },
     {
       path: '/encyclopedia/albums/:id',
@@ -274,7 +264,8 @@ export default new Router({
     {
       path: '/encyclopedia/audios',
       name: 'audios',
-      component: Audios
+      component: EncyclopediaSearch,
+      props: {type: 'audios', fields: ['title', 'band'], firstChar: ''}
     },
     {
       path: '/encyclopedia/audios/:id',
@@ -284,7 +275,8 @@ export default new Router({
     {
       path: '/encyclopedia/videos',
       name: 'videos',
-      component: Videos
+      component: EncyclopediaSearch,
+      props: {type: 'videos', fields: ['title'], firstChar: 'a'}
     },
     {
       path: '/encyclopedia/videos/:id',
@@ -294,7 +286,8 @@ export default new Router({
     {
       path: '/encyclopedia/labels',
       name: 'labels',
-      component: Labels
+      component: EncyclopediaSearch,
+      props: {type: 'labels', fields: ['name'], firstChar: 'a'}
     },
     {
       path: '/encyclopedia/labels/:id',
@@ -304,7 +297,8 @@ export default new Router({
     {
       path: '/encyclopedia/places',
       name: 'places',
-      component: Places
+      component: EncyclopediaSearch,
+      props: {type: 'places', fields: ['name'], firstChar: 'a'}
     },
     {
       path: '/encyclopedia/places/:id',

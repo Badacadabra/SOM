@@ -14,8 +14,7 @@
     name: 'audio',
     data () {
       return {
-        audio: {},
-        errors: []
+        audio: {}
       }
     },
     created () {
@@ -24,7 +23,7 @@
           this.$parseItem('audio', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     },
     components: {

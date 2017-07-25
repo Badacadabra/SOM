@@ -2,9 +2,9 @@
   <div id="encyclopedia">
     <heading :text="$t('categories.encyclopedia')" :level="2" font="astonished" color="red"></heading>
     <nav>
-      <router-link :to="{name: 'genres'}" class="item">
+      <router-link :to="{name: 'styles'}" class="item">
         <icon name="hashtag" scale="1.3"></icon>
-        {{ $t('encyclopedia.genres') }}
+        {{ $t('encyclopedia.styles') }}
       </router-link>
       <router-link :to="{name: 'bands'}" class="item">
         <icon name="group" scale="1.3"></icon>
@@ -40,7 +40,7 @@
       <ul v-if="stats.length > 0">
         <li>
           <span class="num">{{ $n(stats[7].value, 'decimal') }}</span>
-          {{ $t('encyclopedia.genres') | lowercase }}
+          {{ $t('encyclopedia.styles') | lowercase }}
         </li>
         <li>
           <span class="num">{{ $n(stats[0].value, 'decimal') }}</span>
@@ -99,7 +99,7 @@
           this.$parseList('stats', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     },
     filters: {

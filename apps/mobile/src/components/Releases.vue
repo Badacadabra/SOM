@@ -11,8 +11,7 @@
     name: 'releases',
     data () {
       return {
-        releases: [],
-        errors: []
+        releases: []
       }
     },
     created () {
@@ -21,7 +20,7 @@
           this.$parseList('releases', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     }
   }

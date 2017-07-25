@@ -12,8 +12,7 @@
     data () {
       return {
         page: 1,
-        reviews: [],
-        errors: []
+        reviews: []
       }
     },
     methods: {
@@ -23,7 +22,7 @@
             this.$parseList('reviews', response.data, this.page)
           })
           .catch(e => {
-            this.errors.push(e)
+            this.$errors.push(e)
           })
       }
     }

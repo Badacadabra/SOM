@@ -7,12 +7,11 @@
 
 <script>
   export default {
-    name: 'albums-by-genre',
+    name: 'albums-by-style',
     data () {
       return {
         page: 1,
-        albums: [],
-        errors: []
+        albums: []
       }
     },
     methods: {
@@ -23,7 +22,7 @@
             this.$emit('albums')
           })
           .catch(e => {
-            this.errors.push(e)
+            this.$errors.push(e)
           })
       }
     }

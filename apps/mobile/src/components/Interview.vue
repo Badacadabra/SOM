@@ -20,8 +20,7 @@
     name: 'interview',
     data () {
       return {
-        interview: {},
-        errors: []
+        interview: {}
       }
     },
     created () {
@@ -30,7 +29,7 @@
           this.$parseItem('interview', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     }
   }

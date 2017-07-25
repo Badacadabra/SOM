@@ -18,8 +18,7 @@
     name: 'live-report',
     data () {
       return {
-        report: {},
-        errors: []
+        report: {}
       }
     },
     created () {
@@ -28,7 +27,7 @@
           this.$parseItem('report', response.data)
         })
         .catch(e => {
-          this.errors.push(e)
+          this.$errors.push(e)
         })
     }
   }

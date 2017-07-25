@@ -8,6 +8,7 @@ const Ajax = {
     Vue.mixin({
       beforeCreate () {
         this.$loading = true
+        this.$errors = []
       }
     })
 
