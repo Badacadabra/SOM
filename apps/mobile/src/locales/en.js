@@ -89,7 +89,7 @@ export default {
   },
   artist: {
     birth: 'Birthday',
-    bands: 'Associated bands'
+    bands: 'Associated band | Associated bands'
   },
   album: {
     type: 'Type',
@@ -100,7 +100,7 @@ export default {
     audio: 'Available audio | Available audios'
   },
   label: {
-    releases: 'Latest releases'
+    releases: 'Latest release | Latest releases'
   },
   place: {
     description: 'Description',

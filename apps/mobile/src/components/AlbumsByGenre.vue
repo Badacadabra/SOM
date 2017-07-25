@@ -1,6 +1,6 @@
 <template>
   <section>
-    <list ref="list" :scroll="true" v-on:update="load" :items="albums" link="album" :fields="['name', 'band', 'date']" type="img"></list>
+    <list ref="list" :scroll="true" v-on:update="load" :items="albums" link="album" :fields="['name', 'band', 'date']" type="img" class="albums"></list>
     <loader v-if="$loading"></loader>
   </section>
 </template>

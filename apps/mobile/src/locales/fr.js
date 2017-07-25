@@ -89,7 +89,7 @@ export default {
   },
   artist: {
     birth: 'Naissance',
-    bands: 'Groupes associés'
+    bands: 'Groupe associé | Groupes associés'
   },
   album: {
     type: 'Type',
@@ -100,7 +100,7 @@ export default {
     audio: 'Audio disponible | Audios disponibles'
   },
   label: {
-    releases: 'Dernières sorties'
+    releases: 'Dernière sortie | Dernières sorties'
   },
   place: {
     description: 'Description',

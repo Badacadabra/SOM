@@ -28,7 +28,7 @@
       </div>
     </section>
     <section>
-      <heading :text="$t('artist.bands')" :level="3" font="oswald" color="black"></heading>
+      <heading :text="$tc('artist.bands', artist.bands.length)" :level="3" font="oswald" color="black"></heading>
       <router-link v-for="band of artist.bands" :key="band.id" :to="{name: 'band', params: {id: band.id }}" class="info bands">
         {{ band.name }}
       </router-link>

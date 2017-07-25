@@ -1,6 +1,6 @@
 <template>
   <article>
-    <heading :text="interview.band" level="2" font="oswald" color="red" variant="uppercase"></heading>
+    <heading :text="interview.band" :level="2" font="oswald" color="red" variant="uppercase"></heading>
     <div class="info">
       <figure v-if="interview.picture">
         <img :src="interview.picture" :alt="interview.picture">

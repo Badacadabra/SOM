@@ -27,8 +27,8 @@
         </div>
       </div>
     </section>
-    <section>
-      <heading :text="$t('label.releases')" :level="3" font="oswald" color="black" v-if="albums.length > 0"></heading>
+    <section class="albums">
+      <heading :text="$tc('label.releases', albums.length)" :level="3" font="oswald" color="black" v-if="albums.length > 0"></heading>
       <list ref="list" :scroll="false" :items="albums" link="album" :fields="['name', 'band', 'type', 'date']" type="img"></list>
     </section>
     <loader v-if="$loading"></loader>

@@ -1,7 +1,7 @@
 <template>
   <article>
     <div class="info">
-      <h3>{{ news.title }}</h3>
+      <h2>{{ news.title }}</h2>
       <div class="credits">
         <span v-if="news.date">{{ $d(new Date(news.date), 'short') }}</span> - <span>{{ news.author }}</span>
       </div>
@@ -38,7 +38,7 @@
     font-family: Abel, sans-serif
     font-size: 1.2em
 
-  h3
+  h2
     text-align: center
     font-size: 1.1em
     padding: 0 5px
