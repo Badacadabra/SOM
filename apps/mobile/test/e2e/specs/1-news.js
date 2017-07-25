@@ -9,8 +9,9 @@ let devServer
 const TIMEOUT = 5000 // Can be adjusted depending on the Internet connection...
 
 module.exports = {
+  '@disabled': true,
   'List': browser => {
-    devServer = browser.globals.devServerURL;
+    devServer = browser.globals.devServerURL
 
     browser
       .url(`${devServer}/#/news`)
@@ -19,12 +20,20 @@ module.exports = {
       .assert.containsText('h2', 'Actualités')
       .click('#language-switcher')
       .assert.containsText('h2', 'News')
-      .click('#news a:first-child')
+      .assert.cssClassPresent('#news > div', 'std')
+      .assert.elementNotPresent('#news a img')
+      .assert.elementCount('#news a:first-child > div > div', 3)
+      .assert.containsText('#news a', String(new Date().getFullYear()))
   },
   'Details': browser => {
     browser
-      .waitForElementPresent('article', TIMEOUT)
-      .assert.visible('h3')
+      .getText('#news a:first-child > div > div:first-child', title => {
+        browser
+          .click('#news a:first-child')
+          .pause(TIMEOUT)
+          .waitForElementVisible('h2', TIMEOUT)
+          .assert.containsText('h2', title.value)
+      })
       .assert.visible('.credits')
       .assert.visible('.content')
       .end()

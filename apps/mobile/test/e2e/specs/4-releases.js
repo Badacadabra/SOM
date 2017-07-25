@@ -9,8 +9,9 @@ let devServer
 const TIMEOUT = 5000 // Can be adjusted depending on the Internet connection...
 
 module.exports = {
+  '@disabled': true,
   'List': browser => {
-    devServer = browser.globals.devServerURL;
+    devServer = browser.globals.devServerURL
 
     browser
       .url(`${devServer}/#/releases`)
@@ -19,12 +20,21 @@ module.exports = {
       .assert.containsText('h2', 'À découvrir')
       .click('#language-switcher')
       .assert.containsText('h2', 'Releases')
-      .click('#language-switcher')
-      .click('#releases a:nth-child(4)')
+      .assert.cssClassPresent('#releases > div', 'img')
+      .assert.visible('#releases a img')
+      .assert.elementCount('#releases a:first-child > div > div', 4)
+      .assert.containsText('#releases a', String(new Date().getFullYear()))
   },
   'Details': browser => {
     browser
-      .waitForElementVisible('#album', TIMEOUT)
+      .getText('#releases a:nth-child(4) > div > div:first-child', title => {
+        browser
+          .click('#releases a:nth-child(4)')
+          .pause(TIMEOUT)
+          .waitForElementPresent('h2', TIMEOUT)
+          .assert.containsText('h2', title.value.toUpperCase())
+      })
+      .assert.visible('#album')
       // Albums are tested later (see encyclopedia)
       .end()
   }

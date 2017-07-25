@@ -10,7 +10,7 @@ const TIMEOUT = 5000 // Can be adjusted depending on the Internet connection...
 
 module.exports = {
   'French': browser => {
-    devServer = browser.globals.devServerURL;
+    devServer = browser.globals.devServerURL
 
     browser
       .url(`${devServer}/#/`)
