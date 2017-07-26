@@ -21,11 +21,11 @@ import veeFr from 'vee-validate/dist/locale/fr'
 import Ajax from './plugins/Ajax.js'
 
 // Own components
-import Loader from './components/Loader'
-import Dimmer from './components/Dimmer'
-import Disclaimer from './components/Disclaimer'
-import Heading from './components/Heading'
-import List from './components/List'
+import Loader from './components/layout/Loader'
+import Dimmer from './components/layout/Dimmer'
+import Disclaimer from './components/layout/Disclaimer'
+import Heading from './components/layout/Heading'
+import List from './components/layout/List'
 
 // ------------------------------
 

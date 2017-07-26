@@ -8,9 +8,10 @@
 </template>
 
 <script>
-  import SearchInput from './SearchInput'
+  import SearchInput from '../../layout/SearchInput'
 
   export default {
+    name: 'search',
     props: ['type', 'fields', 'firstChar'],
     data () {
       return {

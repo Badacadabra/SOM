@@ -4,14 +4,14 @@
     <div id="language-switcher" @click="switchLanguage">
       <span>&bull;</span> {{ this.$i18n.locale }} <span>&bull;</span>
     </div>
-    <img v-if="menuIsHidden" @click="toggleMenu" id="burger" src="../assets/img/png/burger.png" alt="Ouvrir le menu">
-    <img v-else @click="toggleMenu" id="cross" src="../assets/img/png/cross.png" alt="Fermer le menu">
+    <img v-if="menuIsHidden" @click="toggleMenu" id="burger" src="../../assets/img/png/burger.png" alt="Ouvrir le menu">
+    <img v-else @click="toggleMenu" id="cross" src="../../assets/img/png/cross.png" alt="Fermer le menu">
   </header>
 </template>
 
 <script>
   export default {
-    name: 'appHeader',
+    name: 'app-header',
     data () {
       return {
         menuIsHidden: true

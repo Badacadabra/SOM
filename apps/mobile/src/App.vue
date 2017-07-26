@@ -14,9 +14,9 @@
 </template>
 
 <script>
-  import appHeader from './components/Header'
-  import appMenu from './components/Menu'
-  import appFooter from './components/Footer'
+  import appHeader from './components/layout/Header'
+  import appMenu from './components/layout/Menu'
+  import appFooter from './components/layout/Footer'
 
   export default {
     name: 'app',

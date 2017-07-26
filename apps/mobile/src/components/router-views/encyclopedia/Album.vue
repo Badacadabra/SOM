@@ -1,7 +1,7 @@
 <template>
   <article id="album">
     <heading :text="album.name" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
-    <encyclopedia-picture :src="album.cover" :alt="album.name"></encyclopedia-picture>
+    <large-picture :src="album.cover" :alt="album.name"></large-picture>
     <section>
       <heading :text="$t('encyclopedia.sheet')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-  import EncyclopediaPicture from './EncyclopediaPicture'
+  import LargePicture from '../../layout/LargePicture'
 
   export default {
     name: 'album',
@@ -97,7 +97,7 @@
         })
     },
     components: {
-      EncyclopediaPicture
+      LargePicture
     }
   }
 </script>

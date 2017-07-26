@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import Login from './Login'
-  import Signup from './Signup'
+  import Login from '../auth/Login'
+  import Signup from '../auth/Signup'
 
   export default {
     name: 'app-menu',

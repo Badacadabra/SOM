@@ -1,44 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/components/Home'
+import Home from '@/components/router-views/Home'
 
-import NewsFeed from '@/components/NewsFeed'
-import News from '@/components/News'
+// Webzine
+import NewsFeed from '@/components/router-views/webzine/NewsFeed'
+import News from '@/components/router-views/webzine/News'
+import Reviews from '@/components/router-views/webzine/Reviews'
+import Review from '@/components/router-views/webzine/Review'
+import Interviews from '@/components/router-views/webzine/Interviews'
+import Interview from '@/components/router-views/webzine/Interview'
+import Releases from '@/components/router-views/webzine/Releases'
+import Events from '@/components/router-views/webzine/Events'
+import Gigs from '@/components/router-views/webzine/Gigs'
+import Gig from '@/components/router-views/webzine/Gig'
+import LiveReports from '@/components/router-views/webzine/LiveReports'
+import LiveReport from '@/components/router-views/webzine/LiveReport'
+import PhotoGalleries from '@/components/router-views/webzine/PhotoGalleries'
+import PhotoGallery from '@/components/router-views/webzine/PhotoGallery'
 
-import Reviews from '@/components/Reviews'
-import Review from '@/components/Review'
-
-import Interviews from '@/components/Interviews'
-import Interview from '@/components/Interview'
-
-import Releases from '@/components/Releases'
-
-import Events from '@/components/Events'
-
-import Gigs from '@/components/Gigs'
-import Gig from '@/components/Gig'
-
-import LiveReports from '@/components/LiveReports'
-import LiveReport from '@/components/LiveReport'
-
-import PhotoGalleries from '@/components/PhotoGalleries'
-import PhotoGallery from '@/components/PhotoGallery'
-
-import Encyclopedia from '@/components/Encyclopedia'
-import EncyclopediaSearch from '@/components/EncyclopediaSearch'
-
-import Style from '@/components/Style'
-import BandsByStyle from '@/components/BandsByStyle'
-import AlbumsByStyle from '@/components/AlbumsByStyle'
-import Band from '@/components/Band'
-import BandAlbums from '@/components/BandAlbums'
-import Artist from '@/components/Artist'
-import Album from '@/components/Album'
-import Audio from '@/components/Audio'
-import Video from '@/components/Video'
-import Label from '@/components/Label'
-import Place from '@/components/Place'
+// Encyclopedia
+import Encyclopedia from '@/components/router-views/encyclopedia/Encyclopedia'
+import Search from '@/components/router-views/encyclopedia/Search'
+import Style from '@/components/router-views/encyclopedia/Style'
+import BandsByStyle from '@/components/router-views/encyclopedia/BandsByStyle'
+import AlbumsByStyle from '@/components/router-views/encyclopedia/AlbumsByStyle'
+import Band from '@/components/router-views/encyclopedia/Band'
+import BandAlbums from '@/components/router-views/encyclopedia/BandAlbums'
+import Artist from '@/components/router-views/encyclopedia/Artist'
+import Album from '@/components/router-views/encyclopedia/Album'
+import Audio from '@/components/router-views/encyclopedia/Audio'
+import Video from '@/components/router-views/encyclopedia/Video'
+import Label from '@/components/router-views/encyclopedia/Label'
+import Place from '@/components/router-views/encyclopedia/Place'
 
 Vue.use(Router)
 
@@ -138,7 +132,7 @@ export default new Router({
     {
       path: '/encyclopedia/styles',
       name: 'styles',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'styles', fields: ['title'], firstChar: ''}
     },
     {
@@ -162,7 +156,7 @@ export default new Router({
     {
       path: '/encyclopedia/bands',
       name: 'bands',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'bands', fields: ['name'], firstChar: ''}
     },
     {
@@ -242,7 +236,7 @@ export default new Router({
     {
       path: '/encyclopedia/artists',
       name: 'artists',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'artists', fields: ['FullName'], firstChar: 'a'}
     },
     {
@@ -253,7 +247,7 @@ export default new Router({
     {
       path: '/encyclopedia/albums',
       name: 'albums',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'albums', fields: ['name', 'band'], firstChar: 'a'}
     },
     {
@@ -264,7 +258,7 @@ export default new Router({
     {
       path: '/encyclopedia/audios',
       name: 'audios',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'audios', fields: ['title', 'band'], firstChar: ''}
     },
     {
@@ -275,7 +269,7 @@ export default new Router({
     {
       path: '/encyclopedia/videos',
       name: 'videos',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'videos', fields: ['title'], firstChar: 'a'}
     },
     {
@@ -286,7 +280,7 @@ export default new Router({
     {
       path: '/encyclopedia/labels',
       name: 'labels',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'labels', fields: ['name'], firstChar: 'a'}
     },
     {
@@ -297,7 +291,7 @@ export default new Router({
     {
       path: '/encyclopedia/places',
       name: 'places',
-      component: EncyclopediaSearch,
+      component: Search,
       props: {type: 'places', fields: ['name'], firstChar: 'a'}
     },
     {

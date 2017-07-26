@@ -7,8 +7,6 @@
 </template>
 
 <script>
-  import EncyclopediaPicture from './EncyclopediaPicture'
-
   export default {
     name: 'video',
     data () {
@@ -24,9 +22,6 @@
         .catch(e => {
           this.$errors.push(e)
         })
-    },
-    components: {
-      EncyclopediaPicture
     }
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <article id="label">
     <heading :text="label.name" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
-    <encyclopedia-picture :src="label.logo" :alt="label.nom_label"></encyclopedia-picture>
+    <large-picture :src="label.logo" :alt="label.nom_label"></large-picture>
     <section>
       <heading :text="$t('encyclopedia.info')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  import EncyclopediaPicture from './EncyclopediaPicture'
+  import LargePicture from '../../layout/LargePicture'
 
   export default {
     name: 'label',
@@ -65,7 +65,7 @@
       }
     },
     components: {
-      EncyclopediaPicture
+      LargePicture
     }
   }
 </script>

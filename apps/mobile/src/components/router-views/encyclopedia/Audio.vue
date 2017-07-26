@@ -1,14 +1,14 @@
 <template>
   <article id="audio">
     <heading :text="audio.title" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
-    <encyclopedia-picture :src="audio.picture" :alt="audio.title"></encyclopedia-picture>
+    <large-picture :src="audio.picture" :alt="audio.title"></large-picture>
     <div v-html="audio.player"></div>
     <loader v-if="$loading"></loader>
   </article>
 </template>
 
 <script>
-  import EncyclopediaPicture from './EncyclopediaPicture'
+  import LargePicture from '../../layout/LargePicture'
 
   export default {
     name: 'audio',
@@ -27,7 +27,7 @@
         })
     },
     components: {
-      EncyclopediaPicture
+      LargePicture
     }
   }
 </script>

@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'encyclopedia-picture',
+    name: 'large-picture',
     props: ['src', 'alt']
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <article id="band">
     <heading :text="band.name" :level="2" font="oswald" color="yellow" variant="uppercase"></heading>
-    <encyclopedia-picture :src="band.picture" :alt="band.name"></encyclopedia-picture>
+    <large-picture :src="band.picture" :alt="band.name"></large-picture>
     <section>
       <heading :text="$t('encyclopedia.sheet')" :level="3" font="oswald" color="black"></heading>
       <div class="info">
@@ -99,7 +99,7 @@
 </template>
 
 <script>
-  import EncyclopediaPicture from './EncyclopediaPicture'
+  import LargePicture from '../../layout/LargePicture'
   import 'vue-awesome/icons/star'
 
   export default {
@@ -132,7 +132,7 @@
         })
     },
     components: {
-      EncyclopediaPicture
+      LargePicture
     }
   }
 </script>
