@@ -9,7 +9,6 @@ let devServer
 const TIMEOUT = 5000 // Can be adjusted depending on the Internet connection...
 
 module.exports = {
-  '@disabled': true,
   'Main': browser => {
     devServer = browser.globals.devServerURL
 
