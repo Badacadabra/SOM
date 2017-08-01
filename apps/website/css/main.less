@@ -1,0 +1,228 @@
+// ==============================
+// Colors
+// ==============================
+
+@black: #0C0C0C;
+@darker: #121212;
+@dark: #181818;
+@yellow: #F4BF31;
+@red: #BA2525;
+
+// ==============================
+// Fonts
+// ==============================
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600');
+
+@font-face {
+    font-family: 'Astonished';
+    src: url('../fonts/astonished/astonished-webfont.woff2') format('woff2'),
+         url('../fonts/astonished/astonished-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// ==============================
+// Global
+// ==============================
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  background-image: url('../img/asphalt.png');
+}
+
+.more {
+  width: 100%;
+  color: @black;
+  background-color: @yellow;
+  font: 300 20px Oswald, sans-serif;
+}
+
+.private-btn {
+  color: #BA2525;
+}
+
+// ==============================
+// Header
+// ==============================
+
+header {
+  margin-bottom: 50px;
+}
+
+#topbar {
+  color: whitesmoke;
+  background-color: @black;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: whitesmoke;
+
+    &:hover {
+      color: @yellow;
+    }
+  }
+
+  #switchers {
+    font: 600 27px Oswald, sans-serif;
+    text-align: center;
+  }
+
+  #site-switcher,
+  #language-switcher,
+  #search {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  #site-switcher {
+    color: @black;
+    background-color: @yellow;
+  }
+
+  #language-switcher,
+  #search {
+    background-color: @darker;
+  }
+
+  nav ul {
+    font: 40px Astonished, sans-serif;
+    width: 554px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+    li {
+      height: 80px;
+      line-height: 80px;
+      vertical-align: middle;
+      padding: 0 30px;
+      border-bottom: solid 5px whitesmoke;
+
+      &:hover {
+        color: @yellow;
+        border-bottom-color: @yellow;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#banner {
+  width: 100%;
+  height: 220px;
+  background: black url('../img/smoke.jpg') no-repeat left top;
+  border-bottom: solid 20px black;
+  border-image: url('../../img/warning.png') 20 0 repeat;
+  display: flex;
+  justify-content: space-between;
+
+  figure {
+    margin-left: 200px;
+  }
+
+  #login {
+    width: 340px;
+    height: 160px;
+    padding: 20px;
+    color: whitesmoke;
+    background-color: @darker;
+    border: solid 2px black;
+    display: flex;
+    justify-content: space-between;
+    font-family: Oswald, sans-serif;
+  }
+}
+
+// ==============================
+// Main
+// ==============================
+
+main {
+  width: 1024px;
+  margin: auto;
+}
+
+h2 {
+  color: gray;
+  background-color: @black;
+  font: 42px Astonished, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+.content {
+  color: whitesmoke;
+  background-color: @darker;
+  text-align: center;
+  font: 300 22px Oswald, sans-serif;
+  padding: 20px;
+
+  h3 {
+    color: @yellow;
+  }
+
+  .author {
+    color: gray;
+  }
+}
+
+// ==============================
+// Footer
+// ==============================
+
+footer {
+  border-top: solid 20px black;
+  border-image: url('../../img/warning.png') 20 0 repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+  background-color: @darker;
+  height: 120px;
+  padding: 0 20px;
+  margin-top: 50px;
+
+  #brand {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font: 600 45px Oswald, sans-serif;
+      margin: 0 10px 0 0;
+
+      span {
+        color: @yellow;
+      }
+    }
+  }
+
+  #years {
+    font: 600 27px Oswald, sans-serif;
+  }
+
+  #social img {
+    width: 64px;
+    margin-left: 10px;
+  }
+}
