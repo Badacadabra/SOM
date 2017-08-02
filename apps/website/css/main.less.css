@@ -13,23 +13,98 @@
 ul {
   list-style-type: none;
 }
+a {
+  color: whitesmoke;
+}
 a:hover {
+  color: gray;
   text-decoration: none;
 }
 body {
   background-image: url('../img/asphalt.png');
 }
+* + .tooltip > .tooltip-inner {
+  background-color: #121212;
+  color: #F4BF31;
+  border: 2px solid #F4BF31;
+  padding: 12px;
+  font-size: 18px;
+  font-family: Oswald, sans-serif;
+}
+/* Tooltip on top */
+* + .tooltip.top > .tooltip-arrow {
+  border-top: 5px solid #F4BF31;
+}
+/* Tooltip on bottom */
+* + .tooltip.bottom > .tooltip-arrow {
+  border-bottom: 5px solid #F4BF31;
+}
+/* Tooltip on left */
+* + .tooltip.left > .tooltip-arrow {
+  border-left: 5px solid #F4BF31;
+}
+/* Tooltip on right */
+* + .tooltip.right > .tooltip-arrow {
+  border-right: 5px solid #F4BF31;
+}
 .more {
   width: 100%;
   color: #0C0C0C;
   background-color: #F4BF31;
-  font: 300 20px Oswald, sans-serif;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
 }
 .private-btn {
   color: #BA2525;
 }
-header {
-  margin-bottom: 50px;
+.content,
+#ad img {
+  box-shadow: 0 0 30px black;
+}
+.content {
+  font: 300 20px Oswald, sans-serif;
+}
+.content figure {
+  margin-top: 20px;
+}
+.content figure img {
+  display: block;
+  margin: auto;
+}
+.content figure figcaption {
+  text-align: center;
+}
+.release {
+  background-color: #181818;
+  margin-top: 15px;
+  padding: 10px 0;
+}
+.release:hover {
+  cursor: pointer;
+  background-color: #0C0C0C;
+}
+.release h3 {
+  font-size: 17px;
+  margin: 0;
+}
+.release div:first-of-type {
+  font-size: 16px;
+}
+.release div:last-of-type {
+  font-size: 14px;
+}
+.event {
+  text-align: center;
+}
+.event h3 {
+  font-size: 20px;
+}
+.event div:first-of-type {
+  font-size: 18px;
+}
+.event div:last-of-type {
+  font-size: 18px;
 }
 #topbar {
   color: whitesmoke;
@@ -39,33 +114,23 @@ header {
   display: flex;
   justify-content: space-between;
 }
-#topbar a {
-  color: whitesmoke;
-}
 #topbar a:hover {
   color: #F4BF31;
 }
-#topbar #switchers {
-  font: 600 27px Oswald, sans-serif;
-  text-align: center;
-}
-#topbar #site-switcher,
 #topbar #language-switcher,
 #topbar #search {
   width: 80px;
   height: 80px;
-  line-height: 80px;
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-}
-#topbar #site-switcher {
-  color: #0C0C0C;
-  background-color: #F4BF31;
-}
-#topbar #language-switcher,
-#topbar #search {
+  font: 600 27px Oswald, sans-serif;
   background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#topbar #language-switcher:hover,
+#topbar #search:hover {
+  cursor: pointer;
+  color: #F4BF31;
 }
 #topbar nav ul {
   font: 40px Astonished, sans-serif;
@@ -82,14 +147,17 @@ header {
   border-bottom: solid 5px whitesmoke;
 }
 #topbar nav ul li:hover {
-  color: #F4BF31;
   border-bottom-color: #F4BF31;
   cursor: pointer;
+}
+#topbar nav ul li:hover a {
+  color: #F4BF31;
 }
 #banner {
   width: 100%;
   height: 220px;
   background: black url('../img/smoke.jpg') no-repeat left top;
+  box-shadow: 0 0 100px black inset;
   border-bottom: solid 20px black;
   border-image: url('../../img/warning.png') 20 0 repeat;
   display: flex;
@@ -97,11 +165,17 @@ header {
 }
 #banner figure {
   margin-left: 200px;
+  transition: transform 1s ease;
+}
+#banner figure:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
 }
 #banner #login {
   width: 340px;
   height: 160px;
   padding: 20px;
+  margin: 20px 100px 0 0;
   color: whitesmoke;
   background-color: #121212;
   border: solid 2px black;
@@ -109,29 +183,145 @@ header {
   justify-content: space-between;
   font-family: Oswald, sans-serif;
 }
+#banner #login #pseudo {
+  font-weight: 400;
+  font-size: 22px;
+}
+#banner #login #circle {
+  font-weight: 300;
+  font-size: 15px;
+}
+#banner #login #dashboard,
+#banner #login #messages {
+  font-weight: 300;
+  font-size: 18px;
+}
+#banner #login #dashboard a,
+#banner #login #messages a {
+  color: gray;
+}
+#banner #login #dashboard {
+  margin-top: 15px;
+}
+#banner #login #logout {
+  cursor: pointer;
+}
 main {
   width: 1024px;
   margin: auto;
 }
-h2 {
+main h2 {
   color: gray;
   background-color: #0C0C0C;
   font: 42px Astonished, sans-serif;
   text-align: center;
   margin: 0;
+  position: relative;
+  top: 70px;
+  left: -20px;
 }
-.content {
+main h2::before,
+main h2::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -40px;
+  z-index: -10;
+  border: 20px solid;
+  border-color: black transparent transparent transparent;
+}
+main h2::before {
+  left: 0;
+}
+main h2::after {
+  right: 0;
+}
+main .content {
   color: whitesmoke;
   background-color: #121212;
-  text-align: center;
   font: 300 22px Oswald, sans-serif;
-  padding: 20px;
+  padding: 70px 10px 20px 10px;
 }
-.content h3 {
+main .content h3 {
   color: #F4BF31;
 }
-.content .author {
+main .content h3 a {
+  color: #F4BF31;
+}
+main .content .author {
   color: gray;
+  font-size: 16px;
+}
+main .content .author:before {
+  content: '@';
+}
+main .large-box {
+  width: 650px;
+}
+main .large-box h2 {
+  width: 690px;
+}
+main .small-box {
+  width: 300px;
+}
+main .small-box h2 {
+  width: 340px;
+}
+#news {
+  text-align: center;
+}
+#news a {
+  display: block;
+}
+#news a:hover {
+  color: gray;
+}
+#interviews figcaption {
+  width: 100%;
+  height: 42px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+#interviews a {
+  font-size: 18px;
+}
+#reviews figure:hover figcaption {
+  background-color: #0C0C0C;
+}
+#reviews figure figcaption {
+  width: 250px;
+  padding: 15px;
+  margin: auto;
+  background-color: #181818;
+}
+#reviews figure figcaption h3 {
+  margin: 0;
+}
+#newsletter form {
+  display: flex;
+  margin-top: 20px;
+}
+#newsletter input[type="text"] {
+  width: 300px;
+  height: 50px;
+  background-color: whitesmoke;
+  text-align: center;
+}
+#newsletter input[type="submit"] {
+  color: #0C0C0C;
+  background-color: #F4BF31;
+  width: 50px;
+  height: 50px;
+  font: 400 22px Oswald, sans-serif;
+}
+#newsletter ul {
+  margin-top: 10px;
+}
+#newsletter ul a {
+  color: gray;
+  font: 300 20px Oswald, sans-serif;
 }
 footer {
   border-top: solid 20px black;
@@ -159,7 +349,11 @@ footer #brand h1 span {
 footer #years {
   font: 600 27px Oswald, sans-serif;
 }
-footer #social img {
-  width: 64px;
+footer #social a {
   margin-left: 10px;
+  display: inline-block;
+}
+footer #social a img {
+  width: 64px;
+  height: 64px;
 }

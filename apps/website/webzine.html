@@ -5,14 +5,14 @@
   <title>Spirit of Metal - Webzine</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.less.css" media="screen">
 </head>
 <body>
   <header>
     <div id="topbar">
-      <div id="switchers">
-        <div id="site-switcher">SOM</div>
-        <div id="language-switcher">FR</div>
+      <div id="language-switcher" data-toggle="tooltip" data-placement="right" title="Changer la langue">
+        <i class="fa fa-language"></i>
       </div>
       <nav>
         <ul>
@@ -21,229 +21,380 @@
           <li><a href="http://www.spirit-of-metal.com/forum/index-l-fr.html">Forums</a></li>
         </ul>
       </nav>
-      <div id="search">
-        <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+      <div id="search" data-toggle="tooltip" data-placement="left" title="Recherche avancée">
+        <i class="fa fa-search" aria-hidden="true"></i>
       </div>
     </div>
     <div id="banner">
       <figure>
-        <img src="img/logo.png" alt="Spirit of Metal">
+        <img id="logo" src="img/logo.png" alt="Spirit of Metal">
       </figure>
       <div id="login">
         <img src="img/avatar.png" alt="BadaOfBodom">
         <div class="info">
           <div>
-            <div>BadaOfBodom</div>
-            <div>Second cercle</div>
+            <div id="pseudo">BadaOfBodom</div>
+            <div id="circle">Second cercle</div>
           </div>
           <div>
-            <div>Tableau de bord</div>
-            <div>Messages privés</div>
+            <div id="dashboard">
+              <a href="http://www.spirit-of-metal.com/membre/control_membre-l-fr.html">Tableau de bord</a>
+            </div>
+            <div id="messages">
+              <a href="http://www.spirit-of-metal.com/PM/index-l-fr.html">Messages privés</a></div>
           </div>
         </div>
-        <i class="fa fa-power-off fa-2x private-btn" aria-hidden="true"></i>
+        <i id="logout" class="fa fa-power-off fa-2x private-btn" aria-hidden="true"></i>
       </div>
     </div>
   </header>
-  <main>
+  <main class="container">
     <div class="row">
       <div class="col-sm-8">
-        <div id="news">
+        <section id="news" class="large-box">
           <h2>Actualités</h2>
           <div class="content">
             <div class="by-date">
               <h3>Aujourd'hui</h3>
-              <p>Lonewolf : Nouvel album <span class="author">@Sonadenn</span></p>
-              <p>Theory Of A Deadman : Nouvel album <span class="author">@Sonadenn</span></p>
-              <p>Archspire : Nouveau titre. <span class="author">@DeCRePiTBiRTH</span></p>
-              <p>Necrotted : Nouvel album <span class="author">@Juli1hard</span></p>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Lonewolf**Nouvel*album-id-57016-l-fr.html">
+                Lonewolf : Nouvel album <span class="author">Sonadenn</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Theory*Of*A*Deadman**Nouvel*album-id-57015-l-fr.html">
+                Theory Of A Deadman : Nouvel album <span class="author">Sonadenn</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Archspire**Nouveau*titre.-id-57014-l-fr.html">
+                Archspire : Nouveau titre. <span class="author">DeCRePiTBiRTH</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Necrotted**Nouvel*album-id-57013-l-fr.html">
+                Necrotted : Nouvel album <span class="author">Juli1hard</span>
+              </a>
             </div>
             <div class="by-date">
               <h3>26-07-2017</h3>
-              <p>Ne Obliviscaris : Nouvel album et premier extrait <span class="author">@MiserysKing</span></p>
-              <p>Europe : Nouvel album <span class="author">@Sonadenn</span></p>
-              <p>[SOM] Nouvelle amélioration: tracklist <span class="author">@Kivan</span></p>
-              <p>Eisbrecher : Nouvel album <span class="author">@Sonadenn</span></p>
-              <p>Thor (CAN) : Nouvel album - Vidéo <span class="author">@Sonadenn</span></p>
-              <p>Crossfaith (JAP) : Nouvel EP ''Freedom'' pour le 4 Août. <span class="author">@Theodrik</span></p>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Ne*Obliviscaris**Nouvel*album*et*premier*extrait-id-57010-l-fr.html">
+                Ne Obliviscaris : Nouvel album et premier extrait <span class="author">MiserysKing</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Europe**Nouvel*album-id-57009-l-fr.html">
+                Europe : Nouvel album <span class="author">Sonadenn</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Revenant*(USA*5)**Nouvel*album*en*cours-id-57004-l-fr.html">
+                Revenant (USA-5) : Nouvel album en cours<span class="author">Juli1hard</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Roses*Unread**Nouveau*clip*video-id-57003-l-fr.html">
+                Roses Unread : Nouveau clip vidéo<span class="author">ericb4</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Thor*(CAN)**Nouvel*album***Video-id-57006-l-fr.html">
+                Thor (CAN) : Nouvel album - Vidéo <span class="author">Sonadenn</span>
+              </a>
+              <a href="http://www.spirit-of-metal.com/read_news-groupe-Crossfaith*(JAP)**Nouvel*EP*">
+                Crossfaith (JAP) : Nouvel EP ''Freedom'' pour le 4 Août. <span class="author">Theodrik</span>
+              </a>
             </div>
           </div>
-        </div>
+        </section>
       </div>
       <div class="col-sm-4">
-        <div id="interviews">
+        <section id="releases" class="small-box">
+          <h2>Sorties du mois</h2>
+          <div class="content">
+            <div class="row release">
+              <div class="col-sm-3">
+                <img src="img/release-1.jpg" alt="Nothing Lasts Forever This Way">
+              </div>
+              <div class="col-sm-9">
+                <h3>Nothing Lasts Forever This Way</h3>
+                <div>Lifeless (USA)</div>
+                <div>Hardcore</div>
+              </div>
+            </div>
+            <div class="row release">
+              <div class="col-sm-3">
+                <img src="img/release-2.jpg" alt="Burning Child">
+              </div>
+              <div class="col-sm-9">
+                <h3>Burning Child</h3>
+                <div>Encyrcle</div>
+                <div>Speed Metal</div>
+              </div>
+            </div>
+            <div class="row release">
+              <div class="col-sm-3">
+                <img src="img/release-3.jpg" alt="Twisting the Blade">
+              </div>
+              <div class="col-sm-9">
+                <h3>Twisting the Blade</h3>
+                <div>Stereo Nasty</div>
+                <div>Heavy Metal</div>
+              </div>
+            </div>
+            <div class="row release">
+              <div class="col-sm-3">
+                <img src="img/release-4.jpg" alt="Life">
+              </div>
+              <div class="col-sm-9">
+                <h3>Life</h3>
+                <div>Adagio</div>
+                <div>Power Symphonique</div>
+              </div>
+            </div>
+            <div class="row release">
+              <div class="col-sm-3">
+                <img src="img/release-5.jpg" alt="Solveig">
+              </div>
+              <div class="col-sm-9">
+                <h3>Solveig</h3>
+                <div>Seven Spires</div>
+                <div>Metal Symphonique</div>
+              </div>
+            </div>
+            <a href="http://www.spirit-of-metal.com/liste_chronique-by-release-l-fr.html" class="more">Voir plus</a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <section id="interviews" class="small-box">
           <h2>Interviews</h2>
           <div class="content">
             <figure>
-              <img src="#" alt="Necrowretch">
-              <figcaption>Necrowretch <span class="author">@growler</span></figcaption>
+              <img src="img/photo-interview.jpg" alt="Necrowretch">
+              <figcaption>
+                <a href="http://www.spirit-of-metal.com/interview-groupe-Necrowretch-id_inter-5283-l-fr.html">Necrowretch <span class="author">growler</span></a>
+              </figcaption>
             </figure>
             <ul>
-              <li>Psygnosis <span class="author">@Eternalis</span></li>
-              <li>Tentation <span class="author">@AlonewithL</span></li>
-              <li>Deathroned <span class="author">@AlonewithL</span></li>
-              <li>Sanctuaire (FRA) <span class="author">@AlonewithL</span></li>
+              <li><a href="http://www.spirit-of-metal.com/interview-groupe-Psygnosis-id_inter-5282-l-fr.html">Psygnosis <span class="author">Eternalis</span></a></li>
+              <li><a href="http://www.spirit-of-metal.com/interview-groupe-Tentation-id_inter-5281-l-fr.html">Tentation <span class="author">AlonewithL</span></a></li>
+              <li><a href="http://www.spirit-of-metal.com/interview-groupe-Deathroned-id_inter-5280-l-fr.html">Deathroned <span class="author">AlonewithL</span></a></li>
+              <li><a href="http://www.spirit-of-metal.com/interview-groupe-Sanctuaire_(FRA)-id_inter-5278-l-fr.html">Sanctuaire (FRA) <span class="author">AlonewithL</span></a></li>
             </ul>
-            <button class="more">Voir plus</button>
+            <a href="http://www.spirit-of-metal.com/interviews-l-fr.html" class="more">Voir plus</a>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <div id="releases">
-          <h2>Sorties du mois</h2>
-          <div class="content">
-            <div class="release">
-              <h3>Nothing Lasts Forever This Way</h3>
-              <div>Lifeless (USA)</div>
-              <div>Hardcore</div>
-            </div>
-            <div class="release">
-              <h3>Burning Child</h3>
-              <div>Encyrcle</div>
-              <div>Speed Metal</div>
-            </div>
-            <div class="release">
-              <h3>Twisting the Blade</h3>
-              <div>Stereo Nasty</div>
-              <div>Heavy Metal</div>
-            </div>
-            <div class="release">
-              <h3>Life</h3>
-              <div>Adagio</div>
-              <div>Power Symphonique</div>
-            </div>
-            <button class="more">Voir plus</button>
-          </div>
-        </div>
+        </section>
       </div>
       <div class="col-sm-8">
-        <div id="reviews">
+        <section id="reviews" class="large-box">
           <h2>Chroniques</h2>
           <div class="content">
-            <figure>
-              <img src="#" alt="Gammageddon">
-              <figcaption>Lorem ipsum</figcaption>
-            </figure>
-            <div>
-              <div class="release">
-                <h3>Rome Burns</h3>
-                <div>Imperivm</div>
-                <div class="author">@dark_omens</div>
+            <div class="row">
+              <div class="col-sm-6">
+                <a href="http://www.spirit-of-metal.com/album-groupe-Cytotoxin-nom_album-Gammageddon-l-fr.html" title="Chronique de Gammageddon">
+                  <figure>
+                    <img src="img/big-cover.jpg" alt="Gammageddon">
+                    <figcaption>
+                      <h3>Gammageddon</h3>
+                      <div>Cytotoxin</div>
+                      <div class="author">Matai</div>
+                    </figcaption>
+                  </figure>
+                </a>
               </div>
-              <div class="release">
-                <h3>Savage Sinusoid</h3>
-                <div>Igorrr</div>
-                <div class="author">@Icare</div>
+              <div class="col-sm-6">
+                <div class="row release">
+                    <div class="col-sm-3">
+                      <img src="img/review-1.jpg" alt="Rome Burns">
+                    </div>
+                    <div class="col-sm-9">
+                      <h3>Rome Burns</h3>
+                      <div>Imperivm</div>
+                      <div class="author">dark_omens</div>
+                    </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-2.jpg" alt="Savage Sinusoid">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Savage Sinusoid</h3>
+                    <div>Igorrr</div>
+                    <div class="author">Icare</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-3.jpg" alt="Rhapsodies in Black">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Rhapsodies in Black</h3>
+                    <div>Exit Edent</div>
+                    <div class="author">ericb4</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-4.jpg" alt="Blind Faith">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Blind Faith</h3>
+                    <div>Mean Streak</div>
+                    <div class="author">dark_omens</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-4.jpg" alt="Blind Faith">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Blind Faith</h3>
+                    <div>Mean Streak</div>
+                    <div class="author">dark_omens</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-4.jpg" alt="Blind Faith">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Blind Faith</h3>
+                    <div>Mean Streak</div>
+                    <div class="author">dark_omens</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-4.jpg" alt="Blind Faith">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Blind Faith</h3>
+                    <div>Mean Streak</div>
+                    <div class="author">dark_omens</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-4.jpg" alt="Blind Faith">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Blind Faith</h3>
+                    <div>Mean Streak</div>
+                    <div class="author">dark_omens</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-4.jpg" alt="Blind Faith">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Blind Faith</h3>
+                    <div>Mean Streak</div>
+                    <div class="author">dark_omens</div>
+                  </div>
+                </div>
+                <div class="row release">
+                  <div class="col-sm-3">
+                    <img src="img/review-4.jpg" alt="Blind Faith">
+                  </div>
+                  <div class="col-sm-9">
+                    <h3>Blind Faith</h3>
+                    <div>Mean Streak</div>
+                    <div class="author">dark_omens</div>
+                  </div>
+                </div>
               </div>
-              <div class="release">
-                <h3>Rhapsodies in Black</h3>
-                <div>Exit Edent</div>
-                <div class="author">@ericb4</div>
-              </div>
-              <div class="release">
-                <h3>Blind Faith</h3>
-                <div>Mean Streak</div>
-                <div class="author">@dark_omens</div>
-              </div>
-              <button class="more">Voir plus</button>
             </div>
+            <a href="http://www.spirit-of-metal.com/liste_chronique-l-fr.html" class="more">Voir plus</a>
           </div>
-        </div>
+        </section>
       </div>
     </div>
-    <div class="row">
+    <div id="events" class="row">
       <div class="col-sm-4">
-        <div id="gigs">
+        <section id="gigs" class="small-box">
           <h2>Concerts</h2>
           <div class="content">
-            <div>
-              <h3>LeymFest</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/concerts/index-id-12909-id_date-16052-nom-LeymFest-l-fr.html">LeymFest</a></h3>
               <div>Ancien Casernement, Leyment</div>
               <div>2 septembre 2017</div>
             </div>
-            <div>
-              <h3>Fertois Rock In Fest 2017</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/concerts/index-id-12912-id_date-16055-nom-Fertois_Rock_In_Fest_2017-l-fr.html">Fertois Rock In Fest 2017</a></h3>
               <div>La Ferté sous Jouarre</div>
               <div>16 septembre 2017</div>
             </div>
-            <div>
-              <h3>Wintersun + guest</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/concerts/index-id-12917-id_date-16062-nom-Wintersun_guest-l-fr.html">Wintersun + guest</a></h3>
               <div>Le Grillen, Colmar</div>
               <div>27 septembre 2017</div>
             </div>
-            <button class="more">Voir plus</button>
+            <a href="http://www.spirit-of-metal.com/concerts/index-l-fr.html" class="more">Voir plus</a>
           </div>
-        </div>
+        </section>
       </div>
       <div class="col-sm-4">
-        <div id="live-reports">
+        <section id="live-reports" class="small-box">
           <h2>Live-reports</h2>
           <div class="content">
-            <div>
-              <h3>Var West Fest 2017 (2° Edition)</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/live_report/live_report-nom-Var_West_Fest_2017_(2_Edition)-id-1117-l-fr.html">Var West Fest 2017 (2° Edition)</a></h3>
               <div>Cabasse - 08/07/2017</div>
-              <div class="author">@LostPhoenix</div>
+              <div class="author">LostPhoenix</div>
             </div>
-            <div>
-              <h3>Hellfest 2017: Rude Awekening - jour 3</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/live_report/live_report-nom-Hellfest_2017_Rude_Awakening_*_jour_3-id-1119-l-fr.html">Hellfest 2017: Rude Awekening - jour 3</a></h3>
               <div>Hellfest - 18/06/2017</div>
-              <div class="author">@growler</div>
+              <div class="author">growler</div>
             </div>
-            <div>
-              <h3>Hellfest 2017: Violence Is Forever - jour 2</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/live_report/live_report-nom-Hellfest_2017_Violence_Is_Forever_*_jour_2-id-1118-l-fr.html">Hellfest 2017: Violence Is Forever - jour 2</a></h3>
               <div>Hellfest - 17/06/2017</div>
-              <div class="author">@growler</div>
+              <div class="author">growler</div>
             </div>
-            <button class="more">Voir plus</button>
+            <a href="http://www.spirit-of-metal.com/live_report/index-l-fr.html" class="more">Voir plus</a>
           </div>
-        </div>
+        </section>
       </div>
       <div class="col-sm-4">
-        <div id="photo-galleries">
+        <section id="photo-galleries" class="small-box">
           <h2>Galeries photo</h2>
           <div class="content">
-            <div>
-              <h3>Pain Of Salvation @Puget Le Rats</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/galeries_photo/galerie_photo-groupe-Pain_Of_Salvation_@Puget_Le_Rats_20*06*2017-id-4404-l-fr.html">Pain Of Salvation Puget Le Rats</a></h3>
               <div>20/06/2017</div>
-              <div class="author">@LeLoupArctique</div>
+              <div class="author">LeLoupArctique</div>
             </div>
-            <div>
-              <h3>Scour Hellfest 2017</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/galeries_photo/galerie_photo-groupe-Scour_Hellfest_2017-id-4407-l-fr.html">Scour Hellfest 2017</a></h3>
               <div>18/06/2017</div>
-              <div class="author">@growler</div>
+              <div class="author">growler</div>
             </div>
-            <div>
-              <h3>Obituary Hellfest 2017</h3>
+            <div class="event">
+              <h3><a href="http://www.spirit-of-metal.com/galeries_photo/galerie_photo-groupe-Obituary_Hellfest_2017-id-4409-l-fr.html">Obituary Hellfest 2017</a></h3>
               <div>16/06/2017</div>
-              <div class="author">@growler</div>
+              <div class="author">growler</div>
             </div>
-            <button class="more">Voir plus</button>
+            <a href="http://www.spirit-of-metal.com/galeries_photo/index-l-fr.html" class="more">Voir plus</a>
           </div>
-        </div>
+        </section>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-8">
-        <div id="newsletter">
+        <section id="newsletter" class="large-box">
           <h2>Newsletter</h2>
           <div class="content">
-            <form>
-              <input type="text" placeholder="Entrez votre adresse e-mail...">
-              <input type="submit" value="OK">
-            </form>
-            <ul>
-              <li><a href="#">Lire les newsletters</a></li>
-              <li><a href="#">Désabonnement</a></li>
-            </ul>
+            <div class="row">
+              <div class="col-sm-8">
+                <form>
+                  <input type="text" placeholder="Entrez votre adresse e-mail...">
+                  <input type="submit" value="OK">
+                </form>
+              </div>
+              <div class="col-sm-4">
+                <ul>
+                  <li><a href="#">Lire les newsletters</a></li>
+                  <li><a href="#">Désabonnement</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
       <div class="col-sm-4">
-        <div id="ad">
-          <img src="#" alt="Ad">
-        </div>
+        <section id="ad">
+          <img src="img/ad.jpg" alt="Ad">
+        </section>
       </div>
     </div>
   </main>
@@ -253,16 +404,32 @@
       <span id="years">&copy; 2003 - 2017</span>
     </div>
     <div id="social">
-      <img src="img/icons/mail.png" alt="E-mail">
-      <img src="img/icons/facebook.png" alt="Facebook">
-      <img src="img/icons/twitter.png" alt="Twitter">
-      <img src="img/icons/google.png" alt="Google+">
-      <img src="img/icons/soundcloud.png" alt="Soundcloud">
-      <img src="img/icons/youtube.png" alt="YouTube">
-      <img src="img/icons/rss.png" alt="RSS">
+      <a href="http://www.spirit-of-metal.com/contact2-l-fr.html" data-toggle="tooltip" data-placement="top" title="E-mail">
+        <img src="img/icons/mail.png" alt="E-mail">
+      </a>
+      <a href="https://fr-fr.facebook.com/som.france/" data-toggle="tooltip" title="Facebook">
+        <img src="img/icons/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://twitter.com/SOMFrance" data-toggle="tooltip" title="Twitter">
+        <img src="img/icons/twitter.png" alt="Twitter">
+      </a>
+      <a href="https://plus.google.com/106405702680464429269" data-toggle="tooltip" title="Google+">
+        <img src="img/icons/google.png" alt="Google+">
+      </a>
+      <a href="https://soundcloud.com/spirit-of-metal-officiel" data-toggle="tooltip" title="Soundcloud">
+        <img src="img/icons/soundcloud.png" alt="Soundcloud">
+      </a>
+      <a href="https://www.youtube.com/user/SpiritofMetalWebzine" data-toggle="tooltip" title="YouTube">
+        <img src="img/icons/youtube.png" alt="YouTube">
+      </a>
+      <a href="http://feeds.feedburner.com/SpiritOfMetalWebzine/fr" data-toggle="tooltip" title="RSS">
+        <img src="img/icons/rss.png" alt="RSS">
+      </a>
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
