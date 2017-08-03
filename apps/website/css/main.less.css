@@ -20,6 +20,11 @@ a:hover {
   color: gray;
   text-decoration: none;
 }
+a:active,
+a:focus {
+  color: #F4BF31;
+  text-decoration: none;
+}
 body {
   background-image: url('../img/asphalt.png');
 }
@@ -46,6 +51,9 @@ body {
 /* Tooltip on right */
 * + .tooltip.right > .tooltip-arrow {
   border-right: 5px solid #F4BF31;
+}
+.close {
+  display: none;
 }
 .more {
   width: 100%;
@@ -79,10 +87,16 @@ body {
   background-color: #181818;
   margin-top: 15px;
   padding: 10px 0;
+  transition: transform .5s ease;
+}
+.release img {
+  width: 70px;
+  height: 70px;
 }
 .release:hover {
   cursor: pointer;
-  background-color: #0C0C0C;
+  color: whitesmoke;
+  transform: scale(1.1);
 }
 .release h3 {
   font-size: 17px;
@@ -118,7 +132,7 @@ body {
   color: #F4BF31;
 }
 #topbar #language-switcher,
-#topbar #search {
+#topbar #search-toggle {
   width: 80px;
   height: 80px;
   font: 600 27px Oswald, sans-serif;
@@ -128,9 +142,39 @@ body {
   align-items: center;
 }
 #topbar #language-switcher:hover,
-#topbar #search:hover {
+#topbar #search-toggle:hover {
   cursor: pointer;
   color: #F4BF31;
+}
+#topbar #languages {
+  display: none;
+  font: 600 27px Oswald, sans-serif;
+  position: absolute;
+  z-index: 100;
+  top: 80px;
+  left: 0;
+}
+#topbar #languages div {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  vertical-align: middle;
+  background-color: #121212;
+}
+#topbar #languages div:hover {
+  color: #121212;
+  background-color: #F4BF31;
+  cursor: pointer;
+}
+#topbar #search-box {
+  height: 300px;
+  width: 600px;
+  color: #121212;
+  background-color: whitesmoke;
+  position: absolute;
+  z-index: 100;
+  top: 80px;
+  right: 0;
 }
 #topbar nav ul {
   font: 40px Astonished, sans-serif;
@@ -155,10 +199,10 @@ body {
 }
 #banner {
   width: 100%;
-  height: 220px;
+  height: 215px;
   background: black url('../img/smoke.jpg') no-repeat left top;
   box-shadow: 0 0 100px black inset;
-  border-bottom: solid 20px black;
+  border-bottom: solid 15px black;
   border-image: url('../../img/warning.png') 20 0 repeat;
   display: flex;
   justify-content: space-between;
@@ -175,7 +219,7 @@ body {
   width: 340px;
   height: 160px;
   padding: 20px;
-  margin: 20px 100px 0 0;
+  margin: 20px 80px 0 0;
   color: whitesmoke;
   background-color: #121212;
   border: solid 2px black;
@@ -207,36 +251,7 @@ body {
   cursor: pointer;
 }
 main {
-  width: 1024px;
-  margin: auto;
-}
-main h2 {
-  color: gray;
-  background-color: #0C0C0C;
-  font: 42px Astonished, sans-serif;
-  text-align: center;
-  margin: 0;
-  position: relative;
-  top: 70px;
-  left: -20px;
-}
-main h2::before,
-main h2::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  bottom: -40px;
-  z-index: -10;
-  border: 20px solid;
-  border-color: black transparent transparent transparent;
-}
-main h2::before {
-  left: 0;
-}
-main h2::after {
-  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 main .content {
   color: whitesmoke;
@@ -257,11 +272,44 @@ main .content .author {
 main .content .author:before {
   content: '@';
 }
+main .large-box h2,
+main .small-box h2 {
+  color: gray;
+  background-color: #0C0C0C;
+  font: 42px Astonished, sans-serif;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 70px;
+  left: -20px;
+}
+main .large-box h2::before,
+main .small-box h2::before,
+main .large-box h2::after,
+main .small-box h2::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -40px;
+  z-index: -10;
+  border: 20px solid;
+  border-color: black transparent transparent transparent;
+}
+main .large-box h2::before,
+main .small-box h2::before {
+  left: 0;
+}
+main .large-box h2::after,
+main .small-box h2::after {
+  right: 0;
+}
 main .large-box {
-  width: 650px;
+  width: 590px;
 }
 main .large-box h2 {
-  width: 690px;
+  width: 630px;
 }
 main .small-box {
   width: 300px;
@@ -278,14 +326,44 @@ main .small-box h2 {
 #news a:hover {
   color: gray;
 }
-#interviews figcaption {
-  width: 100%;
-  height: 42px;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.9);
+#reviews-wrapper {
+  background: black url('../img/reviews.jpg') no-repeat 0 -200px;
+  margin-top: 50px;
+  box-shadow: 0 0 100px black;
 }
-#interviews a {
-  font-size: 18px;
+#reviews h2,
+#reviews h3 {
+  text-align: center;
+  margin: 0;
+}
+#reviews h2 {
+  color: #121212;
+  font: 150px Astonished, sans-serif;
+  margin-top: 200px;
+}
+#reviews h3 {
+  color: gray;
+  font-family: Astonished, sans-serif;
+  font-size: 35px;
+  padding-top: 10px;
+}
+#reviews h4 {
+  color: #F4BF31;
+  margin: 0;
+}
+#reviews figure {
+  width: 250px;
+  margin: auto;
+}
+#reviews .content {
+  padding: 0;
+  box-shadow: 0 0;
+}
+#reviews .content img {
+  margin: 0 10px;
+}
+#reviews .release {
+  display: flex;
 }
 #reviews figure:hover figcaption {
   background-color: #0C0C0C;
@@ -298,6 +376,69 @@ main .small-box h2 {
 }
 #reviews figure figcaption h3 {
   margin: 0;
+}
+#articles {
+  padding: 50px 0;
+  border-top: solid 5px whitesmoke;
+  background: black url('../img/interviews.jpg') no-repeat 0 0;
+}
+#interviews figcaption {
+  width: 100%;
+  height: 42px;
+  margin: auto;
+}
+#interviews a {
+  font-size: 18px;
+}
+#events {
+  padding: 100px;
+  border-top: solid 5px whitesmoke;
+  background: black url('../img/gigs.jpg') no-repeat 0 -100px;
+}
+#events #gigs,
+#events #live-reports,
+#events #photo-galleries {
+  margin: 0 auto;
+  max-width: 500px;
+  box-shadow: 0 0 30px black;
+}
+#events h2 {
+  color: #121212;
+  background-color: #F4BF31;
+  text-align: center;
+  position: static;
+  font: 42px Astonished, sans-serif;
+  margin: 0;
+}
+#events .content {
+  box-shadow: 0 0;
+  padding-top: 5px;
+}
+#events .content h3 {
+  margin-bottom: 0;
+}
+#events .content h3 a {
+  color: gray;
+}
+#events .content h3 a:hover {
+  color: #F4BF31;
+}
+#events .content .more {
+  color: #F4BF31;
+  background-color: initial;
+  text-align: right;
+  font-size: 18px;
+  margin-top: 0;
+  padding-right: 10px;
+}
+#events .content .more:after {
+  content: ' > ';
+}
+#events .content .more:hover {
+  color: gray;
+}
+#ad {
+  margin-top: 50px;
 }
 #newsletter form {
   display: flex;
@@ -324,24 +465,16 @@ main .small-box h2 {
   font: 300 20px Oswald, sans-serif;
 }
 footer {
-  border-top: solid 20px black;
+  border-top: solid 15px black;
   border-image: url('../../img/warning.png') 20 0 repeat;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   color: whitesmoke;
   background-color: #121212;
-  height: 120px;
-  padding: 0 20px;
-  margin-top: 50px;
-}
-footer #brand {
-  display: flex;
-  align-items: center;
+  padding: 10px 20px;
 }
 footer #brand h1 {
-  font: 600 45px Oswald, sans-serif;
-  margin: 0 10px 0 0;
+  font: 600 30px Oswald, sans-serif;
+  margin: 10px 5px 10px 0;
+  display: inline-block;
 }
 footer #brand h1 span {
   color: #F4BF31;
@@ -352,8 +485,23 @@ footer #years {
 footer #social a {
   margin-left: 10px;
   display: inline-block;
+  text-align: right;
 }
 footer #social a img {
   width: 64px;
   height: 64px;
+}
+@media screen and (max-width: 1200px) {
+  #reviews h2 {
+    margin: 50px 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  footer #brand,
+  footer #social {
+    text-align: center;
+  }
+  footer #social {
+    padding-bottom: 20px;
+  }
 }
