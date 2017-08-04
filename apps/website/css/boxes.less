@@ -1,0 +1,70 @@
+@import "colors.less";
+
+.large-box,
+.small-box {
+  h2.ribbon,
+  h3.ribbon {
+    color: gray;
+    background-color: @black;
+    font: 42px Astonished, sans-serif;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 0;
+    left: -20px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      bottom: -40px;
+      z-index: -10;
+      border: 20px solid;
+      border-color: black transparent transparent transparent;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  ul {
+    li {
+      padding: 10px;
+      border-bottom: solid 5px @dark;
+    }
+  }
+
+  .date {
+    color: @yellow;
+  }
+
+  .content {
+    font: 300 20px Oswald, sans-serif;
+  }
+}
+
+.large-box {
+  width: 590px;
+
+  h2,
+  h3 {
+    width: 630px;
+  }
+}
+
+.small-box {
+  width: 300px;
+
+  h2,
+  h3 {
+    width: 340px;
+  }
+}

@@ -1,0 +1,14 @@
+@media screen and (max-width: 1200px) {
+  #reviews h2 {
+    margin: 50px 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  footer #brand,
+  footer #social {
+    text-align: center;
+  }
+  footer #social {
+    padding-bottom: 20px;
+  }
+}

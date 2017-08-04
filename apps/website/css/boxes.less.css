@@ -1,0 +1,70 @@
+.large-box h2.ribbon,
+.small-box h2.ribbon,
+.large-box h3.ribbon,
+.small-box h3.ribbon {
+  color: gray;
+  background-color: #0C0C0C;
+  font: 42px Astonished, sans-serif;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 0;
+  left: -20px;
+}
+.large-box h2.ribbon::before,
+.small-box h2.ribbon::before,
+.large-box h3.ribbon::before,
+.small-box h3.ribbon::before,
+.large-box h2.ribbon::after,
+.small-box h2.ribbon::after,
+.large-box h3.ribbon::after,
+.small-box h3.ribbon::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -40px;
+  z-index: -10;
+  border: 20px solid;
+  border-color: black transparent transparent transparent;
+}
+.large-box h2.ribbon::before,
+.small-box h2.ribbon::before,
+.large-box h3.ribbon::before,
+.small-box h3.ribbon::before {
+  left: 0;
+}
+.large-box h2.ribbon::after,
+.small-box h2.ribbon::after,
+.large-box h3.ribbon::after,
+.small-box h3.ribbon::after {
+  right: 0;
+}
+.large-box ul li,
+.small-box ul li {
+  padding: 10px;
+  border-bottom: solid 5px #181818;
+}
+.large-box .date,
+.small-box .date {
+  color: #F4BF31;
+}
+.large-box .content,
+.small-box .content {
+  font: 300 20px Oswald, sans-serif;
+}
+.large-box {
+  width: 590px;
+}
+.large-box h2,
+.large-box h3 {
+  width: 630px;
+}
+.small-box {
+  width: 300px;
+}
+.small-box h2,
+.small-box h3 {
+  width: 340px;
+}

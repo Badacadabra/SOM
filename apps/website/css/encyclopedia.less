@@ -1,0 +1,127 @@
+@import "colors.less";
+
+#encyclopedia {
+  .content {
+    padding-top: 0;
+  }
+}
+
+#band {
+  margin-bottom: 50px;
+
+  h3.ribbon {
+    left: -30px;
+    margin-top: 15px;
+  }
+
+  .content {
+    .logo {
+      display: block;
+      margin: auto;
+      padding: 20px 0;
+    }
+
+    .photo {
+      figcaption a {
+        color: @darker;
+        background-color: @yellow;
+        text-align: center;
+        width: 250px;
+        display: block;
+      }
+    }
+  }
+
+  #profile > div {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    padding: 5px;
+
+    span:first-of-type {
+      color: gray;
+    }
+
+    &:nth-child(odd) {
+      background-color: @black;
+    }
+
+    &:nth-child(even) {
+      background-color: @dark;
+    }
+  }
+
+  #line-up,
+  #former-members {
+    h3 {
+      color: gray;
+      background-color: @black;
+      width: 300px;
+      position: relative;
+      font: 42px Astonished, sans-serif;
+    }
+
+    li {
+      background-color: @dark;
+      padding: 5px;
+      margin: 10px;
+      transition: transform .5s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      p {
+        margin: 0;
+      }
+
+      a:hover {
+        color: whitesmoke;
+      }
+    }
+  }
+
+  #line-up {
+    h3 {
+      left: -30px;
+      padding-left: 30px;
+    }
+
+    li p:first-child {
+      color: @yellow;
+    }
+  }
+
+  #former-members {
+    h3 {
+      text-align: right;
+      padding-right: 30px;
+    }
+
+    li p:first-child {
+      color: gray;
+    }
+  }
+
+  #discography {
+    h4 {
+      color: @yellow;
+      font-size: 18px;
+    }
+
+    .grade {
+      line-height: 70px;
+    }
+
+    .indicators {
+      color: gray;
+      text-align: center;
+    }
+  }
+
+  #videos {
+    .owl-carousel {
+      margin-top: 10px;
+    }
+  }
+}

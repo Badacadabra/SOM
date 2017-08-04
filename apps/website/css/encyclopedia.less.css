@@ -1,0 +1,93 @@
+#encyclopedia .content {
+  padding-top: 0;
+}
+#band {
+  margin-bottom: 50px;
+}
+#band h3.ribbon {
+  left: -30px;
+  margin-top: 15px;
+}
+#band .content .logo {
+  display: block;
+  margin: auto;
+  padding: 20px 0;
+}
+#band .content .photo figcaption a {
+  color: #121212;
+  background-color: #F4BF31;
+  text-align: center;
+  width: 250px;
+  display: block;
+}
+#band #profile > div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  padding: 5px;
+}
+#band #profile > div span:first-of-type {
+  color: gray;
+}
+#band #profile > div:nth-child(odd) {
+  background-color: #0C0C0C;
+}
+#band #profile > div:nth-child(even) {
+  background-color: #181818;
+}
+#band #line-up h3,
+#band #former-members h3 {
+  color: gray;
+  background-color: #0C0C0C;
+  width: 300px;
+  position: relative;
+  font: 42px Astonished, sans-serif;
+}
+#band #line-up li,
+#band #former-members li {
+  background-color: #181818;
+  padding: 5px;
+  margin: 10px;
+  transition: transform .5s ease;
+}
+#band #line-up li:hover,
+#band #former-members li:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#band #line-up li p,
+#band #former-members li p {
+  margin: 0;
+}
+#band #line-up li a:hover,
+#band #former-members li a:hover {
+  color: whitesmoke;
+}
+#band #line-up h3 {
+  left: -30px;
+  padding-left: 30px;
+}
+#band #line-up li p:first-child {
+  color: #F4BF31;
+}
+#band #former-members h3 {
+  text-align: right;
+  padding-right: 30px;
+}
+#band #former-members li p:first-child {
+  color: gray;
+}
+#band #discography h4 {
+  color: #F4BF31;
+  font-size: 18px;
+}
+#band #discography .grade {
+  line-height: 70px;
+}
+#band #discography .indicators {
+  color: gray;
+  text-align: center;
+}
+#band #videos .owl-carousel {
+  margin-top: 10px;
+}
