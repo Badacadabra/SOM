@@ -36,24 +36,54 @@ a {
 }
 
 body {
-  background-image: url('../img/asphalt.png');
+  background-image: url('../img/patterns/dark-grungewall.png');
 }
 
 .close {
   display: none;
 }
 
+.controls {
+  color: @red;
+  text-align: right;
+  position: relative;
+  top: 35px;
+  z-index: 200;
+
+  i:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
 .more {
-  width: 100%;
-  color: @black;
-  background-color: @yellow;
-  margin-top: 20px;
+  width: 80%;
+  color: @yellow;
+  background-color: @dark;
   display: block;
   text-align: center;
+  border-radius: 3px;
+  padding: 7px;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color .5s ease;
 }
 
 .private-btn {
   color: @red;
+}
+
+#dimmer {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 300;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .content,
@@ -66,6 +96,7 @@ body {
   margin-top: 15px;
   padding: 10px 0;
   transition: transform .5s ease;
+  display: block;
 
   img {
     width: 70px;
@@ -170,14 +201,59 @@ header {
   }
 
   #search-box {
-    height: 300px;
-    width: 600px;
+    display: none;
+    width: 400px;
     color: @darker;
     background-color: whitesmoke;
     position: absolute;
-    z-index: 100;
+    z-index: 500;
     top: 80px;
     right: 0;
+
+    input[type="text"] {
+      height: 50px;
+      width: 100%;
+      padding: 10px;
+      font: 300 20px Oswald, sans-serif;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .options {
+      font-family: Oswald;
+
+      & > a {
+        color: black;
+        display: block;
+        padding: 10px;
+
+        &:hover {
+          cursor: pointer;
+          color: whitesmoke;
+          background-color: @black;
+        }
+      }
+    }
+  }
+
+  .typeahead {
+    background-color: white;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    margin-top: 130px;
+
+    li {
+      padding: 0;
+    }
+
+    & > .active > a {
+      color: black;
+      font-weight: bold;
+      background-color: initial;
+    }
   }
 
   nav ul {
@@ -209,26 +285,34 @@ header {
 #banner {
   width: 100%;
   height: 215px;
-  background: black url('../img/smoke.jpg') no-repeat left top;
-  box-shadow: 0 0 100px black inset;
-  border-bottom: solid 15px black;
-  border-image: url('../../img/warning.png') 20 0 repeat;
   display: flex;
   justify-content: space-between;
+  // METAL
+  background: black url('../img/metal-pattern.jpg') no-repeat fixed left top;
+  // box-shadow: 0 0 30px black;
+  // SMOKE
+  // background: black url('../img/smoke.jpg') no-repeat left top;
+  box-shadow: 0 0 100px black inset;
+  // border-bottom: solid 15px black;
+  // border-image: url('../img/warning.png') 20 0 repeat;
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 
   figure {
-    margin-left: 200px;
-    transition: transform 1s ease;
+    margin-left: 80px;
+    animation: spin .5s ease-in-out;
 
     &:hover {
       cursor: pointer;
-      transform: rotate(360deg);
     }
   }
 
   #login {
     width: 340px;
-    height: 160px;
+    height: 175px;
     padding: 20px;
     margin: 20px 80px 0 0;
     color: whitesmoke;
@@ -277,7 +361,7 @@ main {
     color: whitesmoke;
     background-color: @darker;
     font: 300 22px Oswald, sans-serif;
-    padding: 10px 10px 20px 10px;
+    padding: 20px;
 
     h3 {
       color: @yellow;
@@ -289,7 +373,7 @@ main {
 
     .author {
       color: gray;
-      font-size: 16px;
+      font-size: 17px;
 
       &:before {
         content: '@';
@@ -305,7 +389,7 @@ main {
 footer {
   margin-top: 50px;
   border-top: solid 15px black;
-  border-image: url('../../img/warning.png') 20 0 repeat;
+  border-image: url('../img/warning.png') 20 0 repeat;
   color: whitesmoke;
   background-color: @darker;
   padding: 10px 20px;
@@ -339,4 +423,3 @@ footer {
     }
   }
 }
-

@@ -60,6 +60,7 @@
 .large-box .content,
 .small-box .content {
   font: 300 20px Oswald, sans-serif;
+  margin-bottom: 50px;
 }
 .large-box {
   width: 590px;
@@ -101,6 +102,9 @@
   }
 }
 @media screen and (max-width: 992px) {
+  #encyclopedia aside {
+    margin-top: 50px;
+  }
   footer #brand,
   footer #social {
     text-align: center;
@@ -109,17 +113,24 @@
     padding-bottom: 20px;
   }
 }
+#webzine + footer {
+  margin-top: 0;
+}
 #news {
   text-align: center;
 }
 #news a {
   display: block;
 }
+#releases .content {
+  padding: 10px;
+}
 #reviews-wrapper {
-  background: black url('../img/reviews.jpg') no-repeat 0 -200px;
+  background: black url('../img/reviews.jpg') no-repeat fixed 0 -200px;
   margin-top: 50px;
-  box-shadow: 0 0 100px black;
-  border-top: solid 5px whitesmoke;
+}
+#reviews-wrapper .row {
+  margin: 0 auto;
 }
 #reviews h2,
 #reviews h3 {
@@ -127,7 +138,7 @@
   margin: 0;
 }
 #reviews h2 {
-  color: #121212;
+  color: #181818;
   font: 150px Astonished, sans-serif;
   margin-top: 200px;
 }
@@ -167,23 +178,27 @@
 #reviews figure figcaption h3 {
   margin: 0;
 }
-#articles {
-  padding: 50px 0;
-  border-top: solid 5px whitesmoke;
-  background: black url('../img/interviews.jpg') no-repeat 0 0;
+#promo {
+  padding: 100px 0 50px 0;
 }
-#interviews figcaption {
-  width: 100%;
-  height: 42px;
+#interviews figure {
+  padding-top: 10px;
+  background-color: #181818;
+  border-radius: 5px;
+}
+#interviews figure img,
+#interviews figure figcaption {
+  width: 230px;
+}
+#interviews figure figcaption {
   margin: auto;
-}
-#interviews a {
-  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 5px 0 10px 0;
 }
 #events {
   padding: 100px;
   border-top: solid 5px whitesmoke;
-  background: black url('../img/gigs.jpg') no-repeat 0 -100px;
+  background: black url('../img/gigs.jpg') no-repeat fixed 0 0;
 }
 #events #gigs,
 #events #live-reports,
@@ -208,26 +223,13 @@
   margin-bottom: 0;
 }
 #events .content h3 a {
-  color: gray;
+  color: whitesmoke;
+  font-weight: 400;
 }
 #events .content h3 a:hover {
   color: #F4BF31;
 }
-#events .content .more {
-  color: #F4BF31;
-  background-color: initial;
-  text-align: right;
-  font-size: 18px;
-  margin-top: 0;
-  padding-right: 10px;
-}
-#events .content .more:after {
-  content: ' > ';
-}
-#events .content .more:hover {
-  color: gray;
-}
-#ad {
+.ads {
   margin-top: 50px;
 }
 #newsletter form {
@@ -257,24 +259,28 @@
 #encyclopedia .content {
   padding-top: 0;
 }
-#band {
-  margin-bottom: 50px;
+#encyclopedia .owl-carousel .owl-item img {
+  margin-top: 20px;
+}
+#encyclopedia #band-news .content {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+#encyclopedia .owl-carousel {
+  width: initial;
+}
+#band h3.ribbon,
+#band h3.half-ribbon {
+  margin-top: 20px;
 }
 #band h3.ribbon {
-  left: -30px;
-  margin-top: 15px;
+  left: -40px;
 }
 #band .content .logo {
   display: block;
   margin: auto;
   padding: 20px 0;
-}
-#band .content .photo figcaption a {
-  color: #121212;
-  background-color: #F4BF31;
-  text-align: center;
-  width: 250px;
-  display: block;
 }
 #band #profile > div {
   display: flex;
@@ -299,11 +305,33 @@
   position: relative;
   font: 42px Astonished, sans-serif;
 }
+#band #line-up h3::before,
+#band #former-members h3::before,
+#band #line-up h3::after,
+#band #former-members h3::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -40px;
+  z-index: -10;
+  border: 20px solid;
+  border-color: black transparent transparent transparent;
+}
+#band #line-up h3::before,
+#band #former-members h3::before {
+  left: 0;
+}
+#band #line-up h3::after,
+#band #former-members h3::after {
+  right: 0;
+}
 #band #line-up li,
 #band #former-members li {
   background-color: #181818;
-  padding: 5px;
-  margin: 10px;
+  padding: 7px;
+  margin: 10px 0;
   transition: transform .5s ease;
 }
 #band #line-up li:hover,
@@ -320,7 +348,7 @@
   color: whitesmoke;
 }
 #band #line-up h3 {
-  left: -30px;
+  left: -40px;
   padding-left: 30px;
 }
 #band #line-up li p:first-child {
@@ -347,6 +375,12 @@
 #band #videos .owl-carousel {
   margin-top: 10px;
 }
+#band-galleries img {
+  width: 100%;
+}
+#band-galleries figcaption {
+  text-align: center;
+}
 * {
   margin: 0;
   padding: 0;
@@ -368,21 +402,48 @@ a:focus {
   text-decoration: none;
 }
 body {
-  background-image: url('../img/asphalt.png');
+  background-image: url('../img/patterns/dark-grungewall.png');
 }
 .close {
   display: none;
 }
+.controls {
+  color: #BA2525;
+  text-align: right;
+  position: relative;
+  top: 35px;
+  z-index: 200;
+}
+.controls i:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 .more {
-  width: 100%;
-  color: #0C0C0C;
-  background-color: #F4BF31;
-  margin-top: 20px;
+  width: 80%;
+  color: #F4BF31;
+  background-color: #181818;
   display: block;
   text-align: center;
+  border-radius: 3px;
+  padding: 7px;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease;
 }
 .private-btn {
   color: #BA2525;
+}
+#dimmer {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 300;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .content,
 #ad img {
@@ -393,6 +454,7 @@ body {
   margin-top: 15px;
   padding: 10px 0;
   transition: transform .5s ease;
+  display: block;
 }
 .release img {
   width: 70px;
@@ -475,14 +537,51 @@ header {
   cursor: pointer;
 }
 #topbar #search-box {
-  height: 300px;
-  width: 600px;
+  display: none;
+  width: 400px;
   color: #121212;
   background-color: whitesmoke;
   position: absolute;
-  z-index: 100;
+  z-index: 500;
   top: 80px;
   right: 0;
+}
+#topbar #search-box input[type="text"] {
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  font: 300 20px Oswald, sans-serif;
+}
+#topbar #search-box input[type="text"]:focus {
+  outline: none;
+}
+#topbar #search-box .options {
+  font-family: Oswald;
+}
+#topbar #search-box .options > a {
+  color: black;
+  display: block;
+  padding: 10px;
+}
+#topbar #search-box .options > a:hover {
+  cursor: pointer;
+  color: whitesmoke;
+  background-color: #0C0C0C;
+}
+#topbar .typeahead {
+  background-color: white;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  margin-top: 130px;
+}
+#topbar .typeahead li {
+  padding: 0;
+}
+#topbar .typeahead > .active > a {
+  color: black;
+  font-weight: bold;
+  background-color: initial;
 }
 #topbar nav ul {
   font: 40px Astonished, sans-serif;
@@ -508,24 +607,29 @@ header {
 #banner {
   width: 100%;
   height: 215px;
-  background: black url('../img/smoke.jpg') no-repeat left top;
-  box-shadow: 0 0 100px black inset;
-  border-bottom: solid 15px black;
-  border-image: url('../../img/warning.png') 20 0 repeat;
   display: flex;
   justify-content: space-between;
+  background: black url('../img/metal-pattern.jpg') no-repeat fixed left top;
+  box-shadow: 0 0 100px black inset;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 #banner figure {
-  margin-left: 200px;
-  transition: transform 1s ease;
+  margin-left: 80px;
+  animation: spin 0.5s ease-in-out;
 }
 #banner figure:hover {
   cursor: pointer;
-  transform: rotate(360deg);
 }
 #banner #login {
   width: 340px;
-  height: 160px;
+  height: 175px;
   padding: 20px;
   margin: 20px 80px 0 0;
   color: whitesmoke;
@@ -562,7 +666,7 @@ main .content {
   color: whitesmoke;
   background-color: #121212;
   font: 300 22px Oswald, sans-serif;
-  padding: 10px 10px 20px 10px;
+  padding: 20px;
 }
 main .content h3 {
   color: #F4BF31;
@@ -572,7 +676,7 @@ main .content h3 a {
 }
 main .content .author {
   color: gray;
-  font-size: 16px;
+  font-size: 17px;
 }
 main .content .author:before {
   content: '@';
@@ -580,7 +684,7 @@ main .content .author:before {
 footer {
   margin-top: 50px;
   border-top: solid 15px black;
-  border-image: url('../../img/warning.png') 20 0 repeat;
+  border-image: url('../img/warning.png') 20 0 repeat;
   color: whitesmoke;
   background-color: #121212;
   padding: 10px 20px;

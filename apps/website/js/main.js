@@ -1,16 +1,49 @@
 var gui = {
   init: function () {
     gui.listeners();
+
     $('[data-toggle="tooltip"]').tooltip();
+
+    $('.owl-carousel').owlCarousel({
+      items: 1,
+      center: true,
+      autoHeight:true,
+      loop: true,
+      video: true,
+      videoWidth: 570,
+      videoHeight: 428,
+      lazyLoad: true
+    });
+
+    $('#search-box > input[type="text"]').typeahead({
+      source: [
+        {id: 'style', name: '[Style] Heavy Black'},
+        {id: 'band', name: '[Groupe] Children Of Bodom'},
+        {id: 'artist', name: '[Artiste] Alexi Laiho'},
+        {id: 'album', name: '[Album] Something Wild'},
+        {id: 'audio', name: '[Audio] Lake Bodom'},
+        {id: 'video', name: '[Vidéo] Deadnight Warrior'},
+        {id: 'label', name: '[Label] Nuclear Blast'},
+        {id: 'lieu', name: '[Lieu] Lac Bodom'}
+      ],
+      autoSelect: true
+    });
   },
   listeners: function () {
+    $(document).scroll(gui.handlers.closeSearch);
     $('#logo').click(gui.handlers.animateLogo);
     $('#logout').click(gui.handlers.displayLogoutModal);
     $('#language-switcher').click(gui.handlers.displayLanguages);
     $('#languages > div').click(gui.handlers.selectLanguage);
-    $('#search-toggle').click(gui.handlers.displaySearchBox);
+    $('#search-toggle, #dimmer').click(gui.handlers.displaySearchBox);
   },
   handlers: {
+    closeSearch: function () {
+      $('img', '#search-toggle').hide();
+      $('i', '#search-toggle').fadeIn();
+      $('#dimmer').hide();
+      $('#search-box').fadeOut();
+    },
     animateLogo: function () {
       swal({
         imageUrl: '../img/sor.png',
@@ -65,10 +98,12 @@ var gui = {
       if ($('#search-toggle i').is(':visible')) {
         $('i', '#search-toggle').hide();
         $('img', '#search-toggle').fadeIn();
+        $('#dimmer').fadeIn();
         $('#search-box').slideDown();
       } else {
         $('#search-box').slideUp();
         $('img', '#search-toggle').hide();
+        $('#dimmer').fadeOut();
         $('i', '#search-toggle').fadeIn();
       }
     }

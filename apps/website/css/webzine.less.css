@@ -1,14 +1,21 @@
+#webzine + footer {
+  margin-top: 0;
+}
 #news {
   text-align: center;
 }
 #news a {
   display: block;
 }
+#releases .content {
+  padding: 10px;
+}
 #reviews-wrapper {
-  background: black url('../img/reviews.jpg') no-repeat 0 -200px;
+  background: black url('../img/reviews.jpg') no-repeat fixed 0 -200px;
   margin-top: 50px;
-  box-shadow: 0 0 100px black;
-  border-top: solid 5px whitesmoke;
+}
+#reviews-wrapper .row {
+  margin: 0 auto;
 }
 #reviews h2,
 #reviews h3 {
@@ -16,7 +23,7 @@
   margin: 0;
 }
 #reviews h2 {
-  color: #121212;
+  color: #181818;
   font: 150px Astonished, sans-serif;
   margin-top: 200px;
 }
@@ -56,23 +63,27 @@
 #reviews figure figcaption h3 {
   margin: 0;
 }
-#articles {
-  padding: 50px 0;
-  border-top: solid 5px whitesmoke;
-  background: black url('../img/interviews.jpg') no-repeat 0 0;
+#promo {
+  padding: 100px 0 50px 0;
 }
-#interviews figcaption {
-  width: 100%;
-  height: 42px;
+#interviews figure {
+  padding-top: 10px;
+  background-color: #181818;
+  border-radius: 5px;
+}
+#interviews figure img,
+#interviews figure figcaption {
+  width: 230px;
+}
+#interviews figure figcaption {
   margin: auto;
-}
-#interviews a {
-  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 5px 0 10px 0;
 }
 #events {
   padding: 100px;
   border-top: solid 5px whitesmoke;
-  background: black url('../img/gigs.jpg') no-repeat 0 -100px;
+  background: black url('../img/gigs.jpg') no-repeat fixed 0 0;
 }
 #events #gigs,
 #events #live-reports,
@@ -97,26 +108,13 @@
   margin-bottom: 0;
 }
 #events .content h3 a {
-  color: gray;
+  color: whitesmoke;
+  font-weight: 400;
 }
 #events .content h3 a:hover {
   color: #F4BF31;
 }
-#events .content .more {
-  color: #F4BF31;
-  background-color: initial;
-  text-align: right;
-  font-size: 18px;
-  margin-top: 0;
-  padding-right: 10px;
-}
-#events .content .more:after {
-  content: ' > ';
-}
-#events .content .more:hover {
-  color: gray;
-}
-#ad {
+.ads {
   margin-top: 50px;
 }
 #newsletter form {

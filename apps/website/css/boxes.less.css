@@ -53,6 +53,7 @@
 .large-box .content,
 .small-box .content {
   font: 300 20px Oswald, sans-serif;
+  margin-bottom: 50px;
 }
 .large-box {
   width: 590px;
