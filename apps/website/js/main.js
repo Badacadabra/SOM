@@ -46,7 +46,7 @@ var gui = {
     },
     animateLogo: function () {
       swal({
-        imageUrl: '../img/sor.png',
+        imageUrl: 'img/content/sor.png',
         title: 'SOM ou SOR ?',
         text: 'Vous êtes actuellement sur Spirit of Metal. Souhaitez-vous visiter Spirit of Rock ?',
         showCancelButton: true,

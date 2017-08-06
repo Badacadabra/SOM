@@ -36,7 +36,7 @@ a {
 }
 
 body {
-  background-image: url('../img/patterns/dark-grungewall.png');
+  background-image: url('../img/backgrounds/dark-grungewall.png');
 }
 
 .close {
@@ -288,10 +288,10 @@ header {
   display: flex;
   justify-content: space-between;
   // METAL
-  background: black url('../img/metal-pattern.jpg') no-repeat fixed left top;
+  background: black url('../img/backgrounds/metal.jpg') no-repeat fixed left top;
   // box-shadow: 0 0 30px black;
   // SMOKE
-  // background: black url('../img/smoke.jpg') no-repeat left top;
+  // background: black url('../img/backgrounds/smoke.jpg') no-repeat left top;
   box-shadow: 0 0 100px black inset;
   // border-bottom: solid 15px black;
   // border-image: url('../img/warning.png') 20 0 repeat;
@@ -412,14 +412,69 @@ footer {
 
   #social {
     a {
+      width: 64px;
+      height: 64px;
       margin-left: 10px;
       display: inline-block;
       text-align: right;
+      background-image: url('../img/icons/social/sprites.png');
 
-      img {
-        width: 64px;
-        height: 64px;
+      &:first-child {
+        background-position: 0 0;
+
+        &:hover {
+          background-position: 0 -64px;
+        }
+      }
+
+      &:nth-child(2) {
+        background-position: -64px 0;
+
+        &:hover {
+          background-position: -64px -64px;
+        }
+      }
+
+      &:nth-child(3) {
+        background-position: -128px 0;
+
+        &:hover {
+          background-position: -128px -64px;
+        }
+      }
+
+      &:nth-child(4) {
+        background-position: -192px 0;
+
+        &:hover {
+          background-position: -192px -64px;
+        }
+      }
+
+      &:nth-child(5) {
+        background-position: -256px 0;
+
+        &:hover {
+          background-position: -256px -64px;
+        }
+      }
+
+      &:nth-child(6) {
+        background-position: -320px 0;
+
+        &:hover {
+          background-position: -320px -64px;
+        }
+      }
+
+      &:last-child {
+        background-position: -384px 0;
+
+        &:hover {
+          background-position: -384px -64px;
+        }
       }
     }
   }
 }
+
