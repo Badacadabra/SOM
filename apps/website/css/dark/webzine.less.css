@@ -11,7 +11,7 @@
   padding: 10px;
 }
 #reviews-wrapper {
-  background: black url('../img/backgrounds/reviews.jpg') no-repeat fixed 0 -200px;
+  background: black url('../../img/backgrounds/reviews.jpg') no-repeat fixed 0 -200px;
   margin-top: 50px;
 }
 #reviews-wrapper .row {
@@ -83,7 +83,7 @@
 #events {
   padding: 100px;
   border-top: solid 5px whitesmoke;
-  background: black url('../img/backgrounds/events.jpg') no-repeat fixed 0 0;
+  background: black url('../../img/backgrounds/events.jpg') no-repeat fixed 0 0;
 }
 #events #gigs,
 #events #live-reports,

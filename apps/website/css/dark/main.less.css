@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600');
 @font-face {
   font-family: 'Astonished';
-  src: url('../fonts/astonished/astonished-webfont.woff2') format('woff2'), url('../fonts/astonished/astonished-webfont.woff') format('woff');
+  src: url('../../fonts/astonished/astonished-webfont.woff2') format('woff2'), url('../../fonts/astonished/astonished-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -126,7 +126,7 @@
   padding: 10px;
 }
 #reviews-wrapper {
-  background: black url('../img/backgrounds/reviews.jpg') no-repeat fixed 0 -200px;
+  background: black url('../../img/backgrounds/reviews.jpg') no-repeat fixed 0 -200px;
   margin-top: 50px;
 }
 #reviews-wrapper .row {
@@ -198,7 +198,7 @@
 #events {
   padding: 100px;
   border-top: solid 5px whitesmoke;
-  background: black url('../img/backgrounds/events.jpg') no-repeat fixed 0 0;
+  background: black url('../../img/backgrounds/events.jpg') no-repeat fixed 0 0;
 }
 #events #gigs,
 #events #live-reports,
@@ -402,7 +402,7 @@ a:focus {
   text-decoration: none;
 }
 body {
-  background-image: url('../img/backgrounds/dark-grungewall.png');
+  background-image: url('../../img/backgrounds/dark-grungewall.png');
 }
 .close {
   display: none;
@@ -609,7 +609,7 @@ header {
   height: 215px;
   display: flex;
   justify-content: space-between;
-  background: black url('../img/backgrounds/metal.jpg') no-repeat fixed left top;
+  background: black url('../../img/backgrounds/metal.jpg') no-repeat fixed left top;
   box-shadow: 0 0 100px black inset;
 }
 @keyframes spin {
@@ -684,7 +684,7 @@ main .content .author:before {
 footer {
   margin-top: 50px;
   border-top: solid 15px black;
-  border-image: url('../img/warning.png') 20 0 repeat;
+  border-image: url('../../img/warning.png') 20 0 repeat;
   color: whitesmoke;
   background-color: #121212;
   padding: 10px 20px;
@@ -706,7 +706,7 @@ footer #social a {
   margin-left: 10px;
   display: inline-block;
   text-align: right;
-  background-image: url('../img/icons/social/sprites.png');
+  background-image: url('../../img/icons/social/sprites.png');
 }
 footer #social a:first-child {
   background-position: 0 0;

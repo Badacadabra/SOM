@@ -1,0 +1,129 @@
+#encyclopedia .content {
+  padding-top: 0;
+}
+#encyclopedia .owl-carousel .owl-item img {
+  margin-top: 20px;
+}
+#encyclopedia #band-news .content {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+#encyclopedia .owl-carousel {
+  width: initial;
+}
+#band h3.ribbon,
+#band h3.half-ribbon {
+  margin-top: 20px;
+}
+#band h3.ribbon {
+  left: -40px;
+}
+#band .content .logo {
+  display: block;
+  margin: auto;
+  padding: 20px 0;
+}
+#band #profile > div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  padding: 5px;
+}
+#band #profile > div span:first-of-type {
+  color: gray;
+}
+#band #profile > div:nth-child(odd) {
+  background-color: silver;
+}
+#band #profile > div:nth-child(even) {
+  background-color: #E7E7E7;
+}
+#band #line-up h3,
+#band #former-members h3 {
+  color: whitesmoke;
+  background-color: #800000;
+  width: 300px;
+  position: relative;
+  font: 42px Astonished, sans-serif;
+}
+#band #line-up h3::before,
+#band #former-members h3::before,
+#band #line-up h3::after,
+#band #former-members h3::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -40px;
+  z-index: -10;
+  border: 20px solid;
+  border-color: #3D0000 transparent transparent transparent;
+}
+#band #line-up h3::before,
+#band #former-members h3::before {
+  left: 0;
+}
+#band #line-up h3::after,
+#band #former-members h3::after {
+  right: 0;
+}
+#band #line-up h3:hover,
+#band #former-members h3:hover {
+  color: black;
+}
+#band #line-up li,
+#band #former-members li {
+  background-color: #E7E7E7;
+  padding: 7px;
+  margin: 10px 0;
+  transition: transform .5s ease;
+}
+#band #line-up li:hover,
+#band #former-members li:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#band #line-up li p,
+#band #former-members li p {
+  margin: 0;
+}
+#band #line-up li a:hover,
+#band #former-members li a:hover {
+  color: whitesmoke;
+}
+#band #line-up h3 {
+  left: -40px;
+  padding-left: 30px;
+}
+#band #line-up li p:first-child {
+  color: #800000;
+}
+#band #former-members h3 {
+  text-align: right;
+  padding-right: 30px;
+}
+#band #former-members li p:first-child {
+  color: gray;
+}
+#band #discography h4 {
+  color: #800000;
+  font-size: 18px;
+}
+#band #discography .grade {
+  line-height: 70px;
+}
+#band #discography .indicators {
+  color: gray;
+  text-align: center;
+}
+#band #videos .owl-carousel {
+  margin-top: 10px;
+}
+#band-galleries img {
+  width: 100%;
+}
+#band-galleries figcaption {
+  text-align: center;
+}

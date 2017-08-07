@@ -21,22 +21,22 @@ ul {
 }
 
 a {
-  color: whitesmoke;
+  color: @darker;
 
   &:hover {
-    color: gray;
+    color: @red;
     text-decoration: none;
   }
 
   &:active,
   &:focus {
-    color: @yellow;
+    color: @red;
     text-decoration: none;
   }
 }
 
 body {
-  background-image: url('../img/backgrounds/dark-grungewall.png');
+  background: whitesmoke url('../../img/backgrounds/wall.png') repeat 0 0;
 }
 
 .close {
@@ -44,7 +44,7 @@ body {
 }
 
 .controls {
-  color: @red;
+  color: whitesmoke;
   text-align: right;
   position: relative;
   top: 35px;
@@ -58,8 +58,8 @@ body {
 
 .more {
   width: 80%;
-  color: @yellow;
-  background-color: @dark;
+  color: gray;
+  background-color: @gray;
   display: block;
   text-align: center;
   border-radius: 3px;
@@ -69,6 +69,10 @@ body {
   font-size: 16px;
   text-transform: uppercase;
   transition: background-color .5s ease;
+
+  &:hover {
+    color: @darker;
+  }
 }
 
 .private-btn {
@@ -86,13 +90,9 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.content,
-#ad img {
-  box-shadow: 0 0 30px black;
-}
-
 .release {
-  background-color: @dark;
+  color: @darker;
+  background-color: @gray;
   margin-top: 15px;
   padding: 10px 0;
   transition: transform .5s ease;
@@ -105,8 +105,13 @@ body {
 
   &:hover {
     cursor: pointer;
-    color: whitesmoke;
+    color: black;
     transform: scale(1.1);
+  }
+
+  h3,
+  h4 {
+    color: @red;
   }
 
   h3 {
@@ -149,13 +154,15 @@ header {
 
 #topbar {
   color: whitesmoke;
-  background-color: @black;
+  background-color: @dark;
   text-transform: uppercase;
   text-align: center;
   display: flex;
   justify-content: space-between;
 
   a {
+    color: whitesmoke;
+
     &:hover {
       color: @yellow;
     }
@@ -288,13 +295,13 @@ header {
   display: flex;
   justify-content: space-between;
   // METAL
-  background: black url('../img/backgrounds/metal.jpg') no-repeat fixed left top;
+  background: black url('../../img/backgrounds/rock.jpg') repeat fixed 0 0;
   // box-shadow: 0 0 30px black;
   // SMOKE
-  // background: black url('../img/backgrounds/smoke.jpg') no-repeat left top;
+  // background: black url('../../img/backgrounds/smoke.jpg') no-repeat left top;
   box-shadow: 0 0 100px black inset;
   // border-bottom: solid 15px black;
-  // border-image: url('../img/warning.png') 20 0 repeat;
+  // border-image: url('../../img/warning.png') 20 0 repeat;
 
   @keyframes spin {
     from { transform: rotate(0deg); }
@@ -315,8 +322,8 @@ header {
     height: 175px;
     padding: 20px;
     margin: 20px 80px 0 0;
-    color: whitesmoke;
-    background-color: @darker;
+    color: @darker;
+    background-color: @gray;
     border: solid 2px black;
     display: flex;
     justify-content: space-between;
@@ -358,16 +365,21 @@ header {
 
 main {
   .content {
-    color: whitesmoke;
-    background-color: @darker;
+    color: black;
+    background-color: whitesmoke;
     font: 300 22px Oswald, sans-serif;
+    box-shadow: 0 0 30px gray;
     padding: 20px;
 
     h3 {
-      color: @yellow;
+      color: @red;
 
       a {
-        color: @yellow;
+        color: @darker;
+
+        &:hover {
+          color: @red;
+        }
       }
     }
 
@@ -389,7 +401,7 @@ main {
 footer {
   margin-top: 50px;
   border-top: solid 15px black;
-  border-image: url('../img/warning.png') 20 0 repeat;
+  border-image: url('../../img/warning.png') 20 0 repeat;
   color: whitesmoke;
   background-color: @darker;
   padding: 10px 20px;
@@ -399,6 +411,10 @@ footer {
       font: 600 30px Oswald, sans-serif;
       margin: 10px 5px 10px 0;
       display: inline-block;
+
+      a {
+        color: whitesmoke;
+      }
 
       span {
         color: @yellow;
@@ -417,7 +433,7 @@ footer {
       margin-left: 10px;
       display: inline-block;
       text-align: right;
-      background-image: url('../img/icons/social/sprites.png');
+      background-image: url('../../img/icons/social/sprites.png');
 
       &:first-child {
         background-position: 0 0;
@@ -477,4 +493,3 @@ footer {
     }
   }
 }
-

@@ -1,0 +1,149 @@
+#webzine + footer {
+  margin-top: 0;
+}
+#news {
+  text-align: center;
+}
+#news a {
+  color: #121212;
+  display: block;
+}
+#news a:hover {
+  color: #800000;
+}
+#releases .content {
+  padding: 10px;
+}
+#reviews-wrapper {
+  background: black url('../../img/backgrounds/reviews.jpg') no-repeat fixed 0 -200px;
+  margin-top: 50px;
+}
+#reviews-wrapper .row {
+  margin: 0 auto;
+}
+#reviews h2,
+#reviews h3 {
+  text-align: center;
+  margin: 0;
+}
+#reviews h2 {
+  color: #181818;
+  font: 150px Astonished, sans-serif;
+  margin-top: 200px;
+}
+#reviews h3 {
+  color: #121212;
+  font-family: Astonished, sans-serif;
+  font-size: 35px;
+  padding-top: 10px;
+}
+#reviews h4 {
+  color: #800000;
+  margin: 0;
+}
+#reviews figure {
+  width: 250px;
+  margin: auto;
+}
+#reviews .content {
+  padding: 0;
+  box-shadow: 0 0;
+}
+#reviews .content img {
+  margin: 0 10px;
+}
+#reviews .release {
+  display: flex;
+}
+#reviews figure:hover figcaption {
+  background-color: #0C0C0C;
+}
+#reviews figure figcaption {
+  width: 250px;
+  padding: 15px;
+  margin: auto;
+  background-color: #181818;
+}
+#reviews figure figcaption h3 {
+  margin: 0;
+}
+#promo {
+  padding: 100px 0 50px 0;
+}
+#interviews figure {
+  padding-top: 10px;
+  background-color: #E7E7E7;
+  border-radius: 5px;
+}
+#interviews figure img,
+#interviews figure figcaption {
+  width: 230px;
+}
+#interviews figure figcaption {
+  color: #121212;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 5px 0 10px 0;
+}
+#events {
+  padding: 100px;
+  border-top: solid 5px whitesmoke;
+  background: black url('../../img/backgrounds/events.jpg') no-repeat fixed 0 0;
+}
+#events #gigs,
+#events #live-reports,
+#events #photo-galleries {
+  margin: 0 auto;
+  max-width: 500px;
+  box-shadow: 0 0 30px black;
+}
+#events h2 {
+  color: whitesmoke;
+  background-color: #800000;
+  text-align: center;
+  position: static;
+  font: 42px Astonished, sans-serif;
+  margin: 0;
+}
+#events .content {
+  box-shadow: 0 0;
+  padding-top: 5px;
+}
+#events .content h3 {
+  margin-bottom: 0;
+}
+#events .content h3 a {
+  color: #181818;
+  font-weight: 400;
+}
+#events .content h3 a:hover {
+  color: #800000;
+}
+.ads {
+  margin-top: 50px;
+}
+#newsletter form {
+  display: flex;
+  margin-top: 20px;
+}
+#newsletter input[type="text"] {
+  width: 300px;
+  height: 50px;
+  border: solid 1px #121212;
+  background-color: #E7E7E7;
+  text-align: center;
+}
+#newsletter input[type="submit"] {
+  color: whitesmoke;
+  background-color: #121212;
+  width: 50px;
+  height: 50px;
+  font: 400 22px Oswald, sans-serif;
+}
+#newsletter ul {
+  margin-top: 10px;
+}
+#newsletter ul a {
+  color: gray;
+  font: 300 20px Oswald, sans-serif;
+}

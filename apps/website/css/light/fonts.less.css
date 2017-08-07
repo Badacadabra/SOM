@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600');
+@font-face {
+  font-family: 'Astonished';
+  src: url('../../fonts/astonished/astonished-webfont.woff2') format('woff2'), url('../../fonts/astonished/astonished-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,168 @@
+@import "colors.less";
+
+#encyclopedia {
+  .content {
+    padding-top: 0;
+  }
+
+  .owl-carousel .owl-item img {
+    margin-top: 20px;
+  }
+
+  #band-news .content {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+  }
+
+  .owl-carousel {
+    width: initial;
+  }
+}
+
+#band {
+  h3.ribbon,
+  h3.half-ribbon {
+    margin-top: 20px;
+  }
+
+  h3.ribbon {
+    left: -40px;
+  }
+
+  .content {
+    .logo {
+      display: block;
+      margin: auto;
+      padding: 20px 0;
+    }
+  }
+
+  #profile > div {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    padding: 5px;
+
+    span:first-of-type {
+      color: gray;
+    }
+
+    &:nth-child(odd) {
+      background-color: silver;
+    }
+
+    &:nth-child(even) {
+      background-color: @gray;
+    }
+  }
+
+  #line-up,
+  #former-members {
+    h3 {
+      color: whitesmoke;
+      background-color: @red;
+      width: 300px;
+      position: relative;
+      font: 42px Astonished, sans-serif;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: -40px;
+        z-index: -10;
+        border: 20px solid;
+        border-color: #3D0000 transparent transparent transparent;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    li {
+      background-color: @gray;
+      padding: 7px;
+      margin: 10px 0;
+      transition: transform .5s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      p {
+        margin: 0;
+      }
+
+      a:hover {
+        color: whitesmoke;
+      }
+    }
+  }
+
+  #line-up {
+    h3 {
+      left: -40px;
+      padding-left: 30px;
+    }
+
+    li p:first-child {
+      color: @red;
+    }
+  }
+
+  #former-members {
+    h3 {
+      text-align: right;
+      padding-right: 30px;
+    }
+
+    li p:first-child {
+      color: gray;
+    }
+  }
+
+  #discography {
+    h4 {
+      color: @red;
+      font-size: 18px;
+    }
+
+    .grade {
+      line-height: 70px;
+    }
+
+    .indicators {
+      color: gray;
+      text-align: center;
+    }
+  }
+
+  #videos {
+    .owl-carousel {
+      margin-top: 10px;
+    }
+  }
+}
+
+#band-galleries {
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
