@@ -42,7 +42,7 @@
 <style lang="styl" scoped>
   // std (standard) - Centered list without images
   // img (image) - Left-aligned list with images
-  // min (minimalistic) - Centered list with a single line (see encyclopedia)
+  // min (minimalist) - Centered list with a single line (see encyclopedia)
 
   a
     color: black

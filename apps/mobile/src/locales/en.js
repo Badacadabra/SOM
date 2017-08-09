@@ -71,7 +71,7 @@ export default {
     region: 'Region',
     city: 'City',
     date: 'Date',
-    status: 'Statut',
+    status: 'Status',
     website: 'Website'
   },
   style: {
