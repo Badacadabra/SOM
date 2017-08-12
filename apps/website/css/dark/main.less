@@ -97,6 +97,7 @@ body {
   padding: 10px 0;
   transition: transform .5s ease;
   display: block;
+  border: solid 1px black;
 
   img {
     width: 70px;
@@ -161,6 +162,12 @@ header {
     }
   }
 
+  & > div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #portal,
   #language-switcher,
   #search-toggle {
     width: 80px;
@@ -170,7 +177,28 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
 
+  #portal {
+    color: @darker;
+    background-color: @yellow;
+    font: 600 20px Oswald, sans-serif;
+    display: flex;
+    flex-direction: column;
+
+    span:last-child {
+      font-weight: 400;
+      font-size: 17px;
+
+      &:hover {
+        cursor: pointer;
+        color: whitesmoke;
+      }
+    }
+  }
+
+  #language-switcher,
+  #search-toggle {
     &:hover {
       cursor: pointer;
       color: @yellow;

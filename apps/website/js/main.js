@@ -31,7 +31,7 @@ var gui = {
   },
   listeners: function () {
     $(document).scroll(gui.handlers.closeSearch);
-    $('#logo').click(gui.handlers.animateLogo);
+    $('#portal').click(gui.handlers.switchSite);
     $('#logout').click(gui.handlers.displayLogoutModal);
     $('#language-switcher').click(gui.handlers.displayLanguages);
     $('#languages > div').click(gui.handlers.selectLanguage);
@@ -44,11 +44,11 @@ var gui = {
       $('#dimmer').hide();
       $('#search-box').fadeOut();
     },
-    animateLogo: function () {
+    switchSite: function () {
       swal({
-        imageUrl: 'img/content/sor.png',
-        title: 'SOM ou SOR ?',
-        text: 'Vous êtes actuellement sur Spirit of Metal. Souhaitez-vous visiter Spirit of Rock ?',
+        imageUrl: 'img/sor-logo.png',
+        title: 'Spirit of Rock',
+        text: 'Vous êtes actuellement sur Spirit of Metal. Souhaitez-vous changer de site ?',
         showCancelButton: true,
         cancelButtonText: 'Je veux rester ici',
         confirmButtonColor: '#121212',

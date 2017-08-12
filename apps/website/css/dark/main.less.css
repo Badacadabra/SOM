@@ -102,6 +102,9 @@
   }
 }
 @media screen and (max-width: 992px) {
+  #webzine #reviews .more {
+    margin-bottom: 50px;
+  }
   #encyclopedia aside {
     margin-top: 50px;
   }
@@ -125,12 +128,8 @@
 #releases .content {
   padding: 10px;
 }
-#reviews-wrapper {
-  background: black url('../../img/backgrounds/reviews.jpg') no-repeat fixed 0 -200px;
-  margin-top: 50px;
-}
-#reviews-wrapper .row {
-  margin: 0 auto;
+#reviews {
+  padding: 0;
 }
 #reviews h2,
 #reviews h3 {
@@ -139,25 +138,21 @@
 }
 #reviews h2 {
   color: #181818;
-  font: 150px Astonished, sans-serif;
-  margin-top: 200px;
+  background-color: #F4BF31;
+  margin-top: 30px;
+  font: 42px Astonished, sans-serif;
 }
 #reviews h3 {
   color: gray;
   font-family: Astonished, sans-serif;
   font-size: 35px;
-  padding-top: 10px;
 }
 #reviews h4 {
   color: #F4BF31;
   margin: 0;
 }
-#reviews figure {
-  width: 250px;
-  margin: auto;
-}
 #reviews .content {
-  padding: 0;
+  padding: 10px 30px;
   box-shadow: 0 0;
 }
 #reviews .content img {
@@ -165,6 +160,10 @@
 }
 #reviews .release {
   display: flex;
+}
+#reviews figure {
+  width: 250px;
+  margin: auto;
 }
 #reviews figure:hover figcaption {
   background-color: #0C0C0C;
@@ -179,7 +178,7 @@
   margin: 0;
 }
 #promo {
-  padding: 100px 0 50px 0;
+  padding: 80px 0 50px 0;
 }
 #interviews figure {
   padding-top: 10px;
@@ -194,43 +193,6 @@
   margin: auto;
   margin-bottom: 20px;
   padding: 5px 0 10px 0;
-}
-#events {
-  padding: 100px;
-  border-top: solid 5px whitesmoke;
-  background: black url('../../img/backgrounds/events.jpg') no-repeat fixed 0 0;
-}
-#events #gigs,
-#events #live-reports,
-#events #photo-galleries {
-  margin: 0 auto;
-  max-width: 500px;
-  box-shadow: 0 0 30px black;
-}
-#events h2 {
-  color: #121212;
-  background-color: #F4BF31;
-  text-align: center;
-  position: static;
-  font: 42px Astonished, sans-serif;
-  margin: 0;
-}
-#events .content {
-  box-shadow: 0 0;
-  padding-top: 5px;
-}
-#events .content h3 {
-  margin-bottom: 0;
-}
-#events .content h3 a {
-  color: whitesmoke;
-  font-weight: 400;
-}
-#events .content h3 a:hover {
-  color: #F4BF31;
-}
-.ads {
-  margin-top: 50px;
 }
 #newsletter form {
   display: flex;
@@ -255,6 +217,43 @@
 #newsletter ul a {
   color: gray;
   font: 300 20px Oswald, sans-serif;
+}
+.ads {
+  margin-top: 50px;
+}
+#events {
+  padding: 100px;
+  border-top: solid 5px whitesmoke;
+  background: black url('../../img/backgrounds/events.jpg') no-repeat fixed 0 0;
+}
+#events #gigs,
+#events #live-reports,
+#events #photo-galleries {
+  margin: 0 auto;
+  max-width: 500px;
+  box-shadow: 0 0 30px black;
+}
+#events h2 {
+  color: #121212;
+  background-color: #F4BF31;
+  text-align: center;
+  position: static;
+  font: 42px Astonished, sans-serif;
+  margin: 0;
+}
+#events .content {
+  box-shadow: 0 0;
+  padding: 10px 0;
+}
+#events .content h3 {
+  margin-bottom: 0;
+}
+#events .content h3 a {
+  color: whitesmoke;
+  font-weight: 400;
+}
+#events .content h3 a:hover {
+  color: #F4BF31;
 }
 #encyclopedia .content {
   padding-top: 0;
@@ -455,6 +454,7 @@ body {
   padding: 10px 0;
   transition: transform .5s ease;
   display: block;
+  border: solid 1px black;
 }
 .release img {
   width: 70px;
@@ -501,6 +501,11 @@ header {
 #topbar a:hover {
   color: #F4BF31;
 }
+#topbar > div {
+  display: flex;
+  flex-direction: row;
+}
+#topbar #portal,
 #topbar #language-switcher,
 #topbar #search-toggle {
   width: 80px;
@@ -510,6 +515,21 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#topbar #portal {
+  color: #121212;
+  background-color: #F4BF31;
+  font: 600 20px Oswald, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+#topbar #portal span:last-child {
+  font-weight: 400;
+  font-size: 17px;
+}
+#topbar #portal span:last-child:hover {
+  cursor: pointer;
+  color: whitesmoke;
 }
 #topbar #language-switcher:hover,
 #topbar #search-toggle:hover {
