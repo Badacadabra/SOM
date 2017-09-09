@@ -1,5 +1,9 @@
+.fluid-box h2.ribbon,
+.xlarge-box h2.ribbon,
 .large-box h2.ribbon,
 .small-box h2.ribbon,
+.fluid-box h3.ribbon,
+.xlarge-box h3.ribbon,
 .large-box h3.ribbon,
 .small-box h3.ribbon {
   color: gray;
@@ -11,12 +15,20 @@
   top: 0;
   left: -20px;
 }
+.fluid-box h2.ribbon::before,
+.xlarge-box h2.ribbon::before,
 .large-box h2.ribbon::before,
 .small-box h2.ribbon::before,
+.fluid-box h3.ribbon::before,
+.xlarge-box h3.ribbon::before,
 .large-box h3.ribbon::before,
 .small-box h3.ribbon::before,
+.fluid-box h2.ribbon::after,
+.xlarge-box h2.ribbon::after,
 .large-box h2.ribbon::after,
 .small-box h2.ribbon::after,
+.fluid-box h3.ribbon::after,
+.xlarge-box h3.ribbon::after,
 .large-box h3.ribbon::after,
 .small-box h3.ribbon::after {
   content: '';
@@ -29,33 +41,67 @@
   border: 20px solid;
   border-color: black transparent transparent transparent;
 }
+.fluid-box h2.ribbon::before,
+.xlarge-box h2.ribbon::before,
 .large-box h2.ribbon::before,
 .small-box h2.ribbon::before,
+.fluid-box h3.ribbon::before,
+.xlarge-box h3.ribbon::before,
 .large-box h3.ribbon::before,
 .small-box h3.ribbon::before {
   left: 0;
 }
+.fluid-box h2.ribbon::after,
+.xlarge-box h2.ribbon::after,
 .large-box h2.ribbon::after,
 .small-box h2.ribbon::after,
+.fluid-box h3.ribbon::after,
+.xlarge-box h3.ribbon::after,
 .large-box h3.ribbon::after,
 .small-box h3.ribbon::after {
   right: 0;
 }
+.fluid-box ul li,
+.xlarge-box ul li,
 .large-box ul li,
 .small-box ul li,
+.fluid-box ol li,
+.xlarge-box ol li,
 .large-box ol li,
 .small-box ol li {
   padding: 10px;
   border-bottom: solid 5px #181818;
 }
+.fluid-box .date,
+.xlarge-box .date,
 .large-box .date,
 .small-box .date {
   color: #F4BF31;
 }
+.fluid-box .content,
+.xlarge-box .content,
 .large-box .content,
 .small-box .content {
   font: 300 20px Oswald, sans-serif;
   margin-bottom: 50px;
+}
+.yellow-box h2.ribbon,
+.yellow-box h3.ribbon {
+  color: #121212;
+  background-color: #F4BF31;
+}
+.yellow-box h2.ribbon::before,
+.yellow-box h3.ribbon::before,
+.yellow-box h2.ribbon::after,
+.yellow-box h3.ribbon::after {
+  border-color: #C27B17 transparent transparent transparent;
+}
+.xlarge-box {
+  width: 890px;
+}
+.xlarge-box h2,
+.xlarge-box h3 {
+  width: 930px;
 }
 .large-box {
   width: 590px;

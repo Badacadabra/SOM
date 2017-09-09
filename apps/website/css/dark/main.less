@@ -140,6 +140,27 @@ body {
   }
 }
 
+.alternate {
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    padding: 5px;
+
+    span:first-of-type {
+      color: gray;
+    }
+
+    &:nth-child(odd) {
+      background-color: @black;
+    }
+
+    &:nth-child(even) {
+      background-color: @dark;
+    }
+  }
+}
+
 .circliful + div.legend-line {
   position: static !important;
 }

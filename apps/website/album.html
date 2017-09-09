@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Spirit of Metal - Encyclopédie</title>
+  <link rel="icon" type="image/png" href="img/icons/favicon.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/dark/main.less.css" media="screen">
+</head>
+<body>
+  <header>
+    <div id="topbar">
+      <div>
+        <div id="portal">
+          <span>METAL</span>
+          <span>ROCK</span>
+        </div>
+        <div id="language-switcher">
+          <i class="fa fa-language"></i>
+          <img class="close" src="img/icons/cross.png" alt="Fermer">
+        </div>
+        <div id="languages">
+          <div>FR</div>
+          <div>EN</div>
+          <div>ES</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="webzine.html">Webzine</a></li>
+          <li><a href="encyclopedie.html">Encyclopédie</a></li>
+          <li><a href="http://www.spirit-of-metal.com/forum/index-l-fr.html" target="_blank">Forums</a></li>
+        </ul>
+      </nav>
+      <div id="search-toggle">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <img class="close" src="img/icons/cross.png" alt="Fermer">
+      </div>
+      <div id="search-box">
+        <input type="text" placeholder="Recherche...">
+        <div class="options row">
+          <a href="http://www.spirit-of-metal.com/liste_groupe-indexStyle-Black_Metal-l-fr.html" class="col-xs-3">
+            <i class="fa fa-hashtag fa-2x"></i>
+            <div>Styles</div>
+          </a>
+          <a href="http://www.spirit-of-metal.com/liste_groupe-l-fr.html" class="col-xs-3">
+            <i class="fa fa-group fa-2x"></i>
+            <div>Groupes</div>
+          </a>
+          <a href="http://www.spirit-of-metal.com/artists-l-fr.html" class="col-xs-3">
+            <i class="fa fa-address-book-o fa-2x"></i>
+            <div>Artistes</div>
+          </a>
+          <a href="http://www.spirit-of-metal.com/albums-l-fr.html" class="col-xs-3">
+            <i class="fa fa-music fa-2x"></i>
+            <div>Albums</div>
+          </a>
+        </div>
+        <div class="options row">
+          <a href="http://www.spirit-of-metal.com/audio-l-fr.html" class="col-xs-3">
+            <i class="fa fa-file-audio-o fa-2x"></i>
+            <div>Audios</div>
+          </a>
+          <a href="http://www.spirit-of-metal.com/video/video-l-fr.html" class="col-xs-3">
+            <i class="fa fa-video-camera fa-2x"></i>
+            <div>Vidéos</div>
+          </a>
+          <a href="http://www.spirit-of-metal.com/labels-l-fr.html" class="col-xs-3">
+            <i class="fa fa-tag fa-2x"></i>
+            <div>Labels</div>
+          </a>
+          <a href="http://www.spirit-of-metal.com/salles-l-fr.html" class="col-xs-3">
+            <i class="fa fa-map-marker fa-2x"></i>
+            <div>Lieux</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="banner">
+      <a href="webzine.html">
+        <figure>
+          <img id="logo" src="img/som-logo.png" alt="Spirit of Metal">
+        </figure>
+      </a>
+      <div id="login">
+        <img src="img/content/avatar.png" alt="BadaOfBodom">
+        <div class="info">
+          <div>
+            <div id="pseudo">BadaOfBodom</div>
+            <div id="circle">Second cercle</div>
+          </div>
+          <div>
+            <div id="dashboard">
+              <a href="http://www.spirit-of-metal.com/membre/control_membre-l-fr.html">Tableau de bord</a>
+            </div>
+            <div id="messages">
+              <a href="http://www.spirit-of-metal.com/PM/index-l-fr.html">Messages privés</a></div>
+          </div>
+        </div>
+        <i id="logout" class="fa fa-power-off fa-2x private-btn" aria-hidden="true"></i>
+      </div>
+    </div>
+  </header>
+  <main id="encyclopedia">
+    <div id="album" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <section class="xlarge-box center-block">
+            <div class="controls"><i class="fa fa-edit fa-lg"></i></div>
+            <h2 class="ribbon">Something Wild</h2>
+            <div class="content">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="img/content/cover.jpg" alt="Something Wild">
+                  <a href="#" id="lyrics-btn" class="more">
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    Paroles
+                  </a>
+                </div>
+                <div class="col-md-6">
+                  <a id="main-grade" href="http://www.spirit-of-metal.com/liste_vote_album-id_album-630-l-fr.html">NOTE SOM&nbsp;: 16/20</a>
+                  <div class="alternate">
+                    <div>
+                      <span>Groupe</span>
+                      <span><a href="groupe.html">Children Of Bodom</a></span>
+                    </div>
+                    <div>
+                      <span>Style</span>
+                      <span><a href="http://www.spirit-of-metal.com/liste_groupe-indexStyle-Heavy_Black-l-fr.html">Heavy Black</a></span>
+                    </div>
+                    <div>
+                      <span>Type</span>
+                      <span>Album</span>
+                    </div>
+                    <div>
+                      <span>Sortie</span>
+                      <span>16 février 1997</span>
+                    </div>
+                    <div>
+                      <span>Studio</span>
+                      <span>N/A</span>
+                    </div>
+                    <div>
+                      <span>Producteur</span>
+                      <span>N/A</span>
+                    </div>
+                    <div>
+                      <span>Labels</span>
+                      <span><a href="http://www.spirit-of-metal.com/label-label-Nuclear_Blast-l-fr.html">Nulcear Blast</a> / <a href="http://www.spirit-of-metal.com/label-label-Spinefarm_Records-l-fr.html">Spinefarm Records</a></span>
+                    </div>
+                    <div>
+                      <span>Possesseurs sur SOM</span>
+                      <span><a href="http://www.spirit-of-metal.com/album_list_possede-id_album-630-l-fr.html">913</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div id="tracklist">
+                    <div class="tracklist-comment">Re-Issue in 1998 by Nuclear Blast with 2 bonustracks</div>
+                    <div class="track">
+                      <span><span class="track-nb">1.</span> Deadnight Warrior</span>
+                      <span class="duration">03:21</span>
+                    </div>
+                    <div class="track">
+                      <span><span class="track-nb">2.</span> In the Shadows</span>
+                      <span class="duration">06:02</span>
+                    </div>
+                    <div class="track">
+                      <span><span class="track-nb">3.</span> Red Light in My Eyes, Pt. 1</span>
+                      <span class="duration">04:28</span>
+                    </div>
+                    <div class="track">
+                    <span><span class="track-nb">4.</span> Red Light in My Eyes, Pt. 2</span>
+                    <span class="duration">03:50</span>
+                  </div>
+                  <div class="track">
+                    <span><span class="track-nb">5.</span> Lake Bodom</span>
+                    <span class="duration">04:02</span>
+                  </div>
+                  <div class="track">
+                    <span><span class="track-nb">6.</span> The Nail</span>
+                    <span class="duration">06:17</span>
+                  </div>
+                  <div class="track">
+                    <span><span class="track-nb">7.</span> Touch Like Angel of Death</span>
+                    <span class="duration">07:57</span>
+                  </div>
+                  <div class="duration">TOTAL = 35:57</div>
+                  <div class="tracklist-comment">Bonustrack (Finland Release)</div>
+                  <div class="track">
+                    <span><span class="track-nb">8.</span> Children of Bodom (Early Version)</span>
+                    <span class="duration">05:10</span>
+                  </div>
+                  <div class="tracklist-comment">Bonustracks (Japanese Release)</div>
+                  <div class="track">
+                    <span><span class="track-nb">8.</span> Children of Bodom</span>
+                    <span class="duration">05:10</span>
+                  </div>
+                  <div class="track">
+                    <span><span class="track-nb">9.</span> Mass Hypnosis (Sepultura Cover)</span>
+                    <span class="duration">04:04</span>
+                  </div>
+                  <div class="tracklist-comment">Bonustracks (Re-Issue 1998)</div>
+                  <div class="track">
+                    <span><span class="track-nb">8.</span> Silent Scream (Slayer Cover)</span>
+                    <span class="duration">03:17</span>
+                  </div>
+                  <div class="track">
+                    <span><span class="track-nb">9.</span> Don't Stop at the Top (Scorpions Cover)</span>
+                    <span class="duration">03:24</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <a href="groupe.html">
+                  <figure class="albumBy">
+                    <img src="img/content/cob.jpg" alt="Children Of Bodom">
+                  </figure>
+                </a>
+                <div id="lineup">
+                  <h4>Line-up pour cet opus</h4>
+                  <ul>
+                    <li>
+                      <span><a href="#">Alexi Laiho</a></span>
+                      <span class="instruments">Chant, Guitare</span>
+                    </li>
+                    <li>
+                      <span><a href="#">Jaska Raatikainen</a></span>
+                      <span class="instruments">Batterie</span>
+                    </li>
+                    <li>
+                      <span><a href="#">Alexander Kuoppala</a></span>
+                      <span class="instruments">Guitare</span>
+                    </li>
+                    <li>
+                      <span><a href="#">Henkka Seppälä</a></span>
+                      <span class="instruments">Basse</span>
+                    </li>
+                    <li>
+                      <span><a href="#">Janne Wirman</a></span>
+                      <span class="instruments">Claviers</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <section class="xlarge-box yellow-box center-block">
+          <h2 class="ribbon">Chronique</h2>
+          <div class="content">
+            <div class="row review-info">
+              <div class="col-sm-4 review-author">
+                @BadaOfBodom
+              </div>
+              <div class="col-sm-4 review-date">
+                18 mai 2010
+              </div>
+              <div class="col-sm-4 review-grade">
+                19/20
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <p>4 juin 1960, non loin d’Espoo, une ville dynamique située au sud de la Finlande. Ce jour-là, quatre jeunes - deux garçons majeurs et deux filles mineures - décidèrent d’aller flâner sur les rives du lac Bodom pour profiter pleinement de la clémence météorologique. Il faut dire que le soleil brillait de tout son éclat et que le lac était d’un calme plat. Bref, une belle journée en apparence, idéale pour faire du camping. Bien malin est celui qui aurait pu prédire qu’elle allait tourner au cauchemar... Alors que la pénombre crépusculaire gagnait inéluctablement le paysage en fin de soirée, nos jeunes gens se préparèrent à dormir sur place, dans leurs tentes, sans la moindre appréhension. Grave erreur ! Car une fois plongés dans les bras de Morphée, ils furent brutalement attaqués à l’arme blanche, vraisemblablement par un fou dangereux aux projets macabres. Parmi eux, trois trouvèrent la mort après avoir été sauvagement mis en pièces lors de cette attaque inopinée. Le dernier, Nils Gustafsson, survécut par miracle, en dépit de ses multiples blessures profondes et de sa mâchoire cassée. Frappé cependant d’une amnésie post-traumatique, le jeune homme fut incapable de relater les faits à la police, et il fallut le placer sous hypnose pour lui soutirer au moins une information : une lueur démoniaque, diablement rouge, scintillait dans les yeux du meurtrier, comme si la soif de sang était sa seule raison d’être. Malheureusement, malgré une enquête minutieuse, et après avoir suspecté moult individus (dont Nils Gustafsson lui-même), les forces de l’ordre n’ont jamais mis la main sur le véritable coupable. Compte tenu de la bestialité avec laquelle le triple crime a été commis, les Finlandais, profondément choqués par cet acte de barbarie sans précédent, et face à l’impossibilité d’identifier le responsable ainsi que ses motivations, ont fini par tout imputer à la mort en personne : la fameuse faucheuse. Le mythe Children of Bodom est né !</p>
+                  <p>En réalité, l’aventure Children of Bodom débuta en 1993, à Espoo. Cette année-là, un certain Alexi Laiho, guitariste prometteur, et son ami de toujours, Jaska Raatikainen, batteur de talent, prirent la décision de fonder un groupe de Metal. Son nom : Inearthed. Après l’enregistrement de deux démos sous ce pseudonyme, passées quasiment inaperçues, ils furent rapidement rejoints dans leur entreprise par des musiciens qui allaient devenir les artisans du changement en impulsant une marche vers le progrès. Ces musiciens : Henkka Seppälä, bassiste, Alexander Kuoppala, guitariste, et Janne Wirman, claviériste. Et, en effet, en 1997, ce fut la consécration. Pour son premier véritable album, "Something Wild", le groupe décrocha un contrat avec un label, et non des moindres puisqu’il s’agit ni plus ni moins du géant Finlandais répondant au nom de Spinefarm Records. Inearthed devint alors Children of Bodom, en référence à l’affaire criminelle évoquée ci-dessus ; affaire qui, je le rappelle, a ébranlé la Finlande toute entière.</p>
+                  <p>Mais Children of Bodom n’est pas qu’un nom. C’est un tout, c’est un univers, c’est un concept ; cohérent qui plus est. En cela, nul besoin de s’étonner devant la pochette rouge vif de "Something Wild" où l’on peut voir la faucheuse nous tendant sa main maléfique au milieu d’un désert aride et sans vie. Après celle des trois jeunes de Bodom, notre heure a visiblement sonné à son tour. Nul besoin non plus de s’étonner à la lecture des paroles qui se rapportent elles aussi à cette nuit fatidique du 4 au 5 juin 1960, sous des formes diverses. Les titres des chansons sont d’ailleurs révélateurs ! C’est donc sans grande surprise qu’on y découvre un véritable hymne à la nuit, à la mort, et plus généralement au lac Bodom.</p>
+                  <p>Et musicalement ? Autant le dire tout de suite, "Something Wild" est un des albums les plus inventifs qu’il m’ait été donné d’écouter jusqu’à présent. Sept morceaux, seulement sept morceaux me direz-vous (il est évident que l’on ne tient pas compte ici du titre instrumental tiré de la série Miami Vice, caché à la fin de "Touch Like Angel Of Death", ni de "Bruno The Pig", la fameuse piste 8 non répertoriée, presque aussi inutile que "You Suffer" de Napalm Death puisque ce n’est rien d’autre que dix secondes de silence). Oui, mais voilà sept morceaux de pur génie créatif, d’esprit de synthèse éclairé, de talent musical foisonnant en somme. Ce que personne n’avait jamais osé faire, Children of Bodom l’a fait, et avec brio. Car on ne le dit jamais assez, "Something Wild" est un album qui a révolutionné toute une génération, c’est un album qui a emmené le Metal là où on le l’attendait pas. On sait pertinemment que depuis Black Sabbath et l’arrivée définitive du Heavy Metal sur le devant de la scène, ce dernier n’a cessé d’évoluer et de se fragmenter. Dans les années 1990, alors que la scission entre le Metal "édulcoré" et le Metal "extrême" se veut de plus en plus nette, Children of Bodom va en quelque sorte servir de point de ralliement, de tremplin à la réconciliation pour des styles a priori antagonistes. Le groupe est la pièce qui rassemble le pile et le face, il est la glu qui colmate la fissure béante entre deux réalités du même monde, il est le chaînon manquant. Vous ne me croyez pas ? Laissez-moi vous convaincre avec une analyse détaillée de la tracklist, pour le moins hétéroclite… </p>
+                  <p>Pour nous mettre dans l’ambiance horrifique qui s’impose, "Deadnight Warrior", premier titre de l’album, s’amorce sur un extrait du film "Ça" du maître incontesté en la matière ; j’ai nommé Stephen King. Après ces quelques secondes de malséance auditive et d’angoisse fictionnelle, voilà que débarque la batterie, suivie de près par le clavier et les guitares. Le ton est rapidement donné, et une question ne tarde pas à émerger : quel est donc le style pratiqué ? Difficile à dire… On trouve dans "Deadnight Warrior" un chant écorché, typique du Black Metal, de même que des arrangements symphoniques, permis par un clavier qui sait s’imposer pour créer une réelle atmosphère au lieu de suivre la mélodie dictée par les guitares, et puis l’on trouve aussi quelques influences Heavy comme en témoigne le riff presque Power / Folk commençant à la deuxième minute. Le côté progressif est ici marqué, tant les structures varient au sein du morceau, pourtant assez court.</p>
+                  <p>Dans "In The Shadows", on retrouve globalement les mêmes éléments, ce qui n’empêche pas ce morceau d’être très différent de son prédécesseur… L’aspect progressif est peut-être encore plus poussé, tout comme l’aspect symphonique d’ailleurs. Alors que le riff d’introduction s’inscrit parfaitement dans la tradition d’un Black Metal norvégien crasseux et haineux (on croirait entendre "Transilvanian Hunger" de Nuclear Assault avec une meilleure production et un tempo accéléré), on peut aussi repérer un peu plus tard un riff plutôt Black / Death (cf. 02:12) ainsi qu’un riff très Power Néo-Classique (cf. 03:43). La fin, du moins à partir de 04:22, laisse place à une mélodie entêtante aux allures de cérémonie liturgique, mélodie qui ne fait que sublimer le tout. Vraiment surprenant… Enfin, pas si surprenant pour les fans de Bathory qui entendront immédiatement la similitude subtile avec "One Rode To Asa Bay".</p>
+                  <p>La surprise reste de mise avec "Red Light In My Eyes", scindée en deux parties distinctes mais complémentaires. Cette double chanson révèle un penchant néo-classique exacerbé qui nous montre à quel point nos chers amis d’Espoo ont pris des notes devant l’initiative brillante d’Yngwie Malmsteen d’allier la grandeur et la virtuosité de la Musique Classique à la puissance et à la fougue du Heavy Metal. D’un certain point de vue, les deux parties de "Red Light In My Eyes" forment donc une symphonie à part entière. L’utilisation massive du harpsichord par Janne Wirman pour l’exécution du riff principal, dans la première partie, contribue largement à cet état de fait ; surtout quand on sait que cette mélodie est extraite de l’Invention n°13 de Jean-Sébastien Bach. Quant à la deuxième partie, il faut savoir qu’elle débute sur un air tiré de la Symphonie n°25 de Wolfgang Amadeus Mozart et entretient un souffle symphonique jusqu’à la fin grâce à un clavier grandiloquent. D’ailleurs, le refrain est lui aussi issu d’une autre composition de l’inimitable Mozart : le célèbre Confutatis du Requiem en ré mineur. Et même si parfois les guitares sonnent comme des violons - en atteste par exemple le bref crescendo final de la deuxième partie - l’agressivité du Metal demeure bien présente. Il ne faut pas oublier que les yeux rouges en question sont ceux du tueur du lac Bodom, vus par Nils Gustafsson… Ainsi, dans la première partie, on reconnaît vers 01:25 un riff classique du Black Symphonique, bien nerveux et mélodique à la fois. On reconnaît également vers 03:28 un riff qui s’inscrit volontiers dans un registre Thrash. La deuxième partie n’est pas en reste avec deux passages quelque peu Death Mélodique dans l’esprit (cf. 00:40 et 02:50) et deux passages résolument Black (cf. 02:25 et 03:33).</p>
+                  <p>Que dire maintenant de "Lake Bodom" ? Considéré par beaucoup de fans comme un hymne incontournable d’Alexi Laiho et sa bande, ne serait-ce que par son titre fondateur, ce morceau est effectivement un moment de pur bonheur musical (pour mes oreilles, en tout cas…). Ici, à part le chant qui reste fidèle à lui-même, tout se rejoint dans un style particulier qui n’est aucunement difficile à identifier. Ce style, ce n’est ni plus ni moins que le Power Européen à tendance néo-classique auquel Stratovarius nous a déjà largement habitués. Et il n’y a qu’à écouter le solo pour s’en persuader car celui-ci ne laisse strictement aucun doute quant au style pratiqué.</p>
+                  <p>"The Nail", le morceau suivant, est encore très différent… Une nouvelle fois, on a droit à une introduction tirée du milieu cinématographique. Mais dans le cas présent, il s’agit d’un montage où les dialogues du célébrissime "Ben-Hur" se conjuguent avec le fond sonore des "Griffes de la nuit" de Wes Craven ; le but affiché étant le même qu’au tout début… Renforcer notre immersion dans cet univers onirique que nous propose "Something Wild". Musicalement, "The Nail" est probablement le morceau le plus hybride de l’album car il fait figure de synthèse de tout, ou presque tout, ce que l’on peut y trouver. En effet, le titre démarre sur les chapeaux de roues avec une rythmique indubitablement Thrash (quasiment identique à celle de "Vengeance" de Nuclear Assault), enchaîne ensuite avec un passage très néo-classique dès 01:38 rappelant la fameuse Toccata et Fugue en ré mineur de Jean-Sébastien Bach, puis se lance dans un Black Atmosphérique à partir de 02:09, avant de basculer à 03:48 dans une sorte d’interlude Heavy Symphonique que Tuomas Holopainen de Nightwish aurait pu composer, pour finalement terminer en beauté sur une touche de Power Néo-Classique (avec shred façon Malmsteen) quand arrive la cinquième minute (vous noterez d'ailleurs que la conclusion est la même que celle de "Far Beyond The Sun" dudit artiste...).</p>
+                  <p>Enfin, vient "Touch Like Angel Of Death" avec ses riffs cérémoniels, hypnotiques et dantesques qui mélangent toujours aussi subtilement les genres. À cet égard, on ne s’étonnera pas de voir un solo particulièrement Heavy succéder à un riff évoquant plus ou moins Emperor dans "I Am The Black Wizards", et ce entre la deuxième et la troisième minute.</p>
+                  <p>Un bilan s’impose. À l’issue de cette analyse, il apparaît clairement que "Something Wild" est d’une richesse musicale exceptionnelle. Impossible à ranger définitivement dans un style précis, cet opus des Finlandais est un savant mélange entre de nombreux types de Metal de tous horizons, et ce du plus posé au plus brutal. Parmi eux, rappelons-le, le Power Européen (ou plus largement le Heavy), le Thrash, le Death et le Black ; le tout généreusement arrosé par des structures progressives, des inspirations néo-classiques, et des arrangements symphoniques. Bien entendu, avec un tel cocktail explosif, ambitieux s’il en est, on attend naturellement beaucoup de la performance technique des musiciens pour ne pas tomber dans le piège de la cacophonie. Or, force est de constater que nous ne sommes pas déçus à ce niveau-là. Les musiciens, tous autant qu’ils sont, maîtrisent vraiment leurs instruments ; c’est indéniable. Saluons entre autres le jeu guitaristique époustouflant d’originalité et d’habileté du duo Alexi Laiho – Alexander Kuoppala dans "Touch Like Angel Of Death", la performance parfaitement audible de Henkka Seppälä dans "Lake Bodom", la contribution remarquable de Janne Wirman dans "Red Light In My Eyes" qui en fait ipso facto une véritable pièce symphonique, mais aussi la maîtrise de Jaska Raatikainen qui enchaîne comme dans "The Nail" les changements de rythmes avec une aisance déconcertante. À cela, on pourrait ajouter le chant possédé, démoniaque d’Alexi Laiho dans "In The Shadows" ; morceau où ce dernier nous montre toute l’étendue de sa voix écorchée en oscillant entre les graves et les aigus.</p>
+                  <p>Un petit bémol, tout de même : la production. Enregistré et mixé par Anssi Kippo au Astia Studio, "Something Wild" dispose d’un son qui n’est pas dénué d’imperfections. Mais ne nous y trompons pas, le son reste tout à fait honnête, surtout pour l’époque. Et je dirais même que, d’une certaine façon, un tel son non épuré, livré quasi brut de décoffrage, contribue au charme de l’album en lui donnant un aspect authentique qui colle assez bien avec le concept mis en avant depuis le début.</p>
+                  <p>En tout état de cause, "Something Wild" est une œuvre magistrale qui réclame du temps et de l’attention pour pouvoir être appréciée à sa juste valeur. L’album jouit effectivement d’une pléthore de subtilités qu’il est tout bonnement impossible de déceler en une écoute, d’autant plus si cette dernière s’avère approximative. Noble dans son entreprise par la fusion qu’il opère entre des styles de Metal divergents et par l’hommage qu’il rend aux grands compositeurs classiques, "Something Wild" n’en demeure pas moins un vrai régal auditif et une bombe émotionnelle à retardement. C’est moi qui vous le dis. Alors, n’attendez plus : achetez ce disque !</p>
+                </div>
+              </div>
+              <div class="row review-options">
+                <div class="col-xs-4 text-center">
+                  <a href="#">
+                    <i class="fa fa-comments fa-3x" aria-hidden="true"></i>
+                  </a>
+                  13 Commentaires
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">
+                    <i class="fa fa-thumbs-o-up fa-3x" aria-hidden="true" id="ThumbUp13678"></i>
+                  </a>
+                  0 J'aime
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">
+                    <i class="fa fa-share-square-o fa-3x" aria-hidden="true"></i>
+                  </a>
+                  Partager
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="container-fluid">
+    <div class="row">
+      <div id="brand" class="col-md-5 text-left">
+        <h1><a href="webzine.html">SPIRIT OF <span>METAL</span></a></h1>
+        <span id="years">&copy; 2003 - 2017</span>
+      </div>
+      <div id="social" class="col-md-7 text-right">
+        <a href="http://www.spirit-of-metal.com/contact2-l-fr.html"></a>
+        <a href="https://fr-fr.facebook.com/som.france/"></a>
+        <a href="https://twitter.com/SOMFrance"></a>
+        <a href="https://plus.google.com/106405702680464429269"></a>
+        <a href="https://soundcloud.com/spirit-of-metal-officiel"></a>
+        <a href="https://www.youtube.com/user/SpiritofMetalWebzine"></a>
+        <a href="http://feeds.feedburner.com/SpiritOfMetalWebzine/fr"></a>
+      </div>
+    </div>
+  </footer>
+  <div id="dimmer"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

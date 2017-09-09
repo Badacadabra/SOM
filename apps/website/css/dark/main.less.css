@@ -5,8 +5,12 @@
   font-weight: normal;
   font-style: normal;
 }
+.fluid-box h2.ribbon,
+.xlarge-box h2.ribbon,
 .large-box h2.ribbon,
 .small-box h2.ribbon,
+.fluid-box h3.ribbon,
+.xlarge-box h3.ribbon,
 .large-box h3.ribbon,
 .small-box h3.ribbon {
   color: gray;
@@ -18,12 +22,20 @@
   top: 0;
   left: -20px;
 }
+.fluid-box h2.ribbon::before,
+.xlarge-box h2.ribbon::before,
 .large-box h2.ribbon::before,
 .small-box h2.ribbon::before,
+.fluid-box h3.ribbon::before,
+.xlarge-box h3.ribbon::before,
 .large-box h3.ribbon::before,
 .small-box h3.ribbon::before,
+.fluid-box h2.ribbon::after,
+.xlarge-box h2.ribbon::after,
 .large-box h2.ribbon::after,
 .small-box h2.ribbon::after,
+.fluid-box h3.ribbon::after,
+.xlarge-box h3.ribbon::after,
 .large-box h3.ribbon::after,
 .small-box h3.ribbon::after {
   content: '';
@@ -36,33 +48,67 @@
   border: 20px solid;
   border-color: black transparent transparent transparent;
 }
+.fluid-box h2.ribbon::before,
+.xlarge-box h2.ribbon::before,
 .large-box h2.ribbon::before,
 .small-box h2.ribbon::before,
+.fluid-box h3.ribbon::before,
+.xlarge-box h3.ribbon::before,
 .large-box h3.ribbon::before,
 .small-box h3.ribbon::before {
   left: 0;
 }
+.fluid-box h2.ribbon::after,
+.xlarge-box h2.ribbon::after,
 .large-box h2.ribbon::after,
 .small-box h2.ribbon::after,
+.fluid-box h3.ribbon::after,
+.xlarge-box h3.ribbon::after,
 .large-box h3.ribbon::after,
 .small-box h3.ribbon::after {
   right: 0;
 }
+.fluid-box ul li,
+.xlarge-box ul li,
 .large-box ul li,
 .small-box ul li,
+.fluid-box ol li,
+.xlarge-box ol li,
 .large-box ol li,
 .small-box ol li {
   padding: 10px;
   border-bottom: solid 5px #181818;
 }
+.fluid-box .date,
+.xlarge-box .date,
 .large-box .date,
 .small-box .date {
   color: #F4BF31;
 }
+.fluid-box .content,
+.xlarge-box .content,
 .large-box .content,
 .small-box .content {
   font: 300 20px Oswald, sans-serif;
   margin-bottom: 50px;
+}
+.yellow-box h2.ribbon,
+.yellow-box h3.ribbon {
+  color: #121212;
+  background-color: #F4BF31;
+}
+.yellow-box h2.ribbon::before,
+.yellow-box h3.ribbon::before,
+.yellow-box h2.ribbon::after,
+.yellow-box h3.ribbon::after {
+  border-color: #C27B17 transparent transparent transparent;
+}
+.xlarge-box {
+  width: 890px;
+}
+.xlarge-box h2,
+.xlarge-box h3 {
+  width: 930px;
 }
 .large-box {
   width: 590px;
@@ -349,21 +395,6 @@
   margin: auto;
   padding: 20px 0;
 }
-#band #profile > div {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 5px;
-  padding: 5px;
-}
-#band #profile > div span:first-of-type {
-  color: gray;
-}
-#band #profile > div:nth-child(odd) {
-  background-color: #0C0C0C;
-}
-#band #profile > div:nth-child(even) {
-  background-color: #181818;
-}
 #band #line-up h3,
 #band #former-members h3 {
   color: gray;
@@ -447,6 +478,82 @@
 }
 #band-galleries figcaption {
   text-align: center;
+}
+#album .content {
+  padding-top: 20px;
+}
+#album .content #lyrics-btn i {
+  margin-right: 10px;
+}
+#album .content a#main-grade {
+  display: block;
+  font-size: x-large;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #F4BF31;
+  background-color: #121212;
+  border: solid 1px #F4BF31;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+}
+#album .content a#main-grade:hover {
+  color: #121212;
+  background-color: #F4BF31;
+  border: solid 1px #121212;
+}
+#album .content figure.albumBy {
+  margin: 20px 0;
+  text-align: center;
+}
+#album .content figure.albumBy figcaption {
+  text-transform: uppercase;
+}
+#album .content #tracklist {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #181818;
+}
+#album .content #tracklist .track {
+  display: flex;
+  justify-content: space-between;
+}
+#album .content #tracklist .track .track-nb {
+  color: #F4BF31;
+}
+#album .content #tracklist .tracklist-comment {
+  color: gray;
+  margin: 20px 0;
+}
+#album .content #tracklist .duration {
+  color: #F4BF31;
+  text-align: right;
+}
+#album .content #lineup {
+  padding: 20px;
+  background-color: #0C0C0C;
+}
+#album .content #lineup h4 {
+  color: #F4BF31;
+  text-align: center;
+  text-transform: uppercase;
+}
+#album .content #lineup li {
+  display: flex;
+  justify-content: space-between;
+}
+#album .content #lineup li .instruments {
+  color: gray;
+}
+#album .content .review-info {
+  color: #F4BF31;
+  padding: 30px 15px;
+  font-size: x-large;
+  text-align: center;
+}
+#album .content .review-options a {
+  display: block;
 }
 * {
   margin: 0;
@@ -554,6 +661,21 @@ body {
 }
 .event div:last-of-type {
   font-size: 18px;
+}
+.alternate > div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  padding: 5px;
+}
+.alternate > div span:first-of-type {
+  color: gray;
+}
+.alternate > div:nth-child(odd) {
+  background-color: #0C0C0C;
+}
+.alternate > div:nth-child(even) {
+  background-color: #181818;
 }
 .circliful + div.legend-line {
   position: static !important;

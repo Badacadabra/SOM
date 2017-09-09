@@ -117,25 +117,6 @@
     }
   }
 
-  #profile > div {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 5px;
-    padding: 5px;
-
-    span:first-of-type {
-      color: gray;
-    }
-
-    &:nth-child(odd) {
-      background-color: @black;
-    }
-
-    &:nth-child(even) {
-      background-color: @dark;
-    }
-  }
-
   #line-up,
   #former-members {
     h3 {
@@ -239,5 +220,104 @@
 
   figcaption {
     text-align: center;
+  }
+}
+
+#album {
+  .content {
+    padding-top: 20px;
+
+    #lyrics-btn {
+      i {
+        margin-right: 10px;
+      }
+    }
+
+    a#main-grade {
+      display: block;
+      font-size: x-large;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      color: @yellow;
+      background-color: @darker;
+      border: solid 1px @yellow;
+      border-radius: 5px;
+      transition: background-color .5s ease;
+
+      &:hover {
+        color: @darker;
+        background-color: @yellow;
+        border: solid 1px @darker;
+      }
+    }
+
+    figure.albumBy {
+      margin: 20px 0;
+      text-align: center;
+
+      figcaption {
+        text-transform: uppercase;
+      }
+    }
+
+    #tracklist {
+      padding: 20px;
+      margin-top: 20px;
+      background-color: @dark;
+
+      .track {
+        display: flex;
+        justify-content: space-between;
+
+        .track-nb {
+          color: @yellow;
+        }
+      }
+
+      .tracklist-comment {
+        color: gray;
+        margin: 20px 0;
+      }
+
+      .duration {
+        color: @yellow;
+        text-align: right;
+      }
+    }
+
+    #lineup {
+      padding: 20px;
+      background-color: @black;
+
+      h4 {
+        color: @yellow;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+
+        .instruments {
+          color: gray;
+        }
+      }
+    }
+
+    .review-info {
+      color: @yellow;
+      padding: 30px 15px;
+      font-size: x-large;
+      text-align: center;
+    }
+
+    .review-options {
+      a {
+        display: block;
+      }
+    }
   }
 }
