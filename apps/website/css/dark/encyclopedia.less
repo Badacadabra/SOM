@@ -1,6 +1,10 @@
 @import "colors.less";
 
 #encyclopedia {
+  & + footer {
+    margin-top: 0;
+  }
+
   .content {
     padding-top: 0;
   }
@@ -17,6 +21,81 @@
 
   .owl-carousel {
     width: initial;
+  }
+}
+
+#home {
+  /*background: url('../../img/backgrounds/metal-pattern.jpg') no-repeat 0 0;*/
+
+  ul.categories li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px 0;
+    border: solid 1px whitesmoke;
+    font-family: Oswald, sans-serif;
+    font-size: x-large;
+    color: whitesmoke;
+    background-color: #121212;
+    text-transform: uppercase;
+    transition: transform .3s ease;
+    transform: skew(-10deg);
+
+    span.stats-figure {
+      color: gray;
+    }
+
+    span.stats-figure::before {
+      content: "("
+    }
+
+    span.stats-figure::after {
+      content: ")"
+    }
+  }
+
+  ul.categories li a:hover {
+    cursor: pointer;
+    color: @yellow;
+    border-color: @yellow;
+
+    span.stats-figure {
+      color: silver;
+    }
+  }
+
+  ul.latest li {
+    background-color: whitesmoke;
+  }
+
+  #stats {
+    color: whitesmoke;
+    margin-top: 50px;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+    background: url('../../img/backgrounds/equalizer.png') no-repeat 0 -220px;
+
+    h2 {
+      display: inline;
+      border-top: solid 2px whitesmoke;
+      border-bottom: solid 2px whitesmoke;
+    }
+
+    .circliful {
+      max-width: 350px;
+      margin-top: 20px;
+      margin-bottom: 28px;
+    }
+
+    .legend-line div {
+      background-color: #121212;
+      max-width: 350px;
+      padding: 15px;
+      margin: auto;
+      border-top: solid 1px whitesmoke;
+      text-transform: uppercase;
+    }
   }
 }
 

@@ -49,7 +49,9 @@
   right: 0;
 }
 .large-box ul li,
-.small-box ul li {
+.small-box ul li,
+.large-box ol li,
+.small-box ol li {
   padding: 10px;
   border-bottom: solid 5px #181818;
 }
@@ -255,6 +257,9 @@
 #events .content h3 a:hover {
   color: #F4BF31;
 }
+#encyclopedia + footer {
+  margin-top: 0;
+}
 #encyclopedia .content {
   padding-top: 0;
 }
@@ -268,6 +273,69 @@
 }
 #encyclopedia .owl-carousel {
   width: initial;
+}
+#home {
+  /*background: url('../../img/backgrounds/metal-pattern.jpg') no-repeat 0 0;*/
+}
+#home ul.categories li a {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px 0;
+  border: solid 1px whitesmoke;
+  font-family: Oswald, sans-serif;
+  font-size: x-large;
+  color: whitesmoke;
+  background-color: #121212;
+  text-transform: uppercase;
+  transition: transform .3s ease;
+  transform: skew(-10deg);
+}
+#home ul.categories li a span.stats-figure {
+  color: gray;
+}
+#home ul.categories li a span.stats-figure::before {
+  content: "(";
+}
+#home ul.categories li a span.stats-figure::after {
+  content: ")";
+}
+#home ul.categories li a:hover {
+  cursor: pointer;
+  color: #F4BF31;
+  border-color: #F4BF31;
+}
+#home ul.categories li a:hover span.stats-figure {
+  color: silver;
+}
+#home ul.latest li {
+  background-color: whitesmoke;
+}
+#home #stats {
+  color: whitesmoke;
+  margin-top: 50px;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: Oswald, sans-serif;
+  background: url('../../img/backgrounds/equalizer.png') no-repeat 0 -220px;
+}
+#home #stats h2 {
+  display: inline;
+  border-top: solid 2px whitesmoke;
+  border-bottom: solid 2px whitesmoke;
+}
+#home #stats .circliful {
+  max-width: 350px;
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+#home #stats .legend-line div {
+  background-color: #121212;
+  max-width: 350px;
+  padding: 15px;
+  margin: auto;
+  border-top: solid 1px whitesmoke;
+  text-transform: uppercase;
 }
 #band h3.ribbon,
 #band h3.half-ribbon {
@@ -486,6 +554,9 @@ body {
 }
 .event div:last-of-type {
   font-size: 18px;
+}
+.circliful + div.legend-line {
+  position: static !important;
 }
 header {
   margin-bottom: 50px;

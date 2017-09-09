@@ -4,30 +4,100 @@ var gui = {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('.owl-carousel').owlCarousel({
-      items: 1,
-      center: true,
-      autoHeight:true,
-      loop: true,
-      video: true,
-      videoWidth: 570,
-      videoHeight: 428,
-      lazyLoad: true
-    });
+    gui.configure.typeahead();
+    gui.configure.circles();
+    gui.configure.carousel();
+  },
+  configure: {
+    typeahead: function () {
+      $('#search-box > input[type="text"]').typeahead({
+        source: [
+          {id: 'style', name: '[Style] Heavy Black'},
+          {id: 'band', name: '[Groupe] Children Of Bodom'},
+          {id: 'artist', name: '[Artiste] Alexi Laiho'},
+          {id: 'album', name: '[Album] Something Wild'},
+          {id: 'audio', name: '[Audio] Lake Bodom'},
+          {id: 'video', name: '[Vidéo] Deadnight Warrior'},
+          {id: 'label', name: '[Label] Nuclear Blast'},
+          {id: 'lieu', name: '[Lieu] Lac Bodom'}
+        ],
+        autoSelect: true
+      });
+    },
+    circles: function () {
+      $('#circle-1').circliful({
+        animation: 1,
+        animationStep: 1,
+        animateInView: true,
+        foregroundBorderWidth: 5,
+        backgroundBorderWidth: 5,
+        backgroundColor: 'whitesmoke',
+        fontColor: 'whitesmoke',
+        multiPercentage: 1,
+        multiPercentageLegend: 1,
+        percentages: [
+          {'percent': 99, 'color': '#4ADBEA', 'title': 'Avec logo' },
+          {'percent': 94, 'color': '#3180B8', 'title': 'Avec photo(s)' },
+          {'percent': 82, 'color': '#49EBA8', 'title': 'Avec ville' },
+          {'percent': 50, 'color': '#FFCA35', 'title': 'Avec date(s)' }
+        ],
+        icon: 'f0c0',
+        iconPosition: 'middle',
+        iconColor: 'whitesmoke'
+      });
 
-    $('#search-box > input[type="text"]').typeahead({
-      source: [
-        {id: 'style', name: '[Style] Heavy Black'},
-        {id: 'band', name: '[Groupe] Children Of Bodom'},
-        {id: 'artist', name: '[Artiste] Alexi Laiho'},
-        {id: 'album', name: '[Album] Something Wild'},
-        {id: 'audio', name: '[Audio] Lake Bodom'},
-        {id: 'video', name: '[Vidéo] Deadnight Warrior'},
-        {id: 'label', name: '[Label] Nuclear Blast'},
-        {id: 'lieu', name: '[Lieu] Lac Bodom'}
-      ],
-      autoSelect: true
-    });
+      $('#circle-2').circliful({
+        animation: 1,
+        animationStep: 1,
+        animateInView: true,
+        foregroundBorderWidth: 5,
+        backgroundBorderWidth: 5,
+        backgroundColor: 'whitesmoke',
+        fontColor: 'whitesmoke',
+        multiPercentage: 1,
+        multiPercentageLegend: 1,
+        percentages: [
+          {'percent': 16, 'color': '#4ADBEA', 'title': 'Avec paroles' },
+          {'percent': 50, 'color': '#3180B8', 'title': 'Avec label(s)' },
+          {'percent': 50, 'color': '#49EBA8', 'title': 'Avec producteur' },
+          {'percent': 50, 'color': '#FFCA35', 'title': 'Avec studio' }
+        ],
+        icon: 'f001',
+        iconPosition: 'middle',
+        iconColor: 'whitesmoke'
+      });
+
+      $('#circle-3').circliful({
+        animation: 1,
+        animationStep: 1,
+        animateInView: true,
+        foregroundBorderWidth: 5,
+        backgroundBorderWidth: 5,
+        backgroundColor: 'whitesmoke',
+        fontColor: 'whitesmoke',
+        multiPercentage: 1,
+        multiPercentageLegend: 1,
+        percentages: [
+          {'percent': 16, 'color': '#4ADBEA', 'title': 'Avec logo' },
+          {'percent': 50, 'color': '#3180B8', 'title': 'Avec pays' }
+        ],
+        icon: 'f02b',
+        iconPosition: 'middle',
+        iconColor: 'whitesmoke'
+      });
+    },
+    carousel: function () {
+      $('.owl-carousel').owlCarousel({
+        items: 1,
+        center: true,
+        autoHeight:true,
+        loop: true,
+        video: true,
+        videoWidth: 570,
+        videoHeight: 428,
+        lazyLoad: true
+      });
+    }
   },
   listeners: function () {
     $(document).scroll(gui.handlers.closeSearch);

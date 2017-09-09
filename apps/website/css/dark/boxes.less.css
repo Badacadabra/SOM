@@ -42,7 +42,9 @@
   right: 0;
 }
 .large-box ul li,
-.small-box ul li {
+.small-box ul li,
+.large-box ol li,
+.small-box ol li {
   padding: 10px;
   border-bottom: solid 5px #181818;
 }
