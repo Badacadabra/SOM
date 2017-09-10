@@ -228,6 +228,8 @@
     padding-top: 20px;
 
     #lyrics-btn {
+      margin-bottom: 20px;
+
       i {
         margin-right: 10px;
       }
@@ -308,10 +310,52 @@
     }
 
     .review-info {
-      color: @yellow;
-      padding: 30px 15px;
+      color: gray;
+      margin: 0;
       font-size: x-large;
-      text-align: center;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+
+      .review-avatar img {
+        height: 100px;
+      }
+
+      .review-grade {
+        color: @yellow;
+        text-align: center;
+
+        a {
+          color: @yellow;
+          display: block;
+          border: solid 2px @yellow;
+          border-radius: 5px;
+          margin-top: 10px;
+
+          &:hover {
+            color: @red;
+            border-color: @red;
+          }
+        }
+      }
+    }
+
+    .review-content {
+      line-height: 25px;
+      font-weight: 300;
+      padding-top: 20px;
+      border-top: solid 5px @dark;
+
+      .review-quote {
+        color: gray;
+        margin: 15px 0 30px 0;
+        font-size: x-large;
+        text-align: center;
+
+        i {
+          color: @yellow;
+        }
+      }
     }
 
     .review-options {

@@ -4,11 +4,23 @@
   }
 }
 @media screen and (max-width: 992px) {
+  .xlarge-box {
+    width: 590px;
+  }
+  .xlarge-box h2,
+  .xlarge-box h3 {
+    width: 630px;
+  }
   #webzine #reviews .more {
     margin-bottom: 50px;
   }
   #encyclopedia aside {
     margin-top: 50px;
+  }
+  #album .cover {
+    display: block;
+    margin: auto;
+    width: 300px;
   }
   footer #brand,
   footer #social {

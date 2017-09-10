@@ -150,11 +150,23 @@
   }
 }
 @media screen and (max-width: 992px) {
+  .xlarge-box {
+    width: 590px;
+  }
+  .xlarge-box h2,
+  .xlarge-box h3 {
+    width: 630px;
+  }
   #webzine #reviews .more {
     margin-bottom: 50px;
   }
   #encyclopedia aside {
     margin-top: 50px;
+  }
+  #album .cover {
+    display: block;
+    margin: auto;
+    width: 300px;
   }
   footer #brand,
   footer #social {
@@ -482,6 +494,9 @@
 #album .content {
   padding-top: 20px;
 }
+#album .content #lyrics-btn {
+  margin-bottom: 20px;
+}
 #album .content #lyrics-btn i {
   margin-right: 10px;
 }
@@ -547,10 +562,45 @@
   color: gray;
 }
 #album .content .review-info {
+  color: gray;
+  margin: 0;
+  font-size: x-large;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+#album .content .review-info .review-avatar img {
+  height: 100px;
+}
+#album .content .review-info .review-grade {
   color: #F4BF31;
-  padding: 30px 15px;
+  text-align: center;
+}
+#album .content .review-info .review-grade a {
+  color: #F4BF31;
+  display: block;
+  border: solid 2px #F4BF31;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+#album .content .review-info .review-grade a:hover {
+  color: #BA2525;
+  border-color: #BA2525;
+}
+#album .content .review-content {
+  line-height: 25px;
+  font-weight: 300;
+  padding-top: 20px;
+  border-top: solid 5px #181818;
+}
+#album .content .review-content .review-quote {
+  color: gray;
+  margin: 15px 0 30px 0;
   font-size: x-large;
   text-align: center;
+}
+#album .content .review-content .review-quote i {
+  color: #F4BF31;
 }
 #album .content .review-options a {
   display: block;
