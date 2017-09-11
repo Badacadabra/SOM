@@ -157,6 +157,13 @@
   .xlarge-box h3 {
     width: 630px;
   }
+  .small-box {
+    width: 590px;
+  }
+  .small-box h2,
+  .small-box h3 {
+    width: 630px;
+  }
   #webzine #reviews .more {
     margin-bottom: 50px;
   }
@@ -924,6 +931,123 @@ header {
 }
 #banner #login #logout {
   cursor: pointer;
+}
+/* Mobile */
+#m-header {
+  padding: 0;
+}
+#m-header .row {
+  margin: 0;
+}
+#m-header #m-portal {
+  background-color: #0C0C0C;
+  font-family: Oswald, sans-serif;
+  font-size: x-large;
+  padding: 15px 0;
+}
+#m-header #m-portal .som span {
+  color: #F4BF31;
+}
+#m-header #m-portal .som:hover {
+  color: #F4BF31;
+}
+#m-header #m-portal .sor {
+  font-size: 0.7em;
+}
+#m-header #m-portal .sor span {
+  color: gray;
+}
+#m-header #m-portal .sor:hover {
+  color: gray;
+}
+#m-header #m-portal #m-switchers {
+  text-align: right;
+}
+#m-header #m-portal #m-switchers i {
+  color: silver;
+  margin-left: 15px;
+}
+#m-header #m-portal #m-switchers i:hover {
+  cursor: pointer;
+  color: #F4BF31;
+}
+#m-header #m-languages {
+  background-color: #121212;
+}
+#m-header #m-languages > div {
+  padding: 0;
+}
+#m-header #m-languages ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+#m-header #m-languages ul li {
+  flex-grow: 1;
+}
+#m-header #m-languages ul li a {
+  display: block;
+  color: gray;
+  font-size: large;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+  padding: 10px 0;
+}
+#m-header #m-languages ul li a:hover,
+#m-header #m-languages ul li a:focus {
+  color: #121212;
+  background-color: #F4BF31;
+}
+#m-header #m-options {
+  background-color: #121212;
+  text-align: center;
+  padding: 10px 0;
+}
+#m-header #m-options a {
+  padding: 10px 0;
+  font-family: Oswald, sans-serif;
+}
+#m-header #m-login {
+  background-color: #121212;
+  text-align: center;
+  padding: 10px 0;
+  font-family: Oswald, sans-serif;
+  font-size: 20px;
+  color: gray;
+}
+#m-header #m-login span {
+  color: #F4BF31;
+}
+#m-header #m-login a {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+  color: #121212;
+  background-color: #F4BF31;
+}
+#m-header #m-nav {
+  padding: 0;
+  margin-bottom: 20px;
+  background-color: #181818;
+}
+#m-header #m-nav > div {
+  padding: 0;
+}
+#m-header #m-nav a {
+  display: block;
+  color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Astonished, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+#m-header #m-nav a:hover,
+#m-header #m-nav a:focus {
+  color: #121212;
+  background-color: #F4BF31;
 }
 main .content {
   color: whitesmoke;

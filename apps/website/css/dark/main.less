@@ -405,6 +405,152 @@ header {
   }
 }
 
+/* Mobile */
+
+#m-header {
+  padding: 0;
+
+  .row {
+    margin: 0;
+  }
+
+  #m-portal {
+    background-color: @black;
+    font-family: Oswald, sans-serif;
+    font-size: x-large;
+    padding: 15px 0;
+
+    .som {
+      span {
+        color: @yellow;
+      }
+
+      &:hover {
+        color: @yellow;
+      }
+    }
+
+    .sor {
+      font-size: 0.7em;
+
+      span {
+        color: gray;
+      }
+
+      &:hover {
+        color: gray;
+      }
+    }
+
+    #m-switchers {
+      text-align: right;
+
+      i {
+        color: silver;
+        margin-left: 15px;
+
+        &:hover {
+          cursor: pointer;
+          color: @yellow;
+        }
+      }
+    }
+  }
+
+  #m-languages {
+    background-color: @darker;
+
+    & > div {
+      padding: 0;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0;
+
+      li {
+        flex-grow: 1;
+
+        a {
+          display: block;
+          color: gray;
+          font-size: large;
+          font-family: Oswald, sans-serif;
+          text-align: center;
+          padding: 10px 0;
+
+          &:hover,
+          &:focus {
+            color: @darker;
+            background-color: @yellow;
+          }
+        }
+      }
+    }
+  }
+
+  #m-options {
+    background-color: @darker;
+    text-align: center;
+    padding: 10px 0;
+
+    a {
+      padding: 10px 0;
+      font-family: Oswald, sans-serif;
+    }
+  }
+
+  #m-login {
+    background-color: @darker;
+    text-align: center;
+    padding: 10px 0;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+    color: gray;
+
+    span {
+      color: @yellow;
+    }
+
+    a {
+      display: block;
+      padding: 10px;
+      margin-top: 10px;
+      color: @darker;
+      background-color: @yellow;
+    }
+  }
+
+  #m-nav {
+    padding: 0;
+    margin-bottom: 20px;
+    background-color: @dark;
+
+    & > div {
+      padding: 0;
+    }
+
+    a {
+      display: block;
+      color: whitesmoke;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: Astonished, sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      padding: 10px 0;
+
+      &:hover,
+      &:focus {
+        color: @darker;
+        background-color: @yellow;
+      }
+    }
+  }
+}
+
 // ==============================
 // Main
 // ==============================

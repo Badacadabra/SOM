@@ -11,6 +11,13 @@
   .xlarge-box h3 {
     width: 630px;
   }
+  .small-box {
+    width: 590px;
+  }
+  .small-box h2,
+  .small-box h3 {
+    width: 630px;
+  }
   #webzine #reviews .more {
     margin-bottom: 50px;
   }

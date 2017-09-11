@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
   <title>Spirit of Metal - Encyclopédie</title>
   <link rel="icon" type="image/png" href="img/icons/favicon.png">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="css/dark/main.less.css" media="screen">
 </head>
 <body>
-  <header>
+  <header class="hidden-xs hidden-sm">
     <div id="topbar">
       <div>
         <div id="portal">
@@ -87,7 +88,7 @@
           <img id="logo" src="img/som-logo.png" alt="Spirit of Metal">
         </figure>
       </a>
-      <div id="login">
+      <div id="login" class="collapse">
         <img src="img/content/avatar.png" alt="BadaOfBodom">
         <div class="info">
           <div>
@@ -106,6 +107,112 @@
       </div>
     </div>
   </header>
+  <div id="m-header" class="container-fluid hidden-md hidden-lg hidden-xl">
+    <div id="m-portal" class="row">
+      <div class="col-xs-8">
+        <a class="som" href="http://som.badacadabra.net/site/dark/webzine.html">SPIRIT OF <span>METAL</span></a> | 
+        <a class="sor" href="http://som.badacadabra.net/site/light/webzine.html">SPIRIT OF <span>ROCK</span></a>
+      </div>
+      <div id="m-switchers" class="col-xs-4">
+        <i class="fa fa-language" data-toggle="collapse" data-target="#m-languages"></i>
+        <i class="fa fa-search" data-toggle="collapse" data-target="#m-options"></i>
+        <i class="fa fa-user" data-toggle="collapse" data-target="#m-login"></i>
+        <i class="fa fa-power-off private-btn" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div id="m-languages" class="row collapse">
+      <div class="col-xs-12">
+        <ul>
+          <li><a href="#">EN</a></li>
+          <li><a href="#">FR</a></li>
+          <li><a href="#">DE</a></li>
+          <li><a href="#">CN</a></li>
+          <li><a href="#">PT</a></li>
+          <li><a href="#">ES</a></li>
+          <li><a href="#">RU</a></li>
+          <li><a href="#">PL</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="m-options" class="collapse">
+      <div class="row">
+        <a href="http://www.spirit-of-metal.com/fr/reviews/1" class="col-xs-2">
+          <i class="fa fa-pencil-square-o fa-2x"></i>
+          <div>Chroniques</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/interviews-l-fr.html" class="col-xs-2">
+          <i class="fa fa-microphone fa-2x"></i>
+          <div>Interviews</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/live_report/index-l-fr.html" class="col-xs-2">
+          <i class="fa fa-file-text-o fa-2x"></i>
+          <div>Live Reports</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/galeries_photo/index-l-fr.html" class="col-xs-2">
+          <i class="fa fa-camera fa-2x"></i>
+          <div>Galeries Photo</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/liste_groupe-indexStyle-Black_Metal-l-fr.html" class="col-xs-2">
+          <i class="fa fa-hashtag fa-2x"></i>
+          <div>Styles</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/liste_groupe-l-fr.html" class="col-xs-2">
+          <i class="fa fa-group fa-2x"></i>
+          <div>Groupes</div>
+        </a>
+      </div>
+      <div class="row">
+        <a href="http://www.spirit-of-metal.com/artists-l-fr.html" class="col-xs-2">
+          <i class="fa fa-address-book-o fa-2x"></i>
+          <div>Artistes</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/albums-l-fr.html" class="col-xs-2">
+          <i class="fa fa-music fa-2x"></i>
+          <div>Albums</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/audio-l-fr.html" class="col-xs-2">
+          <i class="fa fa-file-audio-o fa-2x"></i>
+          <div>Audios</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/video/video-l-fr.html" class="col-xs-2">
+          <i class="fa fa-video-camera fa-2x"></i>
+          <div>Vidéos</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/labels-l-fr.html" class="col-xs-2">
+          <i class="fa fa-tag fa-2x"></i>
+          <div>Labels</div>
+        </a>
+        <a href="http://www.spirit-of-metal.com/salles-l-fr.html" class="col-xs-2">
+          <i class="fa fa-map-marker fa-2x"></i>
+          <div>Lieux</div>
+        </a>
+      </div>
+    </div>
+    <div id="m-login" class="row collapse">
+      <div class="col-xs-12">
+        Vous êtes connecté·e en tant que <span>BadaOfBodom</span>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <a href="http://www.spirit-of-metal.com/membre/control_membre-l-fr.html">Tableau de bord</a>
+        </div>
+        <div class="col-xs-6">
+          <a href="http://www.spirit-of-metal.com/PM/index-l-fr.html">Messages privés</a>
+        </div>
+      </div>
+    </div>
+    <nav id="m-nav" class="row">
+      <div class="col-xs-4">
+        <a href="webzine.html">Webzine</a>
+      </div>
+      <div class="col-xs-4">
+        <a href="encyclopedie.html">Encyclopedia</a>
+      </div>
+      <div class="col-xs-4">
+        <a href="http://www.spirit-of-metal.com/forum/" target="_blank">Forums</a>
+      </div>
+    </nav>
+  </div>
   <main id="encyclopedia">
     <div id="album" class="container">
       <div class="row">
