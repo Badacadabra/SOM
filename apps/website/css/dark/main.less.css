@@ -1036,7 +1036,6 @@ header {
 }
 #m-header #m-nav a {
   display: block;
-  color: whitesmoke;
   text-align: center;
   text-transform: uppercase;
   font-family: Astonished, sans-serif;
@@ -1044,8 +1043,7 @@ header {
   font-weight: 400;
   padding: 10px 0;
 }
-#m-header #m-nav a:hover,
-#m-header #m-nav a:focus {
+#m-header #m-nav a.m-active {
   color: #121212;
   background-color: #F4BF31;
 }
