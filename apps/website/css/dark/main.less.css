@@ -868,10 +868,16 @@ header {
   border-bottom: solid 5px whitesmoke;
 }
 #topbar nav ul li:hover {
-  border-bottom-color: #F4BF31;
   cursor: pointer;
+  border-bottom-color: silver;
 }
 #topbar nav ul li:hover a {
+  color: silver;
+}
+#topbar nav li.active {
+  border-color: #F4BF31;
+}
+#topbar nav li.active a {
   color: #F4BF31;
 }
 #banner {

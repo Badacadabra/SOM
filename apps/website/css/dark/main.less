@@ -309,27 +309,37 @@ header {
     }
   }
 
-  nav ul {
-    font: 40px Astonished, sans-serif;
-    width: 554px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  nav {
+    ul {
+      font: 40px Astonished, sans-serif;
+      width: 554px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
 
-    li {
-      height: 80px;
-      line-height: 80px;
-      vertical-align: middle;
-      padding: 0 30px;
-      border-bottom: solid 5px whitesmoke;
+      li {
+        height: 80px;
+        line-height: 80px;
+        vertical-align: middle;
+        padding: 0 30px;
+        border-bottom: solid 5px whitesmoke;
 
-      &:hover {
-        border-bottom-color: @yellow;
-        cursor: pointer;
+        &:hover {
+          cursor: pointer;
+          border-bottom-color: silver;
 
-        a {
-          color: @yellow;
+          a {
+            color: silver;
+          }
         }
+      }
+    }
+
+    li.active {
+      border-color: @yellow;
+
+      a {
+        color: @yellow;
       }
     }
   }
