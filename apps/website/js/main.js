@@ -2,11 +2,17 @@ var gui = {
   init: function () {
     gui.listeners();
 
-    $('[data-toggle="tooltip"]').tooltip();
+    $("body").tooltip({
+      selector: '[data-toggle="tooltip"]'
+    });
 
     gui.configure.typeahead();
     gui.configure.circles();
     gui.configure.carousel();
+
+    if ($('#discography').length > 0) {
+      gui.handlers.selectReleaseType();
+    }
   },
   configure: {
     typeahead: function () {
@@ -106,6 +112,8 @@ var gui = {
     $('#language-switcher').click(gui.handlers.displayLanguages);
     $('#languages > div').click(gui.handlers.selectLanguage);
     $('#search-toggle, #dimmer').click(gui.handlers.displaySearchBox);
+    $('li', '#release-menu').click(gui.handlers.selectReleaseType);
+    $('#discography').on('click', '.more', gui.handlers.loadMoreReleases);
   },
   handlers: {
     closeSearch: function () {
@@ -176,6 +184,86 @@ var gui = {
         $('#dimmer').fadeOut();
         $('i', '#search-toggle').fadeIn();
       }
+    },
+    selectReleaseType: function (e) {
+      var releaseType = e && $(e.target).data('type') || 'Album';
+
+      if (e) {
+        $('li', '#release-menu').removeClass('current-type');
+      }
+
+      $(this).addClass('current-type');
+
+      gui.handlers.getReleases(releaseType, 1);
+    },
+    loadMoreReleases: function () {
+      gui.handlers.getReleases($(this).data('type'), Number($(this).data('page')) + 1, true);
+    },
+    getReleases: function (type, page, more) {
+      $.get('http://www.spirit-of-metal.com/API/albums.php?id_groupe=17&type=' + type + '&p=' + page, function (data) {
+        var releases = JSON.parse(data),
+            tpl = '';
+
+        if (releases.length === 0) {
+          tpl += '<p class="not-found">Aucun élément</p>';
+        } else {
+          for (var i = 0; i < releases.length; i++) {
+            tpl += '<a href="album.html" class="row release">';
+            tpl += '  <div class="col-xs-2">';
+            tpl += '    <img src="' + releases[i].cover+ '" alt="' + releases[i].name + '">';
+            tpl += '  </div>';
+            tpl += '  <div class="col-xs-7">';
+            tpl += '    <h4>' + releases[i].name + '</h4>';
+            tpl += '    <div>' + new Date(releases[i].date).getFullYear() + '</div>';
+            tpl += '  </div>';
+            tpl += '  <div class="col-xs-2">';
+            tpl += '   <span class="grade">' + releases[i].grade + '</span>';
+            tpl += '  </div>';
+            tpl += '  <div class="col-xs-1 indicators">';
+            tpl += '    <div class="row">';
+            tpl += '      <div class="col-xl-4">';
+
+            if (releases[i].hasAudio) {
+              tpl += '      <i class="fa fa-music aria-hidden="true"></i>';
+            } else {
+              tpl += '      <i class="fa fa-close" aria-hidden="true"></i>';
+            }
+
+            tpl += '      </div>';
+            tpl += '      <div class="col-xl-4">';
+
+            if (releases[i].hasReview) {
+              tpl += '      <i class="fa fa-quote-left" aria-hidden="true"></i>';
+            } else {
+              tpl += '      <i class="fa fa-close" aria-hidden="true"></i>';
+            }
+
+            tpl += '      </div>';
+            tpl += '      <div class="col-xl-4">';
+
+            if (releases[i].hasLyrics) {
+              tpl += '      <i class="fa fa-microphone" aria-hidden="true"></i>';
+            } else {
+              tpl += '      <i class="fa fa-close" aria-hidden="true"></i>';
+            }
+
+            tpl += '      </div>';
+            tpl += '    </div>';
+            tpl += '  </div>';
+            tpl += '</a>';
+          }
+
+          if (releases.length === 10) {
+            tpl += '<span class="more" data-type="' + type + '" data-page="' + page + '">Voir plus</span>';
+          }
+        }
+
+        if (more) {
+          $('#releases').append(tpl);
+        } else {
+          $('#releases').html(tpl);
+        }
+      });
     }
   }
 };

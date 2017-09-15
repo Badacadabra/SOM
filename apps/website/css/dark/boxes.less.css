@@ -8,8 +8,11 @@
 .small-box h3.ribbon {
   color: gray;
   background-color: #0C0C0C;
-  font: 42px Astonished, sans-serif;
-  text-align: center;
+  height: 50px;
+  font: 30px 'Metal Mania', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   position: relative;
   top: 0;
@@ -82,7 +85,7 @@
 .xlarge-box .content,
 .large-box .content,
 .small-box .content {
-  font: 300 20px Oswald, sans-serif;
+  font: 300 17px Oswald, sans-serif;
   margin-bottom: 50px;
 }
 .yellow-box h2.ribbon,

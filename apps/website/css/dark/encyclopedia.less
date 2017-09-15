@@ -117,6 +117,13 @@
     }
   }
 
+  #controls-options {
+    a {
+      display: block;
+      padding: 15px;
+    }
+  }
+
   #line-up,
   #former-members {
     h3 {
@@ -124,7 +131,10 @@
       background-color: @black;
       width: 300px;
       position: relative;
-      font: 42px Astonished, sans-serif;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      font: 25px 'Metal Mania', cursive;
 
       &::before,
       &::after {
@@ -152,12 +162,13 @@
       background-color: @dark;
       padding: 7px;
       margin: 10px 0;
-      transition: transform .5s ease;
+      border-bottom: solid 1px @dark;
+      transition: border-color .3s ease;
 
       &:hover {
         cursor: pointer;
-        transform: scale(1.1);
       }
+
       p {
         margin: 0;
       }
@@ -165,28 +176,73 @@
       a:hover {
         color: whitesmoke;
       }
+
+      .artist-comment {
+        font-size: 14px;
+        color: gray;
+
+        a {
+          color: silver;
+        }
+      }
     }
   }
 
   #line-up {
+    .controls {
+      top: 51px;
+      left: -10px;
+    }
+
     h3 {
       left: -40px;
       padding-left: 30px;
     }
 
-    li p:first-child {
-      color: @yellow;
+    li {
+      &:hover {
+        border-color: @yellow;
+      }
+
+      p:first-child {
+        color: @yellow;
+      }
+
+      p a:hover {
+        color: @yellow;
+      }
     }
   }
 
   #former-members {
+    .controls {
+      top: 51px;
+      left: -230px;
+    }
+
     h3 {
-      text-align: right;
+      justify-content: flex-end;
       padding-right: 30px;
     }
 
-    li p:first-child {
-      color: gray;
+    li {
+      &:hover {
+        border-color: @red;
+      }
+
+      p:first-child {
+        color: @red;
+      }
+
+      p a:hover {
+        color: @red;
+      }
+    }
+  }
+
+  #biography {
+    p:first-of-type {
+      margin-top: 15px;
     }
   }
 
@@ -196,12 +252,39 @@
       font-size: 18px;
     }
 
+    ul#release-menu {
+      text-align: center;
+
+      li {
+        display: inline-block;
+        margin-right: 15px;
+        transition: border-color .3s ease;
+
+        &:hover {
+          cursor: pointer;
+          color: gray;
+          border-color: gray;
+        }
+      }
+
+      .current-type {
+        color: @yellow;
+        border-color: @yellow;
+      }
+    }
+
     .grade {
       line-height: 70px;
     }
 
     .indicators {
       color: gray;
+      text-align: center;
+    }
+
+    .not-found {
+      color: gray;
+      margin-top: 20px;
       text-align: center;
     }
   }

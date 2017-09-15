@@ -56,6 +56,10 @@ body {
   }
 }
 
+.bis {
+  top: 55px;
+}
+
 .more {
   width: 80%;
   color: @yellow;
@@ -66,9 +70,14 @@ body {
   padding: 7px;
   margin: auto;
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: uppercase;
   transition: background-color .5s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: gray;
+  }
 }
 
 .private-btn {
@@ -197,7 +206,7 @@ header {
   #search-toggle {
     width: 80px;
     height: 80px;
-    font: 600 27px Oswald, sans-serif;
+    font: 400 27px Oswald, sans-serif;
     background-color: @darker;
     display: flex;
     justify-content: center;
@@ -387,7 +396,7 @@ header {
 
     #pseudo {
       font-weight: 400;
-      font-size: 22px;
+      font-size: 20px;
     }
 
     #circle {
@@ -528,8 +537,9 @@ header {
       display: block;
       padding: 10px;
       margin-top: 10px;
-      color: @darker;
-      background-color: @yellow;
+      color: @yellow;
+      border: solid 2px @yellow;
+      border-radius: 5px;
     }
   }
 

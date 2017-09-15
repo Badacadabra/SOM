@@ -90,13 +90,20 @@
   margin: auto;
   padding: 20px 0;
 }
+#band #controls-options a {
+  display: block;
+  padding: 15px;
+}
 #band #line-up h3,
 #band #former-members h3 {
   color: gray;
   background-color: #0C0C0C;
   width: 300px;
   position: relative;
-  font: 42px Astonished, sans-serif;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  font: 25px 'Metal Mania', cursive;
 }
 #band #line-up h3::before,
 #band #former-members h3::before,
@@ -125,12 +132,12 @@
   background-color: #181818;
   padding: 7px;
   margin: 10px 0;
-  transition: transform .5s ease;
+  border-bottom: solid 1px #181818;
+  transition: border-color 0.3s ease;
 }
 #band #line-up li:hover,
 #band #former-members li:hover {
   cursor: pointer;
-  transform: scale(1.1);
 }
 #band #line-up li p,
 #band #former-members li p {
@@ -140,29 +147,83 @@
 #band #former-members li a:hover {
   color: whitesmoke;
 }
+#band #line-up li .artist-comment,
+#band #former-members li .artist-comment {
+  font-size: 14px;
+  color: gray;
+}
+#band #line-up li .artist-comment a,
+#band #former-members li .artist-comment a {
+  color: silver;
+}
+#band #line-up .controls {
+  top: 51px;
+  left: -10px;
+}
 #band #line-up h3 {
   left: -40px;
   padding-left: 30px;
 }
+#band #line-up li:hover {
+  border-color: #F4BF31;
+}
 #band #line-up li p:first-child {
   color: #F4BF31;
 }
+#band #line-up li p a:hover {
+  color: #F4BF31;
+}
+#band #former-members .controls {
+  top: 51px;
+  left: -230px;
+}
 #band #former-members h3 {
-  text-align: right;
+  justify-content: flex-end;
   padding-right: 30px;
 }
+#band #former-members li:hover {
+  border-color: #BA2525;
+}
 #band #former-members li p:first-child {
-  color: gray;
+  color: #BA2525;
+}
+#band #former-members li p a:hover {
+  color: #BA2525;
+}
+#band #biography p:first-of-type {
+  margin-top: 15px;
 }
 #band #discography h4 {
   color: #F4BF31;
   font-size: 18px;
+}
+#band #discography ul#release-menu {
+  text-align: center;
+}
+#band #discography ul#release-menu li {
+  display: inline-block;
+  margin-right: 15px;
+  transition: border-color 0.3s ease;
+}
+#band #discography ul#release-menu li:hover {
+  cursor: pointer;
+  color: gray;
+  border-color: gray;
+}
+#band #discography ul#release-menu .current-type {
+  color: #F4BF31;
+  border-color: #F4BF31;
 }
 #band #discography .grade {
   line-height: 70px;
 }
 #band #discography .indicators {
   color: gray;
+  text-align: center;
+}
+#band #discography .not-found {
+  color: gray;
+  margin-top: 20px;
   text-align: center;
 }
 #band #videos .owl-carousel {
