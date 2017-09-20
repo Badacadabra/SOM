@@ -1,0 +1,32 @@
+{
+    "name": "net.badacadabra.som",
+    "displayName": "Spirit of Metal",
+    "version": "1.0.0",
+    "description": "Official app for Spirit of Metal. News, reviews, interviews, releases, events and encyclopedia.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Baptiste Vannesson",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-dialogs": "^1.3.3",
+        "cordova-plugin-globalization": "^1.0.7",
+        "cordova-plugin-network-information": "^1.3.3",
+        "cordova-plugin-splashscreen": "^4.0.3",
+        "cordova-plugin-whitelist": "^1.3.2"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-dialogs": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-globalization": {},
+            "cordova-plugin-splashscreen": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}
