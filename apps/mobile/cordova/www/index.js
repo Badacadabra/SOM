@@ -35,13 +35,14 @@ var app = {
         navigator.globalization.getPreferredLanguage(
             function (language) {
                 if (navigator.connection.type == Connection.NONE) {
-                  if (/^fr-/.test(language.value)) {
-                    navigator.notification.alert('Une connexion Internet est requise pour utiliser cette application.', null, 'Attention !');
-                  } else {
-                    navigator.notification.alert('An Internet connection is required to continue.', null, 'Warning!');
+                    if (/^fr-/.test(language.value)) {
+                        navigator.notification.alert('Une connexion Internet est requise pour utiliser cette application.', null, 'Attention !');
+                    } else {
+                        navigator.notification.alert('An Internet connection is required to continue.', null, 'Warning!');
                   }
                 } else {
-                  window.location.href = "http://som.badacadabra.net/#/";
+                    // Load the hosted mobile site
+                    window.location.href = "http://som.badacadabra.net/#/";
                 }
             },
             function () {
