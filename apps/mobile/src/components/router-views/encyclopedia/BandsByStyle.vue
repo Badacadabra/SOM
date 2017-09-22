@@ -16,7 +16,7 @@
     },
     methods: {
       load () {
-        this.$get('bands', {id_style: this.$route.params.id, p: this.page})
+        this.$get('bands', {l: this.$i18n.locale, id_style: this.$route.params.id, p: this.page})
           .then(response => {
             this.$parseList('bands', response.data, this.page)
             this.$emit('bands', this.bands[0].style) // necessary to display a title
