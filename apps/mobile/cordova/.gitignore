@@ -1,3 +1,5 @@
 node_modules/
 platforms/
 plugins/
+SpiritOfMetal.apk
+my-release-key.keystore
