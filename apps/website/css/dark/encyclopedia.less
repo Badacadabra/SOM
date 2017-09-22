@@ -124,6 +124,13 @@
     }
   }
 
+  #profile {
+    .flag {
+      vertical-align: initial;
+      margin-right: 5px;
+    }
+  }
+
   #line-up,
   #former-members {
     h3 {
@@ -131,10 +138,10 @@
       background-color: @black;
       width: 300px;
       position: relative;
-      height: 42px;
+      height: 50px;
       display: flex;
       align-items: center;
-      font: 25px 'Metal Mania', cursive;
+      font: 30px 'Metal Mania', cursive;
 
       &::before,
       &::after {
@@ -190,8 +197,8 @@
 
   #line-up {
     .controls {
-      top: 51px;
-      left: -10px;
+      top: 55px;
+      left: 230px;
     }
 
     h3 {
@@ -216,8 +223,8 @@
 
   #former-members {
     .controls {
-      top: 51px;
-      left: -230px;
+      top: 55px;
+      left: 12px;
     }
 
     h3 {
@@ -241,8 +248,12 @@
   }
 
   #biography {
-    p:first-of-type {
-      margin-top: 15px;
+    p {
+      font-family: Abel, sans-serif;
+
+      &:first-of-type {
+        margin-top: 15px;
+      }
     }
   }
 
@@ -426,6 +437,7 @@
     .review-content {
       line-height: 25px;
       font-weight: 300;
+      font-family: Abel, sans-serif;
       padding-top: 20px;
       border-top: solid 5px @dark;
 

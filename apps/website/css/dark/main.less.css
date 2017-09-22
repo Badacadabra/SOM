@@ -210,12 +210,11 @@
   color: #181818;
   background-color: #F4BF31;
   margin-top: 30px;
-  font: 42px Astonished, sans-serif;
+  font: 30px 'Metal Mania', cursive;
 }
 #reviews h3 {
   color: gray;
-  font-family: Astonished, sans-serif;
-  font-size: 35px;
+  font: 25px 'Metal Mania', cursive;
 }
 #reviews h4 {
   color: #F4BF31;
@@ -254,6 +253,11 @@
   padding-top: 10px;
   background-color: #181818;
   border-radius: 5px;
+  transition: background-color 0.5s ease;
+}
+#interviews figure:hover {
+  color: whitesmoke;
+  background-color: #0C0C0C;
 }
 #interviews figure img,
 #interviews figure figcaption {
@@ -263,6 +267,9 @@
   margin: auto;
   margin-bottom: 20px;
   padding: 5px 0 10px 0;
+}
+#interviews figure figcaption .band-name {
+  color: #F4BF31;
 }
 #newsletter form {
   display: flex;
@@ -292,7 +299,7 @@
   margin-top: 50px;
 }
 #events {
-  padding: 100px;
+  padding: 100px 30px;
   border-top: solid 5px whitesmoke;
   background: black url('../../img/backgrounds/events.jpg') no-repeat fixed 0 0;
 }
@@ -301,15 +308,15 @@
 #events #photo-galleries {
   margin: 0 auto;
   max-width: 500px;
-  box-shadow: 0 0 30px black;
 }
 #events h2 {
   color: #121212;
   background-color: #F4BF31;
   text-align: center;
   position: static;
-  font: 42px Astonished, sans-serif;
+  font: 30px 'Metal Mania', sans-serif;
   margin: 0;
+  padding: 5px 0;
 }
 #events .content {
   box-shadow: 0 0;
@@ -421,16 +428,20 @@
   display: block;
   padding: 15px;
 }
+#band #profile .flag {
+  vertical-align: initial;
+  margin-right: 5px;
+}
 #band #line-up h3,
 #band #former-members h3 {
   color: gray;
   background-color: #0C0C0C;
   width: 300px;
   position: relative;
-  height: 42px;
+  height: 50px;
   display: flex;
   align-items: center;
-  font: 25px 'Metal Mania', cursive;
+  font: 30px 'Metal Mania', cursive;
 }
 #band #line-up h3::before,
 #band #former-members h3::before,
@@ -484,8 +495,8 @@
   color: silver;
 }
 #band #line-up .controls {
-  top: 51px;
-  left: -10px;
+  top: 55px;
+  left: 230px;
 }
 #band #line-up h3 {
   left: -40px;
@@ -501,8 +512,8 @@
   color: #F4BF31;
 }
 #band #former-members .controls {
-  top: 51px;
-  left: -230px;
+  top: 55px;
+  left: 12px;
 }
 #band #former-members h3 {
   justify-content: flex-end;
@@ -516,6 +527,9 @@
 }
 #band #former-members li p a:hover {
   color: #BA2525;
+}
+#band #biography p {
+  font-family: Abel, sans-serif;
 }
 #band #biography p:first-of-type {
   margin-top: 15px;
@@ -661,6 +675,7 @@
 #album .content .review-content {
   line-height: 25px;
   font-weight: 300;
+  font-family: Abel, sans-serif;
   padding-top: 20px;
   border-top: solid 5px #181818;
 }
@@ -709,6 +724,7 @@ body {
   top: 35px;
   z-index: 200;
 }
+.controls:hover,
 .controls i:hover {
   cursor: pointer;
   opacity: 0.8;

@@ -94,16 +94,20 @@
   display: block;
   padding: 15px;
 }
+#band #profile .flag {
+  vertical-align: initial;
+  margin-right: 5px;
+}
 #band #line-up h3,
 #band #former-members h3 {
   color: gray;
   background-color: #0C0C0C;
   width: 300px;
   position: relative;
-  height: 42px;
+  height: 50px;
   display: flex;
   align-items: center;
-  font: 25px 'Metal Mania', cursive;
+  font: 30px 'Metal Mania', cursive;
 }
 #band #line-up h3::before,
 #band #former-members h3::before,
@@ -157,8 +161,8 @@
   color: silver;
 }
 #band #line-up .controls {
-  top: 51px;
-  left: -10px;
+  top: 55px;
+  left: 230px;
 }
 #band #line-up h3 {
   left: -40px;
@@ -174,8 +178,8 @@
   color: #F4BF31;
 }
 #band #former-members .controls {
-  top: 51px;
-  left: -230px;
+  top: 55px;
+  left: 12px;
 }
 #band #former-members h3 {
   justify-content: flex-end;
@@ -189,6 +193,9 @@
 }
 #band #former-members li p a:hover {
   color: #BA2525;
+}
+#band #biography p {
+  font-family: Abel, sans-serif;
 }
 #band #biography p:first-of-type {
   margin-top: 15px;
@@ -334,6 +341,7 @@
 #album .content .review-content {
   line-height: 25px;
   font-weight: 300;
+  font-family: Abel, sans-serif;
   padding-top: 20px;
   border-top: solid 5px #181818;
 }

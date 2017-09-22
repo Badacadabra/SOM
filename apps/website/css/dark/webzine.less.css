@@ -22,12 +22,11 @@
   color: #181818;
   background-color: #F4BF31;
   margin-top: 30px;
-  font: 42px Astonished, sans-serif;
+  font: 30px 'Metal Mania', cursive;
 }
 #reviews h3 {
   color: gray;
-  font-family: Astonished, sans-serif;
-  font-size: 35px;
+  font: 25px 'Metal Mania', cursive;
 }
 #reviews h4 {
   color: #F4BF31;
@@ -66,6 +65,11 @@
   padding-top: 10px;
   background-color: #181818;
   border-radius: 5px;
+  transition: background-color 0.5s ease;
+}
+#interviews figure:hover {
+  color: whitesmoke;
+  background-color: #0C0C0C;
 }
 #interviews figure img,
 #interviews figure figcaption {
@@ -75,6 +79,9 @@
   margin: auto;
   margin-bottom: 20px;
   padding: 5px 0 10px 0;
+}
+#interviews figure figcaption .band-name {
+  color: #F4BF31;
 }
 #newsletter form {
   display: flex;
@@ -104,7 +111,7 @@
   margin-top: 50px;
 }
 #events {
-  padding: 100px;
+  padding: 100px 30px;
   border-top: solid 5px whitesmoke;
   background: black url('../../img/backgrounds/events.jpg') no-repeat fixed 0 0;
 }
@@ -113,15 +120,15 @@
 #events #photo-galleries {
   margin: 0 auto;
   max-width: 500px;
-  box-shadow: 0 0 30px black;
 }
 #events h2 {
   color: #121212;
   background-color: #F4BF31;
   text-align: center;
   position: static;
-  font: 42px Astonished, sans-serif;
+  font: 30px 'Metal Mania', sans-serif;
   margin: 0;
+  padding: 5px 0;
 }
 #events .content {
   box-shadow: 0 0;

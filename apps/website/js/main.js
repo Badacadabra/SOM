@@ -217,7 +217,7 @@ var gui = {
             tpl += '    <div>' + new Date(releases[i].date).getFullYear() + '</div>';
             tpl += '  </div>';
             tpl += '  <div class="col-xs-2">';
-            tpl += '   <span class="grade">' + releases[i].grade + '</span>';
+            tpl += '   <span class="grade">' + releases[i].grade + '/20</span>';
             tpl += '  </div>';
             tpl += '  <div class="col-xs-1 indicators">';
             tpl += '    <div class="row">';
