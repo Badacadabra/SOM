@@ -128,6 +128,9 @@
     padding-bottom: 10px
     font: 300 large Oswald, sans-serif
 
+    ul
+      list-style-type: none
+
     .num
       color: $red
       font-weight: 400
